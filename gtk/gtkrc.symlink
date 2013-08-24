@@ -1,0 +1,11 @@
+include "/usr/share/themes/naos/gtk-2.0/gtkrc"
+
+gtk-font-name        =  "DejaVy Sans 8"
+gtk-theme-name       =  "naos"
+gtk-toolbar-style    =  GTK_TOOLBAR_ICONS
+
+style "thing" {
+  font_name = "DejaVu Sans 8"
+}
+
+widget_class "*" style "thing"

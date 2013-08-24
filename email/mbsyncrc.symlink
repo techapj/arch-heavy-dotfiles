@@ -1,0 +1,21 @@
+IMAPAccount kindred
+CertificateFile /etc/ssl/certs/kindred.crt
+Host kindred
+UseIMAPS yes
+User devlin
+
+IMAPStore kindred-remote
+Account kindred
+
+MaildirStore kindred-local
+Path ~/.mail/me-devlinzed.com/
+Inbox ~/.mail/me-devlinzed.com/Inbox
+
+Channel kindred
+Master :kindred-remote:
+Slave :kindred-local:
+Patterns *
+Create Both
+Expunge Both
+Sync All
+SyncState *

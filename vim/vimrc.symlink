@@ -1,0 +1,14 @@
+set runtimepath+=$DOTFILES/vim/plugins/neobundle.vim/
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+source $DOTFILES/vim/bundle.vim
+source $DOTFILES/vim/config.vim
+source $DOTFILES/vim/bindings.vim
+source $DOTFILES/vim/plugin_config.vim
+source $DOTFILES/vim/commands.vim
+source $DOTFILES/vim/functions.vim
+source $DOTFILES/vim/autocmd.vim
+
+if filereadable($HOME . "/.vimrc.local")
+  source $HOME/.vimrc.local
+endif

@@ -1,0 +1,89 @@
+" lead with spacebar
+let mapleader = " "
+
+" toggle insert mode with ✓ or F8, which is what i've rebound
+" caps lock to on my two computers
+inoremap ✓ <ESC>
+noremap ✓ <ESC>
+nnoremap ✓ i
+inoremap <F8> <ESC>
+noremap <F8> <ESC>
+nnoremap <F8> i
+
+" fast save and exit
+map <silent> <CR> :write<CR>
+map <silent> Q :Bdelete<CR>
+
+" quick redo (remember we use check/f8 for insert mode, so i is unused)
+nnoremap i <C-r>
+
+" navigate through paragraphs intelligently
+nnoremap j gj
+nnoremap k gk
+
+" shift navigates between buffers
+nmap <silent> H :bprevious<CR>
+nmap <silent> L :bnext<CR>
+
+" quickly open tags -- combine with zz to go back
+nnoremap tt <C-]>
+
+" switch between alternate files
+nnoremap zz <C-^>
+
+" make Y consistent with D and C
+noremap Y y$
+
+" quick sort
+map <silent> gs :sort<CR>
+
+" open and close folds
+nnoremap ff za
+
+" quickly open vim config
+noremap <silent> <leader>ea :80vsplit $DOTFILES/vim/autocmd.vim<CR>
+noremap <silent> <leader>eb :80vsplit $DOTFILES/vim/bindings.vim<CR>
+noremap <silent> <leader>ec :80vsplit $DOTFILES/vim/config.vim<CR>
+noremap <silent> <leader>ee :80vsplit $DOTFILES/vim<CR>
+noremap <silent> <leader>ef :80vsplit $DOTFILES/vim/functions.vim<CR>
+noremap <silent> <leader>el :80vsplit $HOME/.vimrc.local<CR>
+noremap <silent> <leader>em :80vsplit $DOTFILES/vim/commands.vim<CR>
+noremap <silent> <leader>ep :80vsplit $DOTFILES/vim/plugin_config.vim<CR>
+noremap <silent> <leader>eu :80vsplit $DOTFILES/vim/bundle.vim<CR>
+
+" ctrlp
+nnoremap <silent> <S-Tab> :CtrlPTag<CR>
+nnoremap <silent> <Tab> :CtrlP<CR>
+
+" fugitive
+nmap <silent> <leader>gb :Gblame<CR>
+nmap <silent> <leader>gc :Gcommit<CR>
+nmap <silent> <leader>gd :Gdiff<CR>
+nmap <silent> <leader>gp :!hg push<CR>
+nmap <silent> <leader>gs :Gstatus<CR>
+
+" ag.vim
+noremap <S-Tab><S-Tab> :Ag 
+
+" splitjoin
+nnoremap <silent> <leader>sj :SplitjoinJoin<CR>
+nnoremap <silent> <leader>ss :SplitjoinSplit<CR>
+
+" gundo
+nnoremap <silent> vv :GundoToggle<CR>
+
+" neocomplete
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#smart_close_popup() . "\<CR>"
+endfunction
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"

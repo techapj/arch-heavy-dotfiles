@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+list() {
+  cat "$HOME/.projects"
+}
+
+build() {
+  trap "rm -f $HOME/.projects.$$" EXIT
+
+  echo "$CODE_ROOT" | tee "$HOME/.projects.$$"
+  echo "$DOTFILES" | tee -a "$HOME/.projects.$$"
+
+  find "$CODE_ROOT" -maxdepth 2 -mindepth 1 -type d -name '.git' | while read repository; do
+    dirname "$repository" | tee -a "$HOME/.projects.$$"
+  done
+
+  mv "$HOME/.projects.$$" "$HOME/.projects"
+}
+
+guess() {
+  projects=$(list | xargs -n 1 basename)
+  match=$(echo "$projects" | matcher "$1" --limit 1)
+
+  list | ag "$match$"
+}
+
+new() {
+  git init "$CODE_ROOT/$1" > /dev/null
+
+  echo "$CODE_ROOT/$1"
+  build &>/dev/null & # rebuild the list
+}
+
+command="$1"; shift
+case "$command" in
+  "") list $* ;;
+  "build") build $* ;;
+  "guess") guess $* ;;
+  "new") new $* ;;
+  *) echo "wtf are you doing" 1>&2 ;;
+esac

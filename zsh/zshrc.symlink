@@ -1,0 +1,40 @@
+# load keychain for remote access
+if [[ -n "$SSH_CLIENT" ]] && command -v keychain &> /dev/null; then
+  eval $(keychain --noask --eval)
+fi
+
+# shortcut to this dotfiles path is $DOTFILES
+export DOTFILES="$HOME/.dotfiles"
+
+# this should probably be less hardcodey
+export CODE_ROOT="$HOME/code"
+
+# source every .zsh file in this repo
+for config_file in $DOTFILES/**/*.zsh; do
+  # things that need to be loaded last are manually blacklisted
+  # TODO: improve
+  if [[ "$(basename $config_file)" = "completion.zsh" ]] || [[ $config_file =~ "zsh/plugins" ]]; then
+    continue
+  fi
+
+  source $config_file
+done
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a "$HOME/.localrc" ]]; then
+  source "$HOME/.localrc"
+fi
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for config_file in $DOTFILES/**/completion.zsh; do
+  source "$config_file"
+done
+
+# load syntax highlighting - this must be last!
+source "$DOTFILES/zsh/plugins/highlighting/zsh-syntax-highlighting.zsh"
+source "$DOTFILES/zsh/plugins/history/zsh-history-substring-search.zsh"

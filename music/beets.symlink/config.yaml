@@ -1,0 +1,3 @@
+directory: /media/music
+library: ~/.config/beets/library.blb
+plugins: replaygain lyrics fetchart convert

@@ -1,0 +1,2 @@
+#!/bin/sh
+cat ~/.ssh/id_${1:-ecdsa}.pub

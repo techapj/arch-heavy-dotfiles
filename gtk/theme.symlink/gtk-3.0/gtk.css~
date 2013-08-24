@@ -1,0 +1,119 @@
+/* Default color scheme */
+@define-color base_color #fff;
+@define-color bg_color #e6e6e3;
+@define-color tooltip_bg_color #F5F5B5;
+@define-color selected_bg_color #f1f1f1;
+@define-color text_color #444;
+@define-color fg_color #444;
+@define-color tooltip_fg_color #000;
+@define-color selected_fg_color #eee;
+
+/* Colormap actually used by the theme, to be overridden in other css files */
+@define-color theme_base_color @base_color;
+@define-color theme_text_color @text_color;
+@define-color theme_bg_color @bg_color;
+@define-color theme_fg_color @fg_color;
+@define-color theme_tooltip_bg_color @tooltip_bg_color;
+@define-color theme_tooltip_fg_color @tooltip_fg_color;
+@define-color theme_selected_bg_color @selected_bg_color;
+@define-color theme_selected_fg_color @selected_fg_color;
+
+@define-color link_color #000;
+@define-color frame_color #8e8e8e;
+@define-color inactive_frame_color #c9c9c9;
+@define-color warning_color #000;
+@define-color error_color #7c3547;
+@define-color success_color #222;
+
+@define-color info_fg_color #ccc;
+@define-color info_bg_color #b9b8b6;
+@define-color warning_fg_color #d5dad5;
+@define-color warning_bg_color #d5dad5;
+@define-color question_fg_color #67a2f2;
+@define-color question_bg_color #7195c6;
+@define-color error_fg_color #444;
+@define-color error_bg_color #bbb;
+
+@define-color keyboard_focus_border_a #ccc;
+@define-color keyboard_focus_border_b #fff;
+
+@define-color os_chrome_bg_color #000;
+@define-color os_chrome_fg_color #ccc;
+@define-color os_chrome_selected_bg_color #bbb;
+@define-color os_chrome_selected_fg_color #fff;
+
+@define-color chrome_bg_color #1e1a17;
+@define-color chrome_fg_color #fff;
+
+@define-color focused_entry_border #444;
+
+@define-color button_gradient_color_a #fdfcfd;
+@define-color button_gradient_color_b #dee2de;
+
+
+@define-color button_hover_gradient_color_a #555;
+@define-color button_hover_gradient_color_b #333;
+
+@define-color button_active_gradient_color_a #e8e8e5;
+@define-color button_active_gradient_color_b #dfdfdc;
+
+@define-color button_active_top #eeeeec;
+@define-color button_active_bottom #e2e2df;
+
+@define-color scrollbar_right #ecede8;
+@define-color scrollbar_left #f2f3ec;
+
+@define-color trough_bg_color_a #c6c8c0;
+@define-color trough_bg_color_b #d2d4cc;
+
+@define-color scrollbar_prelight_right #ecede8;
+@define-color scrollbar_prelight_left #fff;
+
+@define-color button_pressed_top #c8c9c3;
+@define-color button_pressed_bottom #c1c2bc;
+
+@define-color selection_top #e9eae5;
+@define-color selection_bottom #e1e1df;
+
+@define-color button_hover_top #c2cad5;
+@define-color button_hover_bottom #abb4bd;
+
+@define-color insensitive_bg_color #999;
+@define-color insensitive_fg_color #888;
+
+@define-color trough_progressbar_color_a #b7b8b2;
+@define-color trough_progressbar_color_b #e2e3de;
+
+@define-color progressbar_background_a #7c3444;
+@define-color progressbar_background_b #663340;
+@define-color progressbar_border #666;
+
+@define-color switch_slider_color #ccc;
+@define-color switch_slider_border #333;
+
+@define-color scale_fill_a #7f9d61;
+@define-color scale_fill_b #5E7F3E;
+
+@define-color menu_controls_color #555753;
+
+@define-color highlighted_border #bbb;
+@define-color internal_element_color #888a85;
+
+@define-color notebook_border #bbb;
+@define-color notebook_active_tab_border #858c85;
+@define-color notebook_selected_tab_color #8dc0f3;
+
+@define-color notebook_tab_gradient_a @theme_base_color;
+@define-color notebook_tab_gradient_b @switch_slider_color;
+
+@define-color tab_gradient_color_c #a4a4a4;
+@define-color tab_gradient_color_d #e6e6e3;
+
+
+@define-color toolbar_active_button_color #b1b1b1;
+@define-color toolbar_active_button_color1 #7f857f;
+@define-color toolbar_active_button_color2 #fcfcfc;
+
+@define-color expander_row_selected_color #ccc;
+
+@import url("gtk-widgets.css");

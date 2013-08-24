@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -e
+
+# make sure the password store exists
+
+  password_store="$HOME/.password-store"
+
+  if [[ ! -d "$password_store" ]]; then
+    echo "Configure \$password_store within $(command -v pass-guess)." 1>&2
+    echo "Its default location, $password_store, does not exist." 1>&2
+
+    exit 3
+  fi
+
+# discern a list of possibilities and use fuzzyfind to guess
+
+  guess=$(find "$password_store" -name '*gpg' -print0 |
+    tr "\0" "\n" | 
+    sed "s#$password_store/##" |
+    sed 's#\.gpg$##' |
+    fuzzyfind "$1")
+
+# notify which we found, using stderr so it isn't piped to anything else
+
+  echo "Using $guess." 1>&2
+
+# delegate to pass 
+
+  shift # remove the query from the arguments list
+
+  pass show "$guess" $*

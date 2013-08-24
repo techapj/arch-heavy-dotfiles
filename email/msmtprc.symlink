@@ -1,0 +1,14 @@
+defaults
+logfile ~/.local/log/msmtp.log
+tls on
+tls_trust_file /etc/ssl/certs/kindred.crt
+
+account nilved
+auth on
+from me@devlinzed.com
+host kindred
+passwordeval pass show kindred/devlin | head -n 1
+port 587
+user devlin
+
+account default : nilved

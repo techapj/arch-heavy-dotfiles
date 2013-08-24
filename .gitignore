@@ -1,0 +1,8 @@
+luakit/share.symlink/*.db
+luakit/share.symlink/adblock/easylist.txt
+luakit/share.symlink/adblock/easyprivacy.txt
+luakit/share.symlink/session
+music/beets.symlink/library.blb
+music/beets.symlink/library.db
+music/beets.symlink/state.pickle
+music/ncmpcpp.symlink/error.log

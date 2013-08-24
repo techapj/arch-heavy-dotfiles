@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# mount several encrypted hard drives
+# todo: also ssh-add
+
+set -e
+
+sudo -v
+
+if (ls /dev/sdc1 && ! mount | grep "mapper/media") &> /dev/null; then
+  pass show keys/media | sudo cryptsetup luksOpen /dev/sdc1 media
+
+  sudo mount /dev/mapper/media /media
+fi
+
+if (ls /dev/sdd1 && ! mount | grep "mapper/backups") &> /dev/null; then
+  pass show keys/backups | sudo cryptsetup luksOpen /dev/sdd1 backups
+
+  sudo mount /dev/mapper/backups /media/backups
+fi
+
+if (ls /dev/sdb1 && ! mount | grep "mapper/recovery") &> /dev/null; then
+  pass show keys/recovery | sudo cryptsetup luksOpen /dev/sdb1 recovery
+
+  sudo mount /dev/mapper/recovery /media/recovery
+fi
+
+pass id_ecdsa | ssh-add -p ~/.ssh/id_ecdsa
+pass id_rsa | ssh-add -p ~/.ssh/id_rsa

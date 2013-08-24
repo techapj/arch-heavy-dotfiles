@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+set -e
+DOTFILES="$(dirname "$0")"
+
+# set up symlinks
+
+  find "." -name "*.symlink" | egrep -v "\.git" | while read symlink; do
+    symlink="${symlink##./}"
+    linkable="$PWD/$symlink"
+    basename=$(basename "$linkable" | sed 's/\.symlink$//')
+
+    if [[ -f "$linkable.sh" ]]; then
+      target=$($linkable.sh)
+    else
+      target="$HOME/.$basename"
+    fi
+
+    if [[ -e "$target" ]] || [[ -L "$target" ]]; then
+      if [[ "$(readlink "$target")" == "$linkable" ]]; then
+        continue
+      else
+        mv -v "$target" "$target.bak"
+      fi
+    fi
+
+    [[ -d $(dirname "$target") ]] || mkdir -vp $(dirname "$target")
+
+    ln -vs "$linkable" "$target"
+  done
+
+# install system-wide ruby gems
+
+  if command -v gem &> /dev/null; then
+    gems=$(gem list)
+
+    cat ruby/gems | while read gem; do
+      grep "$gem" &> /dev/null <<< $gems && continue
+
+      echo "Installing $gem..."
+
+      if ! gem install $gem; then
+        echo "Failed.  Try running with sudo, or debug with \`gem install $gem\`." >&2
+        echo "Skipping gem installation." >&2
+        
+        break
+      fi
+    done
+  fi
+
+# install fonts
+
+  if [[ $(uname) == "Linux" ]]; then
+    destination="$HOME/.fonts"
+    method="/bin/ln -sv"
+  elif [[ $(uname) == "Darwin" ]]; then
+    destination="$HOME/Library/Fonts";
+    method="/bin/cp -v"
+  fi
+
+  if [[ ! -z "$destination" ]]; then
+    [[ -d "$destination" ]] || mkdir "$destination"
+
+    for font in fonts/*; do
+      basename=$(basename "$font")
+
+      [[ -f "$destination/$basename" ]] && continue
+
+      $method "$PWD/$font" "$destination/$basename"
+    done
+  fi
+
+# neobundle it - vimrc runs NeoBundleCheck, so we don't need to explicitly run
+# an install command
+
+  vim +qall

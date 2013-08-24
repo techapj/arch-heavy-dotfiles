@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -e
+
+# make sure the dependencies are installed
+
+  if ! command -v xdotool &> /dev/null; then
+    echo "You need to install xdotool." 1>&2
+
+    exit 3
+  fi
+
+# find the ID and title of the active window
+
+  active_window_id=$(xdotool getactivewindow)
+
+  active_window_title=$(xwininfo -id "$active_window_id" |
+    ag xwininfo |
+    cut -d \" -f 2)
+
+# guess the password based on the site titel
+
+  output=$(pass-guess "$active_window_title")
+  password=$(echo "$output" | head -n 1)
+  username=$(echo "$output" | ag '^username: ' | cut -c 11-)
+
+# send those key presses to the window
+
+  if [[ ! -z "$username" ]]; then
+    xdotool type --window "$active_window_id" "$username"
+    xdotool key --window "$active_window_id" "Tab"
+  fi
+
+  xdotool type --window "$active_window_id" "$password"
+  xdotool key --window "$active_window_id" "Return"

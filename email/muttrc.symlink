@@ -1,0 +1,96 @@
+# yo
+mailboxes +me-devlinzed.com/Inbox
+
+# reading
+set abort_nosubject = no
+set beep_new
+set delete = yes
+set folder = ~/.mail
+set mail_check = 0
+set menu_scroll
+set pager_context = 3
+set pager_index_lines = 10
+set pager_stop
+set pipe_decode
+set postponed = +me-devlinzed.com/Drafts
+set record = +me-devlinzed.com/Sent
+set sort = 'date'
+set spoolfile = +me-devlinzed.com/Inbox
+set text_flowed
+set thorough_search
+set tilde
+set timeout = 3
+
+unset markers
+
+alternative_order text/plain text/enriched text/html
+
+auto_view text/html
+
+# writing
+set attribution = '\n\nOn %d, %n wrote:'
+set envelope_from
+set fast_reply
+set forward_format = 'Fwd: %s'
+set forward_quote
+set from = 'me@devlinzed.com'
+set include
+set realname = 'Devlin Zed'
+set reply_to
+set sendmail = "msmtp-with-markdown"
+set use_from
+
+# files
+set alias_file = ~/.mutt/alias
+set certificate_file = ~/.mutt/certificates
+set header_cache = ~/.mutt/cache/headers
+set mailcap_path = ~/.mailcap
+set message_cachedir = ~/.mutt/cache/bodies
+
+# headers
+ignore "Authentication-Results:"
+ignore "DKIM-Signature:"
+ignore "DomainKey-Signature:"
+hdr_order Date From To Cc
+
+ignore *
+unignore from date subject to cc
+
+# aesthetic
+set markers = no
+set pager_index_lines = 5
+
+# misc
+unset wait_key
+
+set sleep_time = 0
+
+# bindings
+bind index,pager N search-opposite
+
+bind compose p postpone-message
+bind index G last-entry
+bind index gg first-entry
+bind index p recall-message
+
+bind pager G bottom
+bind pager a group-reply
+bind pager gg top
+bind pager j next-line
+bind pager k previous-line
+
+bind attach <return> view-mailcap
+
+# macros
+macro index,pager ! "<save-message>=me-devlinzed.com/Inbox<enter>y<sync-mailbox>" "move to inbox"
+macro index,pager @ "<save-message>=me-devlinzed.com/Todo<enter>y<sync-mailbox>" "move to todo"
+macro index,pager "#" "<save-message>=me-devlinzed.com/Archive<enter>y<sync-mailbox>" "move to archive"
+
+macro index,pager 1 "<change-folder>=me-devlinzed.com/Inbox<enter>" "show inbox"
+macro index,pager 2 "<change-folder>=me-devlinzed.com/Todo<enter>" "show todo"
+macro index,pager 3 "<change-folder>=me-devlinzed.com/Archive<enter>" "show archive"
+macro index,pager s "<change-folder>=me-devlinzed.com/Sent<enter>" "show sent"
+
+macro index L "<enter-command>unset wait_key<enter><shell-escape>read -p 'notmuch query: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;chomp@a;s/\^id:// for@a;$,=\"|\";print@a'\`\"<enter>" "show only messages matching a notmuch pattern"
+macro index a "<limit>all\n" "show all messages (undo limit)"
+macro index,pager "✓" "<sync-mailbox>"

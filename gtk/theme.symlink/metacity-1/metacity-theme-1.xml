@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+	<metacity_theme>
+	<info>
+	   <name>unununium</name>
+	   <author>horst3180</author>
+	   <copyright>GPL</copyright>
+	   <date>mar 21, 2010</date>
+	   <description>"metacity sucks"</description>
+	</info>
+
+<!-- FRAME GEOMETRIES - NORMAL WINDOW -->
+
+   <!-- FRAME GEOMETRIES - NORMAL WINDOW -->
+
+   	<frame_geometry name="fg_NN" rounded_top_left="false" rounded_top_right="false" title_scale="small">
+	   <distance name="left_width" value="3"/>
+	   <distance name="right_width" value="3"/>
+	   <distance name="bottom_height" value="3"/>
+	   <distance name="left_titlebar_edge" value="3"/>
+	   <distance name="right_titlebar_edge" value="3"/>
+	   <distance name="button_width" value="23"/>
+	   <distance name="button_height" value="24"/>
+	   <distance name="title_vertical_pad" value="0"/>
+	   <border name="title_border" left="0" right="0" top="0" bottom="0"/>
+	   <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+	</frame_geometry>
+
+	<frame_geometry name="fg_NM" parent="fg_NN" rounded_top_left="false" rounded_top_right="false">
+		<distance name="left_width" value="0"/>
+		<distance name="right_width" value="0"/>
+		<distance name="bottom_height" value="0"/>
+	</frame_geometry>
+	
+   <!-- FRAME GEOMETRIES - DIALOG WINDOW -->
+
+	<frame_geometry name="fg_D" parent="fg_NN">
+	   <distance name="button_width" value="26"/>
+	</frame_geometry>
+	
+<!-- DRAWING OPERATIONS -->
+
+	<draw_ops name="draw_none">
+	</draw_ops>
+
+<!-- DRAWING OPERATIONS - BUTTONS -->
+    	
+   <!-- DRAWING OPERATIONS - BUTTON - MENU -->
+        
+      <!-- DRAWING OPERATIONS - BUTTON - MIN -->
+
+      <draw_ops name="do_B1n">	      
+	      <image filename="B1n.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B1o">	      
+	      <image filename="B1o.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B1d">	      
+	      <image filename="B1d.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <!-- DRAWING OPERATIONS - BUTTON - MAX -->
+
+      <draw_ops name="do_B2n">	      
+	      <image filename="B2n.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B2o">	      
+	      <image filename="B2o.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B2d">	      
+	      <image filename="B2d.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+      
+      <!-- DRAWING OPERATIONS - BUTTON - CLOSE -->
+      
+      <!-- DRAWING OPERATIONS - BUTTON - CLOSE - NORMALWINDOW -->
+      
+      <draw_ops name="do_B3n">	      
+	      <image filename="B3n.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B3o">	      
+	      <image filename="B3o.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B3d">	      
+	      <image filename="B3d.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <!-- DRAWING OPERATIONS - BUTTON - CLOSE - MAXIMIZEDWINDOW -->
+
+      <draw_ops name="do_B3Mn">	      
+	      <image filename="B3Mn.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B3Mo">	      
+	      <image filename="B3Mo.png" x="0" y="0" width="23" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B3Md">	      
+	      <image filename="B3Md.png" x="0" y="0" width="23" height="24" />
+      </draw_ops> 
+      
+      <!-- DRAWING OPERATIONS - BUTTON - CLOSE - DIALOGWINDOW -->
+      
+      <draw_ops name="do_B3Dn">	      
+	      <image filename="B3Dn.png" x="0" y="0" width="26" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B3Do">	      
+	      <image filename="B3Do.png" x="0" y="0" width="26" height="24" />
+      </draw_ops>
+
+      <draw_ops name="do_B3Dd">	      
+	      <image filename="B3Dd.png" x="0" y="0" width="26" height="24" />
+      </draw_ops>
+      
+<!-- DRAWING OPERATIONS - TITLE -->
+
+  <!-- DRAWING OPERATIONS - TITLE CAPTION - ACTIVE -->
+
+	<draw_ops name="do_ca">
+		<title color="#1d1d1d" x="0" y="1 `max` ((height-title_height)/2)-1"/>
+	</draw_ops> 
+
+<!-- DRAWING OPERATIONS - TITLE CAPTION - ACTIVE -->
+	
+	<draw_ops name="do_ci">
+		<title color="#1d1d1d" x="0" y="1 `max` ((height-title_height)/2)-1"/> 
+	</draw_ops> 
+
+   <!-- DRAWING OPERATIONS - TITLE - NORMALWINDOW -->
+
+	<draw_ops name="do_Tn">
+	  <image filename="T1n.png" x="0" y="0" width="3" height="24" />
+	  <image filename="T2n.png" x="3" y="0" width="width - 6" height="24"/>
+	  <image filename="T3n.png" x="width - 3" y="0" width="3" height="24"/>
+	</draw_ops> 
+
+   <!-- DRAWING OPERATIONS - TITLE - MAXIMIZEDWINDOW -->
+
+	<draw_ops name="do_Tm">
+	  <image filename="T1m.png" x="0" y="0" width="13" height="24" />
+	  <image filename="T2n.png" x="3" y="0" width="width - 6" height="24"/>
+	  <image filename="T3m.png" x="width - 3" y="0" width="3" height="24"/>
+	</draw_ops> 
+	
+<!-- DRAWING OPERATIONS - BORDERS -->
+
+   <!-- DRAWING OPERATIONS - BORDERS - ACTIVE -->
+
+	<draw_ops name="do_El">
+		<image filename="Eml.png" x="0" y="0" width="3" height="height"/>
+	</draw_ops>
+
+	<draw_ops name="do_Er">
+		<image filename="Emr.png" x="0" y="0" width="3" height="height"/>
+	</draw_ops>
+
+	<draw_ops name="do_Eb">
+		<image filename="Ebl.png" x="0" y="0" width="4" height="4"/>
+		<image filename="Ebm.png" x="4" y="0" width="width-8" height="3"/>
+		<image filename="Ebr.png" x="width-4" y="0" width="4" height="4"/>
+	</draw_ops>
+
+<!-- DRAWING OPERATIONS - MENU ICONS -->
+
+	<draw_ops name="draw_menu_icon">
+	</draw_ops>
+	
+<!-- DRAWING OPERATIONS - MENU ICONS -->
+	
+	<draw_ops name="background_button">
+	</draw_ops>
+	
+<!-- MENU ICONS -->
+	
+	<menu_icon function="close" state="normal" draw_ops="draw_menu_icon"/>
+	<menu_icon function="maximize" state="normal" draw_ops="draw_menu_icon"/>
+	<menu_icon function="minimize" state="normal" draw_ops="draw_menu_icon"/>
+	<menu_icon function="unmaximize" state="normal" draw_ops="draw_menu_icon"/>
+
+<!-- FRAME STYLES -->
+
+   <!-- FRAME STYLES - NORMAL WINDOW - ACTIVE -->
+
+	<frame_style name="fs_nna" geometry="fg_NN">
+	   <!-- TITLEBAR AND BORDER DRAW -->
+	   <piece position="entire_background" draw_ops="draw_none"/>
+	   <piece position="titlebar" draw_ops="do_Tn"/>
+	   <piece position="title" draw_ops="do_ca"/>
+	   <piece position="left_edge" draw_ops="do_El"/>
+	   <piece position="right_edge" draw_ops="do_Er"/>
+	   <piece position="bottom_edge" draw_ops="do_Eb"/>
+	
+	   <!-- BUTTON SPECIFICATION -->	   
+	   <button function="menu" state="normal" draw_ops="draw_none"/>
+	   <button function="menu" state="prelight" draw_ops="draw_none"/>
+	   <button function="menu" state="pressed" draw_ops="draw_none"/>
+	   <button function="close" state="normal" draw_ops="do_B3n"/>
+	   <button function="close" state="prelight" draw_ops="do_B3o"/>
+	   <button function="close" state="pressed" draw_ops="do_B3d"/>
+	   <button function="minimize" state="normal" draw_ops="do_B1n"/>
+	   <button function="minimize" state="prelight" draw_ops="do_B1o"/>
+	   <button function="minimize" state="pressed" draw_ops="do_B1d"/>
+	   <button function="maximize" state="normal" draw_ops="do_B2n"/>
+	   <button function="maximize" state="prelight" draw_ops="do_B2o"/>
+	   <button function="maximize" state="pressed" draw_ops="do_B2d"/>
+	</frame_style>
+
+   <!-- FRAME STYLES - NORMAL WINDOW - INACTIVE -->
+
+	<frame_style name="fs_nni" geometry="fg_NN" parent="fs_nna">
+	   <piece position="title" draw_ops="do_ci"/>
+	</frame_style>
+
+   <!-- FRAME STYLES - MAXIMIZED NORMAL WINDOW - ACTIVE -->
+
+   <frame_style name="fs_nma" geometry="fg_NM" parent="fs_nna">
+	   <piece position="titlebar" draw_ops="do_Tm"/>
+	   <button function="close" state="normal" draw_ops="do_B3Mn"/>
+	   <button function="close" state="prelight" draw_ops="do_B3Mo"/>
+	   <button function="close" state="pressed" draw_ops="do_B3Md"/>
+	</frame_style>
+
+   <!-- FRAME STYLES - MAXIMIZED NORMAL WINDOW - INACTIVE -->
+
+	<frame_style name="fs_nmi" geometry="fg_NM" parent="fs_nma">
+	   <piece position="title" draw_ops="do_ci"/>	   
+	</frame_style>
+	
+   <!-- FRAME STYLES - DIALOG WINDOW - ACTIVE -->
+
+	<frame_style name="fs_dna" geometry="fg_D">
+	   <!-- TITLEBAR AND BORDER DRAW -->
+	   <piece position="titlebar" draw_ops="do_Tn"/>
+	   <piece position="title" draw_ops="do_ca"/>
+	   <piece position="left_edge" draw_ops="do_El"/>
+	   <piece position="right_edge" draw_ops="do_Er"/>
+	   <piece position="bottom_edge" draw_ops="do_Eb"/>
+	
+	   <!-- BUTTON SPECIFICATION -->
+	   <button function="menu" state="normal" draw_ops="draw_none"/>
+	   <button function="menu" state="prelight" draw_ops="draw_none"/>
+	   <button function="menu" state="pressed" draw_ops="draw_none"/>
+	   <button function="close" state="normal" draw_ops="do_B3Dn"/>
+	   <button function="close" state="prelight" draw_ops="do_B3Do"/>
+	   <button function="close" state="pressed" draw_ops="do_B3Dd"/>
+	   <button function="maximize" state="normal" draw_ops="draw_none"/>
+	   <button function="maximize" state="pressed" draw_ops="draw_none"/>	   
+	   <button function="minimize" state="normal" draw_ops="draw_none"/>
+	   <button function="minimize" state="pressed" draw_ops="draw_none"/>	   	   
+	   	   
+	</frame_style>
+
+   <!-- FRAME STYLES - DIALOG WINDOW - INACTIVE -->
+
+	<frame_style name="fs_dni" geometry="fg_D" parent="fs_dna">
+	   <piece position="title" draw_ops="do_ci"/>	      	   	   
+	</frame_style>
+
+<!-- STYLE SETS -->
+
+   <!-- STYLE SETS - NORMAL WINDOW-->
+
+	<frame_style_set name="fss_n">
+	   <frame focus="yes" state="normal" resize="both" style="fs_nna"/>
+	   <frame focus="no" state="normal" resize="both" style="fs_nni"/>
+	   <frame focus="yes" state="maximized" style="fs_nma"/>
+	   <frame focus="no" state="maximized" style="fs_nmi"/>
+	   <frame focus="yes" state="shaded" style="fs_nna"/>
+	   <frame focus="no" state="shaded" style="fs_nni"/>
+	   <frame focus="yes" state="maximized_and_shaded" style="fs_nma"/>
+	   <frame focus="no" state="maximized_and_shaded" style="fs_nmi"/>
+	</frame_style_set>
+
+   <!-- STYLE SETS - DIALOG WINDOW-->
+
+	<frame_style_set name="fss_d">
+		<frame focus="yes" state="normal" resize="both" style="fs_dna"/>
+		<frame focus="no" state="normal" resize="both" style="fs_dni"/>
+		<frame focus="yes" state="maximized" style="fs_dna"/>
+		<frame focus="no" state="maximized" style="fs_dni"/>
+		<frame focus="yes" state="shaded" style="fs_dna"/>
+		<frame focus="no" state="shaded" style="fs_dni"/>
+		<frame focus="yes" state="maximized_and_shaded" style="fs_dni"/>
+		<frame focus="no" state="maximized_and_shaded" style="fs_dna"/>
+	</frame_style_set>
+
+   <!-- STYLE SETS - TOOL WINDOW-->
+
+	<frame_style_set name="fss_t">
+		<frame focus="yes" state="normal" resize="both" style="fs_dna"/>
+		<frame focus="no" state="normal" resize="both" style="fs_dni"/>
+		<frame focus="yes" state="maximized" style="fs_dna"/>
+		<frame focus="no" state="maximized" style="fs_dni"/>
+		<frame focus="yes" state="shaded" style="fs_dna"/>
+		<frame focus="no" state="shaded" style="fs_dni"/>
+		<frame focus="yes" state="maximized_and_shaded" style="fs_dni"/>
+		<frame focus="no" state="maximized_and_shaded" style="fs_dna"/>
+	</frame_style_set>
+
+<!-- WINDOW TYPES -->
+
+	<window type="normal" style_set="fss_n"/>
+	<window type="dialog" style_set="fss_d"/>
+	<window type="modal_dialog" style_set="fss_d"/>
+	<window type="menu" style_set="fss_t"/>
+	<window type="utility" style_set="fss_t"/>
+	<window type="border" style_set="fss_t"/>
+
+</metacity_theme>

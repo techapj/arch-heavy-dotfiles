@@ -1,0 +1,715 @@
+####Naos Gtk theme by horst3180####
+
+#default color scheme
+gtk_color_scheme = "fg_color:#5f5f5f\nbg_color:#E6E6E3\nbase_color:#f5f5f5\ntext_color:#5f5f5f\nselected_bg_color:#3a3a3a\nselected_fg_color:#ffffff"
+
+#icon Sizes
+gtk-icon-sizes ="gtk-small-toolbar=21,21:gtk-large-toolbar=21,21:gtk-button=21,21"    
+gtk-button-images = 0
+gtk-menu-images = 0    
+
+#include "panel.rc"
+
+style "theme-default"
+{
+   # Style Properties
+	
+   # button   
+   GtkButton      ::  child-displacement-x           = 1
+   GtkButton      ::  child-displacement-y           = 1
+   GtkButton      ::  default-border                 = {1, 1, 1, 1}
+   GtkButton      ::  default-outside_border         = {0, 0, 0, 0}
+   GtkButton      ::  inner-border                   = {0, 0, 0, 0}
+   GtkButton      ::  button-relief                  = GTK_RELIEF_NONE
+   GtkButton      ::  interior-focus                 = 1
+   GtkButton      ::  interior-focus                 = 10
+   GtkButton      ::  focus-padding                  = 1
+   GtkButton      ::  focus-line-width               = 0
+   GtkButton      ::  focus-line-height              = 0
+   GtkButton      ::  displace-focus                 = 1
+   GtkButton      ::  inner-border                   = {0, 0, 0, 0}
+   GtkButton      ::  shadow_type                    = GTK_SHADOW_NONE
+   GtkButton      ::  image-spacing                  = 2
+
+   # check button
+   GtkCheckButton  ::  indicator-size                 = 15
+   GtkCheckButton  ::  indicator-spacing              = 1
+
+   # combo box
+   #GtkComboBox    ::  appears-as-list 		      = 1
+   GtkComboBox    ::  arrow-size                     = 15
+   #GtkComboBox    ::  shadow_type                    = GTK_SHADOW_OUT
+
+   # expander
+   GtkExpander     ::  expander_size                  = 13
+
+   #GtkWidget::link-color = "#ff0000"
+
+   # menu
+   GtkMenu         ::  horizontal-padding             = 4
+   GtkMenu         ::  vertical-padding               = 2
+
+   # menubar
+   GtkMenuBar      ::  internal-padding               = 0
+
+   # menuitem
+   GtkMenuItem     ::  arrow-spacing                  = 10
+
+   # notebook
+   GtkNotebook     ::  tab-curvature                  = 4
+   GtkNotebook     ::  tab-overlap                    = -1
+   GtkPaned        ::  handle_size                    = 2 #border on the sidebar
+
+   # radio button
+   GtkRadioButton  ::  indicator-size                 = 15
+
+   # range
+   GtkRange        ::  trough-border                  = 0
+   GtkRange        ::  slider-width                   = 12
+   GtkRange        ::  activate-slider                = 1
+   GtkRange        ::  stepper-size                   = 1
+   GtkRange       ::  trough-under-steppers          = 0
+
+   # scale
+   GtkScale        ::  slider-length                  = 25
+   GtkScale        ::  slider-width                   = 8
+   GtkScale        ::  trough-border                  = 1
+
+   # scrollbar
+   GtkScrollbar    ::  min_slider_length              = 30
+   GtkScrollbar   ::  has-backward-stepper           = 1
+   GtkScrollbar   ::  has-forward-stepper            = 1
+   GtkScrollbar   ::  has-secondary-backward-stepper = 0
+   GtkScrollbar   ::  has-secondary-forward-stepper  = 0
+
+   # toolbar
+   GtkToolbar      ::  internal-padding               = 1
+   GtkToolbar::shadow-type		= GTK_SHADOW_NONE
+   GtkMenuBar::shadow-type		= GTK_SHADOW_NONE
+   #GtkToolbar ::button-relief = GTK_RELIEF_NORMAL
+
+   # treeview
+   GtkTreeView     ::  expander_size                  = 13
+   GtkTreeView     ::  vertical-separator             = 1
+   GtkTreeView     ::  horizontal-separator           = 2
+   #GtkTreeView     ::  odd-row-color                  = shade (0.8,@base_color)
+   WnckTasklist    ::  fade-overlay-rect              = 1
+
+    xthickness = 1
+    ythickness = 1
+
+   fg[NORMAL]        = @fg_color                 # Metacity and mouseover, Most text
+   fg[PRELIGHT]      = @fg_color                 # Text when mouseover
+   fg[SELECTED]      = @selected_fg_color        # Metacity X when window selected
+   fg[ACTIVE]        = @fg_color                 # Text when mouseclicking button, Tabs, Active window list
+   fg[INSENSITIVE]   = shade (0.8,@bg_color)     # Insensitive Text
+
+   bg[NORMAL]        = @bg_color                 # Normal Background, inactive Metacity bar, buttons
+   bg[PRELIGHT]      = shade (1.05,@bg_color)                 # Mouseover buttons
+   bg[SELECTED]      = @bg_color                 # Metacity Bar
+   bg[INSENSITIVE]   = @bg_color                 # Insensitive buttons
+   bg[ACTIVE]        = @bg_color                 # Mouseclicking, Tabs, active window list
+
+   base[NORMAL]      = @base_color               # Background, most
+   base[PRELIGHT]    = @base_color	         # Mouseover menu
+   base[ACTIVE]      = @selected_bg_color  # Menu active item in inactive window
+   base[SELECTED]    = @selected_bg_color
+   base[INSENSITIVE] = shade (1.025,@bg_color)   # Background, insensitive
+
+   text[NORMAL]      = @text_color               # Text in window
+   text[PRELIGHT]    = @text_color               # Text on Mouseover
+   text[ACTIVE]      = @selected_fg_color        # Active text in inactive window
+   text[SELECTED]    = @selected_fg_color        # Active text in active window
+   text[INSENSITIVE] = shade (1.6,@text_color)
+
+   engine "murrine" 
+   {
+     animation           = FALSE    # FALSE = disabled, TRUE = enabled
+     contrast            = 0.3    # 0.8 for less contrast, more than 1.0 for more contrast on borders
+     gradient_shades     = {1.05,1.0,1.0,0.98} #{1.3,1.3,1.0,1.1} # default: {1.1,1.0,1.0,1.1}
+     #gradient_shades     = {1.0,1.0,1.0,1.0} #{1.3,1.3,1.0,1.1} # default: {1.1,1.0,1.0,1.1}
+     glazestyle          = 1      # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved
+     highlight_shade     = 1.0    # set highlight amount for buttons or widgets
+     lightborder_shade   = 2.0     # sets lightborder amount for buttons or widgets
+     lightborderstyle    = 1       # 0 = lightborder on top side, 1 = lightborder on all sides
+     listviewheaderstyle = 1       # 0 = flat, 1 = glassy, 2 = raised
+     listviewstyle       = 1       # 0 = nothing, 1 = dotted
+     menubaritemstyle    = 0       # 0 = menuitem look, 1 = button look
+     menubarstyle        = 2       # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
+     menuitemstyle       = 0       # 0 = flat, 1 = glassy, 2 = striped
+     menustyle           = 0       # 0 = no vertical menu stripe, 1 = display vertical menu stripe
+     reliefstyle         = 2       # 0 = flat, 1 = inset, 2 = shadow
+     rgba	         = FALSE   # FALSE = disabled, TRUE = enabled
+     roundness		 = 3
+     stepperstyle        = 1       # 0 = standard, 1 = integrated stepper handles, 2 = unknown
+     toolbarstyle	 = 2       # 0 = flat, 1 = glassy, 2 = gradient	
+     progressbarstyle    = 2     # 0 = no stripes, 1 = diagonal stripes, 2 = vertical stripes 
+     border_shades       = { 0.99, 0.9 }
+     comboboxstyle 	    = 1		
+     #border_colors       = { "#000000", "#000000" }		
+     spinbuttonstyle     = 1
+     #trough_shades       = { 0.87, 0.87 } 
+  }
+}
+
+# styles
+
+# nautilus search stripe and other specialties
+style "extra-view" {
+
+}
+
+style "scrollbar"
+{
+	xthickness = 2
+	ythickness = 2
+   
+	engine "murrine" 
+	{
+                gradient_shades     = {1.05,1.0,1.0,0.99}
+                trough_shades       = { 0.83, 0.87 } 
+                roundness		 = 5
+	}
+}
+
+style "theme-button" = "theme-widest"
+{
+	xthickness   = 3
+	ythickness   = 3
+
+	bg[ACTIVE]   = shade (0.87,@bg_color)
+        bg[INSENSITIVE] = shade (1.03,@bg_color)
+
+}
+
+style "theme-check-radio-buttons" = "theme-button"
+{
+	GtkWidget::interior-focus =  0
+	GtkWidget::focus-padding  =  1
+
+        bg[SELECTED]              =  @bg_color
+        text[ACTIVE] = shade (2.9,@selected_bg_color)
+}
+
+style "theme-combo" = "theme-button" { 
+	GtkButton::inner-border = { 0, 1, 0, 0 }
+}
+
+style "theme-combo-arrow" = "theme-button"
+{
+	xthickness = 1
+	ythickness = 1
+}
+
+style "theme-entry" = "theme-button" 
+{
+	xthickness = 3
+	ythickness = 3
+
+        bg[SELECTED] = "#b5b5b5"#@selected_bg_color
+        base[INSENSITIVE] = shade (1.03,@bg_color)
+
+	engine "murrine" 
+        {
+         reliefstyle         = 0
+         contrast = 0.2
+	}
+}
+
+style "theme-frame" = "theme-wide"
+{
+	GtkWidget::draw-border = {1,1,1,1}
+}
+
+style "theme-handlebox" = "theme-default"
+{
+}
+
+#styles of menu
+
+style "theme-menu" = "theme-default"
+{
+	xthickness = 0
+	ythickness = 0
+
+	bg[NORMAL]   = shade (1.0,@base_color)
+        bg[SELECTED]      = @bg_color
+}
+
+style "theme-menu-item" = "theme-menu"
+{
+        xthickness = 2
+	ythickness = 3
+
+	text[NORMAL]    = @text_color 
+	text[PRELIGHT]  = shade (0.8,@text_color) #combolist
+  	fg[PRELIGHT]	= shade (0.8,@text_color)
+}
+
+style "theme-menu-bar"
+{
+	xthickness      = 2
+	ythickness      = 3
+
+        bg[SELECTED]      = @selected_bg_color
+        fg[PRELIGHT]    = shade (0.9,@selected_fg_color)
+        fg[SELECTED]    = shade (0.9,@selected_fg_color) #firefox selected menubar text
+	
+        engine "murrine" 
+        {
+          roundness = 0
+	}
+
+}
+
+style "theme-menubar-item" = "theme-default" 
+{
+	ythickness = 3
+
+}
+
+style "theme-nautilus-location" 
+{
+
+}
+
+style "theme-notebook" = "theme-wider"
+{
+	bg[ACTIVE] = shade (0.9,@bg_color)
+
+	engine "murrine" 
+        {
+		contrast            	= 0.5
+                roundness               = 3
+                reliefstyle	    	= 0
+                lightborder_shade       = 1.5
+        }
+}
+
+#style of panel
+
+style "theme-panel"
+{
+  xthickness	= 2
+  ythickness	= 0
+  GtkWidget::separator-height = 5
+
+	fg[NORMAL]        = @selected_fg_color
+	fg[PRELIGHT]      = @selected_fg_color
+	fg[SELECTED]      = @selected_fg_color
+	fg[ACTIVE]        = @selected_fg_color
+	fg[INSENSITIVE]   = @selected_fg_color
+	
+	bg[NORMAL]       = shade (0.5,@selected_bg_color)
+	bg[ACTIVE]       = shade (0.4,@selected_bg_color)
+	bg[SELECTED]     = @selected_bg_color
+	bg[PRELIGHT]     = @selected_bg_color
+
+  	bg_pixmap[NORMAL] 		= "Panel/panel-bg.png"
+	bg_pixmap[ACTIVE] 		= "Panel/panel-bg.png"
+	bg_pixmap[SELECTED] 		= "Panel/panel-bg.png"
+	bg_pixmap[INSENSITIVE] 		= "Panel/panel-bg.png"
+	bg_pixmap[PRELIGHT] 		= "Panel/panel-bg.png"
+}
+
+style "theme-panel-button" = "theme-button"
+{
+  xthickness	= 5
+  ythickness	= 0
+
+  #ACTIVE=focused windows
+  #NORMAL=unfocused windows
+  #PRELIGHT=mouseover buttons
+  #SELECTED=**unused**
+  
+	fg[NORMAL]        = shade (0.55,@selected_fg_color)
+	fg[PRELIGHT]      = shade (0.8,@selected_fg_color)
+	fg[SELECTED]      = @selected_fg_color
+	fg[ACTIVE]        = shade (1.0,@selected_fg_color)
+	fg[INSENSITIVE]   = shade (1.0,@selected_fg_color)
+
+	GtkWidget::focus_padding = 2
+
+	engine "pixmap" {
+      
+		
+		image
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			state			= PRELIGHT
+			file            	= "Panel/panelbutton3.png"
+			border          	= { 4, 4, 4, 4 }
+			stretch         	= TRUE
+		}
+		
+		image
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			state			= NORMAL
+			file            	= "Panel/panelbutton1.png"
+			border          	= { 4, 4, 4, 4 }
+			stretch         	= TRUE
+		}
+
+		image
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			state			= ACTIVE
+			file            	= "Panel/panelbutton2.png"
+			border          	= { 4, 4, 4, 4 }
+			stretch         	= TRUE
+		}  
+
+		image
+		{
+			function        	= BOX
+			recolorable     	= TRUE
+			state			= INSENSITIVE
+			file            	= "Panel/panelbutton2.png"
+			border          	= { 4, 4, 4, 4 }
+			stretch         	 = TRUE
+		}  
+ 
+    		image
+    		{
+      		function			= HANDLE
+      		recolorable			= TRUE
+      		overlay_file			= "Panel/handle-v.png"
+      		overlay_stretch	= FALSE
+      		orientation			= VERTICAL
+    		}
+
+    		image
+    		{
+      		function			= HANDLE
+      		overlay_file			= "Panel/handle-h.png"
+      		overlay_stretch 		= FALSE
+     		orientation			= HORIZONTAL
+   		}
+
+	}
+	       
+}
+
+
+style "panelbar"
+{
+
+engine "pixmap"
+{
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		file		= "Panel/panel-bg.png"
+		border		= { 0 , 0 , 0 , 0}
+		stretch		= TRUE
+	}
+
+	
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		file		= "Panel/panel-bg.png"
+		border		= { 0 , 0 , 0 , 0}
+		stretch		= TRUE
+	}
+
+	
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		file		= "Panel/panel-bg.png"
+		border		= { 0 , 0 , 0 , 0}
+		stretch		= TRUE
+	}
+
+	
+	image
+	{
+		function	= BOX
+		state		= PRELIGHT
+		recolorable	= TRUE
+		file		= "Panel/panelbutton3.png"
+		border		= { 4 , 4 , 4 , 4}
+		stretch		= TRUE
+	}
+}
+}
+
+style "theme-paned" = "theme-default" 
+{
+
+}
+
+style "theme-progressbar" = "theme-default"
+{
+	xthickness = 2
+	ythickness = 2
+	
+	fg[PRELIGHT] = @selected_fg_color
+	bg[SELECTED] =  "#68323F"
+        
+        engine "murrine"
+        {
+          gradient_shades     = {1.2,1.0,1.0,0.9}
+          contrast = 0.6
+          trough_shades       = { 0.87, 0.99 } 
+          highlight_shade     = 1.05
+         lightborder_shade   = 1.7
+        }
+
+}
+
+style "theme-range" = "theme-default"
+{
+
+	#Arrows
+	text[NORMAL]      =  @fg_color
+	text[PRELIGHT]    =  @bg_color
+	text[ACTIVE]      =  @bg_color
+	text[INSENSITIVE] =  @bg_color
+	
+         engine "murrine" 
+	{
+
+	}
+}
+
+style "theme-scale"  = "theme-default"
+{
+
+        bg[SELECTED]      = @bg_color  
+        bg[ACTIVE]        = shade (0.88,@bg_color)                 # Mouseclicking, Tabs, active window list
+
+	engine "murrine" 
+	{
+		lightborder_shade   = 1.0   # sets lightborder amount for buttons or widgets
+	}
+}
+
+style "theme-separator-menu-item"
+{
+	GtkSeparatorMenuItem::horizontal-padding = 0
+	# We are setting the desired height by using wide-separators
+	# There is no other way to get the odd height ...
+	GtkWidget::wide-separators = 1
+	GtkWidget::separator-width = 0
+	GtkWidget::separator-height = 3
+	xthickness = 1
+	ythickness = 0
+}
+
+style "theme-tasklist"
+{
+	xthickness = 5
+	ythickness = 3
+}
+
+style "theme-toolbar" = "theme-default"
+{	
+
+}
+
+style "theme-tooltips" = "theme-widest"
+{
+	#bg[NORMAL]   =  @selected_bg_color
+	#bg[SELECTED] =  "#6F3737"#@bg_color
+	#fg[PRELIGHT]   =  @fg_color
+}
+
+# Based on the default style so that the colors from the button style are overriden again.
+style "theme-treeview-header" = "theme-default"
+{
+	xthickness = 2
+	ythickness = 2
+
+	GtkWidget   ::  focus-padding = 0
+	text[INSENSITIVE] = shade (1.5,@text_color)
+        bg[SELECTED]    = shade (2.5,@selected_bg_color)
+	
+}
+
+style "theme-tree-arrow" = "theme-default"
+{
+	#bg[NORMAL]   =  mix(0.70, shade (0.75,@bg_color), shade (0.80,@selected_bg_color))
+	#bg[PRELIGHT] =  mix(0.80, @bg_color, @selected_bg_color)
+}
+
+style "theme-wide" = "theme-default"
+{
+	xthickness = 2
+	ythickness = 2 
+}
+
+style "theme-wider" = "theme-default"
+{
+	xthickness = 3
+	ythickness = 3
+}
+
+style "theme-widest" = "theme-default"
+{
+	xthickness = 4
+	ythickness = 4
+}
+
+style "theme-view" = "theme-default"
+{
+	xthickness = 0
+	ythickness = 0
+}
+
+# text workarounds
+
+style "theme-combobox-text-color-workaround"
+{	
+	#fg[NORMAL] = @selected_fg_color
+	#bg[NORMAL] = shade (0.30, @bg_color)
+
+	#text[NORMAL]      = @selected_fg_color
+	#text[PRELIGHT]    = @selected_fg_color
+	#text[SELECTED]    = @selected_fg_color
+	#text[ACTIVE]      = @selected_fg_color
+	#text[INSENSITIVE] = @bg_color
+}
+
+style "theme-text-is-fg-color-workaround"
+{
+	#text[NORMAL]      = @text_color
+	#text[PRELIGHT]    = @text_color
+	#text[SELECTED]    = @selected_fg_color
+	#text[ACTIVE]      = @text_color
+	#text[INSENSITIVE] = darker (@bg_color)
+}
+
+style "theme-fg-is-text-color-workaround"
+{
+	#fg[NORMAL]      = @fg_color
+	#fg[PRELIGHT]    = @fg_color
+	#fg[ACTIVE]      = @selected_fg_color
+	#fg[SELECTED]    = @selected_fg_color
+	#fg[INSENSITIVE] = darker (@bg_color)
+}
+
+# nautilus search stripe
+widget "*.nautilus-extra-view-widget" style:highest "extra-view"
+widget "*.nautilus-extra-view-widget.*.GtkLabel*" style:highest "extra-view"
+widget "*.nautilus-extra-view-widget.*Button*.GtkLabel*" style:highest "theme-button"
+
+# widget styles
+class "GtkWidget"       style "theme-default"
+class "GtkCheckButton"  style "theme-check-radio-buttons"
+class "GtkButton"       style "theme-button"
+class "GtkScale"        style "theme-scale"
+class "GtkRange"        style "theme-range"
+class "GtkPaned"        style "theme-paned"
+class "GtkFrame"        style "theme-frame"
+class "GtkMenu"         style "theme-menu"
+class "GtkEntry"        style "theme-entry"
+class "GtkMenuItem"     style "theme-menu-item"
+class "GtkNotebook"     style "theme-notebook"
+class "GtkProgressBar"  style "theme-progressbar"
+class "GtkToolbar"      style "theme-toolbar"
+class "GtkHandleBox*"   style "theme-handlebox"
+class "GtkMenuBar"      style "theme-menu-bar"
+class "GtkSeparator"    style "theme-wide"
+class "GtkArrow"        style "theme-combo-arrow"
+class "GtkScrollbar"    style "scrollbar"
+class "GtkTreeView"     style "theme-treeview-header"
+class "Panel*"          style "theme-panel"
+class "*Panel*Applet*"  style "theme-panel"
+#class "GtkSpinButton"	style "theme-entry"
+#class "GtkCalendar"     style "theme-calendar"
+#class "GtkStatusbar"	style "theme-statusbar"
+#class "GtkWindow"       style "my-background"
+
+# menus
+widget_class "*<GtkMenu>*"                        style "theme-menu"
+widget_class "*<GtkMenuItem>*"                    style "theme-menu-item"
+widget_class "*<GtkMenuBar>*"                     style "theme-menu-bar"
+widget_class "*<GtkSeparatorMenuItem>*"           style "theme-separator-menu-item"
+widget_class "*<GtkButton>"                      style "theme-button"
+#widget_class "*<GtkCheckButton>"                 style "theme-check-radio-button"
+#widget_class "*<GtkHandleBox>"                   style "theme-handlebox"
+
+# panel
+widget_class "Panel*"                              style "theme-panel"
+widget_class "Panel*.*<GtkMenuBar>*"               style "theme-panel-button"
+widget_class "Panel*.*<GtkButton>*"                style "theme-panel-button"
+widget_class "*PanelApplet*"                       style "theme-panel"
+#widget_class "*PanelWidget*"                       style "theme-panel"
+widget_class "*Xfce*Panel*"                        style "theme-panel"
+#widget_class "*Tomboy*Tray*"                       style "theme-panel"
+#widget "*fast-user-switch*"                        style "theme-panel" 
+#widget "*CPUFreq*"                                 style "theme-panel"
+#widget "Panel*MenuBar*"                            style "theme-panel" #corrects standard Gnome Menu on panel
+widget_class "*Panel*MenuBar*"                    style "panelbar"
+
+# combobox
+widget_class "*.GtkCombo*"                         style "theme-combo"
+widget_class "*.GtkComboBox*"                      style "theme-combo"
+widget_class "*.GtkComboBoxEntry*"                 style "theme-combo"
+widget_class "*.GtkCombo.GtkButton"                style "theme-combo"
+widget_class "*.Gtk-Combobox-Popup-Menu.*"         style "theme-combobox-text-color-workaround"
+widget_class "*.<GtkComboBox>.<GtkCellView>"       style "theme-text-is-fg-color-workaround"
+
+# progressbar
+#widget_class "*<GtkProgressBar>"                   style "theme-progressbar"
+
+# tooltips
+widget "gtk-tooltips*"                             style "theme-tooltips"
+widget "gtk-tooltip*"                              style "theme-tooltips"
+
+# notebook
+widget_class "*<GtkNotebook>"                      style "theme-notebook"
+widget_class "*.GtkNotebook.*GtkEventBox"          style "theme-notebook"
+widget_class "*.GtkNotebook.*GtkViewport"          style "theme-notebook"
+widget_class "*.GtkNotebook.GtkLabel*"             style "theme-notebook" #for tabs
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"     style "theme-notebook"
+widget_class "*<GtkNotebook>*<GtkLayout>"          style "theme-notebook"
+widget_class "*<GtkNotebook>.GtkLabel*"            style "theme-notebook" #for tabs
+#widget_class "*<GtkNotebook>*<GtkViewport>" 		style "theme-notebook"
+
+# treeview
+widget_class "*.<GtkTreeView>.<GtkButton>"         style "theme-treeview-header"
+widget_class "*.<GtkCTree>.<GtkButton>"            style "theme-treeview-header"
+widget_class "*.<GtkList>.<GtkButton>"             style "theme-treeview-header"
+widget_class "*.<GtkCList>.<GtkButton>"            style "theme-treeview-header"
+widget_class "*.ETree*"                            style "theme-treeview-header" #evolution
+
+# arrow bg
+widget_class "*.<GtkTreeView>.GtkButton.*GtkArrow" style "theme-tree-arrow"
+widget_class "*.GtkCTree.GtkButton.*GtkArrow"      style "theme-tree-arrow"
+widget_class "*.GtkList.GtkButton.*GtkArrow"       style "theme-tree-arrow"
+widget_class "*Panel*GtkToggleButton*"             style "theme-panel-button"
+widget_class "*.ETree.ECanvas"                     style "theme-treeview-header" #evolution
+widget_class "*.ETable.ECanvas"                    style "theme-treeview-header" #evolution
+
+# firefox workarounds
+widget "MozillaGtkWidget*Menu*"	style "theme-fg-is-text-color-workaround"
+widget "MozillaGtkWidget*Frame*" style "theme-fg-is-text-color-workaround"
+
+# misc
+widget_class "*.GtkSpinButton*"                    style "theme-entry"
+widget_class "*<GtkListItem>*"                     style "theme-fg-is-text-color-workaround"
+widget_class "*<GtkCList>"                         style "theme-fg-is-text-color-workaround"
+#widget_class "*.<GtkFrame>.<GtkLabel>"             style "theme-frame-title"
+
+widget_class "*.ETree.ECanvas"                     style "theme-treeview-header" #evolution
+widget_class "*.ETable.ECanvas"                    style "theme-treeview-header" #evolution
+
+style "murrine-evo-new-button-workaround"
+{
+	engine "murrine" {
+		toolbarstyle = 0
+	}
+}
+
+widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "murrine-evo-new-button-workaround"
+

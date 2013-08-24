@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+git remote -v | cut -f 1 | uniq | xargs -P 4 -n 1 git push $*

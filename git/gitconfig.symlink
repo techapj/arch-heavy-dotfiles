@@ -1,7 +1,6 @@
 [alias]
   amend = commit --amend --reuse-message HEAD
   assume = update-index --assume-unchanged
-  assumed = !zsh -ic "git ls-files | grep "^h" | awk '{print $2}'"
   branches = branch -a
   peek = log --since="yesterday"
   remotes = remote -v

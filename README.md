@@ -1,10 +1,11 @@
 devlin zed's dotfiles
 =====================
 
-This is my dotfiles repo that lets me quickly bootstrap a new Arch Linux
-system.  It's for me and you'll probably hate it.
+This is my dotfiles repository that lets me quickly bootstrap a new Arch Linux
+system.  It's expansive and essentially its own Linux distribution, so you're
+probably only looking for configuration for a program or two.  
 
-![screenshot](https://bitbucket.org/devlinzed/dotfiles/raw/tip/screenshot.png)
+![screenshot](https://raw.github.com/devlinzed/dotfiles/master/screenshot.png)
 
 install
 =======
@@ -16,8 +17,8 @@ list of packages and their purpose is below.
               mutt ncmpcpp notmuch packer pass python2 ruby rvxt-unicode slock\
               the_silver_searcher xautolock zsh
 
-    packer -S fontconfig-infinality freetype2-infinality isync matcher msmpt\
-              sxiv
+    packer -S beets fontconfig-infinality freetype2-infinality isync matcher\
+              msmp notmuch sxiv
 
 Afterward, check out the repository:
 
@@ -50,34 +51,28 @@ And properly configure Infinality:
 
 vim should be compiled with:
 
-    ./configure --enable-gui=no\
-                --enable-luainterp\
-                --enable-pythoninterp\
-                --enable-rubyinterp\
-                --prefix=/usr/local\
-                --with-features=huge\
-                --with-luajit\
-                --with-x
+    ./configure --enable-gui=no --enable-luainterp --enable-pythoninterp\
+                --enable-rubyinterp --prefix=/usr/local --with-features=huge\
+                --with-luajit --with-x
 
 what i use
 ==========
 
-This repository is expansive and essentially its own Linux distribution, so
-you're probably only looking for configuration for a program or two.  The
-focal bits are the following.
+The focal bits are the following.
 
 * **color scheme**: [base16](https://github.com/chriskempson/base16)
 * **document viewer**: [epdfview](http://freecode.com/projects/epdfview)
 * **email**: [mutt](http://mutt.org/)
 * **font**: [dejavu sans](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
 * **image viewer**: [sxiv](https://github.com/muennich/sxiv)
+* **language of choice**: [ruby](http://ruby-lang.org)
 * **music player**: [ncmpcpp](http://ncmpcpp.rybczak.net/)
 * **operating system**: [arch linux](http://archlinux.org)
 * **password manager**: [pass](http://zx2c4.com/projects/password-store/)
 * **shell**: [zsh](http://zsh.org/)
 * **terminal emulator**: [rxvt-unicode](https://en.wikipedia.org/wiki/Rxvt)
 * **text editor**: [vim](http://vim.org)
-* **version control**: [mercurial](http://mercurial.selenic.com)
+* **version control**: [git](http://git-scm.org)
 * **video player**: [mpv](http://mpv.io/index.html)
 * **web browser**: [luakit](http://luakit.org)
 * **window manager**: [awesome](http://awesome.naquadah.org/)
@@ -88,7 +83,6 @@ everything in this repository, you'll need to install these as well.
 * [beets](http://beets.radbox.org) for managing my music library
 * [dropbox](http://dropbox.com) for backing up my keyring
 * [exuberant ctags](http://ctags.sourceforge.net/) for indexing my code
-* [git](http://git-scm.org) for working on lousy projects
 * [infinality](http://infinality.net) for beautifying fonts
 * [isync](http://isync.sourceforge.net/) for receiving email
 * [keychain](http://www.funtoo.org/wiki/Keychain) for managing your ssh and gpg
@@ -103,7 +97,6 @@ everything in this repository, you'll need to install these as well.
   replacing grep
 * [xautolock](http://freecode.com/projects/xautolock) and
   [slock](http://tools.suckless.org/slock) to lock the screen
-
 
 folder structure
 ================

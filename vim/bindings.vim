@@ -52,18 +52,18 @@ noremap <silent> <leader>ep :80vsplit $DOTFILES/vim/plugin_config.vim<CR>
 noremap <silent> <leader>eu :80vsplit $DOTFILES/vim/bundle.vim<CR>
 
 " ctrlp
-nnoremap <silent> <S-Tab> :CtrlPTag<CR>
+" nnoremap <silent> <S-Tab> :CtrlPTag<CR>
 nnoremap <silent> <Tab> :CtrlP<CR>
 
 " fugitive
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gc :Gcommit<CR>
 nmap <silent> <leader>gd :Gdiff<CR>
-nmap <silent> <leader>gp :!hg push<CR>
+nmap <silent> <leader>gp :Gpush<CR>
 nmap <silent> <leader>gs :Gstatus<CR>
 
-" ag.vim
-noremap <S-Tab><S-Tab> :Ag 
+" git-grep.vim
+noremap <S-Tab> :GitGrep 
 
 " splitjoin
 nnoremap <silent> <leader>sj :SplitjoinJoin<CR>

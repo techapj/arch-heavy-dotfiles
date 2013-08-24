@@ -41,9 +41,9 @@ NeoBundleLazy "sjl/gundo.vim", {
       \     },
       \ }
 
-NeoBundleLazy "vim-scripts/ag.vim", {
+NeoBundleLazy "tjennings/git-grep-vim", {
       \ "autoload": {
-      \     "commands": ["Ag"],
+      \     "commands": ["GitGrep"],
       \     },
       \ }
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # mount several encrypted hard drives
 # todo: also ssh-add

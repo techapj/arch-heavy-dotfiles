@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+git ls-files | grep "^h" | cut -d\  -f 2

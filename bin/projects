@@ -31,7 +31,9 @@ new() {
   build &>/dev/null & # rebuild the list
 }
 
-command="$1"; shift
+command="$1";
+[[ -n "$command" ]] && shift
+
 case "$command" in
   "") list $* ;;
   "build") build $* ;;

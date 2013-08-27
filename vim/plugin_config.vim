@@ -32,4 +32,4 @@ let g:ctrlp_user_command = {
 let g:neocomplete#enable_at_startup = 1 " why is this necessary?
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplete#syntax#min_keyword_length = 2
+let g:neocomplete#syntax#min_keyword_length = 1

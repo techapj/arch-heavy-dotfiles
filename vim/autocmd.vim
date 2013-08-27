@@ -21,6 +21,8 @@ augroup dfknz
   autocmd FileType ruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
   autocmd FileType ruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   autocmd FileType ruby nmap <buffer> <silent> <leader>rv :Rview<CR>
+  autocmd FileType ruby nmap <buffer> <silent> <leader>rs :edit db/schema.rb<CR>
+  autocmd FileType ruby nmap <buffer> <silent> <leader>re :edit Gemfile<CR>
   autocmd FileType ruby,haml,eruby setlocal omnifunc=rubycomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd InsertEnter * set number

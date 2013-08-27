@@ -36,6 +36,7 @@
 [user]
   name = devlin zed
   email = me@devlinzed.com
+  signingkey = CF7781EF
 
 [web]
   browser = open

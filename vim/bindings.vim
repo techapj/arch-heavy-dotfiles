@@ -22,8 +22,8 @@ nnoremap j gj
 nnoremap k gk
 
 " shift navigates between buffers
-nmap <silent> H :bprevious<CR>
-nmap <silent> L :bnext<CR>
+nmap <silent> H :<C-U>execute v:count . "bprevious"<CR>
+nmap <silent> L :<C-U>execute v:count . "bnext"<CR>
 
 " quickly open tags -- combine with zz to go back
 nnoremap tt <C-]>

@@ -12,7 +12,7 @@ nnoremap <F8> i
 
 " fast save and exit
 map <silent> <CR> :write<CR>
-map <silent> Q :Bdelete<CR>
+map <silent> <leader><leader> :Bdelete<CR>
 
 " quick redo (remember we use check/f8 for insert mode, so i is unused)
 nnoremap i <C-r>

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+ps ax |
+  tail -n +2 |
+  awk "{ print \$1, \$5 }" |
+  grep "$1" |
+  cut -d \  -f 1 |
+  xargs kill "$2"

@@ -41,15 +41,15 @@ map <silent> gs :sort<CR>
 nnoremap ff za
 
 " quickly open vim config
-noremap <silent> <leader>ea :80vsplit $DOTFILES/vim/autocmd.vim<CR>
-noremap <silent> <leader>eb :80vsplit $DOTFILES/vim/bindings.vim<CR>
-noremap <silent> <leader>ec :80vsplit $DOTFILES/vim/config.vim<CR>
-noremap <silent> <leader>ee :80vsplit $DOTFILES/vim<CR>
-noremap <silent> <leader>ef :80vsplit $DOTFILES/vim/functions.vim<CR>
-noremap <silent> <leader>el :80vsplit $HOME/.vimrc.local<CR>
-noremap <silent> <leader>em :80vsplit $DOTFILES/vim/commands.vim<CR>
-noremap <silent> <leader>ep :80vsplit $DOTFILES/vim/plugin_config.vim<CR>
-noremap <silent> <leader>eu :80vsplit $DOTFILES/vim/bundle.vim<CR>
+noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
+noremap <silent> <leader>eb :edit $DOTFILES/vim/bindings.vim<CR>
+noremap <silent> <leader>ec :edit $DOTFILES/vim/config.vim<CR>
+noremap <silent> <leader>ee :edit $DOTFILES/vim<CR>
+noremap <silent> <leader>ef :edit $DOTFILES/vim/functions.vim<CR>
+noremap <silent> <leader>el :edit $HOME/.vimrc.local<CR>
+noremap <silent> <leader>em :edit $DOTFILES/vim/commands.vim<CR>
+noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
+noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
 
 " ctrlp
 " nnoremap <silent> <S-Tab> :CtrlPTag<CR>

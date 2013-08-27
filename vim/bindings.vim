@@ -22,8 +22,8 @@ nnoremap j gj
 nnoremap k gk
 
 " shift navigates between buffers
-nmap <silent> H :<C-U>execute v:count . "bprevious"<CR>
-nmap <silent> L :<C-U>execute v:count . "bnext"<CR>
+nmap <silent> <C-j> :<C-U>execute v:count . "bprevious"<CR>
+nmap <silent> <C-k> :<C-U>execute v:count . "bnext"<CR>
 
 " quickly open tags -- combine with zz to go back
 nnoremap tt <C-]>
@@ -62,6 +62,7 @@ nmap <silent> <leader>gc :Gcommit<CR>
 nmap <silent> <leader>gd :Gdiff<CR>
 nmap <silent> <leader>gp :Git push-all<CR>
 nmap <silent> <leader>gs :Gstatus<CR>
+nmap <silent> <leader>gu :Git pull<CR>
 
 " git-grep.vim
 noremap <S-Tab> :GitGrep 

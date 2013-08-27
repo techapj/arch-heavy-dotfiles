@@ -49,11 +49,12 @@ PROMPT='
 %{$fg[yellow]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 $(prompt_char) '
 
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_TRUSTED="%{$fg[red]%}^"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 vim_ins_mode=""
 vim_cmd_mode="!"
@@ -89,6 +90,10 @@ parse_git_dirty () {
 
   if [[ $(echo ${gitstat} | wc -l | tr -d ' ') == 0 ]]; then
 	echo -n "$ZSH_THEME_GIT_PROMPT_CLEAN"
+  fi
+
+  if [[ -d ".git/trusted" ]]; then
+    echo -n "$ZSH_THEME_GIT_PROMPT_TRUSTED"
   fi
 }
 

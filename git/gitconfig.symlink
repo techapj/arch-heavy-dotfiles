@@ -8,10 +8,16 @@
   unassume = update-index --no-assume-unchanged
   undo = reset --hard
 
+[color]
+  ui = auto
+
 [core]
   editor = vim
   excludesfile = ~/.gitignore
   pager = less
+
+[init]
+  templatedir = ~/.dotfiles/git/template
 
 [merge]
   summary = true
@@ -24,9 +30,6 @@
 
 [rebase]
   autosquash = true
-
-[color]
-  ui = auto
 
 [user]
   name = devlin zed

@@ -1,2 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+
 [[ "$1" == "rebase" ]] && exec .git/hooks/post-merge

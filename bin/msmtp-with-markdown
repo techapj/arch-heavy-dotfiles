@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 markdownify-email | msmtp $@

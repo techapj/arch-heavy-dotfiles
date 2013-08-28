@@ -12,7 +12,6 @@ STDIN.readlines.each do |haystack|
 
   if distance > guess_distance
     guess = haystack
-
     guess_distance = distance
   end
 end

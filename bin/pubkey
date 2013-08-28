@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 cat ~/.ssh/id_${1:-ecdsa}.pub

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 # Usage: git-incoming [d] [<upstream>] [<head> [<limit>]]
 # Show commits on <upstream> that do not exist on current branch.
 

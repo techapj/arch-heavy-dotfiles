@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 # Usage: git-outgoing [-d] [<upstream>] [<head> [<limit>]]
 # Show commits on current branch that do not exist on branch <upstream>.
 

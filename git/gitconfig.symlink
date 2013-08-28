@@ -5,10 +5,8 @@
   peek = log --since="yesterday"
   remotes = remote -v
   tags = tag -l
-  trust = !mkdir .git/trusted
   unassume = update-index --no-assume-unchanged
   undo = reset --hard
-  untrust = !rmdir .git/trusted
 
 [color]
   ui = auto

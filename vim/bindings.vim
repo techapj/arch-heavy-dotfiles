@@ -40,6 +40,9 @@ map <silent> gs :sort<CR>
 " open and close folds
 nnoremap ff za
 
+" this bind is way too good to use on something so lousy
+nnoremap K <C-w>
+
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
 noremap <silent> <leader>eb :edit $DOTFILES/vim/bindings.vim<CR>
@@ -52,7 +55,6 @@ noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
 noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
 
 " ctrlp
-" nnoremap <silent> <S-Tab> :CtrlPTag<CR>
 nnoremap <silent> <Tab> :CtrlP<CR>
 
 " fugitive
@@ -65,7 +67,7 @@ nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gu :Git pull<CR>
 
 " git-grep.vim
-noremap <S-Tab> :GitGrep 
+noremap <S-Tab> :GitGrep |" this comment is just to get rid of the trailing warning
 
 " splitjoin
 nnoremap <silent> <leader>sj :SplitjoinJoin<CR>

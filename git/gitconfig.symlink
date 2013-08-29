@@ -1,10 +1,7 @@
 [alias]
   amend = commit --amend --reuse-message HEAD
   assume = update-index --assume-unchanged
-  branches = branch -a
   peek = log --since="yesterday"
-  remotes = remote -v
-  tags = tag -l
   unassume = update-index --no-assume-unchanged
   undo = reset --hard
 

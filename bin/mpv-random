@@ -1,2 +1,4 @@
 #!/usr/bin/env zsh
+set -ue
+
 find "$1" -type f | sample | xargs -i% mpv "%"

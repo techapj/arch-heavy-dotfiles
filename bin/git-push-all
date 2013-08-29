@@ -1,2 +1,4 @@
 #!/usr/bin/env zsh
+set -ue
+
 git remote | xargs -P 4 -n 1 git push $*

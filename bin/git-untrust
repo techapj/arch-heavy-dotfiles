@@ -1,2 +1,4 @@
 #!/usr/bin/env zsh
+set -ue
+
 [[ -d ".git/trusted" ]] && rmdir .git/trusted

@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
+set -ue
 
 # mount several encrypted hard drives
 # todo: also ssh-add
 
-set -e
 
 sudo -v
 

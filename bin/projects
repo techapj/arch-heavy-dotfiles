@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+set -ue
 
 list() {
   cat "$HOME/.projects"

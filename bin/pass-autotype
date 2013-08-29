@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-set -e
+set -ue
 
 # make sure the dependencies are installed
 

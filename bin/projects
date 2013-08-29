@@ -32,13 +32,18 @@ new() {
   build &>/dev/null & # rebuild the list
 }
 
-command="$1";
-[[ -n "$command" ]] && shift
+if [[ "$#" > 0 ]]; then
+  command="$1"
+
+  shift
+else
+  command="list"
+fi
 
 case "$command" in
-  "") list $* ;;
   "build") build $* ;;
   "guess") guess $* ;;
+  "list") list $* ;;
   "new") new $* ;;
   *) echo "wtf are you doing" 1>&2 ;;
 esac

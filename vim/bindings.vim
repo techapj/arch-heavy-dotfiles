@@ -78,11 +78,11 @@ nnoremap <silent> vv :GundoToggle<CR>
 
 " neocomplete
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+
 function! s:my_cr_function()
   return neocomplete#smart_close_popup() . "\<CR>"
 endfunction
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
   \ "\<Plug>(neosnippet_expand_or_jump)"

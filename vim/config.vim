@@ -8,6 +8,8 @@ set autoindent
 set autoread
 set background=dark
 set backspace=2
+set concealcursor=i
+set conceallevel=2
 set copyindent
 set cpoptions+=J
 set expandtab

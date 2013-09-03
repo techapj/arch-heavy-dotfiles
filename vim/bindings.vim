@@ -12,9 +12,10 @@ nnoremap <F8> i
 
 " fast save and exit
 map <silent> <CR> :write<CR>
-map <silent> <leader><leader> :Bdelete<CR>
+map <silent> vv :Bdelete<CR>
+nnoremap cc <C-w>q
 
-" quick redo (remember we use check/f8 for insert mode, so i is unused)
+" fast redo
 nnoremap i <C-r>
 
 " navigate through paragraphs intelligently
@@ -56,6 +57,7 @@ noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
 
 " ctrlp
 nnoremap <silent> <Tab> :CtrlP<CR>
+nnoremap <silent> <S-Tab> :CtrlPTag<CR>
 
 " fugitive
 nmap <silent> <leader>ga :Git add .<CR>
@@ -67,14 +69,14 @@ nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gu :Git pull<CR>
 
 " git-grep.vim
-noremap <S-Tab> :GitGrep |" this comment is just to get rid of the trailing warning
+noremap gr :GitGrep |" this comment is just to get rid of the trailing warning
 
 " splitjoin
 nnoremap <silent> <leader>sj :SplitjoinJoin<CR>
 nnoremap <silent> <leader>ss :SplitjoinSplit<CR>
 
 " gundo
-nnoremap <silent> vv :GundoToggle<CR>
+nnoremap <silent> UU :GundoToggle<CR>
 
 " neocomplete
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>

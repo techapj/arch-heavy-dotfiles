@@ -1,7 +1,6 @@
 NeoBundle "Shougo/neocomplete.vim"
 NeoBundle "Shougo/neosnippet"
 NeoBundle "bling/vim-airline"
-NeoBundle "bling/vim-bufferline"
 NeoBundle "chriskempson/base16-vim"
 NeoBundle "kana/vim-textobj-indent"
 NeoBundle "kana/vim-textobj-lastpat"

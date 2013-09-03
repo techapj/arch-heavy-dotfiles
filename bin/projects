@@ -20,7 +20,7 @@ build() {
 
 guess() {
   projects=$(list | xargs -n 1 basename)
-  match=$(printf "$projects" | matcher "$1" --limit 1)
+  match=$(printf "$projects\n" | matcher "$1" --limit 1)
 
   list | ag "$match$"
 }

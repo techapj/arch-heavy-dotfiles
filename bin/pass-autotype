@@ -4,7 +4,7 @@ set -ue
 # make sure the dependencies are installed
 
   if ! command -v xdotool &> /dev/null; then
-    echo "You need to install xdotool." 1>&2
+    printf "You need to install xdotool.\n" 1>&2
 
     exit 3
   fi
@@ -20,8 +20,8 @@ set -ue
 # guess the password based on the site titel
 
   output=$(pass-guess "$active_window_title")
-  password=$(echo "$output" | head -n 1)
-  username=$(echo "$output" | ag '^username: ' | cut -c 11-)
+  password=$(printf "$output" | head -n 1)
+  username=$(printf "$output" | ag '^username: ' | cut -c 11-)
 
 # send those key presses to the window
 

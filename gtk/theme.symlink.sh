@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "$HOME/.themes/naos"
+printf "$HOME/.themes/naos\n"

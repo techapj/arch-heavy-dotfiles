@@ -11,7 +11,7 @@ set -ue
 
   if [[ "$1" == "-g" ]] || [[ "$1" == "--guess" ]]; then
     candidates=$(ssh "$HOST" "ls $LOCATION" 2>/dev/null)
-    name=$(echo "$candidates" | matcher "$2" --limit 1)
+    name=$(printf "$candidates" | matcher "$2" --limit 1)
 
     shift 2
 

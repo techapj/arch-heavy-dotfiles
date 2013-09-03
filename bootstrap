@@ -36,11 +36,11 @@ DOTFILES="$(dirname "$0")"
     cat ruby/gems | while read gem; do
       grep "$gem" &> /dev/null <<< $gems && continue
 
-      echo "Installing $gem..."
+      printf "Installing $gem...\n"
 
       if ! gem install $gem; then
-        echo "Failed.  Try running with sudo, or debug with \`gem install $gem\`." >&2
-        echo "Skipping gem installation." >&2
+        printf "Failed.  Try running with sudo, or debug with \`gem install $gem\`.\n" >&2
+        printf "Skipping gem installation.\n" >&2
         
         break
       fi

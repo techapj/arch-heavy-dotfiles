@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 set -ue
-
-[[ -n "$1" ]] && echo -n $1/
+[[ -n "$1" ]] && printf $1/
 
 ls -t $1 2> /dev/null | head -n 1

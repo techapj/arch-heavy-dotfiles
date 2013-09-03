@@ -1,2 +1,2 @@
 #!/bin/sh
-echo $HOME/.config/awesome
+printf "$HOME/.config/awesome\n"

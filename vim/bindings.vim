@@ -11,8 +11,9 @@ noremap <F8> <ESC>
 nnoremap <F8> i
 
 " fast save and exit
-map <silent> <CR> :write<CR>
+map <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 map <silent> vv :Bdelete<CR>
+map <silent> VV :Bdelete!<CR>
 nnoremap cc <C-w>q
 
 " fast redo

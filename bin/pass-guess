@@ -6,8 +6,8 @@ set -ue
   password_store="$HOME/.password-store"
 
   if [[ ! -d "$password_store" ]]; then
-    echo "Configure \$password_store within $(command -v pass-guess)." 1>&2
-    echo "Its default location, $password_store, does not exist." 1>&2
+    printf "Configure \$password_store within $(command -v pass-guess).\n" 1>&2
+    printf "Its default location, $password_store, does not exist.\n" 1>&2
 
     exit 3
   fi
@@ -22,7 +22,7 @@ set -ue
 
 # notify which we found, using stderr so it isn't piped to anything else
 
-  echo "Using $guess." 1>&2
+  printf "Using $guess.\n" 1>&2
 
 # delegate to pass 
 

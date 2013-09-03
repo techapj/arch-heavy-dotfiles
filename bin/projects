@@ -8,8 +8,8 @@ list() {
 build() {
   trap "rm -f $HOME/.projects.$$" EXIT
 
-  echo "$CODE_ROOT" | tee "$HOME/.projects.$$"
-  echo "$DOTFILES" | tee -a "$HOME/.projects.$$"
+  printf "$CODE_ROOT\n" | tee "$HOME/.projects.$$"
+  printf "$DOTFILES\n" | tee -a "$HOME/.projects.$$"
 
   find "$CODE_ROOT" -maxdepth 2 -mindepth 1 -type d -name '.git' | while read repository; do
     dirname "$repository" | tee -a "$HOME/.projects.$$"
@@ -20,7 +20,7 @@ build() {
 
 guess() {
   projects=$(list | xargs -n 1 basename)
-  match=$(echo "$projects" | matcher "$1" --limit 1)
+  match=$(printf "$projects" | matcher "$1" --limit 1)
 
   list | ag "$match$"
 }
@@ -28,7 +28,7 @@ guess() {
 new() {
   git init "$CODE_ROOT/$1" > /dev/null
 
-  echo "$CODE_ROOT/$1"
+  printf "$CODE_ROOT/$1\n"
   build &>/dev/null & # rebuild the list
 }
 
@@ -45,5 +45,5 @@ case "$command" in
   "guess") guess $* ;;
   "list") list $* ;;
   "new") new $* ;;
-  *) echo "wtf are you doing" 1>&2 ;;
+  *) printf "wtf are you doing\n" 1>&2 ;;
 esac

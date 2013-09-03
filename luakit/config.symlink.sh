@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "$HOME/.config/luakit"
+printf "$HOME/.config/luakit\n"

@@ -1,2 +1,2 @@
 #!/bin/sh
-echo $HOME/.config/beets
+printf "$HOME/.config/beets\n"

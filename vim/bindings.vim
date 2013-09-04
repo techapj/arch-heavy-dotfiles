@@ -66,6 +66,7 @@ nnoremap <silent> ]c :<C-U>execute v:count . "cnext"<CR>
 nnoremap <silent> i :CtrlP<CR>
 
 " fugitive
+nmap <silent> <leader>gU :Git up<CR>
 nmap <silent> <leader>ga :Git add .<CR>
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gc :Gcommit<CR>
@@ -73,7 +74,7 @@ nmap <silent> <leader>gd :Gdiff<CR>
 nmap <silent> <leader>gl :Glog<CR>
 nmap <silent> <leader>gp :Git push-all<CR>
 nmap <silent> <leader>gs :Gstatus<CR>
-nmap <silent> <leader>gu :Git up<CR>
+nmap <silent> <leader>gu :Git reup<CR>
 
 " git-grep.vim
 noremap <leader>gg :GitGrep |"

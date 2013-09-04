@@ -5,3 +5,4 @@ fuzzy-string-match
 gem-browse
 mail
 redcarpet
+rubocop

@@ -29,3 +29,12 @@ let g:neocomplete#enable_at_startup = 1 " why is this necessary?
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#syntax#min_keyword_length = 1
+
+" syntastic
+let g:syntastic_coffee_checkers = ["coffee", "coffeelint"]
+let g:syntastic_error_symbol='✗'
+let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+let g:syntastic_ruby_rubocop_args = "--rails"
+let g:syntastic_style_error_symbol='✗'
+let g:syntastic_style_warning_symbol='⚠'
+let g:syntastic_warning_symbol='⚠'

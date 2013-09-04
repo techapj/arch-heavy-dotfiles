@@ -14,8 +14,8 @@ Before installing, you should install the relevant packages with `pacman`.  A
 list of packages and their purpose is below.
 
     pacman -S awesome ctags epdfview git keychain lua luajit luakit mpd mpv\
-              mutt ncmpcpp notmuch packer pass python2 ruby rvxt-unicode slock\
-              the_silver_searcher xautolock zsh
+              mutt ncmpcpp nodejs notmuch packer pass python2 ruby rvxt-unicode\
+              slock the_silver_searcher xautolock zsh
 
     packer -S beets fontconfig-infinality freetype2-infinality isync matcher\
               msmp notmuch sxiv
@@ -29,14 +29,13 @@ Afterward, check out the repository:
 This will:
 
 1. create symbolic links;
-2. install the required system-wide ruby gems;
+2. install the required system-wide ruby gems and npm packages;
 4. install our beautiful fonts;
 5. install vim plugins.
 
 The bootstrap script is idempotent and you can run it again to update symbolic
-links and vim plugins.  You may need to run it as root, if `gem` and `pip2`
-require it (but make sure to properly set `HOME` and `DOTFILES` or it'll be
-installed to the root directory.)
+links and vim plugins.  If `gem` and `npm` require root, pass `--sudo` to the
+boostrap script: do **not** run it with sudo!
 
 Afterward, it's recommended that you `ag` for the following values and
 replace them as necessary:

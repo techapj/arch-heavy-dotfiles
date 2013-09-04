@@ -3,6 +3,16 @@ set -ue
 
 DOTFILES="$(dirname "$0")"
 
+# use sudo to install gems/packages?
+
+  if [[ "$#" > 0 ]] && [[ "$1" == "--sudo" ]]; then
+    sudo="$(command -v sudo)"
+
+    "$sudo" -v
+  else
+    sudo=""
+  fi
+
 # set up symlinks
 
   find "." -name "*.symlink" | egrep -v "\.git" | while read symlink; do
@@ -32,7 +42,13 @@ DOTFILES="$(dirname "$0")"
 # install system-wide ruby gems
 
   if command -v gem &> /dev/null; then
-    cat ruby/gems | xargs -P 4 -n 1 gem install
+    cat ruby/gems | xargs "$sudo" gem install --no-user-install
+  fi
+
+# install system-wide npm packages
+
+  if command -v npm &> /dev/null; then
+    cat node/packages | xargs "$sudo" npm install --global
   fi
 
 # install fonts

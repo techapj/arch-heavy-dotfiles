@@ -22,6 +22,7 @@ NeoBundle "tpope/vim-repeat"
 NeoBundle "tpope/vim-surround"
 NeoBundle "ujihisa/neco-look"
 NeoBundle "vim-ruby/vim-ruby"
+NeoBundle "vim-scripts/QFixToggle"
 
 NeoBundleLazy "AndrewRadev/splitjoin.vim", {
       \ "autoload": {

@@ -12,22 +12,26 @@ nnoremap <F8> i
 
 " fast save and exit
 map <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
-map <silent> vv :Bdelete<CR>
 map <silent> VV :Bdelete!<CR>
+map <silent> vv :Bdelete<CR>
 nnoremap cc <C-w>q
 
 " fast redo
-nnoremap i <C-r>
+nnoremap U <C-r>
 
 " navigate through paragraphs intelligently
 nnoremap j gj
 nnoremap k gk
 
-" shift navigates between buffers
-nmap <silent> <C-j> :<C-U>execute v:count . "bnext"<CR>
-nmap <silent> <C-k> :<C-U>execute v:count . "bprevious"<CR>
+" tab navigates between buffers
+nmap <silent> <Tab> :<C-U>execute v:count . "bnext"<CR>
+nmap <silent> <S-Tab> :<C-U>execute v:count . "bprevious"<CR>
 
-" quickly open tags -- combine with zz to go back
+" ctrl between splits
+nnoremap <C-j> <C-w>w
+nnoremap <C-k> <C-w>W
+
+" quickly open tags
 nnoremap tt <C-]>
 
 " switch between alternate files
@@ -42,9 +46,6 @@ map <silent> gs :sort<CR>
 " open and close folds
 nnoremap ff za
 
-" this bind is way too good to use on something so lousy
-nnoremap K <C-w>
-
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
 noremap <silent> <leader>eb :edit $DOTFILES/vim/bindings.vim<CR>
@@ -56,28 +57,33 @@ noremap <silent> <leader>em :edit $DOTFILES/vim/commands.vim<CR>
 noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
 noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
 
+" quickfix navigation
+nnoremap <silent> <leader>cc :QFix<CR>
+nnoremap <silent> [c :<C-U>execute v:count . "cprev"<CR>
+nnoremap <silent> ]c :<C-U>execute v:count . "cnext"<CR>
+
 " ctrlp
-nnoremap <silent> <Tab> :CtrlP<CR>
-nnoremap <silent> <S-Tab> :CtrlPTag<CR>
+nnoremap <silent> i :CtrlP<CR>
 
 " fugitive
 nmap <silent> <leader>ga :Git add .<CR>
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gc :Gcommit<CR>
 nmap <silent> <leader>gd :Gdiff<CR>
+nmap <silent> <leader>gl :Glog<CR>
 nmap <silent> <leader>gp :Git push-all<CR>
 nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gu :Git up<CR>
 
 " git-grep.vim
-noremap gr :GitGrep |" this comment is just to get rid of the trailing warning
+noremap <leader>gg :GitGrep |" this comment is just to get rid of the trailing warning
 
 " splitjoin
 nnoremap <silent> <leader>sj :SplitjoinJoin<CR>
 nnoremap <silent> <leader>ss :SplitjoinSplit<CR>
 
 " gundo
-nnoremap <silent> UU :GundoToggle<CR>
+nnoremap <silent> <C-u> :GundoToggle<CR>
 
 " neocomplete
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>

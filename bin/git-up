@@ -7,5 +7,5 @@ log=$(git log --color --pretty=oneline --abbrev-commit HEAD@{1}.. |
   sed 's/^/  /')
 
 if [[ -n "$log" ]]; then
-  printf "Log:\n$log"
+  printf "Log:\n$log\n"
 fi

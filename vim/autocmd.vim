@@ -15,15 +15,15 @@ augroup dfknz
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType ruby nmap <buffer> <leader>bo :Bopen 
-  autocmd FileType ruby nmap <buffer> <leader>ra :Rake 
-  autocmd FileType ruby nmap <buffer> <leader>rg :Rgenerate 
-  autocmd FileType ruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
-  autocmd FileType ruby nmap <buffer> <silent> <leader>re :edit Gemfile<CR>
-  autocmd FileType ruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
-  autocmd FileType ruby nmap <buffer> <silent> <leader>rr :edit config/routes.rb<CR>
-  autocmd FileType ruby nmap <buffer> <silent> <leader>rs :edit db/schema.rb<CR>
-  autocmd FileType ruby nmap <buffer> <silent> <leader>rv :Rview<CR>
+  autocmd FileType ruby,haml,ruby nmap <buffer> <leader>bo :Bopen |"
+  autocmd FileType ruby,haml,ruby nmap <buffer> <leader>ra :Rake |"
+  autocmd FileType ruby,haml,ruby nmap <buffer> <leader>rg :Rgenerate |"
+  autocmd FileType ruby,haml,ruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
+  autocmd FileType ruby,haml,ruby nmap <buffer> <silent> <leader>re :edit Gemfile<CR>
+  autocmd FileType ruby,haml,ruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
+  autocmd FileType ruby,haml,ruby nmap <buffer> <silent> <leader>rr :edit config/routes.rb<CR>
+  autocmd FileType ruby,haml,ruby nmap <buffer> <silent> <leader>rs :edit db/schema.rb<CR>
+  autocmd FileType ruby,haml,ruby nmap <buffer> <silent> <leader>rv :Rview<CR>
   autocmd FileType ruby,haml,eruby setlocal omnifunc=rubycomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0

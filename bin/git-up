@@ -1,11 +1,31 @@
 #!/usr/bin/env zsh
 set -ue
 
-git pull $*
+report_diff() {
+  diff=$(git --no-pager diff --color --stat HEAD@{1}.. |
+    sed 's/^/ /')
 
-log=$(git log --color --pretty=oneline --abbrev-commit HEAD@{1}.. |
-  sed 's/^/  /')
+  if [[ -n "$diff" ]]; then
+    printf "Diff:\n$diff\n"
+  fi
+}
 
-if [[ -n "$log" ]]; then
-  printf "Log:\n$log\n"
+report_log() {
+  log=$(git log --color --pretty=oneline --abbrev-commit HEAD@{1}.. |
+    sed 's/^/  /')
+
+  if [[ -n "$log" ]]; then
+    printf "Log:\n$log\n"
+  fi
+}
+
+# when invoked as git-reup, run as `git pull --rebase'
+if [[ "$(basename "$0")" = "git-reup" ]]; then
+  git pull --rebase $@
+
+  report_diff
+else
+  git pull $@
 fi
+
+report_log

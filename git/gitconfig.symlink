@@ -19,9 +19,6 @@
 [merge]
   summary = true
 
-[pull]
-  rebase = true
-
 [push]
   default = current
 

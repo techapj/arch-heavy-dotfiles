@@ -76,7 +76,7 @@ nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gu :Git up<CR>
 
 " git-grep.vim
-noremap <leader>gg :GitGrep |" this comment is just to get rid of the trailing warning
+noremap <leader>gg :GitGrep |"
 
 " splitjoin
 nnoremap <silent> <leader>sj :SplitjoinJoin<CR>

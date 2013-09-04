@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -e
+set -ue
+
 DOTFILES="$(dirname "$0")"
 
 # set up symlinks
@@ -31,20 +32,7 @@ DOTFILES="$(dirname "$0")"
 # install system-wide ruby gems
 
   if command -v gem &> /dev/null; then
-    gems=$(gem list)
-
-    cat ruby/gems | while read gem; do
-      grep "$gem" &> /dev/null <<< $gems && continue
-
-      printf "Installing $gem...\n"
-
-      if ! gem install $gem; then
-        printf "Failed.  Try running with sudo, or debug with \`gem install $gem\`.\n" >&2
-        printf "Skipping gem installation.\n" >&2
-        
-        break
-      fi
-    done
+    cat ruby/gems | xargs -P 4 -n 1 gem install
   fi
 
 # install fonts

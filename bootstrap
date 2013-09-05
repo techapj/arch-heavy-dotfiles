@@ -5,20 +5,12 @@ set -ue
 
   DOTFILES="$(dirname "$0")"
 
-# use sudo to install gems/packages?
-
-  if [[ "$#" > 0 ]] && [[ "$1" == "--sudo" ]] && sudo -v; then
-    sudo="sudo"
-  else
-    sudo=""
-  fi
-
 # set up symlinks
 
   find "." -name "*.symlink" | egrep -v "\.git" | while read symlink; do
     symlink="${symlink##./}"
     linkable="$PWD/$symlink"
-    basename=$(basename "$linkable" | sed 's/\.symlink$//')
+    basename="$(basename "$linkable" | sed 's/\.symlink$//')"
 
     if [[ -f "$linkable.sh" ]]; then
       target=$($linkable.sh)
@@ -34,7 +26,11 @@ set -ue
       fi
     fi
 
-    [[ -d $(dirname "$target") ]] || mkdir -vp $(dirname "$target")
+    dirname="$(dirname "$target")"
+
+    if [[ ! -d "$dirname" ]]; then
+      mkdir -vp "$dirname"
+    fi
 
     ln -vs "$linkable" "$target"
   done
@@ -42,13 +38,13 @@ set -ue
 # install system-wide ruby gems
 
   if command -v gem &> /dev/null; then
-    cat ruby/gems | xargs $sudo gem install --no-user-install
+    cat ruby/gems | xargs gem install --no-user-install
   fi
 
 # install system-wide npm packages
 
   if command -v npm &> /dev/null; then
-    cat node/packages | xargs $sudo npm install --global
+    cat node/packages | xargs npm install --global
   fi
 
 # install fonts
@@ -62,7 +58,9 @@ set -ue
   fi
 
   if [[ ! -z "$destination" ]]; then
-    [[ -d "$destination" ]] || mkdir "$destination"
+    if [[ ! -d "$destination" ]]; then
+      mkdir "$destination"
+    fi
 
     for font in fonts/*; do
       basename=$(basename "$font")

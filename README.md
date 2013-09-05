@@ -34,8 +34,8 @@ This will:
 5. install vim plugins.
 
 The bootstrap script is idempotent and you can run it again to update symbolic
-links and vim plugins.  If `gem` and `npm` require root, pass `--sudo` to the
-boostrap script: do **not** run it with sudo!
+links and vim plugins.  If `gem` and `npm` require root, make sure you use
+`sudo -E ./bootstrap` to preserve your user's environment.
 
 Afterward, it's recommended that you `ag` for the following values and
 replace them as necessary:

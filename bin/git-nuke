@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-set -ue
-
-git branch -D $1
-git push origin :$1

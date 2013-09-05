@@ -12,7 +12,6 @@ let g:airline_theme = "powerlineish"
 " ruby
 let g:ruby_fold = 1
 let g:ruby_operators = 1
-let g:ruby_complete_classes_in_global = 1
 
 " ctrlp
 let g:ctrlp_map = ""

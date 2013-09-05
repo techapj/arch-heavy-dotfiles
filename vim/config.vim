@@ -8,6 +8,7 @@ set autoindent
 set autoread
 set background=dark
 set backspace=2
+set completefunc=neocomplete#complete#auto_complete
 set concealcursor=i
 set conceallevel=2
 set copyindent
@@ -33,7 +34,7 @@ set nostartofline
 set noswapfile
 set nowritebackup
 set number
-set omnifunc=syntaxcomplete#Complete
+set omnifunc=neocomplete#complete#auto_complete
 set pumheight=10
 set relativenumber
 set report=0

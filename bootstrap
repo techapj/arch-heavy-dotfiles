@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -ue
 
-DOTFILES="$(dirname "$0")"
+# this won't be set by xinitrc, so mock it based on this file's location
+
+  DOTFILES="$(dirname "$0")"
 
 # use sudo to install gems/packages?
 
-  if [[ "$#" > 0 ]] && [[ "$1" == "--sudo" ]]; then
-    sudo="$(command -v sudo)"
-
-    "$sudo" -v
+  if [[ "$#" > 0 ]] && [[ "$1" == "--sudo" ]] && sudo -v; then
+    sudo="sudo"
   else
     sudo=""
   fi
@@ -42,13 +42,13 @@ DOTFILES="$(dirname "$0")"
 # install system-wide ruby gems
 
   if command -v gem &> /dev/null; then
-    cat ruby/gems | xargs "$sudo" gem install --no-user-install
+    cat ruby/gems | xargs $sudo gem install --no-user-install
   fi
 
 # install system-wide npm packages
 
   if command -v npm &> /dev/null; then
-    cat node/packages | xargs "$sudo" npm install --global
+    cat node/packages | xargs $sudo npm install --global
   fi
 
 # install fonts
@@ -67,9 +67,10 @@ DOTFILES="$(dirname "$0")"
     for font in fonts/*; do
       basename=$(basename "$font")
 
-      [[ -f "$destination/$basename" ]] && continue
-
-      $method "$PWD/$font" "$destination/$basename"
+      if [[ ! -f "$destination/$basename" ]]; then
+        # don't quote $method because it includes switches
+        $method "$PWD/$font" "$destination/$basename"
+      fi
     done
   fi
 

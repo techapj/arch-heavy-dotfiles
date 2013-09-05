@@ -72,6 +72,12 @@ set -ue
     done
   fi
 
+# configure fonts
+
+  if command -v infctl &> /dev/null; then
+    infctl setstyle linux
+  fi
+
 # neobundle it - vimrc runs NeoBundleCheck, so we don't need to explicitly run
 # an install command
 

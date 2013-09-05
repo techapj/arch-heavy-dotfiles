@@ -20,7 +20,7 @@ list of packages and their purpose is below.
     packer -S beets fontconfig-infinality freetype2-infinality isync matcher\
               msmp notmuch sxiv
 
-Afterward, check out the repository:
+Afterward, check out the repository and run the installation script:
 
     git clone https://github.com/devlinzed/dotfiles ~/.dotfiles
     cd ~/.dotfiles
@@ -44,10 +44,6 @@ replace them as necessary:
 * `/home/devlin`
 * `devlin`
 
-And properly configure Infinality:
-
-    infctl setstyle linux
-
 vim should be compiled with:
 
     ./configure --enable-gui=no --enable-luainterp --enable-pythoninterp\
@@ -64,7 +60,6 @@ The focal bits are the following.
 * **email**: [mutt](http://mutt.org/)
 * **font**: [dejavu sans](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
 * **image viewer**: [sxiv](https://github.com/muennich/sxiv)
-* **language of choice**: [ruby](http://ruby-lang.org)
 * **music player**: [ncmpcpp](http://ncmpcpp.rybczak.net/)
 * **operating system**: [arch linux](http://archlinux.org)
 * **password manager**: [pass](http://zx2c4.com/projects/password-store/)
@@ -102,7 +97,7 @@ folder structure
 
 - `**/*.symlink`: linked into your `$HOME`
 - `**/*.zsh`: automatically loaded by zsh
-- `**/*completion.zsh`: loaded last
+- `**/*.completion.zsh`: loaded last
 - `bin/*`: added to your `$PATH`
 - `functions/*`: lazy loaded as zsh functions
 

@@ -1,0 +1,3 @@
+ControlMaster auto
+ControlPath /tmp/%u-%r@%h:%p
+ControlPersist yes

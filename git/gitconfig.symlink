@@ -2,6 +2,8 @@
   amend = commit --amend --reuse-message HEAD
   assume = update-index --assume-unchanged
   peek = log --since="yesterday"
+  root = rev-parse --show-toplevel
+  run = "!exec "
   unassume = update-index --no-assume-unchanged
   undo = reset --hard
 

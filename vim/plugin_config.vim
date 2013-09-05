@@ -7,6 +7,7 @@ let g:airline_detect_paste = 1
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
+let g:airline_section_c = ""
 let g:airline_theme = "powerlineish"
 
 " ruby

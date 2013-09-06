@@ -38,13 +38,13 @@ set -ue
 # install system-wide ruby gems
 
   if command -v gem &> /dev/null; then
-    cat ruby/gems | xargs gem install --no-user-install
+    xargs gem install --no-user-install < ruby/gems
   fi
 
 # install system-wide npm packages
 
   if command -v npm &> /dev/null; then
-    cat node/packages | xargs npm install --global
+    xargs npm install --global < node/packages
   fi
 
 # install fonts

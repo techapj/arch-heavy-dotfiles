@@ -3,6 +3,7 @@ NeoBundle "Shougo/neosnippet"
 NeoBundle "bling/vim-airline"
 NeoBundle "chriskempson/base16-vim"
 NeoBundle "devlinzed/QFixToggle"
+NeoBundle "ecomba/vim-ruby-refactoring"
 NeoBundle "kana/vim-textobj-indent"
 NeoBundle "kana/vim-textobj-lastpat"
 NeoBundle "kana/vim-textobj-line"
@@ -23,6 +24,8 @@ NeoBundle "tpope/vim-repeat"
 NeoBundle "tpope/vim-surround"
 NeoBundle "ujihisa/neco-look"
 NeoBundle "vim-ruby/vim-ruby"
+NeoBundle "vim-scripts/matchit.zip"
+NeoBundle "vim-scripts/ruby-matchit"
 
 NeoBundleLazy "AndrewRadev/splitjoin.vim", {
       \ "autoload": {

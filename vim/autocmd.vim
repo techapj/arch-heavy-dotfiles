@@ -15,10 +15,10 @@ augroup dfknz
   autocmd FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake |"
   autocmd FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate |"
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
-  autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>re :edit Gemfile<CR>
+  autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>red :edit db/schema.rb<CR>
+  autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>reg :edit Gemfile<CR>
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rr :edit config/routes.rb<CR>
-  autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rs :edit db/schema.rb<CR>
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>
   autocmd InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0
   autocmd InsertEnter * set number

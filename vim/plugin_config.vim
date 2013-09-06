@@ -11,8 +11,13 @@ let g:airline_section_c = ""
 let g:airline_theme = "powerlineish"
 
 " ruby
+let g:ruby_complete_classes_in_global = 1
 let g:ruby_fold = 1
+let g:ruby_no_expensive = 0
 let g:ruby_operators = 1
+
+" ruby refactoring
+let g:ruby_refactoring_map_keys = 0
 
 " ctrlp
 let g:ctrlp_map = ""

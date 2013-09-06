@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -ue
+
+if command -v "git-pre-commit" &> /dev/null; then
+  git-pre-commit $*
+fi

@@ -1,4 +1,8 @@
 #!/usr/bin/env zsh
 set -ue
 
-[[ -d ".git/trusted" ]] || mkdir .git/trusted
+cd "$(git root)"
+
+if [[ ! -d ".git/trusted" ]]; then
+  mkdir ".git/trusted"
+fi

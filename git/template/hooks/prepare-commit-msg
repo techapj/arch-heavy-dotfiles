@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -ue
+
+if command -v "git-prepare-commit-msg" &> /dev/null; then
+  git-prepare-commit-msg $*
+fi

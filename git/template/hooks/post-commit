@@ -1,3 +1,6 @@
 #!/usr/bin/env zsh
+set -ue
 
-git ctags &> /dev/null &
+if command -v "git-post-commit" &> /dev/null; then
+  git-post-commit $*
+fi

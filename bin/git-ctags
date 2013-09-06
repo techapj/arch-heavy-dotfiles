@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -ue
 
-dir="$(git rev-parse --git-dir)"
+dir="$(git root)/.git"
 
 trap 'rm -f "$dir/tags.$$"' EXIT INT TERM
 git ls-files | ctags --tag-relative -L - -f "$dir/tags.$$" --languages=-javascript,sql

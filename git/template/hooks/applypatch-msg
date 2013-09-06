@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -ue
+
+if command -v "git-applypatch-msg" &> /dev/null; then
+  git-applypatch-msg $*
+fi

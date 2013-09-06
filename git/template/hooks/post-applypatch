@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -ue
+
+if command -v "git-post-applypatch" &> /dev/null; then
+  git-post-applypatch $*
+fi

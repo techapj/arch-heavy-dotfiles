@@ -7,3 +7,5 @@ for i in $(seq 4 9); do
 done
 
 alias "wrk"="workon"
+
+alias "rspec"="nocorrect rspec"

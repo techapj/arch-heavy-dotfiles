@@ -35,18 +35,6 @@ set -ue
     ln -vs "$linkable" "$target"
   done
 
-# install system-wide ruby gems
-
-  if command -v gem &> /dev/null; then
-    xargs gem install --no-user-install < ruby/gems
-  fi
-
-# install system-wide npm packages
-
-  if command -v npm &> /dev/null; then
-    xargs npm install --global < node/packages
-  fi
-
 # install fonts
 
   if [[ $(uname) == "Linux" ]]; then
@@ -76,6 +64,18 @@ set -ue
 
   if command -v infctl &> /dev/null; then
     infctl setstyle linux
+  fi
+
+# install system-wide ruby gems
+
+  if command -v gem &> /dev/null; then
+    xargs gem install --no-user-install < ruby/gems
+  fi
+
+# install system-wide npm packages
+
+  if command -v npm &> /dev/null; then
+    xargs npm install --global < node/packages
   fi
 
 # neobundle it - vimrc runs NeoBundleCheck, so we don't need to explicitly run

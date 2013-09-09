@@ -73,7 +73,7 @@ vnoremap <leader>rxl :RExtractLocalVariable<CR>
 vnoremap <leader>rxm :RExtractMethod<CR>
 
 " ctrlp
-nnoremap <silent> i :CtrlP<CR>
+nnoremap <silent> <leader><leader> :CtrlP<CR>
 
 " fugitive
 nmap <silent> <leader>gU :Git up<CR>

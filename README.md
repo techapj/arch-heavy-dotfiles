@@ -29,9 +29,9 @@ Afterward, check out the repository and run the installation script:
 This will:
 
 1. create symbolic links;
-2. install the required system-wide ruby gems and npm packages;
-4. install our beautiful fonts;
-5. install vim plugins.
+2. install our beautiful fonts;
+3. install the required system-wide ruby gems and npm packages;
+4. install vim plugins.
 
 The bootstrap script is idempotent and you can run it again to update symbolic
 links and vim plugins.  If `gem` and `npm` require root, make sure you use
@@ -58,7 +58,7 @@ The focal bits are the following.
 * **color scheme**: [base16](https://github.com/chriskempson/base16)
 * **document viewer**: [epdfview](http://freecode.com/projects/epdfview)
 * **email**: [mutt](http://mutt.org/)
-* **font**: [dejavu sans](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
+* **font**: [envy code r](http://download.damieng.com/fonts/original/EnvyCodeR-PR7.zip) & [cure](http://artwizaleczapka.sourceforge.net/)
 * **image viewer**: [sxiv](https://github.com/muennich/sxiv)
 * **music player**: [ncmpcpp](http://ncmpcpp.rybczak.net/)
 * **operating system**: [arch linux](http://archlinux.org)

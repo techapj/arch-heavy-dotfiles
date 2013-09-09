@@ -2,7 +2,7 @@
 set -ue
 
 list() {
-  cat "$HOME/.projects"
+  less "$HOME/.projects"
 }
 
 build() {

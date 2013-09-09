@@ -18,13 +18,11 @@
 *.cursorColor:  #d0d0d0
 *.foreground:   #d0d0d0
 
-URxvt.boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=11,style=regular
-URxvt.font: xft:DejaVu Sans Mono for Powerline:pixelsize=11,style=regular
-URxvt.scrollBar: false
+URxvt.boldFont: xft:PragmataPro for Powerline:size=10:antialias=true:style=regular
+URxvt.font: xft:PragmataPro for Powerline:size=10:antialias=true:style=regular
 URxvt.letterSpace: -1
+URxvt.scrollBar: false
 
-XTerm*faceName: xft:DejaVu Sans Mono for Powerline:pixelsize=11,style=regular
-XTerm*utf8: 2
 Xft.antialias: 1
 Xft.autohint: 1
 Xft.dpi: 96

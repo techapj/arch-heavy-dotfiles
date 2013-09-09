@@ -3,7 +3,7 @@ devlin zed's dotfiles
 
 This is my dotfiles repository that lets me quickly bootstrap a new Arch Linux
 system.  It's expansive and essentially its own Linux distribution, so you're
-probably only looking for configuration for a program or two.  
+probably only looking for configuration for a program or two.
 
 ![screenshot](https://raw.github.com/devlinzed/dotfiles/master/screenshot.png)
 
@@ -81,6 +81,7 @@ everything in this repository, you'll need to install these as well.
 * [isync](http://isync.sourceforge.net/) for receiving email
 * [keychain](http://www.funtoo.org/wiki/Keychain) for managing your ssh and gpg
   agents & passwords
+* [node](http://nodejs.org) for compiling and validating coffeescript
 * [matcher](https://github.com/burke/matcher) for approximate string matching
 * [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) for serving music
   to ncmpcpp

@@ -6,6 +6,4 @@ for i in $(seq 4 9); do
   alias "${i}th"="awk '{ print \$$i }'"
 done
 
-alias "wrk"="workon"
-
 alias "rspec"="nocorrect rspec"

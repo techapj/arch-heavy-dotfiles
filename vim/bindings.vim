@@ -62,16 +62,6 @@ nnoremap <silent> <leader>cc :QFix<CR>
 nnoremap <silent> [c :<C-U>execute v:count . "cprev"<CR>
 nnoremap <silent> ]c :<C-U>execute v:count . "cnext"<CR>
 
-" ruby refactoring
-nnoremap <leader>rap :RAddParameter<CR>
-nnoremap <leader>riv :RIntroduceVariable<CR>
-vnoremap <leader>rni :RRenameInstanceVariable<CR>
-vnoremap <leader>rnl :RRenameLocalVariable<CR>
-vnoremap <leader>rxe :RExtractLet<CR>
-vnoremap <leader>rxc :RExtractConstant<CR>
-vnoremap <leader>rxl :RExtractLocalVariable<CR>
-vnoremap <leader>rxm :RExtractMethod<CR>
-
 " ctrlp
 nnoremap <silent> <leader><leader> :CtrlP<CR>
 

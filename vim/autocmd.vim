@@ -13,16 +13,16 @@ augroup dfknz
   autocmd FileType python setlocal shiftwidth=4 softtabstop=4
   autocmd FileType ruby nnoremap <buffer> <silent> <leader>rap :RAddParameter<CR>
   autocmd FileType ruby nnoremap <buffer> <silent> <leader>riv :RIntroduceVariable<CR>
-  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsf :SweetVimRspecRunFile<CR>
-  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rso :SweetVimRspecRunFocused<CR>
-  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsp :SweetVimRspecRunPrevious<CR>
+  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsa :call RunAllSpecs()<CR>
+  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsc :call RunCurrentSpecFile()<CR>
+  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsn :call RunNearestSpec()<CR>
+  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsp :call RunLastSpec()<CR>
   autocmd FileType ruby vnoremap <buffer> <silent> <leader>rni :RRenameInstanceVariable<CR>
   autocmd FileType ruby vnoremap <buffer> <silent> <leader>rnl :RRenameLocalVariable<CR>
   autocmd FileType ruby vnoremap <buffer> <silent> <leader>rxc :RExtractConstant<CR>
   autocmd FileType ruby vnoremap <buffer> <silent> <leader>rxe :RExtractLet<CR>
   autocmd FileType ruby vnoremap <buffer> <silent> <leader>rxl :RExtractLocalVariable<CR>
   autocmd FileType ruby vnoremap <buffer> <silent> <leader>rxm :RExtractMethod<CR>
-  autocmd FileType ruby,haml,eruby nmap <buffer> <leader>bo :Bopen |"
   autocmd FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake |"
   autocmd FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate |"
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>

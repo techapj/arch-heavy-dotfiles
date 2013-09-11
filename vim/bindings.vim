@@ -11,9 +11,9 @@ noremap <F8> <ESC>
 nnoremap <F8> i
 
 " fast save and exit
-map <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
-map <silent> VV :Bdelete!<CR>
-map <silent> vv :Bdelete<CR>
+nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
+nnoremap <silent> VV :Bdelete!<CR>
+nnoremap <silent> vv :Bdelete<CR>
 nnoremap cc <C-w>q
 
 " fast redo
@@ -24,8 +24,8 @@ nnoremap j gj
 nnoremap k gk
 
 " tab navigates between buffers
-nmap <silent> <Tab> :<C-U>execute v:count . "bnext"<CR>
-nmap <silent> <S-Tab> :<C-U>execute v:count . "bprevious"<CR>
+nnoremap <silent> <Tab> :<C-U>execute v:count . "bnext"<CR>
+nnoremap <silent> <S-Tab> :<C-U>execute v:count . "bprevious"<CR>
 
 " ctrl between splits
 nnoremap <C-j> <C-w>w
@@ -41,7 +41,7 @@ nnoremap zz <C-^>
 noremap Y y$
 
 " quick sort
-map <silent> gs :sort<CR>
+nnoremap <silent> gs :sort<CR>
 
 " open and close folds
 nnoremap ff za
@@ -57,24 +57,22 @@ noremap <silent> <leader>em :edit $DOTFILES/vim/commands.vim<CR>
 noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
 noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
 
-" quickfix navigation
-nnoremap <silent> <leader>cc :QFix<CR>
-nnoremap <silent> [c :<C-U>execute v:count . "cprev"<CR>
-nnoremap <silent> ]c :<C-U>execute v:count . "cnext"<CR>
+" quickfix
+nnoremap <silent> Q :QFix<CR>
 
 " ctrlp
 nnoremap <silent> <leader><leader> :CtrlP<CR>
 
 " fugitive
-nmap <silent> <leader>gU :Git up<CR>
-nmap <silent> <leader>ga :Git add .<CR>
-nmap <silent> <leader>gb :Gblame<CR>
-nmap <silent> <leader>gc :Gcommit<CR>
-nmap <silent> <leader>gd :Gdiff<CR>
-nmap <silent> <leader>gl :Glog<CR>
-nmap <silent> <leader>gp :Git push-all<CR>
-nmap <silent> <leader>gs :Gstatus<CR>
-nmap <silent> <leader>gu :Git reup<CR>
+nnoremap <silent> <leader>gU :Git up<CR>
+nnoremap <silent> <leader>ga :Git add .<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gp :Git push-all<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gu :Git reup<CR>
 
 " git-grep.vim
 noremap <leader>gg :GitGrep |"

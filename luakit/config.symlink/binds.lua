@@ -272,28 +272,28 @@ add_binds("normal", {
     key({}, "F11", "Toggle fullscreen mode.",
         function (w) w.win.fullscreen = not w.win.fullscreen end),
 
-    -- Clipboard
-    key({}, "p", [[Open a URL based on the current clipboard contents in the current tab.]],
+    -- Clipboard/Selection
+    key({}, "p", [[Open a URL based on the current primary contents in the current tab.]],
         function (w)
-            local uri = luakit.selection.clipboard
-            if not uri then w:notify("Nothing on the clipboard") return end
+            local uri = luakit.selection.primary
+            if not uri then w:notify("Nothing in primary") return end
             w:navigate(w:search_open(uri))
         end),
 
-    key({}, "P", [[Open a URL based on the current clipboard contents
+    key({}, "P", [[Open a URL based on the current primary contents
         in `[count=1]` new tab(s).]],
         function (w, m)
-            local uri = luakit.selection.clipboard
-            if not uri then w:notify("Nothing on the clipboard") return end
+            local uri = luakit.selection.primary
+            if not uri then w:notify("Nothing in primary") return end
             for i = 1, m.count do w:new_tab(w:search_open(uri)) end
         end, {count = 1}),
 
     -- Yanking
-    key({}, "y", "Yank current URI to clipboard.",
+    key({}, "y", "Yank current URI to primary.",
         function (w)
             local uri = string.gsub(w.view.uri or "", " ", "%%20")
-            luakit.selection.clipboard = uri
-            w:notify("Yanked uri to clipboard: " .. uri)
+            luakit.selection.primary = uri
+            w:notify("Yanked URI to primary: " .. uri)
         end),
 
     -- Commands

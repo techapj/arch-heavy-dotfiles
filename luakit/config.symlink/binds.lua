@@ -66,8 +66,7 @@ add_binds("all", {
         function (w) w:forward() end),
 
     -- Open link in new tab or navigate to selection
-    but({}, 2, [[Open link under mouse cursor in new tab or navigate to the
-        contents of `luakit.selection.primary`.]],
+    but({}, 2, [[Open link under mouse cursor in new tab]],
         function (w, m)
             -- Ignore button 2 clicks in form fields
             if not m.context.editable then
@@ -75,12 +74,6 @@ add_binds("all", {
                 local uri = w.view.hovered_uri
                 if uri then
                     w:new_tab(uri, false)
-                else -- Open selection in current tab
-                    uri = luakit.selection.primary
-                    -- Ignore multi-line selection contents
-                    if uri and not string.match(uri, "\n.+") then
-                        w:navigate(w:search_open(uri))
-                    end
                 end
             end
         end),
@@ -280,31 +273,23 @@ add_binds("normal", {
         function (w) w.win.fullscreen = not w.win.fullscreen end),
 
     -- Clipboard
-    key({}, "p", [[Open a URL based on the current primary selection contents
-        in the current tab.]],
+    key({}, "p", [[Open a URL based on the current clipboard contents in the current tab.]],
         function (w)
-            local uri = luakit.selection.primary
-            if not uri then w:notify("No primary selection...") return end
+            local uri = luakit.selection.clipboard
+            if not uri then w:notify("Nothing on the clipboard") return end
             w:navigate(w:search_open(uri))
         end),
 
-    key({}, "P", [[Open a URL based on the current primary selection contents
+    key({}, "P", [[Open a URL based on the current clipboard contents
         in `[count=1]` new tab(s).]],
         function (w, m)
-            local uri = luakit.selection.primary
-            if not uri then w:notify("No primary selection...") return end
+            local uri = luakit.selection.clipboard
+            if not uri then w:notify("Nothing on the clipboard") return end
             for i = 1, m.count do w:new_tab(w:search_open(uri)) end
         end, {count = 1}),
 
     -- Yanking
-    key({}, "y", "Yank current URI to primary selection.",
-        function (w)
-            local uri = string.gsub(w.view.uri or "", " ", "%%20")
-            luakit.selection.primary = uri
-            w:notify("Yanked uri to primary: " .. uri)
-        end),
-
-    key({}, "Y", "Yank current URI to clipboard.",
+    key({}, "y", "Yank current URI to clipboard.",
         function (w)
             local uri = string.gsub(w.view.uri or "", " ", "%%20")
             luakit.selection.clipboard = uri
@@ -494,10 +479,6 @@ add_binds("insert", {
 })
 
 readline_bindings = {
-    key({"Shift"}, "Insert",
-        "Insert contents of primary selection at cursor position.",
-        function (w) w:insert_cmd(luakit.selection.primary) end),
-
     key({"Control"}, "w", "Delete previous word.",
         function (w) w:del_word() end),
 

@@ -18,7 +18,7 @@ list of packages and their purpose is below.
               slock the_silver_searcher xautolock zsh
 
     packer -S beets fontconfig-infinality freetype2-infinality isync matcher\
-              msmp notmuch sxiv
+              msmp notmuch sxiv urxvt-clipboard
 
 Afterward, check out the repository and run the installation script:
 

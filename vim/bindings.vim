@@ -11,7 +11,7 @@ noremap <F8> <ESC>
 nnoremap <F8> i
 
 " fast save and exit
-nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
+noremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> VV :Bdelete!<CR>
 nnoremap <silent> vv :Bdelete<CR>
 nnoremap cc <C-w>q
@@ -41,7 +41,7 @@ nnoremap zz <C-^>
 noremap Y y$
 
 " quick sort
-nnoremap <silent> gs :sort<CR>
+noremap gs :sort<CR>
 
 " open and close folds
 nnoremap ff za

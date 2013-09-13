@@ -39,6 +39,10 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#syntax#min_keyword_length = 1
 
+" neosnippet
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory = "~/.vim/bundle/vim-snippets/snippets"
+
 " syntastic
 let g:syntastic_coffee_checkers = ["coffee", "coffeelint"]
 let g:syntastic_error_symbol='✗'

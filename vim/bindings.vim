@@ -35,7 +35,7 @@ nnoremap <C-k> <C-w>W
 nnoremap tt <C-]>
 
 " switch between alternate files
-nnoremap zz <C-^>
+nmap zz :A<CR>
 
 " make Y consistent with D and C
 noremap Y y$

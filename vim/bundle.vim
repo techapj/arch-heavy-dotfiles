@@ -17,6 +17,7 @@ NeoBundle "thoughtbot/vim-rspec"
 NeoBundle "tpope/vim-bundler"
 NeoBundle "tpope/vim-commentary"
 NeoBundle "tpope/vim-dispatch"
+NeoBundle "tpope/vim-endwise"
 NeoBundle "tpope/vim-eunuch"
 NeoBundle "tpope/vim-fugitive"
 NeoBundle "tpope/vim-haml"
@@ -34,13 +35,13 @@ NeoBundle "vim-scripts/ruby-matchit"
 NeoBundleLazy "AndrewRadev/splitjoin.vim", {
       \ "autoload": {
       \     "commands": ["SplitjoinJoin", "SplitjoinSplit"],
-      \     }.
+      \     },
       \ }
 
 NeoBundleLazy "kien/ctrlp.vim", {
       \ "autoload": {
       \     "commands": ["CtrlP", "CtrlPTag"],
-      \     }
+      \     },
       \ }
 
 NeoBundleLazy "sjl/gundo.vim", {

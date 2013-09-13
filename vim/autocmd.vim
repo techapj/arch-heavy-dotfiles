@@ -11,8 +11,8 @@ augroup dfknz
   autocmd FileType markdown nmap <buffer> <leader>3 I### <ESC>
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rap :RAddParameter<CR>
-  autocmd FileType ruby nnoremap <buffer> <silent> <leader>riv :RIntroduceVariable<CR>
+  autocmd FileType ruby nnoremap <buffer> <silent> <leader>ril :RIntroduceVariable<CR>
+  autocmd FileType ruby nnoremap <buffer> <silent> <leader>rip :RAddParameter<CR>
   autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsa :call RunAllSpecs()<CR>
   autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsc :call RunCurrentSpecFile()<CR>
   autocmd FileType ruby nnoremap <buffer> <silent> <leader>rsn :call RunNearestSpec()<CR>
@@ -26,9 +26,6 @@ augroup dfknz
   autocmd FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake |"
   autocmd FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate |"
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
-  autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>red :edit db/schema.rb<CR>
-  autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>reg :edit Gemfile<CR>
-  autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rer :edit config/routes.rb<CR>
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   autocmd FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>
   autocmd InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0

@@ -6,20 +6,20 @@ theme = {}
 
 theme.font          = "cure 10"
 
-theme.bg_normal     = "#202020"
-theme.bg_focus      = "#D28445"
-theme.bg_urgent     = "#AC4142"
-theme.bg_minimize   = "#151515"
+theme.bg_normal     = "#151515"
+theme.bg_focus      = "#303030"
+theme.bg_urgent     = "#D28445"
+theme.bg_minimize   = "#6a9fb5"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#e0e0e0"
-theme.fg_focus      = "#f5f5f5"
+theme.fg_focus      = "#e0e0e0"
 theme.fg_urgent     = "#f5f5f5"
-theme.fg_minimize   = "#d0d0d0"
+theme.fg_minimize   = "#303030"
 
-theme.border_width  = 1
+theme.border_width  = 0
 theme.border_normal = "#202020"
-theme.border_focus  = "#D28445"
+theme.border_focus  = "#6A9FB5"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets

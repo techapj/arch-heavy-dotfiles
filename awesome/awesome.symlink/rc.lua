@@ -7,7 +7,6 @@ require("awful.autofocus")
 local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
-local vicious = require("vicious")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
@@ -94,6 +93,7 @@ end
 
 -- Create a wibox for each screen and add it
 mytopwibox = {}
+mybottomwibox = {}
 mypromptbox = {}
 mytaglist = {}
 mytaglist.buttons = awful.util.table.join(
@@ -141,7 +141,10 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 -- time widget
-mytextclock = awful.widget.textclock("%I:%M:%S - %A, %B %d ", 1)
+mytextclock = awful.widget.textclock("%I:%M:%S on %A, %B %d ", 1)
+
+-- ncmpcpp widget
+myncmpcppwidget = wibox.widget.textbox()
 
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
@@ -163,7 +166,16 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local top_right_layout = wibox.layout.fixed.horizontal()
+    top_right_layout:add(myncmpcppwidget)
     top_right_layout:add(mytextclock)
+
+    -- Create the bottom wibox
+    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s })
+
+    local bottom_left_layout = wibox.layout.fixed.horizontal()
+    bottom_left_layout:add(mytasklist[s])
+
+    local bottom_right_layout = wibox.layout.fixed.horizontal()
 
     -- Now bring it all together
     local top_layout = wibox.layout.align.horizontal()
@@ -171,6 +183,12 @@ for s = 1, screen.count() do
     top_layout:set_right(top_right_layout)
 
     mytopwibox[s]:set_widget(top_layout)
+
+    local bottom_layout = wibox.layout.align.horizontal()
+    bottom_layout:set_left(bottom_left_layout)
+    bottom_layout:set_right(bottom_right_layout)
+
+    mybottomwibox[s]:set_widget(bottom_layout)
 end
 -- }}}
 
@@ -358,6 +376,14 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c, startup)
+    -- Enable sloppy focus
+    c:connect_signal("mouse::enter", function(c)
+        if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+            and awful.client.focus.filter(c) then
+            client.focus = c
+        end
+    end)
+
     if not startup then
         -- Set the windows at the slave,
         -- i.e. put it at the end of others instead of setting it master.

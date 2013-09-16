@@ -1,5 +1,6 @@
 cyclic_scrolling = "yes"
 display_bitrate = "yes"
+execute_on_song_change = "awesome-update"
 fancy_scrolling = "yes"
 header_text_scrolling = "yes"
 ignore_leading_the = "yes"

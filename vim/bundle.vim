@@ -11,8 +11,10 @@ NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'kana/vim-textobj-underscore'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'moll/vim-bbye'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'svermeulen/vim-extended-ft'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-commentary'
@@ -31,17 +33,10 @@ NeoBundle 'ujihisa/neco-look'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/matchit.zip'
 NeoBundle 'vim-scripts/ruby-matchit'
-NeoBundle 'svermeulen/vim-extended-ft'
 
 NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
       \ 'autoload': {
       \     'commands': ['SplitjoinJoin', 'SplitjoinSplit'],
-      \     },
-      \ }
-
-NeoBundleLazy 'kien/ctrlp.vim', {
-      \ 'autoload': {
-      \     'commands': ['CtrlP', 'CtrlPTag'],
       \     },
       \ }
 

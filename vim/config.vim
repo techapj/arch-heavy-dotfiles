@@ -31,6 +31,7 @@ set modelines=0
 set nobackup
 set nolazyredraw
 set nolist
+set noshowmode
 set nostartofline
 set noswapfile
 set nowritebackup

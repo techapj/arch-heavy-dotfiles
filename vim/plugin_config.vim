@@ -3,12 +3,12 @@ let g:airline#extensions#branch#empty_message = "✗"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ":t"
 let g:airline_detect_modified = 0
-let g:airline_detect_paste = 1
+let g:airline_detect_paste = 0
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_c = ""
-let g:airline_theme = "powerlineish"
+" let g:airline_theme = "powerlineish"
 
 " ruby
 let g:ruby_complete_classes_in_global = 1

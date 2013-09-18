@@ -2,7 +2,6 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'devlinzed/QFixToggle'
 NeoBundle 'ecomba/vim-ruby-refactoring'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'kana/vim-textobj-indent'
@@ -37,6 +36,12 @@ NeoBundle 'vim-scripts/ruby-matchit'
 NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
       \ 'autoload': {
       \     'commands': ['SplitjoinJoin', 'SplitjoinSplit'],
+      \     },
+      \ }
+
+NeoBundleLazy 'devlinzed/QFixToggle', {
+      \ 'autoload': {
+      \     'commands': ['QFix'],
       \     },
       \ }
 

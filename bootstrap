@@ -82,3 +82,7 @@ set -ue
 # an install command
 
   vim +qall
+
+# download adblock files
+
+  ./bin/update-adblock

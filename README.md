@@ -31,7 +31,8 @@ This will:
 1. create symbolic links;
 2. install our beautiful fonts;
 3. install the required system-wide ruby gems and npm packages;
-4. install vim plugins.
+4. install vim plugins;
+5. install adblock filters.
 
 The bootstrap script is idempotent and you can run it again to update symbolic
 links and vim plugins.  If `gem` and `npm` require root, make sure you use

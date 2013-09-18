@@ -64,7 +64,6 @@ nnoremap <silent> Q :QFix<CR>
 nnoremap <silent> <leader><leader> :CtrlP<CR>
 
 " fugitive
-nnoremap <silent> <leader>gU :Git up<CR>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>

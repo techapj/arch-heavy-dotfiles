@@ -3,6 +3,17 @@ if [[ -n "$SSH_CLIENT" ]] && command -v keychain &> /dev/null; then
   eval $(keychain --noask --eval)
 fi
 
+# set environment variables
+case "$-" in
+  *i*) INTERACTIVE=1 ;;
+  *) unset INTERACTIVE ;;
+esac
+
+case "$-" in
+  *l*) LOGIN=1 ;;
+  *) unset LOGIN ;;
+esac
+
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES="$HOME/.dotfiles"
 
@@ -38,3 +49,9 @@ done
 # load syntax highlighting - this must be last!
 source "$DOTFILES/zsh/plugins/highlighting/zsh-syntax-highlighting.zsh"
 source "$DOTFILES/zsh/plugins/history/zsh-history-substring-search.zsh"
+
+# motd
+if [[ -n "$INTERACTIVE" ]] && [[ -n "$LOGIN" ]]; then
+  uname -npsr
+  uptime
+fi

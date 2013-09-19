@@ -80,7 +80,7 @@ nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gu :Git reup<CR>
 
 " git-grep.vim
-noremap <leader>gg :GitGrep |"
+noremap <leader>gg :GitGrep<space>
 
 " splitjoin
 nnoremap <silent> <leader>sj :SplitjoinJoin<CR>

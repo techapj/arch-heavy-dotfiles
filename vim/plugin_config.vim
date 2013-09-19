@@ -1,4 +1,5 @@
 " airline
+" also configured in functions.vim by an autocmd
 let g:airline#extensions#branch#empty_message = "✗"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ":t"
@@ -7,7 +8,6 @@ let g:airline_detect_paste = 0
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
-let g:airline_section_c = ""
 
 " ruby
 let g:ruby_complete_classes_in_global = 1

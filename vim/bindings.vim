@@ -82,10 +82,6 @@ nnoremap <silent> <leader>gu :Git reup<CR>
 " git-grep.vim
 noremap <leader>gg :GitGrep<space>
 
-" splitjoin
-nnoremap <silent> <leader>sj :SplitjoinJoin<CR>
-nnoremap <silent> <leader>ss :SplitjoinSplit<CR>
-
 " gundo
 nnoremap <silent> <C-u> :GundoToggle<CR>
 

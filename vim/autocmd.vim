@@ -32,4 +32,5 @@ augroup dfknz
   au InsertEnter * set number
   au InsertLeave * let &timeoutlen = old_timeoutlen | unlet old_timeoutlen
   au InsertLeave * set relativenumber
+  au VimEnter * call ConfigureAirline()
 augroup END

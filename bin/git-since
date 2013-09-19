@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+set -ue
+
+if [[ "$#" > 0 ]]; then
+  commit="$1"
+else
+  commit="HEAD"
+fi
+
+then_="$(git log --pretty=format:%at --max-count=1 "$commit")"
+now=$(date +%s)
+delta=$(($now - $then_))
+
+if [[ "$delta" -gt 60 ]]; then
+  echo "$(($delta / 60))m"
+else
+  echo "${delta}s"
+fi

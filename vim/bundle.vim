@@ -33,12 +33,6 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/matchit.zip'
 NeoBundle 'vim-scripts/ruby-matchit'
 
-NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
-      \ 'autoload': {
-      \     'commands': ['SplitjoinJoin', 'SplitjoinSplit'],
-      \     },
-      \ }
-
 NeoBundleLazy 'devlinzed/QFixToggle', {
       \ 'autoload': {
       \     'commands': ['QFix'],

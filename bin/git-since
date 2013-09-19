@@ -11,8 +11,4 @@ then_="$(git log --pretty=format:%at --max-count=1 "$commit")"
 now=$(date +%s)
 delta=$(($now - $then_))
 
-if [[ "$delta" -gt 60 ]]; then
-  echo "$(($delta / 60))m"
-else
-  echo "${delta}s"
-fi
+printf "$delta\n"

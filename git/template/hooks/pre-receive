@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -ue
+
+if command -v "git-pre-receive" &> /dev/null; then
+  git-pre-receive 
+fi

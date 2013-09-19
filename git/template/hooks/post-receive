@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -ue
+
+if command -v "git-post-receive" &> /dev/null; then
+  git-post-receive 
+fi

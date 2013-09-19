@@ -31,6 +31,9 @@ nnoremap <silent> <S-Tab> :<C-U>execute v:count . "bprevious"<CR>
 nnoremap <C-j> <C-w>w
 nnoremap <C-k> <C-w>W
 
+" vis the previously entered text
+nnoremap gV `[v`]
+
 " quickly open tags
 nnoremap tt <C-]>
 
@@ -45,6 +48,9 @@ noremap gs :sort<CR>
 
 " open and close folds
 nnoremap ff za
+
+" focus a fold
+nnoremap FF mzzMzvzz15<c-e>`z
 
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>

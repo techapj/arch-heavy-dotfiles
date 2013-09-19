@@ -6,6 +6,7 @@ syntax on
 
 set autoindent
 set autoread
+set autowrite
 set background=dark
 set backspace=2
 set completefunc=neocomplete#complete#auto_complete
@@ -70,6 +71,6 @@ set wrapmargin=4
 
 colorscheme base16-default
 
-if !isdirectory($HOME . '/.vim/tmp/undo')
-  silent! !mkdir -p ~/.vim/tmp/undo &> /dev/null
+if !isdirectory(expand(&undodir))
+  call mkdir(expand(&undodir), "p")
 endif

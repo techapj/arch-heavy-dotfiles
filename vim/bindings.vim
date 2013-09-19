@@ -50,7 +50,7 @@ noremap gs :sort<CR>
 nnoremap ff za
 
 " focus a fold
-nnoremap FF mzzMzvzz15<c-e>`z
+nnoremap FF mzzMzvzz`z
 
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>

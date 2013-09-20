@@ -86,17 +86,12 @@ noremap <leader>gg :GitGrep<space>
 nnoremap <silent> <C-u> :GundoToggle<CR>
 
 " neocomplete
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+snoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+snoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 function! s:my_cr_function()
   return neocomplete#smart_close_popup() . "\<CR>"
 endfunction
-
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: "\<TAB>"

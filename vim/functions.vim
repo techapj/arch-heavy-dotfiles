@@ -30,7 +30,7 @@ function! GitSince()
     return l:time / 3600 . "h"
   elseif l:time > 60
     return l:time / 60 . "m"
-  else
+  elseif l:time > 1
     return "<1m"
   endif
 endfunction

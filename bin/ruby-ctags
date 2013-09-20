@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+set -ue
+
+cd /usr/lib/ruby/[0-9]*
+find . -name '*rb' | ctags -L - --languages=ruby

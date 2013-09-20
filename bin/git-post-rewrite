@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 set -ue
 
-if [[ "$1" == "rebase" ]]; then
+if [[ "$#" > 0 ]] && [[ "$1" == "rebase" ]]; then
   exec .git/hooks/post-merge
 fi

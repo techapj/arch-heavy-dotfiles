@@ -66,8 +66,7 @@ add_binds("all", {
         function (w) w:forward() end),
 
     -- Open link in new tab or navigate to selection
-    but({}, 2, [[Open link under mouse cursor in new tab or navigate to the
-        contents of `luakit.selection.primary`.]],
+    but({}, 2, [[Open link under mouse cursor in new tab]],
         function (w, m)
             -- Ignore button 2 clicks in form fields
             if not m.context.editable then
@@ -75,12 +74,6 @@ add_binds("all", {
                 local uri = w.view.hovered_uri
                 if uri then
                     w:new_tab(uri, false)
-                else -- Open selection in current tab
-                    uri = luakit.selection.primary
-                    -- Ignore multi-line selection contents
-                    if uri and not string.match(uri, "\n.+") then
-                        w:navigate(w:search_open(uri))
-                    end
                 end
             end
         end),

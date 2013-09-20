@@ -59,7 +59,7 @@ The focal bits are the following.
 * **color scheme**: [base16](https://github.com/chriskempson/base16)
 * **document viewer**: [epdfview](http://freecode.com/projects/epdfview)
 * **email**: [mutt](http://mutt.org/)
-* **font**: [pragmata pro](http://www.fsd.it/fonts/pragmatapro.htm) & [cure](http://artwizaleczapka.sourceforge.net/)
+* **font**: [dejavu sans mono for powerline](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
 * **image viewer**: [sxiv](https://github.com/muennich/sxiv)
 * **music player**: [ncmpcpp](http://ncmpcpp.rybczak.net/)
 * **operating system**: [arch linux](http://archlinux.org)

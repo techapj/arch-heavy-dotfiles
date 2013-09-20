@@ -13,7 +13,7 @@ function! ConfigureAirline()
   let g:airline_section_b = airline#section#create(['branch'])
   let g:airline_section_c = GitSince()
   let g:airline_section_x = airline#section#create(['filetype'])
-  let g:airline_section_y = airline#section#create_right(['%l', '%c'])
+  let g:airline_section_y = airline#section#create(['%l', '/', '%c'])
   let g:airline_section_z = airline#section#create(['%p%%'])
 endfunction
 

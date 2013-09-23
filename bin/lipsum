@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-set -ue
-
-curl http://loripsum.net/api/${1:-1}/plaintext 2> /dev/null

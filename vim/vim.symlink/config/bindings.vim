@@ -53,15 +53,13 @@ nnoremap ff za
 nnoremap FF mzzMzvzz`z
 
 " quickly open vim config
-noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
-noremap <silent> <leader>eb :edit $DOTFILES/vim/bindings.vim<CR>
-noremap <silent> <leader>ec :edit $DOTFILES/vim/config.vim<CR>
-noremap <silent> <leader>ee :edit $DOTFILES/vim<CR>
-noremap <silent> <leader>ef :edit $DOTFILES/vim/functions.vim<CR>
-noremap <silent> <leader>el :edit $HOME/.vimrc.local<CR>
-noremap <silent> <leader>em :edit $DOTFILES/vim/commands.vim<CR>
-noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
-noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
+noremap <silent> <leader>ea :edit $HOME/.vim/config/autocmd.vim<CR>
+noremap <silent> <leader>eb :edit $HOME/.vim/config/bindings.vim<CR>
+noremap <silent> <leader>ec :edit $HOME/.vim/config/config.vim<CR>
+noremap <silent> <leader>ef :edit $HOME/.vim/config/functions.vim<CR>
+noremap <silent> <leader>em :edit $HOME/.vim/config/commands.vim<CR>
+noremap <silent> <leader>ep :edit $HOME/.vim/config/plugin_config.vim<CR>
+noremap <silent> <leader>eu :edit $HOME/.vim/config/bundle.vim<CR>
 
 " quickfix
 nnoremap <silent> Q :QFix<CR>

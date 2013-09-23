@@ -1,0 +1,33 @@
+set runtimepath+=$DOTFILES/vim/plugins/
+call plug#begin($HOME . "/.vim/bundle")
+
+Plug 'Shougo/neocomplete.vim'
+Plug 'bling/vim-airline'
+Plug 'chriskempson/base16-vim'
+Plug 'devlinzed/QFixToggle'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'moll/vim-bbye'
+Plug 'scrooloose/syntastic'
+Plug 'sjl/gundo.vim'
+Plug 'svermeulen/vim-extended-ft'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tjennings/git-grep-vim'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'ujihisa/neco-look'
+Plug 'vim-ruby/vim-ruby'
+
+call plug#end()

@@ -7,7 +7,7 @@ set -ue
 
 # set up symlinks
 
-  find "." -name "*.symlink" | egrep -v "\.git" | while read symlink; do
+  find "." -name "*.symlink" | egrep -v "\.git|/tmp/" | while read symlink; do
     symlink="${symlink##./}"
     linkable="$PWD/$symlink"
     basename="$(basename "$linkable" | sed 's/\.symlink$//')"

@@ -24,7 +24,9 @@ export CODE_ROOT="$HOME/code"
 for config_file in $DOTFILES/**/*.zsh; do
   # things that need to be loaded last are manually blacklisted
   # TODO: improve
-  if [[ "$(basename $config_file)" = "completion.zsh" ]] || [[ $config_file =~ "zsh/plugins" ]]; then
+  if [[ "$(basename $config_file)" = "completion.zsh" ]] ||
+     [[ $config_file =~ "/zsh/plugins/" ]] ||
+     [[ $config_file =~ "/tmp/" ]]; then
     continue
   fi
 

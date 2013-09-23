@@ -32,9 +32,9 @@ class Object
 end
 
 def copy(thing)
-  bin = %w(xsel pbcopy)
-    .map { |e| "/usr/bin/#{e}" }
-    .find { |e| File.executable?(e) }
+  bin = %w(xsel pbcopy).
+    map { |e| "/usr/bin/#{e}" }.
+    find { |e| File.executable?(e) }
 
   command = "printf '#{thing}' | #{bin}"
   system command

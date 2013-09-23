@@ -5,7 +5,6 @@ augroup dfknz
   au BufRead /tmp/mutt-* setlocal filetype=markdown syntax=markdown textwidth=72
   au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
   au BufWritePost $MYVIMRC,$DOTFILES/vim/*.vim source %
-  au BufWritePost,BufReadPost,BufEnter * call UpdateAirline()
   au FileType gitcommit setlocal spell textwidth=72
   au FileType markdown nmap <buffer> <leader>1 yypVr=
   au FileType markdown nmap <buffer> <leader>2 yypVr-
@@ -34,4 +33,5 @@ augroup dfknz
   au InsertLeave * let &timeoutlen = old_timeoutlen | unlet old_timeoutlen
   au InsertLeave * set relativenumber
   au VimEnter * call ConfigureAirline()
+  au VimEnter * call UpdateAirline() | au BufEnter * call UpdateAirline()
 augroup END

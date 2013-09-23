@@ -1,35 +1,12 @@
 #!/usr/bin/env zsh
 set -ue
 
-# configuration
+HOST="nilved@theia.feralhosting.com"
+LOCATION="private/rtorrent/data"
 
-  HOST="nilved@theia.feralhosting.com"
-  LOCATION="private/rtorrent/data"
+candidates=$(ssh "$HOST" "ls $LOCATION" 2>/dev/null)
+name=$(printf "$candidates" | fuzzyfind "$2")
 
-# guess using matcher if we supply -g or --guess
-# this depends on having github.com/burke/matcher on your PATH
+shift # remove the guess before it's passed to rsync
 
-  if [[ "$1" == "-g" ]] || [[ "$1" == "--guess" ]]; then
-    candidates=$(ssh "$HOST" "ls $LOCATION" 2>/dev/null)
-    name=$(printf "$candidates" | matcher "$2" --limit 1)
-
-    shift 2
-
-# download the latest if we supply -l or --latest
-
-  elif [[ "$1" == "-l" ]] || [[ "$1" == "--latest" ]]; then
-    name=$(ssh "$HOST" "ls -t $LOCATION" 2> /dev/null | head -n 1)
-
-    shift
-
-# otherwise download by exact name
-
-  else
-    name="$1"
-
-    shift
-  fi
-
-# rsync that shit
-
-  rsync -rve ssh --progress --partial $HOST:"\"$LOCATION/$name\"" $* .
+rsync -rve ssh --progress --partial $HOST:"\"$LOCATION/$name\"" $* .

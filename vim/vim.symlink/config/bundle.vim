@@ -1,6 +1,7 @@
 set runtimepath+=$DOTFILES/vim/plugins/
 call plug#begin($HOME . "/.vim/bundle")
 
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'bling/vim-airline'
 Plug 'chriskempson/base16-vim'

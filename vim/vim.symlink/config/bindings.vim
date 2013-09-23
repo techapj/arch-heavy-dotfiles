@@ -11,10 +11,8 @@ noremap <F8> <ESC>
 nnoremap <F8> i
 
 " fast save and exit
-noremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
-nnoremap <silent> VV :Bdelete!<CR>
-nnoremap <silent> vv :Bdelete<CR>
-nnoremap cc <C-w>q
+nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
+nnoremap <silent> K :Bdelete!<CR>
 
 " fast redo
 nnoremap U <C-r>
@@ -22,10 +20,6 @@ nnoremap U <C-r>
 " navigate through paragraphs intelligently
 nnoremap j gj
 nnoremap k gk
-
-" tab navigates between buffers
-nnoremap <silent> <Tab> :<C-U>execute v:count . "bnext"<CR>
-nnoremap <silent> <S-Tab> :<C-U>execute v:count . "bprevious"<CR>
 
 " ctrl between splits
 nnoremap <C-j> <C-w>w
@@ -65,21 +59,25 @@ noremap <silent> <leader>eu :edit $HOME/.vim/config/bundle.vim<CR>
 nnoremap <silent> Q :QFix<CR>
 
 " ctrlp
-nnoremap <silent> <leader><leader> :CtrlP<CR>
+nnoremap <silent> <S-Tab> :CtrlPTag<CR>
+nnoremap <silent> <Tab> :CtrlP<CR>
 
 " fugitive
 nnoremap <leader>gg :Ggrep<space>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gc :Gcommit -v<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gp :Git push-all<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gu :Git reup<CR>
 
 " gundo
 nnoremap <silent> <C-u> :GundoToggle<CR>
+
+" splitjoin
+nnoremap <silent> gj :SplitjoinJoin<CR>
+nnoremap <silent> gk :SplitjoinSplit<CR>
 
 " neocomplete
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"

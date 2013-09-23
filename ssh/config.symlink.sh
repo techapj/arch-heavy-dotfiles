@@ -1,4 +1,2 @@
-#!/usr/bin/env zsh
-set -ue
-
+#!/usr/bin/env sh
 printf "$HOME/.ssh/config\n"

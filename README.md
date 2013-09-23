@@ -14,11 +14,11 @@ Before installing, you should install the relevant packages with `pacman`.  A
 list of packages and their purpose is below.
 
     pacman -S awesome ctags epdfview git keychain lua luajit luakit mpd mpv\
-              mutt ncmpcpp nodejs notmuch packer pass python2 ruby rvxt-unicode\
-              slock the_silver_searcher xautolock zsh
+              mutt ncmpcpp nodejs notmuch packer pass ruby rvxt-unicode slock\
+              xautolock zsh
 
-    packer -S beets fontconfig-infinality freetype2-infinality isync matcher\
-              msmp notmuch sxiv
+    packer -S beets fontconfig-infinality freetype2-infinality isync msmtp\
+              notmuch sxiv
 
 Afterward, check out the repository and run the installation script:
 
@@ -28,17 +28,17 @@ Afterward, check out the repository and run the installation script:
 
 This will:
 
-1. create symbolic links;
-2. install our beautiful fonts;
-3. install the required system-wide ruby gems and npm packages;
-4. install vim plugins;
-5. install adblock filters.
+1. Create symbolic links
+2. Install our beautiful fonts
+3. Install the required system-wide ruby gems and npm packages
+4. Install vim plugins
+5. Install ad-blocking filters for luakit
 
 The bootstrap script is idempotent and you can run it again to update symbolic
 links and vim plugins.  If `gem` and `npm` require root, make sure you use
 `sudo -E ./bootstrap` to preserve your user's environment.
 
-Afterward, it's recommended that you `ag` for the following values and
+Afterward, it's recommended that you `git grep` for the following values and
 replace them as necessary:
 
 * `.dotfiles`
@@ -75,22 +75,19 @@ The focal bits are the following.
 Some programs or scripts rely on secondary programs.  To properly use
 everything in this repository, you'll need to install these as well.
 
-* [beets](http://beets.radbox.org) for managing my music library
-* [dropbox](http://dropbox.com) for backing up my keyring
-* [exuberant ctags](http://ctags.sourceforge.net/) for indexing my code
+* [beets](http://beets.radbox.org) for managing music library
+* [dropbox](http://dropbox.com) for backing up secrets
+* [exuberant ctags](http://ctags.sourceforge.net/) for indexing code
 * [infinality](http://infinality.net) for beautifying fonts
 * [isync](http://isync.sourceforge.net/) for receiving email
 * [keychain](http://www.funtoo.org/wiki/Keychain) for managing your ssh and gpg
   agents & passwords
 * [node](http://nodejs.org) for compiling and validating coffeescript
-* [matcher](https://github.com/burke/matcher) for approximate string matching
 * [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) for serving music
   to ncmpcpp
 * [msmpt](http://msmtp.sourceforge.net) for sending email
 * [notmuch](http://notmuchmail.org/) for indexing and searching email
 * [packer](https://aur.archlinux.org/packages/packer/) for accessing the AUR
-* [the silver searcher](https://github.com/ggreer/the_silver_searcher) for
-  replacing grep
 * [xautolock](http://freecode.com/projects/xautolock) and
   [slock](http://tools.suckless.org/slock) to lock the screen
 

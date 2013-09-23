@@ -9,9 +9,9 @@ function! CloseWindowOrKillBuffer()
 endfunction
 
 function! ConfigureAirline()
+  " c is set by Updateairline
   let g:airline_section_a = airline#section#create(['mode'])
   let g:airline_section_b = airline#section#create(['branch'])
-  let g:airline_section_c = GitSince()
   let g:airline_section_x = airline#section#create(['filetype'])
   let g:airline_section_y = airline#section#create(['%l', '/', '%c'])
   let g:airline_section_z = airline#section#create(['%p%%'])
@@ -19,6 +19,7 @@ endfunction
 
 function! UpdateAirline()
   let g:airline_section_c = GitSince()
+
   call airline#update_statusline()
 endfunction
 

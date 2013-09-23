@@ -68,6 +68,7 @@ nnoremap <silent> Q :QFix<CR>
 nnoremap <silent> <leader><leader> :CtrlP<CR>
 
 " fugitive
+nnoremap <leader>gg :Ggrep<space>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -76,9 +77,6 @@ nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gp :Git push-all<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gu :Git reup<CR>
-
-" git-grep.vim
-noremap <leader>gg :GitGrep<space>
 
 " gundo
 nnoremap <silent> <C-u> :GundoToggle<CR>

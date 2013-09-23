@@ -5,8 +5,10 @@ HOST="nilved@theia.feralhosting.com"
 LOCATION="private/rtorrent/data"
 
 candidates=$(ssh "$HOST" "ls $LOCATION" 2>/dev/null)
-name=$(printf "$candidates" | fuzzyfind "$2")
+name=$(printf "$candidates" | fuzzyfind "$1")
 
 shift # remove the guess before it's passed to rsync
 
-rsync -rve ssh --progress --partial $HOST:"\"$LOCATION/$name\"" $* .
+if [[ -n "$name" ]]; then # make sure a name is selected
+  rsync -rve ssh --progress --partial $HOST:"\"$LOCATION/$name\"" $* .
+fi

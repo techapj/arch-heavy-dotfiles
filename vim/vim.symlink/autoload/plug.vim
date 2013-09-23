@@ -321,7 +321,7 @@ function! s:update_parallel(pull, threads)
             r = `#{cd} #{base} && git clone --recursive #{uri} -b #{branch} #{dir} 2>&1`
             [$? == 0, r]
           end
-        result = result.lines.to_a.last.strip
+        result = result.lines.to_a.last && result.lines.to_a.last.strip
         log.call name, result, ok
       end
     end

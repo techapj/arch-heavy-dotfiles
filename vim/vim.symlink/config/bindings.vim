@@ -63,7 +63,7 @@ nnoremap <silent> <S-Tab> :CtrlPTag<CR>
 nnoremap <silent> <Tab> :CtrlP<CR>
 
 " fugitive
-nnoremap <leader>gg :Ggrep<space>
+nnoremap <leader>gg :MyGgrep<space>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gc :Gcommit -v<CR>

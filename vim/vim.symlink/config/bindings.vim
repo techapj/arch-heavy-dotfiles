@@ -13,6 +13,7 @@ nnoremap <F8> i
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> K :Bdelete!<CR>
+nnoremap <silent> KK :DeleteAllOtherBuffers<CR>
 
 " fast redo
 nnoremap U <C-r>

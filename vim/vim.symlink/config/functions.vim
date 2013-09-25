@@ -39,3 +39,8 @@ endfunction
 function! MyGgrep(args)
   execute "Ggrep --cached --ignore-case '" . a:args . "'"
 endfunction
+
+function! DeleteAllOtherBuffers()
+  let l:this = expand("%")
+  bufdo if expand("%") != l:this | bdelete | endif
+endfunction

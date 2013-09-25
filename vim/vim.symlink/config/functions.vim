@@ -37,5 +37,5 @@ endfunction
 
 " wraps it in quotes and assumes case insensitivity
 function! MyGgrep(args)
-  execute "Ggrep -i '" . a:args . "'"
+  execute "Ggrep --cached --ignore-case '" . a:args . "'"
 endfunction

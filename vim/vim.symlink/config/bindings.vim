@@ -52,6 +52,11 @@ noremap <silent> <leader>em :edit $HOME/.vim/config/commands.vim<CR>
 noremap <silent> <leader>ep :edit $HOME/.vim/config/plugin_config.vim<CR>
 noremap <silent> <leader>eu :edit $HOME/.vim/config/bundle.vim<CR>
 
+" grepping
+nnoremap \\ :MyGgrep<space>
+nnoremap \w :GrepFromWord<CR>
+nnoremap \s :GrepFromSearch<CR>
+
 " quickfix
 nnoremap <silent> Q :QFix<CR>
 
@@ -60,7 +65,6 @@ nnoremap <silent> <S-Tab> :CtrlPTag<CR>
 nnoremap <silent> <Tab> :CtrlP<CR>
 
 " fugitive
-nnoremap <leader>gg :MyGgrep<space>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gc :Gcommit -v<CR>

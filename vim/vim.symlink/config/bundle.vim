@@ -2,7 +2,10 @@ set runtimepath+=$DOTFILES/vim/plugins/
 call plug#begin($HOME . "/.vim/bundle")
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'PeterRincker/vim-argumentative'
+Plug 'Raimondi/delimitMate'
 Plug 'Shougo/neocomplete.vim'
+Plug 'austintaylor/vim-indentobject'
 Plug 'bling/vim-airline'
 Plug 'chriskempson/base16-vim'
 Plug 'devlinzed/QFixToggle'

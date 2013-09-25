@@ -40,6 +40,14 @@ function! MyGgrep(args)
   execute "Ggrep --ignore-case '" . a:args . "'"
 endfunction
 
+function! GrepFromWord()
+  call MyGgrep(expand("<cword>"))
+endfunction
+
+function! GrepFromSearch()
+  call MyGgrep(substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g'))
+endfunction
+
 function! DeleteAllOtherBuffers()
   let l:this = expand("%")
   bufdo if expand("%") != l:this | bdelete | endif

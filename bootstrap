@@ -78,10 +78,9 @@ set -ue
     xargs npm install --global < node/packages
   fi
 
-# neobundle it - vimrc runs NeoBundleCheck, so we don't need to explicitly run
-# an install command
+# update plugins
 
-  vim +qall
+  vim +PlugUpdate +PlugInstall +qall
 
 # download adblock files
 

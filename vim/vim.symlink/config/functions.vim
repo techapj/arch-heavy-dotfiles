@@ -37,7 +37,7 @@ endfunction
 
 " wraps it in quotes and assumes case insensitivity
 function! MyGgrep(args)
-  execute "Ggrep --cached --ignore-case '" . a:args . "'"
+  execute "Ggrep --ignore-case '" . a:args . "'"
 endfunction
 
 function! DeleteAllOtherBuffers()

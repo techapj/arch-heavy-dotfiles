@@ -13,7 +13,7 @@ nnoremap <F8> i
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> K :Bdelete!<CR>
-nnoremap <silent> KK :DeleteAllOtherBuffers<CR>
+nnoremap <silent> <C-k> :DeleteAllOtherBuffers<CR>
 
 " fast redo
 nnoremap U <C-r>
@@ -21,10 +21,6 @@ nnoremap U <C-r>
 " navigate through paragraphs intelligently
 nnoremap j gj
 nnoremap k gk
-
-" ctrl between splits
-nnoremap <C-j> <C-w>w
-nnoremap <C-k> <C-w>W
 
 " vis the previously entered text
 nnoremap gV `[v`]

@@ -36,16 +36,16 @@ function! GitSince()
 endfunction
 
 " wraps it in quotes and assumes case insensitivity
-function! MyGgrep(args)
+function! FuckinGrep(args)
   execute "Ggrep --ignore-case '" . a:args . "'"
 endfunction
 
 function! GrepFromWord()
-  call MyGgrep(expand("<cword>"))
+  call FuckinGrep(expand("<cword>"))
 endfunction
 
 function! GrepFromSearch()
-  call MyGgrep(substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g'))
+  call FuckinGrep(substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g'))
 endfunction
 
 function! DeleteAllOtherBuffers()

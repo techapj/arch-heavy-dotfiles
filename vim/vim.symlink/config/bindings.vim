@@ -53,7 +53,7 @@ noremap <silent> <leader>ep :edit $HOME/.vim/config/plugin_config.vim<CR>
 noremap <silent> <leader>eu :edit $HOME/.vim/config/bundle.vim<CR>
 
 " grepping
-nnoremap \\ :MyGgrep<space>
+nnoremap \\ :FuckinGrep<space>
 nnoremap \w :GrepFromWord<CR>
 nnoremap \s :GrepFromSearch<CR>
 

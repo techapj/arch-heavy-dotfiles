@@ -7,6 +7,8 @@ set -ue
 
 # try to update first
 
+  git submodule init
+  git submodule sync
   git submodule foreach "git checkout master; git pull origin"
 
 # set up symlinks
@@ -84,7 +86,7 @@ set -ue
 
 # update plugins
 
-  vim +PlugUpdate +PlugInstall +qall
+  vim +NeoBundleUpdate +qall
 
 # download adblock files
 

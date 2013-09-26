@@ -22,7 +22,7 @@ list of packages and their purpose is below.
 
 Afterward, check out the repository and run the installation script:
 
-    git clone https://github.com/devlinzed/dotfiles ~/.dotfiles
+    git clone https://github.com/devlinzed/dotfiles ~/.dotfiles --recurse-submodules
     cd ~/.dotfiles
     ./bootstrap
 

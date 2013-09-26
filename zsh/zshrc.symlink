@@ -49,5 +49,5 @@ for config_file in $DOTFILES/**/completion.zsh; do
 done
 
 # load syntax highlighting - this must be last!
-source "$DOTFILES/zsh/plugins/highlighting/zsh-syntax-highlighting.zsh"
-source "$DOTFILES/zsh/plugins/history/zsh-history-substring-search.zsh"
+source "$DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$DOTFILES/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"

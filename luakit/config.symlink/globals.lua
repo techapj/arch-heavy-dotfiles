@@ -1,7 +1,6 @@
 -- Global variables for luakit
 globals = {
     homepage            = "http://duckduckgo.com",
- -- homepage            = "http://github.com/mason-larobina/luakit",
     scroll_step         = 100,
     zoom_step           = 0.1,
     max_cmd_history     = 8192,

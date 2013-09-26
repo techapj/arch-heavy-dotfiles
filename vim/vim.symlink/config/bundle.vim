@@ -1,36 +1,57 @@
-set runtimepath+=$DOTFILES/vim/plugins/
-call plug#begin($HOME . "/.vim/bundle")
+set runtimepath+=~/.vim/neobundle/
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'PeterRincker/vim-argumentative'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neocomplete.vim'
-Plug 'austintaylor/vim-indentobject'
-Plug 'bling/vim-airline'
-Plug 'chriskempson/base16-vim'
-Plug 'devlinzed/QFixToggle'
-Plug 'ecomba/vim-ruby-refactoring'
-Plug 'kchmck/vim-coffee-script'
-Plug 'kien/ctrlp.vim'
-Plug 'moll/vim-bbye'
-Plug 'scrooloose/syntastic'
-Plug 'sjl/gundo.vim'
-Plug 'svermeulen/vim-extended-ft'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'ujihisa/neco-look'
-Plug 'vim-ruby/vim-ruby'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-call plug#end()
+NeoBundle 'PeterRincker/vim-argumentative'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'austintaylor/vim-indentobject'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'devlinzed/QFixToggle'
+NeoBundle 'ecomba/vim-ruby-refactoring'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'moll/vim-bbye'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'svermeulen/vim-extended-ft'
+NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'ujihisa/neco-look'
+NeoBundle 'vim-ruby/vim-ruby'
+
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \   'cygwin': 'make -f make_cygwin.mak',
+      \   'mac': 'make -f make_mac.mak',
+      \   'unix': 'make -f make_unix.mak',
+      \   'windows': 'make -f make_mingw32.mak',
+      \   },
+      \ }
+
+NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
+      \ 'autoload': {
+      \   'commands': ['SplitjoinSplit', 'SplitjoinJoin'],
+      \   },
+      \ }
+
+NeoBundleLazy 'sjl/gundo.vim', {
+      \ 'autoload': {
+      \   'commands': ['GundoToggle'],
+      \   },
+      \ }
+
+NeoBundleCheck

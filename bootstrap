@@ -5,6 +5,10 @@ set -ue
 
   DOTFILES="$(dirname "$0")"
 
+# try to update first
+
+  git submodule foreach "git checkout master; git pull origin"
+
 # set up symlinks
 
   find "." -name "*.symlink" | egrep -v "\.git|/tmp/" | while read symlink; do

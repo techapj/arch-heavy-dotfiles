@@ -26,8 +26,12 @@ endfunction
 function! GitSince()
   let l:time = system("cd " . expand("%:p:h") . " && git since")
 
-  if l:time > 3600
-    return l:time / 3600 . "h" . l:time % 3600 / 60 . "m"
+  if l:time > 86400
+    return l:time / 86400 . "d" .
+         \ l:time % 86400 / 3600 . "h"
+  elseif l:time > 3600
+    return l:time / 3600 . "h" .
+         \ l:time % 3600 / 60 . "m"
   elseif l:time > 60
     return l:time / 60 . "m"
   elseif l:time > 1

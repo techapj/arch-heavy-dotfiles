@@ -56,3 +56,21 @@ function! DeleteAllOtherBuffers()
   let l:this = expand("%")
   bufdo if expand("%") != l:this | bdelete | endif
 endfunction
+
+function! RunAllSpecs()
+  execute "Dispatch rspec"
+endfunction
+
+function! RunCurrentSpecFile()
+  let s:last_spec = expand("%")
+
+  execute "Dispatch rspec %"
+endfunction
+
+function! RunLastSpec()
+  if exists('s:last_spec')
+    execute "Dispatch rspec " . s:last_spec
+  else
+    echo "No last spec"
+  endif
+endfunction

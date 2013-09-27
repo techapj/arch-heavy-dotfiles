@@ -13,10 +13,6 @@ augroup dfknz
   au FileType python setlocal shiftwidth=4 softtabstop=4
   au FileType ruby nnoremap <buffer> <silent> <leader>ril :RIntroduceVariable<CR>
   au FileType ruby nnoremap <buffer> <silent> <leader>rip :RAddParameter<CR>
-  au FileType ruby nnoremap <buffer> <silent> <leader>rsa :call RunAllSpecs()<CR>
-  au FileType ruby nnoremap <buffer> <silent> <leader>rsc :call RunCurrentSpecFile()<CR>
-  au FileType ruby nnoremap <buffer> <silent> <leader>rsn :call RunNearestSpec()<CR>
-  au FileType ruby nnoremap <buffer> <silent> <leader>rsp :call RunLastSpec()<CR>
   au FileType ruby vnoremap <buffer> <silent> <leader>rni :RRenameInstanceVariable<CR>
   au FileType ruby vnoremap <buffer> <silent> <leader>rnl :RRenameLocalVariable<CR>
   au FileType ruby vnoremap <buffer> <silent> <leader>rxc :RExtractConstant<CR>
@@ -28,6 +24,9 @@ augroup dfknz
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsa :call RunAllSpecs()<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsc :call RunCurrentSpecFile()<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsp :call RunLastSpec()<CR>
   au InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0
   au InsertEnter * set number
   au InsertLeave * let &timeoutlen = old_timeoutlen | unlet old_timeoutlen

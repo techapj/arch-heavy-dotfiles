@@ -16,7 +16,6 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'moll/vim-bbye'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'svermeulen/vim-extended-ft'
-NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-dispatch'
@@ -32,15 +31,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'vim-ruby/vim-ruby'
-
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \   'cygwin': 'make -f make_cygwin.mak',
-      \   'mac': 'make -f make_mac.mak',
-      \   'unix': 'make -f make_unix.mak',
-      \   'windows': 'make -f make_mingw32.mak',
-      \   },
-      \ }
 
 NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
       \ 'autoload': {

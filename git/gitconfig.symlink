@@ -6,31 +6,23 @@
   run = "!exec "
   unassume = update-index --no-assume-unchanged
   undo = reset --hard
-
 [color]
   ui = auto
-
 [core]
   editor = vim
   excludesfile = ~/.gitignore
   pager = less
-
 [init]
   templatedir = ~/.dotfiles/git/template
-
 [merge]
   summary = true
-
 [push]
   default = current
-
 [rebase]
   autosquash = true
-
 [user]
-  name = devlin zed
   email = me@devlinzed.com
+  name = devlin zed
   signingkey = CF7781EF
-
 [web]
   browser = open

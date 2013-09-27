@@ -18,7 +18,6 @@ let g:ruby_operators = 1
 let g:ruby_refactoring_map_keys = 0
 
 " ctrlp
-let g:ctrlp_by_filename = 1
 let g:ctrlp_map = ""
 let g:ctrlp_working_path_mode = "ra"
 

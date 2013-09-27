@@ -14,14 +14,14 @@ set -ue
   active_window_id=$(xdotool getactivewindow)
 
   active_window_title=$(xwininfo -id "$active_window_id" |
-    ag xwininfo |
+    grep xwininfo |
     cut -d \" -f 2)
 
 # guess the password based on the site titel
 
   output=$(pass-guess "$active_window_title")
   password=$(printf "$output" | head -n 1)
-  username=$(printf "$output" | ag '^username: ' | cut -c 11-)
+  username=$(printf "$output" | grep '^username: ' | cut -c 11-)
 
 # send those key presses to the window
 

@@ -1,6 +1,8 @@
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+runtime macros/matchit.vim
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'PeterRincker/vim-argumentative'

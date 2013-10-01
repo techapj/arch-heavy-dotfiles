@@ -51,7 +51,7 @@ set smarttab
 set softtabstop=2
 set splitbelow
 set splitright
-set suffixesadd=.rb,.js
+set suffixesadd=.rb
 set tabstop=4
 set tags=./.git/tags,/
 set term=$TERM

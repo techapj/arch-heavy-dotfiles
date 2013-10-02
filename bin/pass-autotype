@@ -20,8 +20,8 @@ set -ue
 # guess the password based on the site titel
 
   output=$(pass-guess "$active_window_title")
-  password=$(printf "$output" | head -n 1)
-  username=$(printf "$output" | grep '^username: ' | cut -c 11-)
+  password=$(printf "%s" "$output" | head -n 1)
+  username=$(printf "%s" "$output" | grep '^username: ' | cut -c 11-)
 
 # send those key presses to the window
 

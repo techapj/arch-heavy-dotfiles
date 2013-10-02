@@ -42,12 +42,9 @@ end
 -- Themes define colours, icons, and wallpapers
 beautiful.init( awful.util.getdir('config') .. "/theme.lua" )
 
--- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
 browser = "luakit"
-system_monitor = terminal .. " -e " .. "htop"
+system_monitor = "urxvtc -e htop"
+terminal = "urxvtc -e tmux"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

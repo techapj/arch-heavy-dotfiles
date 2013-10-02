@@ -60,9 +60,8 @@ nnoremap \s :GrepFromSearch<CR>
 " quickfix
 nnoremap <silent> Q :QFix<CR>
 
-" ctrlp
-nnoremap <silent> <S-Tab> :CtrlPTag<CR>
-nnoremap <silent> <Tab> :CtrlP<CR>
+" dmenu find
+nnoremap <silent> <Tab> :OpenWithDmenu<CR>
 
 " fugitive
 nnoremap <silent> <leader>ga :Git add .<CR>

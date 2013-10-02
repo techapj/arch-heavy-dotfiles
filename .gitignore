@@ -6,5 +6,6 @@ music/beets.symlink/library.blb
 music/beets.symlink/library.db
 music/beets.symlink/state.pickle
 music/ncmpcpp.symlink/error.log
+vim/vim.symlink/.netrwhist
 vim/vim.symlink/bundle
 vim/vim.symlink/tmp

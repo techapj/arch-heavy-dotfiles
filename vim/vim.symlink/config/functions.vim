@@ -69,3 +69,14 @@ function! RunLastSpec()
     echo "No last spec"
   endif
 endfunction
+
+function! OpenWithDmenu()
+  let l:git_root = substitute(system("git root"), "\n$", "", "")
+
+  " dmenu -z requires fuzzy patch from AUR
+  let l:fname = substitute(system("git ls-files | dmenu -z"), "\n$", "", "")
+
+  if !empty(l:fname)
+    execute "edit " . l:git_root . '/' . l:fname
+  endif
+endfunction

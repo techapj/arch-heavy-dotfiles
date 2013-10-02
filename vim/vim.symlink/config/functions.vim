@@ -1,13 +1,3 @@
-function! CloseWindowOrKillBuffer()
-  let number_of_windows_to_this_buffer = len(filter(range(1, winnr('$')), "winbufnr(v:val) == bufnr('%')"))
-
-  if number_of_windows_to_this_buffer > 1
-    wincmd c
-  else
-    bdelete
-  endif
-endfunction
-
 function! ConfigureAirline()
   " c is set by Updateairline
   let g:airline_section_a = airline#section#create(['mode'])
@@ -53,8 +43,13 @@ function! GrepFromSearch()
 endfunction
 
 function! DeleteAllOtherBuffers()
-  let l:this = expand("%")
-  bufdo if expand("%") != l:this | bdelete | endif
+  let l:this_buffer = expand("%")
+  for bufno in range(0, bufnr("$"))
+    let l:name = bufname(bufno)
+    if l:name != "" && l:name != l:this_buffer
+      silent! execute "Bdelete " . l:bufno
+    endif
+  endfor
 endfunction
 
 function! RunAllSpecs()

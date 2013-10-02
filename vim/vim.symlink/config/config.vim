@@ -8,6 +8,7 @@ set autoindent
 set autoread
 set autowrite
 set background=dark
+set backspace=indent,eol,start
 set completefunc=neocomplete#complete#auto_complete
 set concealcursor=i
 set conceallevel=2

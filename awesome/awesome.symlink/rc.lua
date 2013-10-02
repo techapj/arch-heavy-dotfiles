@@ -44,7 +44,7 @@ beautiful.init( awful.util.getdir('config') .. "/theme.lua" )
 
 browser = "luakit"
 system_monitor = "urxvtc -e htop"
-terminal = "urxvtc -e tmux"
+terminal = 'urxvtc'
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

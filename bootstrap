@@ -7,9 +7,7 @@ set -ue
 
 # try to update first
 
-  git submodule init
-  git submodule sync
-  git submodule foreach "git checkout master; git pull origin"
+  git submodule update --init --reursive
 
 # set up symlinks
 

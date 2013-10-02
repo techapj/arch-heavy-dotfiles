@@ -2,33 +2,23 @@
 set -ue
 
 # make sure the dependencies are installed
+if ! command -v xdotool &> /dev/null; then
+  printf "You need to install xdotool.\n" 1>&2
+  exit 1
+fi
 
-  if ! command -v xdotool &> /dev/null; then
-    printf "You need to install xdotool.\n" 1>&2
-
-    exit 3
-  fi
-
-# find the ID and title of the active window
-
-  active_window_id=$(xdotool getactivewindow)
-
-  active_window_title=$(xwininfo -id "$active_window_id" |
-    grep xwininfo |
-    cut -d \" -f 2)
-
-# guess the password based on the site titel
-
-  output=$(pass-guess "$active_window_title")
-  password=$(printf "%s" "$output" | head -n 1)
-  username=$(printf "%s" "$output" | grep '^username: ' | cut -c 11-)
+# get the deets
+output="$(pass-ask)"
+password="$(printf "%s" "$output" | head -n 1)"
+username="$(printf "%s" "$output" | grep '^username: ' | cut -c 11-)"
 
 # send those key presses to the window
+active_window_id=$(xdotool getactivewindow)
 
-  if [[ ! -z "$username" ]]; then
-    xdotool type --window "$active_window_id" "$username"
-    xdotool key --window "$active_window_id" "Tab"
-  fi
+if [[ -n "$username" ]]; then
+  xdotool type --window "$active_window_id" "$username"
+  xdotool key --window "$active_window_id" "Tab"
+fi
 
-  xdotool type --window "$active_window_id" "$password"
-  xdotool key --window "$active_window_id" "Return"
+xdotool type --window "$active_window_id" "$password"
+xdotool key --window "$active_window_id" "Return"

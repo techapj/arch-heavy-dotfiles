@@ -14,11 +14,11 @@ Before installing, you should install the relevant packages with `pacman`.  A
 list of packages and their purpose is below.
 
     pacman -S awesome ctags epdfview git keychain lua luajit luakit mpd mpv\
-              mutt ncmpcpp nodejs notmuch packer pass ruby rvxt-unicode slock\
-              xautolock zsh
+              mutt ncmpcpp nodejs notmuch packer pass ruby rvxt-unicode\
+              slock xautolock zsh
 
-    packer -S beets fontconfig-infinality freetype2-infinality isync msmtp\
-              notmuch sxiv
+    packer -S beets dmenu fontconfig-infinality freetype2-infinality isync\
+              msmtp notmuch sxiv
 
 Afterward, check out the repository and run the installation script:
 
@@ -75,14 +75,15 @@ The focal bits are the following.
 Some programs or scripts rely on secondary programs.  To properly use
 everything in this repository, you'll need to install these as well.
 
-* [beets](http://beets.radbox.org) for managing music library
-* [dropbox](http://dropbox.com) for backing up secrets
+* [beets](http://beets.radbox.org) for managing my music library
+* [dmenu](http://tools.suckless.org/dmenu/) for menus, duh
+* [dropbox](http://dropbox.com) for backups
 * [exuberant ctags](http://ctags.sourceforge.net/) for indexing code
 * [infinality](http://infinality.net) for beautifying fonts
 * [isync](http://isync.sourceforge.net/) for receiving email
 * [keychain](http://www.funtoo.org/wiki/Keychain) for managing your ssh and gpg
   agents & passwords
-* [node](http://nodejs.org) for compiling and validating coffeescript
+* [node](http://nodejs.org) because people keep writing crap in it
 * [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) for serving music
   to ncmpcpp
 * [msmpt](http://msmtp.sourceforge.net) for sending email

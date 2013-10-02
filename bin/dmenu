@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+set -ue
+
+# make this match your awesome theme!
+exec /usr/bin/dmenu -i -fn cure-10 -nb "#151515" -nf "#e0e0e0" -sb "#303030" -sf "#e0e0e0" $*

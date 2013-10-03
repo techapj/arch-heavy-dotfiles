@@ -11,9 +11,9 @@ choice="$(printf "%s" "$shortnames" |
   shuf |
   dmenu -z -p "watch")"
 
-
 fullpath="$(printf "%s" "$candidates" |
-  egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$")"
+  egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$" |
+  head -n 1)" # just in case two share a name, pick the first
 
 if [[ -d "$fullpath" ]]; then
   exec mpv-random "$fullpath"

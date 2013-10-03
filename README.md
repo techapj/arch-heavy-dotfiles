@@ -13,8 +13,8 @@ install
 Before installing, you should install the relevant packages with `pacman`.  A
 list of packages and their purpose is below.
 
-    pacman -S awesome ctags epdfview git keychain lua luajit luakit mpd mpv\
-              mutt ncmpcpp nodejs notmuch packer pass ruby rvxt-unicode\
+    pacman -S awesome ctags epdfview git keychain lua luajit luakit mpc\
+              mpd mpv mutt nodejs notmuch packer pass ruby rvxt-unicode\
               slock xautolock zsh
 
     packer -S beets dmenu fontconfig-infinality freetype2-infinality isync\
@@ -61,7 +61,7 @@ The focal bits are the following.
 * **email**: [mutt](http://mutt.org/)
 * **font**: [dejavu sans mono for powerline](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
 * **image viewer**: [sxiv](https://github.com/muennich/sxiv)
-* **music player**: [ncmpcpp](http://ncmpcpp.rybczak.net/)
+* **music player**: [mpc](http://mpd.wikia.com/wiki/Client:Mpc)
 * **operating system**: [arch linux](http://archlinux.org)
 * **password manager**: [pass](http://zx2c4.com/projects/password-store/)
 * **shell**: [zsh](http://zsh.org/)
@@ -85,7 +85,6 @@ everything in this repository, you'll need to install these as well.
   agents & passwords
 * [node](http://nodejs.org) because people keep writing crap in it
 * [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) for serving music
-  to ncmpcpp
 * [msmpt](http://msmtp.sourceforge.net) for sending email
 * [notmuch](http://notmuchmail.org/) for indexing and searching email
 * [packer](https://aur.archlinux.org/packages/packer/) for accessing the AUR

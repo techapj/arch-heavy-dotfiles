@@ -9,12 +9,6 @@ case "$-" in
   *) unset LOGIN ;;
 esac
 
-# shortcut to this dotfiles path is $DOTFILES
-export DOTFILES="$HOME/.dotfiles"
-
-# this should probably be less hardcodey
-export CODE_ROOT="$HOME/code"
-
 # source every .zsh file in this repo
 for config_file in $DOTFILES/**/*.zsh; do
   # things that need to be loaded last are manually blacklisted

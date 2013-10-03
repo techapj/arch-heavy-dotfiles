@@ -140,9 +140,6 @@ mytasklist.buttons = awful.util.table.join(
 -- time widget
 mytextclock = awful.widget.textclock("%I:%M:%S on %A, %B %d ", 1)
 
--- ncmpcpp widget
-myncmpcppwidget = wibox.widget.textbox()
-
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
@@ -163,7 +160,6 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local top_right_layout = wibox.layout.fixed.horizontal()
-    top_right_layout:add(myncmpcppwidget)
     top_right_layout:add(mytextclock)
 
     -- Create the bottom wibox
@@ -205,13 +201,13 @@ globalkeys = awful.util.table.join(
 
   awful.key({ }, "XF86AudioMute", function() awful.util.spawn("amixer sset Master toggle", false) end),
 
-  awful.key({ }, "XF86AudioPlay", function() awful.util.spawn("ncmpcpp toggle", false) end),
+  awful.key({ }, "XF86AudioPlay", function() awful.util.spawn("mpc toggle", false) end),
 
-  awful.key({ }, "XF86AudioPrev", function() awful.util.spawn("ncmpcpp prev", false) end),
+  awful.key({ }, "XF86AudioPrev", function() awful.util.spawn("mpc prev", false) end),
 
-  awful.key({ }, "XF86AudioNext", function() awful.util.spawn("ncmpcpp next", false) end),
+  awful.key({ }, "XF86AudioNext", function() awful.util.spawn("mpc next", false) end),
 
-  awful.key({ }, "XF86AudioStop", function() awful.util.spawn("ncmpcpp stop", false) end),
+  awful.key({ }, "XF86AudioStop", function() awful.util.spawn("mpc stop", false) end),
 
   awful.key({ modkey, "Ctrl" }, "l", function() awful.util.spawn("slock", false) end),
 

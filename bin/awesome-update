@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-set -ue
-
-now_playing="$(ncmpcpp --now-playing | cut -d " " -f 2-)"
-echo "myncmpcppwidget:set_text([=[$now_playing / ]=])" | awesome-client

@@ -229,7 +229,7 @@ globalkeys = awful.util.table.join(
             if client.focus then client.focus:raise() end
         end),
     awful.key({ modkey,           }, "w", function () awful.util.spawn(browser) end),
-
+    awful.key({ modkey,           }, "p" ,function () awful.util.spawn("mpc-ask") end),
     awful.key({ modkey,           }, "a" ,function () awful.util.spawn("pass-autotype") end),
 
     -- Layout manipulation

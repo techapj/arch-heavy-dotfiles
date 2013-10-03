@@ -13,9 +13,8 @@ install
 Before installing, you should install the relevant packages with `pacman`.  A
 list of packages and their purpose is below.
 
-    pacman -S awesome ctags epdfview git keychain lua luajit luakit mpc\
-              mpd mpv mutt nodejs notmuch packer pass ruby rvxt-unicode\
-              slock xautolock zsh
+    pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
+              nodejs notmuch packer pass ruby rvxt-unicode slock xautolock zsh
 
     packer -S beets dmenu fontconfig-infinality freetype2-infinality isync\
               msmtp notmuch sxiv
@@ -54,15 +53,14 @@ vim should be compiled with:
 what i use
 ==========
 
-The focal bits are the following.
+The focal bits are the following.  This repository mainly consists of
+configuration and scripts for these programs.
 
 * **color scheme**: [base16](https://github.com/chriskempson/base16)
-* **document viewer**: [epdfview](http://freecode.com/projects/epdfview)
 * **email**: [mutt](http://mutt.org/)
-* **font**: [dejavu sans mono for powerline](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
+* **font**: [dejavu sans mono](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
 * **image viewer**: [sxiv](https://github.com/muennich/sxiv)
 * **music player**: [mpc](http://mpd.wikia.com/wiki/Client:Mpc)
-* **operating system**: [arch linux](http://archlinux.org)
 * **password manager**: [pass](http://zx2c4.com/projects/password-store/)
 * **shell**: [zsh](http://zsh.org/)
 * **terminal emulator**: [rxvt-unicode](https://en.wikipedia.org/wiki/Rxvt)
@@ -79,10 +77,9 @@ everything in this repository, you'll need to install these as well.
 * [dmenu](http://tools.suckless.org/dmenu/) for menus, duh
 * [dropbox](http://dropbox.com) for backups
 * [exuberant ctags](http://ctags.sourceforge.net/) for indexing code
-* [infinality](http://infinality.net) for beautifying fonts
-* [isync](http://isync.sourceforge.net/) for receiving email
-* [keychain](http://www.funtoo.org/wiki/Keychain) for managing your ssh and gpg
-  agents & passwords
+* [infinality](http://infinality.net) for configuring font display
+* [isync](http://isync.sourceforge.net/) for syncing email
+* [keychain](http://www.funtoo.org/wiki/Keychain) for managing agents & passwords
 * [node](http://nodejs.org) because people keep writing crap in it
 * [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) for serving music
 * [msmpt](http://msmtp.sourceforge.net) for sending email

@@ -2,7 +2,9 @@
 set -ue
 
 add_album() {
+  mpc clear
   mpc add "$(mpc listall | cut -d/ -f1-2 | uniq | egrep -v "\..{3,4}$" | dmenu -z)"
+  mpc play
 }
 
 if [[ "$#" < "1" ]] || [[ -z "$1" ]]; then

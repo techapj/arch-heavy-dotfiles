@@ -2,7 +2,12 @@
 set -ue
 
 add_album() {
-  album="$(mpc listall | cut -d/ -f1-2 | uniq | egrep -v "\..{3,4}$" | dmenu -z)"
+  album="$(mpc listall |
+    cut -d/ -f1-2 |
+    uniq |
+    egrep -v "\..{3,4}$" |
+    dmenu -z -p 'play' |
+    chomp)"
 
   mpc clear
   mpc add "$album"

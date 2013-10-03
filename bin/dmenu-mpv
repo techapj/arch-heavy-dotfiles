@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+set -ue
+
+candidates="$(find /media/videos/{films,tv} -maxdepth 1)"
+
+shortnames="$(printf "%s" "$candidates" |
+  sed -r "s#/media/videos/(tv|films)/?##;s#\..{3,4}\$##")"
+
+choice="$(printf "%s" "$shortnames" |
+  grep -v "^[ \t]*$" |
+  shuf |
+  dmenu -z -p "watch")"
+
+
+fullpath="$(printf "%s" "$candidates" |
+  egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$")"
+
+if [[ -d "$fullpath" ]]; then
+  exec mpv-random "$fullpath"
+elif [[ -f "$fullpath" ]]; then
+  exec mpv "$fullpath"
+fi

@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -ue
 
-exec "$(which -a dmenu | sed -n 2p)" \
+exec "$(which -a dmenu | tail -n 1)" \
   -i\
   -fn cure-10\
   -nb "#151515"\

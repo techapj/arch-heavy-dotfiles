@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 set -ue
 
-MPD_HOST=$HOME/.mpd/socket "$(which -a mpc | sed -n 2p)" $*
+MPD_HOST=$HOME/.mpd/socket "$(which -a mpc | tail -n 1)" $*

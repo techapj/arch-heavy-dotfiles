@@ -8,7 +8,7 @@ if ! command -v xdotool &> /dev/null; then
 fi
 
 # get the deets
-output="$(pass-ask)"
+output="$(pass $*)"
 password="$(printf "%s" "$output" | head -n 1)"
 username="$(printf "%s" "$output" | grep '^username: ' | cut -c 11-)"
 

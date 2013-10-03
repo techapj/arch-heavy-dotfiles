@@ -229,8 +229,10 @@ globalkeys = awful.util.table.join(
             if client.focus then client.focus:raise() end
         end),
     awful.key({ modkey,           }, "w", function () awful.util.spawn(browser) end),
-    awful.key({ modkey,           }, "p" ,function () awful.util.spawn("mpc-ask") end),
-    awful.key({ modkey,           }, "a" ,function () awful.util.spawn("pass-autotype") end),
+    awful.key({ modkey,           }, "p", function () awful.util.spawn("dmenu-mpc") end),
+    awful.key({ modkey,           }, "v", function () awful.util.spawn("dmenu-mpv") end),
+    awful.key({ modkey,           }, "a", function () awful.util.spawn("dmenu-pass-autotype") end),
+    awful.key({ modkey,           }, "c", function () awful.util.spawn("dmenu-calculate") end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -263,9 +265,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey }, "r", function ()
-      awful.util.spawn("dmenu_run")
-    end),
+    awful.key({ modkey }, "r", function () awful.util.spawn("dmenu_run -p 'execute'") end),
 
     awful.key({ modkey }, "x", function ()
         awful.prompt.run({ prompt = "Run Lua code: " },

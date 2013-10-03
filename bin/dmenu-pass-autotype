@@ -16,10 +16,10 @@ candidates="$(find "$password_store" -name '*gpg' -print0 |
   sed "s#$password_store/##;s#\.gpg\$##")"
 
 # ask which
-choice="$(printf "$candidates" | sort | dmenu)"
+choice="$(printf "$candidates" | sort | dmenu -p 'autotype' | chomp)"
 
 # notify which we found, using stderr so it isn't piped to anything else
 printf "Using $choice.\n" 1>&2
 
 # delegate to pass 
-pass show "$choice" $*
+pass-autotype "$choice" $*

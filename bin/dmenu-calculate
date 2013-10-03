@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+set -ue
+
+dmenu -p "calculate" | bc 2>&1 | chomp | xsel -ib

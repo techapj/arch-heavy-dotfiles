@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+set -ue
+
+add_album() {
+  mpc add "$(mpc listall | cut -d/ -f1-2 | uniq | egrep -v "\..{3,4}$" | dmenu -z)"
+}
+
+if [[ "$#" < "1" ]] || [[ -z "$1" ]]; then
+  type="album"
+else
+  type="$1"
+fi
+
+case "$type" in
+  # artist) add_artist ;;
+  # track) add_track ;;
+  *) add_album ;;
+esac

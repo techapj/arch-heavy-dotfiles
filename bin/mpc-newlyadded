@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+set -ue
+
+grep "added" "$HOME/.mpd/mpd.log" | tail -n 50 | cut -d\  -f6- | mpc add

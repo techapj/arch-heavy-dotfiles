@@ -8,7 +8,6 @@ export HISTFILE="$HOME/.zsh-history"
 export HISTSIZE=SAVEHIST=10240
 export LESSHISTFILE="-" # disable less history
 export LSCOLORS="exfxcxdxbxegedabagacad"
-export TERM="xterm-256color"
 
 setopt APPEND_HISTORY
 setopt AUTO_CD

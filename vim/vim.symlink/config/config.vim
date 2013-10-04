@@ -55,7 +55,6 @@ set splitright
 set suffixesadd=.rb
 set tabstop=4
 set tags=./.git/tags,/
-set term=$TERM
 set textwidth=79
 set timeoutlen=210
 set undodir=~/.vim/tmp/undo//

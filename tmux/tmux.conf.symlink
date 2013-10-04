@@ -23,9 +23,9 @@ setw -g pane-base-index 1
 bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
 
 # Saner splitting.
+bind b split-window
 bind v split-window -h
-bind s split-window -v
-bind S choose-session
+bind x kill-window
 
 # Pane movement
 bind h select-pane -L

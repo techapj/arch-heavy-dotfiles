@@ -21,6 +21,9 @@ nnoremap k gk
 " vis the previously entered text
 nnoremap gV `[v`]
 
+" this makes no sense but C-v is claimed so
+nnoremap Q <C-v>
+
 " splits
 nnoremap <C-v> <C-w><C-v>
 nnoremap <C-b> <C-w><C-s>

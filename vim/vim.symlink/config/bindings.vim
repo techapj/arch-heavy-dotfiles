@@ -1,15 +1,6 @@
 " lead with spacebar
 let mapleader = " "
 
-" toggle insert mode with ✓ or F8, which is what i've rebound
-" caps lock to on my two computers
-inoremap ✓ <ESC>
-noremap ✓ <ESC>
-nnoremap ✓ i
-inoremap <F8> <ESC>
-noremap <F8> <ESC>
-nnoremap <F8> i
-
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> K :Bdelete!<CR>

@@ -1,7 +1,7 @@
 # Use FUCKIN ESCAPE as a prefix
-set -g prefix escape
 unbind C-f
-bind escape send-prefix
+set -g prefix C-space
+bind C-space send-prefix
 
 # Relax!
 set -sg escape-time 0

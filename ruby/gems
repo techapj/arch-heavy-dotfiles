@@ -1,7 +1,6 @@
 gem-ctags
 
 bundler
-fuzzy-string-match
 gem-browse
 mail
 redcarpet

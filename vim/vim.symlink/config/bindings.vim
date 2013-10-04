@@ -1,6 +1,9 @@
 " lead with spacebar
 let mapleader = " "
 
+" does this work
+nnoremap <ESC> i
+
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> K :Bdelete!<CR>

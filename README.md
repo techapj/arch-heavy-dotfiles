@@ -17,7 +17,7 @@ list of packages and their purpose is below.
               nodejs notmuch packer pass ruby rvxt-unicode slock xautolock zsh
 
     packer -S beets dmenu fontconfig-infinality freetype2-infinality isync\
-              msmtp notmuch sxiv
+              msmtp notmuch
 
 Afterward, check out the repository and run the installation script:
 
@@ -56,12 +56,8 @@ what i use
 The focal bits are the following.  This repository mainly consists of
 configuration and scripts for these programs.
 
-* **color scheme**: [base16](https://github.com/chriskempson/base16)
 * **email**: [mutt](http://mutt.org/)
-* **font**: [dejavu sans mono](http://dejavu-fonts.org) & [cure](http://artwizaleczapka.sourceforge.net/)
-* **image viewer**: [sxiv](https://github.com/muennich/sxiv)
-* **music player**: [mpc](http://mpd.wikia.com/wiki/Client:Mpc)
-* **password manager**: [pass](http://zx2c4.com/projects/password-store/)
+* **music player**: [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) and [mpc](http://mpd.wikia.com/wiki/Client:Mpc)
 * **shell**: [zsh](http://zsh.org/)
 * **terminal emulator**: [rxvt-unicode](https://en.wikipedia.org/wiki/Rxvt)
 * **text editor**: [vim](http://vim.org)
@@ -73,18 +69,17 @@ configuration and scripts for these programs.
 Some programs or scripts rely on secondary programs.  To properly use
 everything in this repository, you'll need to install these as well.
 
-* [beets](http://beets.radbox.org) for managing my music library
+* [beets](http://beets.radbox.org) for managing the music library
 * [dmenu](http://tools.suckless.org/dmenu/) for menus, duh
-* [dropbox](http://dropbox.com) for backups
 * [exuberant ctags](http://ctags.sourceforge.net/) for indexing code
 * [infinality](http://infinality.net) for configuring font display
 * [isync](http://isync.sourceforge.net/) for syncing email
 * [keychain](http://www.funtoo.org/wiki/Keychain) for managing agents & passwords
-* [node](http://nodejs.org) because people keep writing crap in it
-* [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) for serving music
 * [msmpt](http://msmtp.sourceforge.net) for sending email
+* [node](http://nodejs.org) because people keep writing crap in it
 * [notmuch](http://notmuchmail.org/) for indexing and searching email
 * [packer](https://aur.archlinux.org/packages/packer/) for accessing the AUR
+* [pass](http://zx2c4.com/projects/password-store/) for managing passwords
 * [xautolock](http://freecode.com/projects/xautolock) and
   [slock](http://tools.suckless.org/slock) to lock the screen
 

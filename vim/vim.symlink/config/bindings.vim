@@ -7,7 +7,9 @@ nnoremap <ESC> i
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> K :Bdelete!<CR>
-nnoremap <silent> <C-k> :DeleteAllOtherBuffers<CR>
+nnoremap <silent> KK :DeleteAllOtherBuffers<CR>
+nnoremap <silent> <C-x> :q<CR>
+nnoremap <silent> <C-x><C-x> :q<CR>
 
 " fast redo
 nnoremap U <C-r>
@@ -19,11 +21,22 @@ nnoremap k gk
 " vis the previously entered text
 nnoremap gV `[v`]
 
+" splits
+nnoremap <C-v> <C-w><C-v>
+nnoremap <C-b> <C-w><C-s>
+
+" this is my tmux prefix, so unbind it for purity
+map <C-a> <nop>
+
+" replace those ops
+nnoremap + <C-a>
+nnoremap - <C-x>
+
 " quickly open tags
 nnoremap tt <C-]>
 
 " switch between alternate files
-nmap zz :A<CR>
+nnoremap zz :A<CR>
 
 " make Y consistent with D and C
 noremap Y y$
@@ -50,9 +63,6 @@ noremap <silent> <leader>eu :edit $HOME/.vim/config/bundle.vim<CR>
 nnoremap \\ :FuckinGrep<space>
 nnoremap \w :GrepFromWord<CR>
 nnoremap \s :GrepFromSearch<CR>
-
-" quickfix
-nnoremap <silent> Q :QFix<CR>
 
 " ctrlp
 nnoremap <silent> <S-Tab> :CtrlPTag<CR>

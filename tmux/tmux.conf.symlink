@@ -1,7 +1,7 @@
-# Use FUCKIN ESCAPE as a prefix
+# Use C-a as a prefix
 unbind C-f
-set -g prefix C-space
-bind C-space send-prefix
+set -g prefix C-a
+bind C-a send-prefix
 
 # Relax!
 set -sg escape-time 0
@@ -64,3 +64,12 @@ set -g pane-border-fg colour237
 set -g status-bg colour234
 set -g status-fg white
 set -g window-status-activity-attr bold
+
+# Smart panes with awareness of vim splits
+bind -n C-b run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-b) || tmux split-window"
+bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-h) || tmux select-pane -L"
+bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-j) || tmux select-pane -D"
+bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-k) || tmux select-pane -U"
+bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-l) || tmux select-pane -R"
+bind -n C-v run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-v) || tmux split-window -h"
+bind -n C-x run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-x) || tmux kill-pane"

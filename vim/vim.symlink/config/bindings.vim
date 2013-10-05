@@ -6,10 +6,10 @@ nnoremap <ESC> i
 
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
-nnoremap <silent> K :Bdelete!<CR>
-nnoremap <silent> KK :DeleteAllOtherBuffers<CR>
 nnoremap <silent> <C-x> :q<CR>
-nnoremap <silent> <C-x><C-x> :q<CR>
+nnoremap <silent> <leader><C-x> :q!<CR>
+nnoremap <silent> <leader>K :DeleteAllOtherBuffers<CR>
+nnoremap <silent> K :Bdelete!<CR>
 
 " fast redo
 nnoremap U <C-r>
@@ -21,11 +21,8 @@ nnoremap k gk
 " vis the previously entered text
 nnoremap gV `[v`]
 
-" this makes no sense but C-v is claimed so
-nnoremap Q <C-v>
-
 " splits
-nnoremap <C-v> <C-w><C-v>
+nnoremap <C-n> <C-w><C-v>
 nnoremap <C-b> <C-w><C-s>
 
 " this is my tmux prefix, so unbind it for purity

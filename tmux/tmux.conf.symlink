@@ -24,7 +24,7 @@ bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
 
 # Saner splitting.
 bind b split-window
-bind v split-window -h
+bind n split-window -h
 bind x kill-pane
 
 # Pane movement
@@ -71,5 +71,5 @@ bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-j) || tmux select-pane -D"
 bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-k) || tmux select-pane -U"
 bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-l) || tmux select-pane -R"
-bind -n C-v run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-v) || tmux split-window -h"
+bind -n C-n run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-n) || tmux split-window -h"
 bind -n C-x run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-x) || tmux kill-pane"

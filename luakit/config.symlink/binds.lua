@@ -52,9 +52,6 @@ add_binds("all", {
     key({}, "Escape", "Return to `normal` mode.",
         function (w) w:set_mode() end),
 
-    key({}, "✓", "Return to `normal` mode.",
-        function (w) w:set_mode() end),
-
     key({"Control"}, "[", "Return to `normal` mode.",
         function (w) w:set_mode() end),
 
@@ -148,7 +145,7 @@ add_binds("normal", {
         end 
     end),
 
-    key({}, "✓", "Enter `insert` mode.",
+    key({}, "Escape", "Enter `insert` mode.",
         function (w) w:set_mode("insert")  end),
 
     key({}, ":", "Enter `command` mode.",

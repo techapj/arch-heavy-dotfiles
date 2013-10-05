@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 set -ue
 
-cd /usr/lib/ruby/[0-9]*
-find . -name '*rb' | ctags -L - --languages=ruby
+for dir in /usr/lib/ruby/[0-9]*; do
+  cd "$dir"
+  find . -name '*rb' | ctags -L - --languages=ruby
+done

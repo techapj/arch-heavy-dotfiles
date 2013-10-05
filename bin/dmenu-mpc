@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#window!/usr/bin/env zsh
 set -ue
 
 add_album() {
@@ -6,12 +6,15 @@ add_album() {
     cut -d/ -f1-2 |
     uniq |
     egrep -v "\..{3,4}$" |
+    shuf |
     dmenu -z -p 'play' |
     chomp)"
 
-  mpc clear
-  mpc add "$album"
-  mpc play
+  if [[ -n "$album" ]]; then
+    mpc clear
+    mpc add "$album"
+    mpc play
+  fi
 }
 
 if [[ "$#" < "1" ]] || [[ -z "$1" ]]; then

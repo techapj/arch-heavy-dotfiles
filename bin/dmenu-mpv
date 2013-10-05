@@ -8,6 +8,7 @@ shortnames="$(printf "%s" "$candidates" |
 
 choice="$(printf "%s" "$shortnames" |
   grep -v "^[ \t]*$" |
+  uniq |
   shuf |
   dmenu -z -p "watch")"
 

@@ -7,7 +7,7 @@ set -ue
 
 # try to update first
 
-  git submodule update --init --reursive
+  git submodule update --init --recursive
 
 # set up symlinks
 

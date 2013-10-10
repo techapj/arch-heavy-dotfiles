@@ -425,7 +425,7 @@ add_binds("normal", {
 
 add_binds("insert", {
     key({"Control"},  "e",       function (w)
-      local editor = "urxvt -e vim" 
+      local editor = "urxvtc -e vim" 
       local dir = "/tmp/" 
       local time = os.time()
       local file = dir .. "luakit-" .. time

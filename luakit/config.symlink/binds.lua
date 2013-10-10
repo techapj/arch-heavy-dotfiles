@@ -421,17 +421,9 @@ add_binds("normal", {
 
     buf("^ZQ$", "Quit and don't save the session.",
         function (w) w:close_win() end),
-
-    -- Enter passthrough mode
-    -- key({"Control"}, "z",
-    --     "Enter `passthrough` mode, ignores all luakit keybindings.",
-    --     function (w) w:set_mode("passthrough") end),
 })
 
 add_binds("insert", {
-    -- key({"Control"}, "z",
-    --     "Enter `passthrough` mode, ignores all luakit keybindings.",
-    --     function (w) w:set_mode("passthrough") end),
     key({"Control"},  "e",       function (w)
       local editor = "urxvt -e vim" 
       local dir = "/tmp/" 
@@ -479,8 +471,9 @@ add_binds("insert", {
       end
     end),
 
-    key({"Shift"}, "Insert", function(w)
-    end),
+    key({"Shift"}, "Insert",
+        "Insert contents of primary selection at cursor position.",
+        function (w) w:insert_cmd(luakit.selection.primary) end),
 })
 
 readline_bindings = {

@@ -16,8 +16,8 @@ list of packages and their purpose is below.
     pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
               nodejs notmuch packer pass ruby rvxt-unicode slock xautolock zsh
 
-    packer -S beets dmenu fontconfig-infinality freetype2-infinality isync\
-              msmtp notmuch
+    packer -S beets dmenu-xft-fuzzy fontconfig-infinality freetype2-infinality\
+              isync msmtp notmuch
 
 Afterward, check out the repository and run the installation script:
 

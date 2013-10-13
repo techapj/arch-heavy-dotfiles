@@ -33,3 +33,7 @@ setxkbmap -option 'caps:escape'
 eval `keychain --eval --clear`
 
 exec dbus-launch --exit-with-session awesome
+
+# temporary infinality shit
+export INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=0
+export INFINALITY_FT_STEM_FITTING_STRENGTH=0

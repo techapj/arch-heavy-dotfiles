@@ -1,9 +1,4 @@
 namespace :install do
-  desc "Install or update Luakit's adblock filters."
-  task :adblock do
-    system 'bin/update-adblock'
-  end
-
   desc 'Pull git submodules like zsh and vim plugins.'
   task :submodules do
     system 'bin/git-pull-all'
@@ -38,7 +33,6 @@ desc 'Run every install command in order.'
 task :install do
   Rake::Task['install:submodules'].invoke
 
-  Rake::Task['install:adblock'].invoke
   Rake::Task['install:symlinks'].invoke
   Rake::Task['install:vim_plugins'].invoke
 end

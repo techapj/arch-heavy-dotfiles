@@ -16,7 +16,7 @@ Before installing, you should install the relevant packages with `pacman`,
     pacman -S awesome beets ctags git keychain lua luajit luakit mpc mpd mpv
               mutt msmtp nodejs notmuch packer pass ruby rxvt-unicode slock
               sxiv xautolock zsh
-    packer -S dmenu-xft-fuzzy fontconfig-infinality isync
+    packer -S dmenu-xft-fuzzy isync
     gem install gem-ctags bundler gem-browse mail redcarpet rubocop
     npm install -g coffee coffelint jshint
 
@@ -63,7 +63,6 @@ everything in this repository, you'll need to install these as well.
 * [beets](http://beets.radbox.org) for managing the music library
 * [dmenu](http://tools.suckless.org/dmenu/) for menus, duh
 * [exuberant ctags](http://ctags.sourceforge.net/) for indexing code
-* [infinality](http://infinality.net) for configuring font display
 * [isync](http://isync.sourceforge.net/) for syncing email
 * [keychain](http://www.funtoo.org/wiki/Keychain) for managing agents & passwords
 * [msmpt](http://msmtp.sourceforge.net) for sending email

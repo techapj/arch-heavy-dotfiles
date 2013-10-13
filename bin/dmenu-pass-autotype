@@ -5,7 +5,7 @@ password_store="$HOME/.password-store"
 
 # make sure the password store exists
 if [[ ! -d "$password_store" ]]; then
-  printf "Configure \$password_store within $(command -v pass-guess).\n" 1>&2
+  printf "Configure \$password_store within $(command -v dmenu-pass-autotype).\n" 1>&2
   printf "Its default location, $password_store, does not exist.\n" 1>&2
   exit 1
 fi

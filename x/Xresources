@@ -38,6 +38,6 @@
 *.color14:      base0F
 *.color15:      base07
 
-URxvt.boldFont: xft:lemon:size=12
-URxvt.font: xft:lemon:size=12
+URxvt.boldFont: xft:lemon:size=10
+URxvt.font: xft:lemon:size=10
 URxvt.scrollBar: false

@@ -13,16 +13,25 @@ install
 Before installing, you should install the relevant packages with `pacman`,
 `gem` and `npm`.  A list of packages and their purpose is below.
 
-    pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
-              nodejs notmuch packer pass ruby rxvt-unicode slock sxiv\
-              xautolock zsh
+### official repos
 
-    packer -S beets dmenu-xft-fuzzy fontconfig-infinality freetype2-infinality\
-              isync msmtp notmuch
+    pacman -S awesome beets ctags git keychain lua luajit luakit mpc mpd mpv
+              mutt msmtp nodejs notmuch packer pass ruby rxvt-unicode slock
+              sxiv xautolock zsh
+
+### aur
+
+    packer -S dmenu-xft-fuzzy fontconfig-infinality isync
+
+### ruby gems
 
     gem install gem-ctags bundler gem-browse mail redcarpet rubocop
 
+### npm packages
+
     npm install -g coffee coffelint jshint
+
+### bootstrapping
 
 Afterward, check out the repository and run the installation script:
 
@@ -39,6 +48,8 @@ replace them as necessary:
 * `.dotfiles`
 * `/home/devlin`
 * `devlin`
+
+### compiling vim
 
 vim should be compiled with:
 

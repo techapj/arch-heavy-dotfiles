@@ -13,6 +13,14 @@ local menubar = require("menubar")
 
 _G.CONFIG = awful.util.getdir("config")
 
+local function powerlineize(text, foreground, background, arrow_background)
+  foreground = foreground or beautiful.fg_normal
+  background = background or beautiful.bg_normal
+  arrow_background = arrow_background or beautiful.bg_normal
+
+  return "<span color='" .. background .. "' background='" .. arrow_background .. "'></span><span color='" .. foreground .. "' background='" .. background .. "'>" .. text .. "</span>"
+end
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -91,7 +99,6 @@ end
 -- Create a wibox for each screen and add it
 mytopwibox = {}
 mybottomwibox = {}
-mypromptbox = {}
 mytaglist = {}
 mytaglist.buttons = awful.util.table.join(
                     awful.button({ }, 1, awful.tag.viewonly),
@@ -138,12 +145,9 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 -- time widget
-mytextclock = awful.widget.textclock("%I:%M:%S on %A, %B %d ", 1)
+mytextclock = awful.widget.textclock(powerlineize(" %I %M %S  ", "#505050", "#6a9fb5") .. powerlineize(" %Y %m %d  ", nil, nil, "#6a9fb5"), 1)
 
 for s = 1, screen.count() do
-    -- Create a promptbox for each screen
-    mypromptbox[s] = awful.widget.prompt()
-    --
     -- Create a taglist widget
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
@@ -156,7 +160,6 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the left
     local top_left_layout = wibox.layout.fixed.horizontal()
     top_left_layout:add(mytaglist[s])
-    top_left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
     local top_right_layout = wibox.layout.fixed.horizontal()
@@ -265,14 +268,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey }, "r", function () awful.util.spawn("dmenu_run -p 'execute'") end),
-
-    awful.key({ modkey }, "x", function ()
-        awful.prompt.run({ prompt = "Run Lua code: " },
-        mypromptbox[mouse.screen].widget,
-        awful.util.eval, nil,
-        awful.util.getdir("cache") .. "/history_eval")
-    end)
+    awful.key({ modkey }, "r", function () awful.util.spawn("dmenu_run -p 'execute'") end)
 )
 
 clientkeys = awful.util.table.join(

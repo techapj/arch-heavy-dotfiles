@@ -24,7 +24,6 @@ if [[ -d "$HOME/.fonts" ]]; then
   fc-cache
 fi
 
-pgrep dropbox -u $USER || ~/.dropbox-dist/dropbox &
 pgrep mpd -u $USER || mpd
 pgrep urxvtd -u $USER || urxvtd -o -f
 pgrep xautolock -u $USER || xautolock -time 15 -locker "slock" -secure &

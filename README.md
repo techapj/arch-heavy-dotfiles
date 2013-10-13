@@ -13,25 +13,12 @@ install
 Before installing, you should install the relevant packages with `pacman`,
 `gem` and `npm`.  A list of packages and their purpose is below.
 
-### official repos
-
     pacman -S awesome beets ctags git keychain lua luajit luakit mpc mpd mpv
               mutt msmtp nodejs notmuch packer pass ruby rxvt-unicode slock
               sxiv xautolock zsh
-
-### aur
-
     packer -S dmenu-xft-fuzzy fontconfig-infinality isync
-
-### ruby gems
-
     gem install gem-ctags bundler gem-browse mail redcarpet rubocop
-
-### npm packages
-
     npm install -g coffee coffelint jshint
-
-### bootstrapping
 
 Afterward, check out the repository and run the installation script:
 
@@ -40,16 +27,12 @@ Afterward, check out the repository and run the installation script:
     rake install
 
 The script is idempotent and you can run it again to update symbolic links and
-vim plugins. 
+vim plugins.  When you're done, `git grep` for `devlin` and change it as
+necessary.  If you installed to a different directory, look for `.dotfiles`,
+too.
 
-Afterward, it's recommended that you `git grep` for the following values and
-replace them as necessary:
-
-* `.dotfiles`
-* `/home/devlin`
-* `devlin`
-
-### compiling vim
+compiling vim
+-------------
 
 vim should be compiled with:
 

@@ -15,10 +15,12 @@ username="$(printf "%s" "$output" | grep '^username: ' | cut -c 11-)"
 # send those key presses to the window
 active_window_id=$(xdotool getactivewindow)
 
-if [[ -n "$username" ]]; then
-  xdotool type --window "$active_window_id" "$username"
-  xdotool key --window "$active_window_id" "Tab"
-fi
+if [[ -n "$password" ]]; then
+  if [[ -n "$username" ]]; then
+    xdotool type --window "$active_window_id" "$username"
+    xdotool key --window "$active_window_id" "Tab"
+  fi
 
-xdotool type --window "$active_window_id" "$password"
-xdotool key --window "$active_window_id" "Return"
+  xdotool type --window "$active_window_id" "$password"
+  xdotool key --window "$active_window_id" "Return"
+fi

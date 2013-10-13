@@ -13,12 +13,11 @@ local menubar = require("menubar")
 
 _G.CONFIG = awful.util.getdir("config")
 
-local function powerlineize(text, foreground, background, arrow_background)
+function pretty(text, foreground, background)
   foreground = foreground or beautiful.fg_normal
   background = background or beautiful.bg_normal
-  arrow_background = arrow_background or beautiful.bg_normal
 
-  return "<span color='" .. background .. "' background='" .. arrow_background .. "'></span><span color='" .. foreground .. "' background='" .. background .. "'>" .. text .. "</span>"
+  return "<span color='" .. foreground .. "' background='" .. background .. "'> " .. text .. " </span>"
 end
 
 -- {{{ Error handling
@@ -145,7 +144,7 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 -- time widget
-mytextclock = awful.widget.textclock(powerlineize(" %I %M %S  ", "#505050", "#6a9fb5") .. powerlineize(" %Y %m %d  ", nil, nil, "#6a9fb5"), 1)
+mytextclock = awful.widget.textclock(pretty("%I %M %S", "#8bb4c6", "#192b33") .. pretty("%Y %m %d", "#8bb4c6", "#223a44"), 1)
 
 for s = 1, screen.count() do
     -- Create a taglist widget
@@ -155,7 +154,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the top wibox
-    mytopwibox[s] = awful.wibox({ position = "top", screen = s })
+    mytopwibox[s] = awful.wibox({ position = "top", screen = s, height = 12 })
 
     -- Widgets that are aligned to the left
     local top_left_layout = wibox.layout.fixed.horizontal()
@@ -166,7 +165,7 @@ for s = 1, screen.count() do
     top_right_layout:add(mytextclock)
 
     -- Create the bottom wibox
-    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s })
+    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s, height = 12 })
 
     local bottom_left_layout = wibox.layout.fixed.horizontal()
     bottom_left_layout:add(mytasklist[s])

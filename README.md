@@ -10,8 +10,8 @@ probably only looking for configuration for a program or two.
 install
 =======
 
-Before installing, you should install the relevant packages with `pacman`.  A
-list of packages and their purpose is below.
+Before installing, you should install the relevant packages with `pacman`,
+`gem` and `npm`.  A list of packages and their purpose is below.
 
     pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
               nodejs notmuch packer pass ruby rxvt-unicode slock sxiv\
@@ -20,23 +20,18 @@ list of packages and their purpose is below.
     packer -S beets dmenu-xft-fuzzy fontconfig-infinality freetype2-infinality\
               isync msmtp notmuch
 
+    gem install gem-ctags bundler gem-browse mail redcarpet rubocop
+
+    npm install -g coffee coffelint jshint
+
 Afterward, check out the repository and run the installation script:
 
-    git clone https://github.com/devlinzed/dotfiles ~/.dotfiles --recurse-submodules
+    git clone https://github.com/devlinzed/dotfiles ~/.dotfiles
     cd ~/.dotfiles
-    ./bootstrap
+    rake install
 
-This will:
-
-1. Create symbolic links
-2. Install our beautiful fonts
-3. Install the required system-wide ruby gems and npm packages
-4. Install vim plugins
-5. Install ad-blocking filters for luakit
-
-The bootstrap script is idempotent and you can run it again to update symbolic
-links and vim plugins.  If `gem` and `npm` require root, make sure you use
-`sudo -E ./bootstrap` to preserve your user's environment.
+The script is idempotent and you can run it again to update symbolic links and
+vim plugins. 
 
 Afterward, it's recommended that you `git grep` for the following values and
 replace them as necessary:

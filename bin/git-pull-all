@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
 set -ue
 
-git submodule foreach --quiet pwd | xargs -P4 -n1 -i% zsh -c "cd % && git checkout master && pull origin master"
+git submodule foreach --quiet pwd\
+  | xargs -P4 -n1 -i% zsh -c "cd % && (git checkout master; git pull origin)"

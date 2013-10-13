@@ -83,11 +83,11 @@ everything in this repository, you'll need to install these as well.
 folder structure
 ================
 
-- `**/*.symlink`: linked into your `$HOME`
-- `**/*.zsh`: automatically loaded by zsh
-- `**/*.completion.zsh`: loaded last
-- `bin/*`: added to your `$PATH`
-- `functions/*`: lazy loaded as zsh functions
+- `**/*.zsh`: automatically loaded by zsh (this will probably be moved)
+- `**/completion.zsh`: automatically loaded, but after everything else
+- `bin/`: added to your `$PATH` and accessible everywhere
+- `functions/*`: lazy loaded as zsh functions and accessible everywhere
+- `symlinks.yml`: list of files linked into your `$HOME`
 
 license
 -------

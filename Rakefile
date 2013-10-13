@@ -11,7 +11,21 @@ namespace :install do
 
   desc 'Set up symlinks to the rest of the system.'
   task :symlinks do
-    $stderr.puts 'NYI'
+    require 'fileutils'
+    require 'yaml'
+
+    YAML.load(File.read('symlinks.yml')).each do |src, dst|
+      src = File.join(Dir.pwd, src)
+      dst = File.join(ENV['HOME'], dst)
+
+      unless File.exists?(dst)
+        unless Dir.exists?(File.dirname(dst))
+          FileUtils.mkdir_p(File.dirname(dst))
+        end
+
+        File.symlink(src, dst) and puts "#{src} -> #{dst}"
+      end
+    end
   end
 
   desc 'Install or update vim plugins with NeoBundle.'

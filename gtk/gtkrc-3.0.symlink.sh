@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-printf "$HOME/.config/gtk-3.0/settings.ini\n"

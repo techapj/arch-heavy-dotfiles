@@ -14,7 +14,7 @@ Before installing, you should install the relevant packages with `pacman`.  A
 list of packages and their purpose is below.
 
     pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
-              nodejs notmuch packer pass ruby rvxt-unicode slock xautolock zsh
+              nodejs notmuch packer pass ruby rxvt-unicode slock xautolock zsh
 
     packer -S beets dmenu-xft-fuzzy fontconfig-infinality freetype2-infinality\
               isync msmtp notmuch

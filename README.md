@@ -14,7 +14,8 @@ Before installing, you should install the relevant packages with `pacman`.  A
 list of packages and their purpose is below.
 
     pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
-              nodejs notmuch packer pass ruby rxvt-unicode slock xautolock zsh
+              nodejs notmuch packer pass ruby rxvt-unicode slock sxiv\
+              xautolock zsh
 
     packer -S beets dmenu-xft-fuzzy fontconfig-infinality freetype2-infinality\
               isync msmtp notmuch
@@ -57,6 +58,7 @@ The focal bits are the following.  This repository mainly consists of
 configuration and scripts for these programs.
 
 * **email**: [mutt](http://mutt.org/)
+* **image viewer**: [sxiv](https://bbs.archlinux.org/viewtopic.php?id=112643)
 * **music player**: [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) and [mpc](http://mpd.wikia.com/wiki/Client:Mpc)
 * **shell**: [zsh](http://zsh.org/)
 * **terminal emulator**: [rxvt-unicode](https://en.wikipedia.org/wiki/Rxvt)

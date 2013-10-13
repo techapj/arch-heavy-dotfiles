@@ -3,7 +3,7 @@ set -ue
 
 exec "$(which -a dmenu | tail -n 1)" \
   -i\
-  -fn lemon-10\
+  -fn lemon:7\
   -nb "#151515"\
   -nf "#e0e0e0"\
   -sb "#75b5aa"\

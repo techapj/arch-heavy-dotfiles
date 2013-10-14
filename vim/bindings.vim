@@ -32,6 +32,7 @@ map <C-a> <nop>
 nnoremap + <C-a>
 nnoremap - <C-x>
 nnoremap <leader>w <C-w>
+nnoremap <leader>l <C-l>
 
 " quickly open tags
 nnoremap tt <C-]>

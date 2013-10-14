@@ -6,7 +6,7 @@ nnoremap <ESC> i
 
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
-nnoremap <silent> <C-d> :q<CR>
+nnoremap <silent> <C-w> :q<CR>
 nnoremap <silent> <leader><C-x> :q!<CR>
 nnoremap <silent> <leader>K :DeleteAllOtherBuffers<CR>
 nnoremap <silent> K :Bdelete!<CR>
@@ -22,15 +22,16 @@ nnoremap k gk
 nnoremap gV `[v`]
 
 " splits
-nnoremap <C-t> <C-w><C-v>
-nnoremap <C-g> <C-w><C-s>
+nnoremap <silent> <C-t> :vsplit<CR>
+nnoremap <silent> <C-g> :split<CR>
 
 " this is my tmux prefix, so unbind it for purity
 map <C-a> <nop>
 
-" replace those ops
+" replace overwritten binds
 nnoremap + <C-a>
 nnoremap - <C-x>
+nnoremap <leader>w <C-w>
 
 " quickly open tags
 nnoremap tt <C-]>

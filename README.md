@@ -13,9 +13,9 @@ install
 Before installing, you should install the relevant packages with `pacman`,
 `gem` and `npm`.  A list of packages and their purpose is below.
 
-    pacman -S awesome beets ctags git keychain lua luajit luakit mpc mpd mpv
-              mutt msmtp nodejs notmuch packer pass ruby rxvt-unicode slock
-              sxiv xautolock zsh
+    pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
+              msmtp nodejs notmuch packer pass ruby rxvt-unicode slock sxiv\
+              xautolock zsh
     packer -S dmenu-xft-fuzzy isync
     gem install gem-ctags bundler gem-browse mail redcarpet rubocop
     npm install -g coffee coffelint jshint
@@ -60,7 +60,6 @@ configuration and scripts for these programs.
 Some programs or scripts rely on secondary programs.  To properly use
 everything in this repository, you'll need to install these as well.
 
-* [beets](http://beets.radbox.org) for managing the music library
 * [dmenu](http://tools.suckless.org/dmenu/) for menus, duh
 * [exuberant ctags](http://ctags.sourceforge.net/) for indexing code
 * [isync](http://isync.sourceforge.net/) for syncing email
@@ -68,7 +67,6 @@ everything in this repository, you'll need to install these as well.
 * [msmpt](http://msmtp.sourceforge.net) for sending email
 * [node](http://nodejs.org) because people keep writing crap in it
 * [notmuch](http://notmuchmail.org/) for indexing and searching email
-* [packer](https://aur.archlinux.org/packages/packer/) for accessing the AUR
 * [pass](http://zx2c4.com/projects/password-store/) for managing passwords
 * [xautolock](http://freecode.com/projects/xautolock) and
   [slock](http://tools.suckless.org/slock) to lock the screen

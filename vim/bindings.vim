@@ -6,7 +6,7 @@ nnoremap <ESC> i
 
 " fast save and exit
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
-nnoremap <silent> <C-x> :q<CR>
+nnoremap <silent> <C-d> :q<CR>
 nnoremap <silent> <leader><C-x> :q!<CR>
 nnoremap <silent> <leader>K :DeleteAllOtherBuffers<CR>
 nnoremap <silent> K :Bdelete!<CR>
@@ -22,8 +22,8 @@ nnoremap k gk
 nnoremap gV `[v`]
 
 " splits
-nnoremap <C-n> <C-w><C-v>
-nnoremap <C-b> <C-w><C-s>
+nnoremap <C-t> <C-w><C-v>
+nnoremap <C-g> <C-w><C-s>
 
 " this is my tmux prefix, so unbind it for purity
 map <C-a> <nop>
@@ -51,13 +51,13 @@ nnoremap ff za
 nnoremap FF mzzMzvzz`z
 
 " quickly open vim config
-noremap <silent> <leader>ea :edit $HOME/.vim/config/autocmd.vim<CR>
-noremap <silent> <leader>eb :edit $HOME/.vim/config/bindings.vim<CR>
-noremap <silent> <leader>ec :edit $HOME/.vim/config/config.vim<CR>
-noremap <silent> <leader>ef :edit $HOME/.vim/config/functions.vim<CR>
-noremap <silent> <leader>em :edit $HOME/.vim/config/commands.vim<CR>
-noremap <silent> <leader>ep :edit $HOME/.vim/config/plugin_config.vim<CR>
-noremap <silent> <leader>eu :edit $HOME/.vim/config/bundle.vim<CR>
+noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
+noremap <silent> <leader>eb :edit $DOTFILES/vim/bindings.vim<CR>
+noremap <silent> <leader>ec :edit $DOTFILES/vim/config.vim<CR>
+noremap <silent> <leader>ef :edit $DOTFILES/vim/functions.vim<CR>
+noremap <silent> <leader>em :edit $DOTFILES/vim/commands.vim<CR>
+noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
+noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
 
 " grepping
 nnoremap \\ :FuckinGrep<space>

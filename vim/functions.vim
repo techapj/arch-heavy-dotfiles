@@ -58,7 +58,6 @@ endfunction
 
 function! RunCurrentSpecFile()
   let s:last_spec = expand("%")
-
   execute "Dispatch rspec %"
 endfunction
 
@@ -67,5 +66,17 @@ function! RunLastSpec()
     execute "Dispatch rspec " . s:last_spec
   else
     echo "No last spec"
+  endif
+endfunction
+
+function! ToggleQuickfix()
+  if exists('g:quickfix') && g:quickfix " set by autocmd
+    execute "cclose"
+  else
+    if exists('Copen')
+      execute "Copen"
+    else
+      execute "copen"
+    endif
   endif
 endfunction

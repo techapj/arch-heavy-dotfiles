@@ -25,6 +25,9 @@ nnoremap gV `[v`]
 nnoremap <silent> <C-t> :vsplit<CR>
 nnoremap <silent> <C-g> :split<CR>
 
+" toggle quickfix with support for dispatch
+nnoremap <silent> Q :ToggleQuickfix<CR>
+
 " this is my tmux prefix, so unbind it for purity
 map <C-a> <nop>
 

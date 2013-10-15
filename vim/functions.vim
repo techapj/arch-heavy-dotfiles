@@ -47,7 +47,7 @@ function! DeleteAllOtherBuffers()
   for bufno in range(0, bufnr("$"))
     let l:name = bufname(bufno)
     if l:name != "" && l:name != l:this_buffer
-      silent! execute "Bdelete " . l:bufno
+      silent! execute "Bdelete! " . l:bufno
     endif
   endfor
 endfunction

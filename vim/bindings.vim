@@ -8,7 +8,7 @@ nnoremap <ESC> i
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> <C-w> :q<CR>
 nnoremap <silent> <leader><C-x> :q!<CR>
-nnoremap <silent> <leader>K :DeleteAllOtherBuffers<CR>
+nnoremap <silent> <leader>k :DeleteAllOtherBuffers<CR>
 nnoremap <silent> K :Bdelete!<CR>
 
 " fast redo

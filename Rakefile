@@ -10,16 +10,11 @@ namespace :install do
     require 'yaml'
 
     YAML.load(File.read('symlinks.yml')).each do |src, dst|
-      src = File.join(Dir.pwd, src)
+      src = File.join(File.dirname(__FILE__), src)
       dst = File.join(ENV['HOME'], dst)
 
-      unless File.exists?(dst)
-        unless Dir.exists?(File.dirname(dst))
-          FileUtils.mkdir_p(File.dirname(dst))
-        end
-
-        File.symlink(src, dst) and puts "#{src} -> #{dst}"
-      end
+      FileUtils.mkdir_p(File.dirname(dst)) rescue nil
+      FileUtils.ln_s(src, dst, verbose: true, force: true)
     end
   end
 

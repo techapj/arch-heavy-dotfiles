@@ -1,5 +1,4 @@
 awesome: .config/awesome
-beets/config.yaml: .config/beets/config.yaml
 ctags/ctags: .ctags
 email/mailcap: .mailcap
 email/mbsyncrc: .mbsyncrc

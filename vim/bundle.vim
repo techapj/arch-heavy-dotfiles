@@ -40,6 +40,12 @@ NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
       \   },
       \ }
 
+NeoBundleLazy 'devlinzed/toggle_quickfix', {
+      \ 'autoload': {
+      \   'commands': ['ToggleQuickfix'],
+      \   },
+      \ }
+
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],

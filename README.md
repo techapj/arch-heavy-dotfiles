@@ -16,7 +16,7 @@ Before installing, you should install the relevant packages with `pacman`,
     pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
               msmtp nodejs notmuch packer pass ruby rxvt-unicode slock sxiv\
               xautolock zsh
-    packer -S dmenu-xft-fuzzy isync
+    packer -S dmenu-xft-fuzzy isync-git
     gem install gem-ctags bundler gem-browse mail redcarpet rubocop
     npm install -g coffee coffelint jshint
 

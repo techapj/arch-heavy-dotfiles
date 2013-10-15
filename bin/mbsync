@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+"$(which -a mbsync | tail -n 1)" $* && notmuch new

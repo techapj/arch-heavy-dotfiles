@@ -1,0 +1,207 @@
+#!/usr/bin/env ruby
+require 'net/imap'
+require 'pathname'
+
+class IO
+  def puts_with_time(*a, &b)
+    a[0] = "#{Time.now}: #{a[0]}"
+    puts(*a, &b)
+  end
+end
+
+class Configuration
+  attr_reader :host, :username, :certificate
+
+  def initialize(pathname = nil)
+    @pathname = pathname || Pathname.new("#{ENV['HOME']}/.mbsyncrc")
+    parse
+  end
+
+  def to_hash
+    {
+      certificate: certificate,
+      host: host,
+      password: password,
+      username: username,
+    }
+  end
+
+  alias_method :to_h, :to_hash
+
+  def to_s
+    to_hash.to_s
+  end
+
+  def [](*a, &b)
+    to_hash.send(:[], *a, &b)
+  end
+
+  def password
+    @password ||= (plaintext_password || password_command)
+  end
+
+  private
+
+  def parse
+    @host = remote_account_attributes['Host']
+    @username = remote_account_attributes['User']
+    @certificate = remote_account_attributes['CertificateFile']
+  end
+
+  def parse_attribute_line(line, hash)
+    key, *value = line.split
+    hash[key] = value.join(' ')
+  end
+
+  def password_command
+    %x(#{ENV['SHELL']} -ic #{remote_account_attributes['PassCmd']}).chomp
+  end
+
+  def plaintext_password
+    remote_account_attributes[:Pass]
+  end
+
+  def remote_account_attributes
+    @remote_account_attributes ||= remote_account_attributes!
+  end
+
+  def remote_account_attributes!
+    hash = { }
+    remote_account_lines do |line|
+      parse_attribute_line(line, hash)
+    end
+    hash
+  end
+
+  def remote_account_lines(&blk)
+    care = false
+    @pathname.each_line do |line|
+      care = remote_account_yield_line(line, care, &blk)
+    end
+  end
+
+  def remote_account_yield_line(line, care, &blk)
+    return false if line.chomp == ''
+    return true if line =~ /^IMAPAccount/
+    blk.call(line) if care
+    return true
+  end
+end
+
+class Connection < Net::IMAP
+  def await_done_confirmation
+    synchronize do
+      get_tagged_response(@idle_tag, nil)
+      $stdout.puts_with_time 'Confirmed DONE'
+    end
+  end
+
+  def idle
+    cmd = "IDLE"
+    synchronize do
+      @idle_tag = generate_tag
+      put_string(@idle_tag + " " + cmd)
+      put_string(CRLF)
+      $stdout.puts_with_time 'Sent idle'
+    end
+  end
+
+  def on_update(call_at_start = true, &blk)
+    blk.call if call_at_start
+    add_response_handler do |resp|
+      process_response(resp, &blk)
+    end
+    idle
+  end
+
+  def refresh(&blk)
+    $stdout.puts_with_time 'Refreshing connection...'
+    say_done
+    await_done_confirmation
+    blk.call if blk.respond_to?(:call)
+    idle
+  end
+
+  def say_done
+    cmd = "DONE"
+    synchronize do
+      put_string(cmd)
+      put_string(CRLF)
+      $stdout.puts_with_time 'Sent DONE'
+    end
+  end
+
+  private
+
+  def process_response(resp, &blk)
+    return unless resp.name == 'EXISTS'
+    Thread.new do
+      say_done
+      await_done_confirmation
+      blk.call
+      idle
+    end
+  end
+end
+
+class ConnectionHandler
+  attr_reader :host, :username, :password, :callback, :certificate
+
+  def initialize(params = {})
+    @host = params[:host]
+    @username = params[:username]
+    @password = params[:password]
+    @certificate = params[:certificate]
+    open_connection
+  end
+
+  def close_connection
+    @connection.close if @connection.respond_to?(:close)
+  end
+
+  def loop(&blk)
+    while true
+      $stdout.puts_with_time "Waiting..."
+      sleep 600
+      @connection.refresh(&blk)
+    end
+  end
+
+  def unread_messages?
+    @unread_messages != 0
+  end
+
+  def watch(&blk)
+    callback = -> { blk.call(check_unread) }
+    @connection.on_update(&callback)
+    loop(&callback)
+  end
+
+  private
+
+  def check_unread
+    $stdout.puts_with_time "Checking for messages..."
+    @connection.status('INBOX', ['UNSEEN'])['UNSEEN']
+  end
+
+  def open_connection
+    @connection = Connection.new(host, 993, true, certificate)
+     @connection.login(username, password)
+    @connection.select('INBOX')
+    $stdout.puts_with_time "Logged in..."
+  end
+end
+
+begin
+  handler = ConnectionHandler.new(Configuration.new)
+  handler.watch do |unread|
+    if unread > 0
+      $stdout.puts_with_time "Found #{unread} messages. Syncing."
+      system 'mbsync -a'
+    else
+      $stdout.puts_with_time 'Found no messages.'
+    end
+  end
+ensure
+  handler.close if handler.respond_to?(:close)
+end

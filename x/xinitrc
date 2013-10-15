@@ -27,6 +27,7 @@ fi
 pgrep mpd -u $USER || mpd
 pgrep urxvtd -u $USER || urxvtd -o -f
 pgrep xautolock -u $USER || xautolock -time 15 -locker "slock" -secure &
+pgrep syncemaild -u $USER || syncemaild &
 
 setxkbmap -option 'caps:escape'
 

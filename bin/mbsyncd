@@ -84,7 +84,7 @@ class Configuration
     return false if line.chomp == ''
     return true if line =~ /^IMAPAccount/
     blk.call(line) if care
-    return true
+    care
   end
 end
 

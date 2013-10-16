@@ -3,7 +3,7 @@ CertificateFile /etc/ssl/certs/kindred.crt
 Host kindred
 UseIMAPS yes
 User devlin
-PassCmd "pass show kindred/devlin"
+PassCmd "cat ~/.keys/kindred"
 
 IMAPStore kindred-remote
 Account kindred

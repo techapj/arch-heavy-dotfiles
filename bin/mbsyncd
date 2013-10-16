@@ -54,7 +54,7 @@ class Configuration
   end
 
   def password_command
-    %x(#{ENV['SHELL']} -ic #{remote_account_attributes['PassCmd']}).chomp
+    %x(#{ENV['SHELL']} -c #{remote_account_attributes['PassCmd']}).chomp
   end
 
   def plaintext_password
@@ -152,7 +152,7 @@ class ConnectionHandler
     @username = params[:username]
     @password = params[:password]
     @certificate = params[:certificate]
-    open_connection
+    open_connection and clean_password
   end
 
   def close_connection
@@ -162,7 +162,7 @@ class ConnectionHandler
   def loop(&blk)
     while true
       $stdout.puts_with_time "Waiting."
-      sleep 600
+      sleep 60 * 24 # server dies at 29
       @connection.refresh(&blk)
     end
   end
@@ -172,9 +172,8 @@ class ConnectionHandler
   end
 
   def watch(&blk)
-    callback = -> { blk.call(check_unread) }
-    @connection.on_update(&callback)
-    loop(&callback)
+    @connection.on_update { blk.call(check_unread) }
+    look { blk.call(check_unread) }
   end
 
   private
@@ -189,10 +188,17 @@ class ConnectionHandler
     @connection.login(username, password)
     @connection.select('INBOX')
     $stdout.puts_with_time "Logged in."
+    @connection
+  end
+
+  def clean_password
+    @password = nil
+    GC.start
+    $stdout.puts_with_time "Cleaned password."
   end
 end
 
-begin
+def main
   handler = ConnectionHandler.new(Configuration.new)
   handler.watch do |unread|
     if unread > 0
@@ -204,4 +210,8 @@ begin
   end
 ensure
   handler.close_connection if handler.respond_to?(:close_connection)
+end
+
+if $PROGRAM_NAME == __FILE__
+  main
 end

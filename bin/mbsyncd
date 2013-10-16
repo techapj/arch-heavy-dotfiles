@@ -92,7 +92,7 @@ class Connection < Net::IMAP
   def await_done_confirmation
     synchronize do
       get_tagged_response(@idle_tag, nil)
-      $stdout.puts_with_time 'Confirmed DONE'
+      $stdout.puts_with_time 'Confirmed DONE.'
     end
   end
 
@@ -102,7 +102,7 @@ class Connection < Net::IMAP
       @idle_tag = generate_tag
       put_string(@idle_tag + " " + cmd)
       put_string(CRLF)
-      $stdout.puts_with_time 'Sent idle'
+      $stdout.puts_with_time 'Sent IDLE.'
     end
   end
 
@@ -127,7 +127,7 @@ class Connection < Net::IMAP
     synchronize do
       put_string(cmd)
       put_string(CRLF)
-      $stdout.puts_with_time 'Sent DONE'
+      $stdout.puts_with_time 'Sent DONE.'
     end
   end
 
@@ -161,7 +161,7 @@ class ConnectionHandler
 
   def loop(&blk)
     while true
-      $stdout.puts_with_time "Waiting..."
+      $stdout.puts_with_time "Waiting."
       sleep 600
       @connection.refresh(&blk)
     end
@@ -180,7 +180,7 @@ class ConnectionHandler
   private
 
   def check_unread
-    $stdout.puts_with_time "Checking for messages..."
+    $stdout.puts_with_time "Checking for messages."
     @unread_messages = @connection.status('INBOX', ['UNSEEN'])['UNSEEN']
   end
 
@@ -188,7 +188,7 @@ class ConnectionHandler
     @connection = Connection.new(host, 993, true, certificate)
     @connection.login(username, password)
     @connection.select('INBOX')
-    $stdout.puts_with_time "Logged in..."
+    $stdout.puts_with_time "Logged in."
   end
 end
 

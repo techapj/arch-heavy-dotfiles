@@ -2,4 +2,3 @@
 set -ue
 
 git ctags &> /dev/null &
-git remote -v | egrep ":devlinzed/|:factore/" &> /dev/null && git trust

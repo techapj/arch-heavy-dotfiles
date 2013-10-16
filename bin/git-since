@@ -9,6 +9,5 @@ fi
 
 then_="$(git log --pretty=format:%at --max-count=1 "$commit")"
 now=$(date +%s)
-delta=$(($now - $then_))
 
-printf "$delta\n"
+printf "%d\n" "$(($now - $then_))"

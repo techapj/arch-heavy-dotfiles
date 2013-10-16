@@ -186,7 +186,7 @@ class ConnectionHandler
 
   def open_connection
     @connection = Connection.new(host, 993, true, certificate)
-     @connection.login(username, password)
+    @connection.login(username, password)
     @connection.select('INBOX')
     $stdout.puts_with_time "Logged in..."
   end

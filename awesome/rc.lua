@@ -145,6 +145,7 @@ mytasklist.buttons = awful.util.table.join(
 
 -- time widget
 mytextclock = awful.widget.textclock(pretty("%I %M %S", "#8bb4c6", "#192b33") .. pretty("%Y %m %d", "#8bb4c6", "#223a44"), 1)
+mymailwidget = wibox.widget.textbox()
 
 for s = 1, screen.count() do
     -- Create a taglist widget
@@ -162,6 +163,7 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local top_right_layout = wibox.layout.fixed.horizontal()
+    top_right_layout:add(mymailwidget)
     top_right_layout:add(mytextclock)
 
     -- Create the bottom wibox

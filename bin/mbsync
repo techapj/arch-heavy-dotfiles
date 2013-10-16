@@ -4,18 +4,30 @@ sync_email() {
   "$(which -a mbsync | tail -n 1)" $* && notmuch new
 }
 
-get_unread_emails() {
-  unread_emails="$(find ~/.mail -mindepth 4 -maxdepth 4 |
+unread_emails() {
+  find ~/.mail -mindepth 4 -maxdepth 4 |
     grep "/Inbox/new/" |
-    wc -l)"
+    wc -l
+}
+
+has_unread_emails() {
+  [[ "$(unread_emails)" -gt 0 ]]
+}
+
+show_unread_email_widget() {
+  printf "mymailwidget:set_markup(pretty('new email', '#f5f5f5', '#d28445'))\n" |
+    awesome-client
+}
+
+hide_unread_email_widget() {
+  printf "mymailwidget:set_text('')\n" | awesome-client
 }
 
 notify() {
-  get_unread_emails
-  if [[ "$unread_emails" -eq 1 ]]; then
-    notify-send "You have a new email."
-  elif [[ "$unread_emails" -gt 1 ]]; then
-    notify-send "You have $unread_emails unread emails."
+  if has_unread_emails; then
+    show_unread_email_widget
+  else
+    hide_unread_email_widget
   fi
 }
 

@@ -203,5 +203,5 @@ begin
     end
   end
 ensure
-  handler.close if handler.respond_to?(:close)
+  handler.close_connection if handler.respond_to?(:close_connection)
 end

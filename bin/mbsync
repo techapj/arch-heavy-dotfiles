@@ -31,5 +31,6 @@ notify() {
   fi
 }
 
+notify
 sync_email $*
 notify

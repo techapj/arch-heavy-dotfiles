@@ -27,7 +27,6 @@ ruby/gemrc: .gemrc
 ruby/irbrc: .irbrc
 ssh/config: .ssh/config
 tmux/tmux.conf: .tmux.conf
-vim/bundle/neobundle.vim: .vim/bundle/neobundle.vim
 vim/vimrc: .vimrc
 x/Xresources: .Xresources
 x/xinitrc: .xinitrc

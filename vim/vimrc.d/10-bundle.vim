@@ -1,4 +1,4 @@
-set runtimepath+=~/.vim/bundle/neobundle.vim
+set runtimepath+=~/.dotfiles/vim/plugins/neobundle.vim
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 runtime macros/matchit.vim

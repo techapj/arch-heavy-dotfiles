@@ -145,7 +145,7 @@ class Connection < Net::IMAP
 end
 
 class ConnectionHandler
-  attr_reader :host, :username, :password, :callback, :certificate
+  attr_reader :host, :username, :password, :certificate
 
   def initialize(params = {})
     @host = params[:host]

@@ -13,8 +13,19 @@ namespace :install do
       src = File.join(File.dirname(__FILE__), src)
       dst = File.join(ENV['HOME'], dst)
 
-      FileUtils.mkdir_p(File.dirname(dst)) rescue nil
-      FileUtils.ln_s(src, dst, verbose: true, force: true)
+      unless File.directory?(File.dirname(dst))
+        FileUtils.mkdir_p(File.dirname(dst), verbose: true)
+      end
+
+      if File.exists?(dst) || File.symlink?(dst)
+        if File.readlink(dst) == src
+          next
+        else
+          FileUtils.mv(dst, "#{dst.bak}", verbose: true)
+        end
+      end
+
+      FileUtils.ln_s(src, dst, verbose: true)
     end
   end
 

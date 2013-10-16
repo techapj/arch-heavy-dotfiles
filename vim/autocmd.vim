@@ -4,8 +4,6 @@ augroup dfknz
   au BufRead /tmp/luakit-* setlocal filetype=markdown syntax=markdown
   au BufRead /tmp/mutt-* setlocal filetype=markdown syntax=markdown textwidth=72
   au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
-  au BufWinEnter quickfix let g:quickfix = bufnr("$")
-  au BufWinLeave * if exists("g:quickfix") && expand("<abuf>") == g:quickfix | unlet! g:quickfix | endif
   au BufWritePost $MYVIMRC,$DOTFILES/vim/*.vim source %
   au FileType gitcommit setlocal spell textwidth=72
   au FileType markdown nmap <buffer> <leader>1 yypVr=

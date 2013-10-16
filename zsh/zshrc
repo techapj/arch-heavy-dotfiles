@@ -1,45 +1,8 @@
+# set required environment variables
 export DOTFILES="$HOME/.dotfiles"
 export PATH=".git/trusted/../../bin:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
 
-# set environment variables
-case "$-" in
-  *i*) INTERACTIVE=1 ;;
-  *) unset INTERACTIVE ;;
-esac
-
-case "$-" in
-  *l*) LOGIN=1 ;;
-  *) unset LOGIN ;;
-esac
-
-# source every .zsh file in this repo
-for config_file in $DOTFILES/**/*.zsh; do
-  # things that need to be loaded last are manually blacklisted
-  # TODO: improve
-  if [[ "$(basename $config_file)" = "completion.zsh" ]] ||
-     [[ $config_file =~ "/zsh/plugins/" ]] ||
-     [[ $config_file =~ "/tmp/" ]]; then
-    continue
-  fi
-
-  source $config_file
+# source autoloaded zsh files
+find $DOTFILES/zsh/zshrc.d -name '*\.zsh' | sort | while read thing; do
+  source $thing
 done
-
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a "$HOME/.localrc" ]]; then
-  source "$HOME/.localrc"
-fi
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-# load every completion after autocomplete loads
-for config_file in $DOTFILES/**/completion.zsh; do
-  source "$config_file"
-done
-
-# load syntax highlighting - this must be last!
-source "$DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$DOTFILES/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"

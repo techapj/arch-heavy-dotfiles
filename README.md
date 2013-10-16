@@ -71,17 +71,8 @@ everything in this repository, you'll need to install these as well.
 * [xautolock](http://freecode.com/projects/xautolock) and
   [slock](http://tools.suckless.org/slock) to lock the screen
 
-folder structure
-================
-
-- `**/*.zsh`: automatically loaded by zsh (this will probably be moved)
-- `**/completion.zsh`: automatically loaded, but after everything else
-- `bin/`: added to your `$PATH` and accessible everywhere
-- `functions/*`: lazy loaded as zsh functions and accessible everywhere
-- `symlinks.yml`: list of files linked into your `$HOME`
-
 license
--------
+=======
 
 Where applicable, everything in this repository is released into the public
 domain.  See `UNLICENSE.md`.

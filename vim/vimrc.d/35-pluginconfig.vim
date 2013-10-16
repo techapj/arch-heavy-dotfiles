@@ -52,6 +52,10 @@ let g:syntastic_style_error_symbol='✗'
 let g:syntastic_style_warning_symbol='⚠'
 let g:syntastic_warning_symbol='⚠'
 
+" splitjoin
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+
 " surround
 let g:surround_35  = "#{\r}"   " wrap in #{} with ysiw#
 

@@ -61,7 +61,7 @@ noremap <silent> <leader>eb :edit $DOTFILES/vim/vimrc.d/50-bindings.vim<CR>
 noremap <silent> <leader>ec :edit $DOTFILES/vim/vimrc.d/30-config.vim<CR>
 noremap <silent> <leader>ef :edit $DOTFILES/vim/vimrc.d/20-functions.vim<CR>
 noremap <silent> <leader>em :edit $DOTFILES/vim/vimrc.d/90-commands.vim<CR>
-noremap <silent> <leader>ep :edit $DOTFILES/vim/vimrc.d/35-plugin_config.vim<CR>
+noremap <silent> <leader>ep :edit $DOTFILES/vim/vimrc.d/35-pluginconfig.vim<CR>
 noremap <silent> <leader>eu :edit $DOTFILES/vim/vimrc.d/10-bundle.vim<CR>
 
 " grepping

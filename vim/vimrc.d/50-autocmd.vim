@@ -4,7 +4,7 @@ augroup dfknz
   au BufRead /tmp/luakit-* setlocal filetype=markdown syntax=markdown
   au BufRead /tmp/mutt-* setlocal filetype=markdown syntax=markdown textwidth=72
   au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
-  au BufWritePost $MYVIMRC,$DOTFILES/vim/*.vim source %
+  au BufWritePost $MYVIMRC,$DOTFILES/vim/vimrc.d/*.vim source %
   au FileType gitcommit setlocal spell textwidth=72
   au FileType markdown nmap <buffer> <leader>1 yypVr=
   au FileType markdown nmap <buffer> <leader>2 yypVr-

@@ -181,7 +181,7 @@ class ConnectionHandler
 
   def check_unread
     $stdout.puts_with_time "Checking for messages..."
-    @connection.status('INBOX', ['UNSEEN'])['UNSEEN']
+    @unread_messages = @connection.status('INBOX', ['UNSEEN'])['UNSEEN']
   end
 
   def open_connection

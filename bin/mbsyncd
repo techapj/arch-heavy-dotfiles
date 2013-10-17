@@ -54,7 +54,7 @@ class Configuration
   end
 
   def password_command
-    %x(#{ENV['SHELL']} -c #{remote_account_attributes['PassCmd']}).chomp
+    %x(sh -c #{remote_account_attributes['PassCmd']}).chomp
   end
 
   def plaintext_password

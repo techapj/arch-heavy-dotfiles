@@ -162,7 +162,7 @@ class ConnectionHandler
   def loop(&blk)
     while true
       $stdout.puts_with_time "Waiting."
-      sleep 60 * 24 # server dies at 29
+      sleep 60 * 15
       @connection.refresh(&blk)
     end
   end
@@ -173,7 +173,7 @@ class ConnectionHandler
 
   def watch(&blk)
     @connection.on_update { blk.call(check_unread) }
-    look { blk.call(check_unread) }
+    loop { blk.call(check_unread) }
   end
 
   private

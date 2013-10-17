@@ -173,7 +173,7 @@ class ConnectionHandler
 
   def watch(&blk)
     @connection.on_update { blk.call(check_unread) }
-    loop { blk.call(check_unread) }
+    loop
   end
 
   private

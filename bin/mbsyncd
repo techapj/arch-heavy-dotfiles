@@ -135,6 +135,7 @@ class Connection < Net::IMAP
 
   def process_response(resp, &blk)
     return unless resp.name == 'EXISTS'
+    $stderr.puts_with_time "Receievd EXISTS."
     Thread.new do
       say_done
       await_done_confirmation

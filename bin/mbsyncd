@@ -162,7 +162,7 @@ class ConnectionHandler
   def loop(&blk)
     while true
       $stdout.puts_with_time "Waiting."
-      sleep 60 * 15
+      sleep 60 * 24
       @connection.refresh(&blk)
     end
   end

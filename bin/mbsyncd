@@ -204,7 +204,7 @@ def main
   handler.watch do |unread|
     if unread > 0
       $stdout.puts_with_time "Found #{unread} messages. Syncing."
-      `mbsync -a`
+      `mbsync -anL`
     else
       $stdout.puts_with_time 'Found no messages.'
     end

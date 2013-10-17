@@ -1,36 +1,4 @@
 #!/usr/bin/env zsh
+set -ue
 
-sync_email() {
-  "$(which -a mbsync | tail -n 1)" $* && notmuch new
-}
-
-unread_emails() {
-  find ~/.mail -mindepth 4 -maxdepth 4 |
-    grep "/Inbox/new/" |
-    wc -l
-}
-
-has_unread_emails() {
-  [[ "$(unread_emails)" -gt 0 ]]
-}
-
-show_unread_email_widget() {
-  printf "mymailwidget:set_markup(pretty('new email', '#f5f5f5', '#d28445'))\n" |
-    awesome-client
-}
-
-hide_unread_email_widget() {
-  printf "mymailwidget:set_text('')\n" | awesome-client
-}
-
-notify() {
-  if has_unread_emails; then
-    show_unread_email_widget
-  else
-    hide_unread_email_widget
-  fi
-}
-
-notify
-sync_email $*
-notify
+"$(which -a mbsync | tail -n 1)" $* && notmuch new 2>&1 | grep -v "^Note:"

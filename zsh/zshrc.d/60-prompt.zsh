@@ -15,7 +15,7 @@ function prompt_char {
 }
 
 PROMPT='
-%{$fg[yellow]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+%{$fg[yellow]%}$(short_pwd)%{$reset_color%}$(git_prompt_info)
 $(prompt_char) '
 
 ZSH_THEME_GIT_PROMPT_CLEAN=""
@@ -39,6 +39,10 @@ zle-line-finish() {
   vim_mode=$vim_ins_mode
 }
 zle -N zle-line-finish
+
+short_pwd() {
+  printf "%s" "${PWD/#$HOME/~}" | sed -e 's#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g'
+}
 
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return

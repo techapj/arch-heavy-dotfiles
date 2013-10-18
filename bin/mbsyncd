@@ -97,10 +97,10 @@ class Connection < Net::IMAP
   end
 
   def idle
-    cmd = "IDLE"
+    cmd = 'IDLE'
     synchronize do
       @idle_tag = generate_tag
-      put_string(@idle_tag + " " + cmd)
+      put_string(@idle_tag + ' ' + cmd)
       put_string(CRLF)
       $stdout.puts_with_time 'Sent IDLE.'
     end
@@ -123,7 +123,7 @@ class Connection < Net::IMAP
   end
 
   def say_done
-    cmd = "DONE"
+    cmd = 'DONE'
     synchronize do
       put_string(cmd)
       put_string(CRLF)
@@ -135,7 +135,7 @@ class Connection < Net::IMAP
 
   def process_response(resp, &blk)
     return unless resp.name == 'EXISTS'
-    $stderr.puts_with_time "Receievd EXISTS."
+    $stderr.puts_with_time 'Receievd EXISTS.'
     Thread.new do
       say_done
       await_done_confirmation
@@ -162,7 +162,7 @@ class ConnectionHandler
 
   def loop(&blk)
     while true
-      $stdout.puts_with_time "Waiting."
+      $stdout.puts_with_time 'Waiting.'
       sleep 60 * 24
       @connection.refresh(&blk)
     end
@@ -180,7 +180,7 @@ class ConnectionHandler
   private
 
   def check_unread
-    $stdout.puts_with_time "Checking for messages."
+    $stdout.puts_with_time 'Checking for messages.'
     @unread_messages = @connection.status('INBOX', ['UNSEEN'])['UNSEEN']
   end
 
@@ -188,14 +188,14 @@ class ConnectionHandler
     @connection = Connection.new(host, 993, true, certificate)
     @connection.login(username, password)
     @connection.select('INBOX')
-    $stdout.puts_with_time "Logged in."
+    $stdout.puts_with_time 'Logged in.'
     @connection
   end
 
   def clean_password
     @password = nil
     GC.start
-    $stdout.puts_with_time "Cleaned password."
+    $stdout.puts_with_time 'Cleaned password.'
   end
 end
 

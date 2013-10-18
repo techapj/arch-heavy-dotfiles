@@ -42,7 +42,6 @@ set pumheight=10
 set relativenumber
 set report=0
 set ruler
-set shell=zsh
 set shiftround
 set shiftwidth=2
 set shortmess=filtIoOA

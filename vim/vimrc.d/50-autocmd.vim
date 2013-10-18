@@ -21,6 +21,7 @@ augroup dfknz
   au FileType ruby vnoremap <buffer> <silent> <leader>rxm :RExtractMethod<CR>
   au FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake<space>
   au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
+  au FileType ruby,haml,eruby if filereadable("Capfile") | nmap <buffer><silent> <leader>d :Dispatch! cap deploy<CR> | endif
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>

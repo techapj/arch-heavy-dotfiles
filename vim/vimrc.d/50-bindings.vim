@@ -40,8 +40,9 @@ nnoremap <leader>l <C-l>
 " quickly open tags
 nnoremap tt <C-]>
 
-" switch between alternate files
-nnoremap zz :A<CR>
+" switch between alternate files and recent buffers
+nnoremap zz <C-^>
+nnoremap ZZ :A<CR>
 
 " make Y consistent with D and C
 noremap Y y$

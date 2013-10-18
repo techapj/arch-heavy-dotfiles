@@ -26,10 +26,12 @@ Afterward, check out the repository and run the installation script:
     cd ~/.dotfiles
     rake install
 
-The script is idempotent and you can run it again to update symbolic links and
-vim plugins.  When you're done, `git grep` for `devlin` and change it as
-necessary.  If you installed to a different directory, look for `.dotfiles`,
-too.
+When you're done, `git grep` for `devlin` and change it as necessary.  If you
+installed to a different directory, look for `.dotfiles`, too.
+
+The script is idempotent and you can run it again to update symbolic links, git
+submdules and vim plugins.  In fact, you could consider making a cron task that
+runs `rake -f $DOTFILES/Rakefile install` to keep everything updated.
 
 compiling vim
 -------------

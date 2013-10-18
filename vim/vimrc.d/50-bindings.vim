@@ -55,6 +55,15 @@ nnoremap ff za
 " focus a fold
 nnoremap FF mzzMzvzz`z
 
+" no stretching for brackets and shit
+inoremap <C-d> =
+inoremap <C-f> _
+inoremap <C-g> =>
+inoremap <C-h> ()<left>
+inoremap <C-j> {}<left>
+inoremap <C-k> []<left>
+inoremap <C-l> <><left>
+
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/vimrc.d/50-autocmd.vim<CR>
 noremap <silent> <leader>eb :edit $DOTFILES/vim/vimrc.d/50-bindings.vim<CR>

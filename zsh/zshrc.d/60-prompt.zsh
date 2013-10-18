@@ -1,12 +1,19 @@
 PR_GIT_UPDATE=1
 
 setopt prompt_subst
-autoload colors
-colors
-
+autoload colors; colors
 autoload -U add-zsh-hook
 
-function prompt_char {
+zle-keymap-select() {
+  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+  zle reset-prompt
+}
+
+zle-line-finish() {
+  vim_mode=$vim_ins_mode
+}
+
+prompt_char() {
   if [[ -n "$vim_mode" ]]; then
     echo "$vim_mode"
   else
@@ -14,34 +21,15 @@ function prompt_char {
   fi
 }
 
-PROMPT='
-%{$fg[yellow]%}$(short_pwd)%{$reset_color%}$(git_prompt_info)
-$(prompt_char) '
-
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_TRUSTED="%{$fg[red]%}^"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
-
-vim_ins_mode=""
-vim_cmd_mode="!"
-vim_mode=$vim_ins_mode
-
-zle-keymap-select() {
-  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-  zle reset-prompt
-}
-zle -N zle-keymap-select
-
-zle-line-finish() {
-  vim_mode=$vim_ins_mode
-}
-zle -N zle-line-finish
-
 short_pwd() {
   printf "%s" "${PWD/#$HOME/~}" | sed -e 's#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g'
+}
+
+job_count() {
+  count="$(jobs | wc -l)"
+  if [[ -n "$count" ]] && [[ "$count" -gt 0 ]]; then
+    printf " %d&" "$count"
+  fi
 }
 
 git_prompt_info() {
@@ -68,3 +56,21 @@ parse_git_dirty() {
     echo -n "$ZSH_THEME_GIT_PROMPT_TRUSTED"
   fi
 }
+
+PROMPT='
+%{$fg[yellow]%}$(short_pwd)%{$reset_color%}$(git_prompt_info)%{$fg[red]%}$(job_count)%{$reset_color%}
+$(prompt_char) '
+
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_TRUSTED="%{$fg[red]%}^"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+
+vim_ins_mode=""
+vim_cmd_mode="!"
+vim_mode=$vim_ins_mode
+
+zle -N zle-keymap-select
+zle -N zle-line-finish

@@ -56,13 +56,13 @@ nnoremap ff za
 nnoremap FF mzzMzvzz`z
 
 " no stretching for brackets and shit
+imap <C-h> (
+imap <C-j> {
+imap <C-k> [
+imap <C-l> <
 inoremap <C-d> =
 inoremap <C-f> _
 inoremap <C-g> =>
-inoremap <C-h> ()<left>
-inoremap <C-j> {}<left>
-inoremap <C-k> []<left>
-inoremap <C-l> <><left>
 
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/vimrc.d/50-autocmd.vim<CR>

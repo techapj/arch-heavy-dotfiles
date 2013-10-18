@@ -6,6 +6,7 @@ runtime macros/matchit.vim
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'PeterRincker/vim-argumentative'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'austintaylor/vim-indentobject'
 NeoBundle 'bling/vim-airline'

@@ -17,11 +17,11 @@ parse_git_dirty() {
   gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
 
   if [[ $(printf "%s" ${gitstat} | grep -c "^\(# Changes to be committed:\|# Changes not staged for commit:\)$") > 0 ]]; then
-	printf "%s" "$ZSH_THEME_GIT_PROMPT_DIRTY"
+    printf "%s" "$ZSH_THEME_GIT_PROMPT_DIRTY"
   fi
 
   if [[ $(printf "%s" ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
-	printf "%s""$ZSH_THEME_GIT_PROMPT_UNTRACKED"
+    printf "%s" "$ZSH_THEME_GIT_PROMPT_UNTRACKED"
   fi
 
   if [[ -d ".git/trusted" ]]; then

@@ -2,4 +2,4 @@
 set -ue
 
 git submodule foreach --quiet pwd\
-  | xargs -P4 -n1 -i% zsh -c "cd % && (git checkout master; git pull origin)"
+  | xargs -P4 -n1 -i% sh -c "cd % && (git checkout master; git pull origin)"

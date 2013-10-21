@@ -8,7 +8,7 @@ if ! command -v xdotool &> /dev/null; then
 fi
 
 # get the deets
-output="$(pass $*)"
+output="$(pass $@)"
 
 # fail fast if it doesn't exist
 exit_code="$?"

@@ -25,7 +25,6 @@ if [[ -d "$HOME/.fonts" ]]; then
 fi
 
 pgrep mpd -u $USER || mpd
-pgrep urxvtd -u $USER || urxvtd -o -f
 pgrep xautolock -u $USER || xautolock -time 15 -locker "slock" -secure &
 
 setxkbmap -option 'caps:escape'

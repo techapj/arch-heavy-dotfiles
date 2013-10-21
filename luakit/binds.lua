@@ -424,53 +424,6 @@ add_binds("normal", {
 })
 
 add_binds("insert", {
-    key({"Control"},  "e",       function (w)
-      local editor = "urxvtc -e vim" 
-      local dir = "/tmp/" 
-      local time = os.time()
-      local file = dir .. "luakit-" .. time
-      local marker = "luakit_extedit_" .. time
-      local function editor_callback(exit_reason, exit_status)
-        f = io.open(file, "r")
-        s = f:read("*all")
-        f:close()
-        -- Strip the string
-        s = s:gsub("^%s*(.-)%s*$", "%1")
-        -- Escape it but remove the quotes
-        s = string.format("%q", s):sub(2, -2)
-        -- lua escaped newlines (slash+newline) into js newlines (slash+n)
-        s = s:gsub("\\n", "\n")
-        w.view:eval_js(string.format([=[
-        var e = document.getElementsByClassName('%s');
-        if(1 == e.length && e[0].disabled){
-          e[0].focus();
-          e[0].value = "%s";
-          e[0].disabled = false;
-          e[0].className = e[0].className.replace(/\b %s\b/,'');
-        }
-        ]=], marker, s, marker))
-        os.remove(file)
-      end
-
-      local s = w.view:eval_js(string.format([=[
-      var e = document.activeElement;
-      if(e && (e.tagName && 'TEXTAREA' == e.tagName || e.type && 'text' == e.type)){
-        var s = e.value;
-        e.className += " %s";
-        e.disabled = true;
-        e.value = '%s';
-        s;
-      }else 'false';
-      ]=], marker, file))
-      if "false" ~= s then
-        local f = io.open(file, "w")
-        f:write(s)
-        f:flush()
-        f:close()
-        luakit.spawn(string.format("%s %q", editor, file), editor_callback)
-      end
-    end),
-
     key({"Shift"}, "Insert",
         "Insert contents of primary selection at cursor position.",
         function (w) w:insert_cmd(luakit.selection.primary) end),

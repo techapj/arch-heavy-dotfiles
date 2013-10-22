@@ -11,14 +11,6 @@ augroup dfknz
   au FileType markdown nmap <buffer> <leader>3 I### <ESC>
   au FileType markdown setlocal spell
   au FileType python setlocal shiftwidth=4 softtabstop=4
-  au FileType ruby nnoremap <buffer> <silent> <leader>ril :RIntroduceVariable<CR>
-  au FileType ruby nnoremap <buffer> <silent> <leader>rip :RAddParameter<CR>
-  au FileType ruby vnoremap <buffer> <silent> <leader>rni :RRenameInstanceVariable<CR>
-  au FileType ruby vnoremap <buffer> <silent> <leader>rnl :RRenameLocalVariable<CR>
-  au FileType ruby vnoremap <buffer> <silent> <leader>rxc :RExtractConstant<CR>
-  au FileType ruby vnoremap <buffer> <silent> <leader>rxe :RExtractLet<CR>
-  au FileType ruby vnoremap <buffer> <silent> <leader>rxl :RExtractLocalVariable<CR>
-  au FileType ruby vnoremap <buffer> <silent> <leader>rxm :RExtractMethod<CR>
   au FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake<space>
   au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>

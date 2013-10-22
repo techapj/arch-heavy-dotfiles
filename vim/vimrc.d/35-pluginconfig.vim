@@ -6,7 +6,6 @@ let g:airline#extensions#tabline#fnamemod = ":t"
 let g:airline_detect_modified = 0
 let g:airline_detect_paste = 0
 let g:airline_enable_branch = 1
-let g:airline_enable_syntastic = 1
 let g:airline_left_alt_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_alt_sep = ''
@@ -42,15 +41,6 @@ let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::' 
 let g:neocomplete#syntax#min_keyword_length = 1
-
-" syntastic
-let g:syntastic_coffee_checkers = ["coffee", "coffeelint"]
-let g:syntastic_error_symbol='✗'
-let g:syntastic_ruby_checkers = ["mri", "rubocop"]
-let g:syntastic_ruby_rubocop_args = "--rails"
-let g:syntastic_style_error_symbol='✗'
-let g:syntastic_style_warning_symbol='⚠'
-let g:syntastic_warning_symbol='⚠'
 
 " splitjoin
 let g:splitjoin_split_mapping = ''

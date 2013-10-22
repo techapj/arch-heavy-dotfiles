@@ -10,15 +10,14 @@ probably only looking for configuration for a program or two.
 install
 =======
 
-Before installing, you should install the relevant packages with `pacman`,
-`gem` and `npm`.  A list of packages and their purpose is below.
+Before installing, you should install the relevant packages with `pacman` and
+`gem`.  A list of packages and their purpose is below.
 
     pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
               msmtp nodejs notmuch packer pass ruby rxvt-unicode slock sxiv\
               xautolock zsh
     packer -S dmenu-xft-fuzzy isync-git
-    gem install gem-ctags bundler gem-browse mail redcarpet rubocop
-    npm install -g coffee coffelint jshint
+    gem install gem-ctags bundler mail redcarpet
 
 Afterward, check out the repository and run the installation script:
 
@@ -66,7 +65,6 @@ everything in this repository, you'll need to install these as well.
 * [isync](http://isync.sourceforge.net/) for syncing email
 * [keychain](http://www.funtoo.org/wiki/Keychain) for managing agents & passwords
 * [msmpt](http://msmtp.sourceforge.net) for sending email
-* [node](http://nodejs.org) because people keep writing crap in it
 * [notmuch](http://notmuchmail.org/) for indexing and searching email
 * [pass](http://zx2c4.com/projects/password-store/) for managing passwords
 * [xautolock](http://freecode.com/projects/xautolock) and

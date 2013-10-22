@@ -1,1 +1,1 @@
-source ~/.zshrc
+source "$DOTFILES/zsh/zshrc"

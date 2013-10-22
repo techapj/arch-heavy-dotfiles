@@ -83,6 +83,10 @@ nnoremap \s :GrepFromSearch<CR>
 nnoremap <silent> <S-Tab> :CtrlPTag<CR>
 nnoremap <silent> <Tab> :CtrlP<CR>
 
+" make shift tab work
+map <Esc>[Z <S-Tab>
+ounmap <ESC>[Z
+
 " fugitive
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>

@@ -11,6 +11,18 @@ let g:airline_left_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols = { 'branch': '', 'linenr': '', 'readonly': '' }
+let g:airline_mode_map = {
+    \ 'n'  : 'normal',
+    \ 'i'  : 'insert',
+    \ 'R'  : 'replace',
+    \ 'c'  : 'command',
+    \ 'v'  : 'visual',
+    \ 'V'  : 'v-line',
+    \ '' : 'v-block',
+    \ 's'  : 'select',
+    \ 'S'  : 's-line',
+    \ '' : 's-block',
+    \ }
 
 " ruby
 let g:ruby_complete_classes_in_global = 1

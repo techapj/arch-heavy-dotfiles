@@ -4,4 +4,4 @@ set -ue
 # change to the tmux directory
 cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#I_#P")" | cut -d= -f2-)"
 
-pwd # start small
+pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g"

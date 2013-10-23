@@ -5,5 +5,5 @@ line_divider() {
   echo "${(l.$COLUMNS..—.)}"
 }
  
-PROMPT="%{$fg_bold[blue]%}$(line_divider)
+PROMPT="$FG[236]$(line_divider)
 %{$fg[cyan]%}➥%{$reset_color%} "

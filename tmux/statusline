@@ -37,13 +37,9 @@ git_status() {
   git_uncommited_changes "$status_text"
 }
 
-statusline() {
-  if git root &> /dev/null; then
-    git_status
-    git_trusted_pwd
-  else
-    short_pwd "blue"
-  fi
-}
-
-statusline
+if git root &> /dev/null; then
+  git_status
+  git_trusted_pwd
+else
+  short_pwd "blue"
+fi

@@ -40,4 +40,5 @@
 
 URxvt.boldFont: xft:lemon:size=10
 URxvt.font: xft:lemon:size=10
+URxvt.internalBorder: 7
 URxvt.scrollBar: false

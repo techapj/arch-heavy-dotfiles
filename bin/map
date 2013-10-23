@@ -6,6 +6,6 @@ Kernel.class_eval <<EOF
   end
 EOF
 
-STDIN.readlines.each do |line|
+STDIN.each_line do |line|
   puts callback(line.chomp)
 end

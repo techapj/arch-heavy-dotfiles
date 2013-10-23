@@ -21,13 +21,13 @@ git_trusted_pwd() {
 
 git_new_files() {
   if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$1"; then
-    format "?" "black" "yellow"
+    format "?" "black" "green"
   fi
 }
 
 git_uncommited_changes() {
   if grep "^# Changes to" > /dev/null <<< "$1"; then
-    format "!" "black" "green"
+    format "!" "black" "yellow"
   fi
 }
 

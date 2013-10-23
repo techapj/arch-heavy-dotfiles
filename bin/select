@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+Kernel.class_eval <<EOF
+  def callback(e)
+    #{ARGV.shift}
+  end
+EOF
+
+STDIN.readlines.each do |line|
+  puts line.chomp if callback(line.chomp)
+end

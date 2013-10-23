@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+set -ue
+
+# change to the tmux directory
+cd "$(tmux showenv TMUX_PWD | cut -d= -f2-)"
+
+pwd # start small

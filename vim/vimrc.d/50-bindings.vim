@@ -12,7 +12,7 @@ nnoremap <silent> <leader>k :DeleteAllOtherBuffers<CR>
 nnoremap <silent> K :Bdelete!<CR>
 
 " fast redo
-nnoremap U <C-r>
+nnoremap i <C-r>
 
 " navigate through paragraphs intelligently
 nnoremap j gj
@@ -97,19 +97,25 @@ nnoremap <silent> <leader>gp :Git push-all<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 
 " gundo
-nnoremap <silent> <C-u> :GundoToggle<CR>
+nnoremap <silent> U :GundoToggle<CR>
 
 " splitjoin
 nnoremap <silent> gj :SplitjoinJoin<CR>
 nnoremap <silent> gk :SplitjoinSplit<CR>
 
 " neocomplete
-inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"
-inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-snoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"
 snoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
-
 function! s:my_cr_function()
   return neocomplete#smart_close_popup() . "\<CR>"
 endfunction
+
+" neosnippet
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" :
+      \ pumvisible() ? "\<C-n>" : "\<TAB>"
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" :
+      \ "\<TAB>"

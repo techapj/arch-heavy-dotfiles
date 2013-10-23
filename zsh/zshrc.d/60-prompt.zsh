@@ -1,8 +1,9 @@
-PR_GIT_UPDATE=1
-
 setopt prompt_subst
 autoload colors; colors
 
-PROMPT='
-%{$fg[yellow]%}${PWD/#$HOME/~}%{$reset_color%}
-$ '
+line_divider() {
+  echo "${(l.$COLUMNS..—.)}"
+}
+ 
+PROMPT="%{$fg_bold[blue]%}$(line_divider)
+%{$fg[cyan]%}➥%{$reset_color%} "

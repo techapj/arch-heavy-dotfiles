@@ -2,6 +2,6 @@
 set -ue
 
 # change to the tmux directory
-cd "$(tmux showenv TMUX_PWD | cut -d= -f2-)"
+cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#I_#P")" | cut -d= -f2-)"
 
 pwd # start small

@@ -1,1 +1,3 @@
-[[ -n "$TMUX" ]] && update-tmux
+if [[ -n "$TMUX" ]]; then
+  tmux setenv "$(tmux display -p "TMUX_PWD_#I_#P")" "$PWD"
+fi

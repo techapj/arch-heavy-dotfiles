@@ -17,6 +17,7 @@ setopt CORRECT
 setopt EXTENDED_GLOB
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
+setopt IGNORE_EOF
 setopt INC_APPEND_HISTORY SHARE_HISTORY
 setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps

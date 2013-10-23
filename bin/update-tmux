@@ -1,0 +1,1 @@
+tmux setenv TMUX_PWD "$PWD"

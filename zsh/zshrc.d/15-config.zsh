@@ -27,6 +27,7 @@ setopt PROMPT_SUBST
 unsetopt CASE_GLOB
 
 zle -N newtab
+zle -N reset-prompt
 
 set -o vi
 

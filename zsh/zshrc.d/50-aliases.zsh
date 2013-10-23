@@ -7,3 +7,5 @@ for i in 4 5 6 7 8 9; do
 done
 
 alias "rspec"="nocorrect rspec"
+
+alias "ls"="ls --color=auto"

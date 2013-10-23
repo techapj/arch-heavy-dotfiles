@@ -1,7 +1,49 @@
 #!/usr/bin/env zsh
 set -ue
 
-# change to the tmux directory
 cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#I_#P")" | cut -d= -f2-)"
 
-pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g"
+format() {
+  printf "#[fg=%s,bg=%s] %s " "$2" "$3" "$1"
+}
+
+short_pwd() {
+  format "$(pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g")" "black" "$1"
+}
+
+git_trusted_pwd() {
+  if git trusted; then
+    short_pwd "red"
+  else
+    short_pwd "blue"
+  fi
+}
+
+git_new_files() {
+  if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$1"; then
+    format "new changes" "black" "yellow"
+  fi
+}
+
+git_uncommited_changes() {
+  if grep "^# Changes to" > /dev/null <<< "$1"; then
+    format "new files" "black" "green"
+  fi
+}
+
+git_status() {
+  local status_text="$(git status)"
+  git_new_files "$status_text"
+  git_uncommited_changes "$status_text"
+}
+
+statusline() {
+  if git root &> /dev/null; then
+    git_status
+    git_trusted_pwd
+  else
+    short_pwd "blue"
+  fi
+}
+
+statusline

@@ -15,7 +15,7 @@ Before installing, you should install the relevant packages with `pacman` and
 
     pacman -S awesome ctags git keychain lua luajit luakit mpc mpd mpv mutt\
               msmtp nodejs notmuch packer pass ruby rxvt-unicode slock sxiv\
-              xautolock zsh
+              tmux xautolock zsh
     packer -S dmenu-xft-fuzzy isync-git
     gem install gem-ctags bundler mail redcarpet
 
@@ -51,6 +51,7 @@ configuration and scripts for these programs.
 * **music player**: [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) and [mpc](http://mpd.wikia.com/wiki/Client:Mpc)
 * **shell**: [zsh](http://zsh.org/)
 * **terminal emulator**: [rxvt-unicode](https://en.wikipedia.org/wiki/Rxvt)
+* **terminal multiplexer**: [tmux](http://tmux.sourceforge.net/)
 * **text editor**: [vim](http://vim.org)
 * **version control**: [git](http://git-scm.org)
 * **video player**: [mpv](http://mpv.io/index.html)

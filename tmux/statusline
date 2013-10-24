@@ -7,11 +7,12 @@ format() {
   printf "#[fg=%s,bg=%s] %s " "$2" "$3" "$1"
 }
 
+short_pwd() {
+  pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g"
+}
+
 git_status() {
   local s="$(git status)"
-  if git trusted; then
-    format "#" "colour11" "colour5"
-  fi
   if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$s"; then
     format "?" "colour1" "colour3"
   fi
@@ -35,14 +36,21 @@ git_branch() {
   format "$(git rev-parse --abbrev-ref HEAD)" "colour11" "colour7"
 }
 
-short_pwd() {
-  format "$(pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g")" "colour0" "colour4"
+git_pwd() {
+  local color
+  if git trusted; then
+    color="colour9"
+  else
+    color="colour4"
+  fi
+  format "$(short_pwd)" "colour0" "$color"
 }
 
 if git root &> /dev/null; then
   git_status
   git_since
   git_branch
+  git_pwd
+else
+  format "$(short_pwd)" "colour0" "colour4"
 fi
-
-short_pwd

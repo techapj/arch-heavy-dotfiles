@@ -7,44 +7,43 @@ format() {
   printf "#[fg=%s,bg=%s] %s " "$2" "$3" "$1"
 }
 
-git_trusted() {
-  if git trusted; then
-    printf "^"
-  fi
-}
-
 git_status() {
   local s="$(git status)"
+  local chars
+  if git trusted; then
+    chars="$chars^"
+  fi
   if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$s"; then
-    printf "?"
+    chars="$chars?"
   fi
   if grep "^# Changes to" > /dev/null <<< "$s"; then
-    printf "\!"
+    chars="$chars!"
   fi
-  printf ' ' # not using format, so give it some space
+  if [[ -n "$chars" ]]; then
+    format "$chars" "colour11" "colour3"
+  fi
 }
 
 git_since() {
   local seconds="$(git since)"
   if [[ "$seconds" -gt 3600 ]]; then
-    format "$((seconds / 3600))h$((seconds % 3600 / 60))m" "black" "red"
+    format "$((seconds / 3600))h$((seconds % 3600 / 60))m" "colour0" "colour9"
   elif [[ "$seconds" -gt 60 ]]; then
-    format "$((seconds / 60))m" "black" "green"
+    format "$((seconds / 60))m" "colour11" "colour2"
   else
-    format "<1m" "black" "green"
+    format "<1m" "colour11" "colour2"
   fi
 }
 
 git_branch() {
-  format "$(git rev-parse --abbrev-ref HEAD)" "black" "white"
+  format "$(git rev-parse --abbrev-ref HEAD)" "colour11" "colour7"
 }
 
 short_pwd() {
-  format "$(pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g")" "black" "blue"
+  format "$(pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g")" "colour0" "colour4"
 }
 
 if git root &> /dev/null; then
-  git_trusted
   git_status
   git_since
   git_branch

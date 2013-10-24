@@ -9,18 +9,19 @@ format() {
 
 git_trusted() {
   if git trusted; then
-    format "^" "red" "black"
+    printf "^"
   fi
 }
 
 git_status() {
   local status_text="$(git status)"
   if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$status_text"; then
-    format "?" "yellow" "black"
+    printf "?"
   fi
   if grep "^# Changes to" > /dev/null <<< "$status_text"; then
-    format "!" "red" "black"
+    printf "\!"
   fi
+  printf ' '
 }
 
 git_since() {

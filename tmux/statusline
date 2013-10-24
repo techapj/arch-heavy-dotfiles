@@ -9,18 +9,11 @@ format() {
 
 git_status() {
   local s="$(git status)"
-  local chars
-  if git trusted; then
-    chars="$chars^"
+  if grep "^# Changes to" > /dev/null <<< "$s"; then
+    format "!" "colour13" "colour1"
   fi
   if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$s"; then
-    chars="$chars?"
-  fi
-  if grep "^# Changes to" > /dev/null <<< "$s"; then
-    chars="$chars!"
-  fi
-  if [[ -n "$chars" ]]; then
-    format "$chars" "colour11" "colour3"
+    format "?" "colour11" "colour3"
   fi
 }
 

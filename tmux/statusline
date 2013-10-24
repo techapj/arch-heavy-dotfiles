@@ -7,39 +7,46 @@ format() {
   printf "#[fg=%s,bg=%s] %s " "$2" "$3" "$1"
 }
 
-short_pwd() {
-  format "$(pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g")" "black" "$1"
-}
-
-git_trusted_pwd() {
+git_trusted() {
   if git trusted; then
-    short_pwd "red"
-  else
-    short_pwd "blue"
-  fi
-}
-
-git_new_files() {
-  if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$1"; then
-    format "?" "black" "green"
-  fi
-}
-
-git_uncommited_changes() {
-  if grep "^# Changes to" > /dev/null <<< "$1"; then
-    format "!" "black" "yellow"
+    format "^" "red" "black"
   fi
 }
 
 git_status() {
   local status_text="$(git status)"
-  git_new_files "$status_text"
-  git_uncommited_changes "$status_text"
+  if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$status_text"; then
+    format "?" "yellow" "black"
+  fi
+  if grep "^# Changes to" > /dev/null <<< "$status_text"; then
+    format "!" "red" "black"
+  fi
+}
+
+git_since() {
+  local seconds="$(git since)"
+  if [[ "$seconds" -gt 3600 ]]; then
+    format "$((seconds / 3600))h$((seconds % 3600 / 60))m" "black" "red"
+  elif [[ "$seconds" -gt 60 ]]; then
+    format "$((seconds / 60))m" "black" "green"
+  else
+    format "<1m" "black" "green"
+  fi
+}
+
+git_branch() {
+  format "$(git branch | cut -d\  -f2)" "black" "white"
+}
+
+short_pwd() {
+  format "$(pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g")" "black" "blue"
 }
 
 if git root &> /dev/null; then
+  git_trusted
   git_status
-  git_trusted_pwd
-else
-  short_pwd "blue"
+  git_since
+  git_branch
 fi
+
+short_pwd

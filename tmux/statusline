@@ -14,14 +14,14 @@ git_trusted() {
 }
 
 git_status() {
-  local status_text="$(git status)"
-  if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$status_text"; then
+  local s="$(git status)"
+  if egrep "^# Untracked|^# Changed|^# Changes not" > /dev/null <<< "$s"; then
     printf "?"
   fi
-  if grep "^# Changes to" > /dev/null <<< "$status_text"; then
+  if grep "^# Changes to" > /dev/null <<< "$s"; then
     printf "\!"
   fi
-  printf ' '
+  printf ' ' # not using format, so give it some space
 }
 
 git_since() {
@@ -36,7 +36,7 @@ git_since() {
 }
 
 git_branch() {
-  format "$(git branch | cut -d\  -f2)" "black" "white"
+  format "$(git rev-parse --abbrev-ref HEAD)" "black" "white"
 }
 
 short_pwd() {

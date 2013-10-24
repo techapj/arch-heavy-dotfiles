@@ -2,7 +2,7 @@
 set -ue
 
 add_album() {
-  album="$(mpc listall |
+  local album="$(mpc listall |
     cut -d/ -f1-2 |
     uniq |
     egrep -v "\..{3,4}$" |
@@ -16,6 +16,8 @@ add_album() {
     mpc play
   fi
 }
+
+local type
 
 if [[ "$#" < "1" ]] || [[ -z "$1" ]]; then
   type="album"

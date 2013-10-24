@@ -13,16 +13,14 @@ namespace :install do
       src = File.join(File.dirname(__FILE__), src)
       dst = File.join(ENV['HOME'], dst)
 
-      unless File.directory?(File.dirname(dst))
-        FileUtils.mkdir_p(File.dirname(dst), verbose: true)
-      end
-
       if File.exists?(dst) || File.symlink?(dst)
         if File.readlink(dst) == src
           next
         else
           FileUtils.mv(dst, "#{dst.bak}", verbose: true)
         end
+      elsif !File.directory?(File.dirname(dst))
+        FileUtils.mkdir_p(File.dirname(dst), verbose: true)
       end
 
       FileUtils.ln_s(src, dst, verbose: true)
@@ -37,7 +35,7 @@ end
 
 desc 'Run every install command in order.'
 task :install do
-  Rake::Task['install:submodules'].invoke
+  Rake::Task['install:submodules'].invoke # put this 1st
 
   Rake::Task['install:symlinks'].invoke
   Rake::Task['install:vim_plugins'].invoke

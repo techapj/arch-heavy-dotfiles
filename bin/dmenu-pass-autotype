@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -ue
 
-password_store="$HOME/.password-store"
+local password_store="$HOME/.password-store"
 
 # make sure the password store exists
 if [[ ! -d "$password_store" ]]; then
@@ -11,15 +11,15 @@ if [[ ! -d "$password_store" ]]; then
 fi
 
 # discern a list of possibilities
-candidates="$(find "$password_store" -name '*gpg' -print0 |
+local candidates="$(find "$password_store" -name '*gpg' -print0 |
   tr "\0" "\n" | 
   sed "s#$password_store/##;s#\.gpg\$##")"
 
 # ask which
-choice="$(printf "$candidates" | sort | dmenu -p 'autotype' | chomp)"
+local choice="$(printf "$candidates" | sort | dmenu -p 'autotype' | chomp)"
 
 # notify which we found, using stderr so it isn't piped to anything else
 printf "Using $choice.\n" 1>&2
 
 # delegate to pass 
-pass-autotype "$choice" $*
+exec pass-autotype "$choice" $*

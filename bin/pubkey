@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 set -ue
 
-less ~/.ssh/id_${1:-ecdsa}.pub
+exec less ~/.ssh/id_${1:-ecdsa}.pub

@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 set -ue
 
-dig +short myip.opendns.com @resolver1.opendns.com
+exec dig +short myip.opendns.com @resolver1.opendns.com

@@ -3,10 +3,6 @@ set -ue
 
 cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#D")" | cut -d= -f2-)"
 
-format() {
-  printf "#[fg=%s] %s " "$2" "$1"
-}
-
 short_pwd() {
   pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g"
 }

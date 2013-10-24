@@ -14,7 +14,6 @@ set concealcursor=i
 set conceallevel=2
 set copyindent
 set cpoptions+=J
-set cursorline
 set expandtab
 set foldlevelstart=99
 set foldmethod=indent

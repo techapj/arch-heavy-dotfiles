@@ -29,7 +29,7 @@ git_since() {
   elif [[ "$seconds" -gt 60 ]]; then
     printf " #[fg=colour2]$((seconds / 60))m "
   else
-    printf " #[fg=colour2]<1m since commit "
+    printf " #[fg=colour2]<1m "
   fi
 }
 
@@ -44,7 +44,7 @@ git_pwd() {
   else
     color="colour4"
   fi
-  printf " #[fg=$color]%s " "$(short_pwd)"
+  printf " #[fg=$color]%s" "$(short_pwd)"
 }
 
 if git root &> /dev/null; then

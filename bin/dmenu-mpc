@@ -2,7 +2,7 @@
 set -ue
 
 add_album() {
-  local album="$(mpc listall |
+  album="$(mpc listall |
     cut -d/ -f1-2 |
     uniq |
     egrep -v "\..{3,4}$" |

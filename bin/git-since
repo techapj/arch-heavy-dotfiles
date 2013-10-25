@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 set -ue
 
-commit
-
 if [[ "$#" > 0 ]]; then
   commit="$1"
 else

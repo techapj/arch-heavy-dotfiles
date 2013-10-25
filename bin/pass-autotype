@@ -8,20 +8,20 @@ if ! command -v xdotool &> /dev/null; then
 fi
 
 # get the deets
-local output="$(pass $@)"
+output="$(pass $@)"
 
 # fail fast if it doesn't exist
-local exit_code="$?"
+exit_code="$?"
 if [[ "$exit_code" -gt 0 ]]; then
   exit "$exit_code" # $? is the result of [[ now
 fi
 
 # extract the junk we want
-local password="$(printf "%s" "$output" | head -n 1)"
-local username="$(printf "%s" "$output" | grep '^username: ' | cut -c 11-)"
+password="$(printf "%s" "$output" | head -n 1)"
+username="$(printf "%s" "$output" | grep '^username: ' | cut -c 11-)"
 
 # send those key presses to the window
-local active_window_id="$(xdotool getactivewindow)"
+active_window_id="$(xdotool getactivewindow)"
 
 if [[ -n "$password" ]]; then
   if [[ -n "$username" ]]; then

@@ -1,18 +1,18 @@
 #!/usr/bin/env zsh
 set -ue
 
-local candidates="$(find /media/videos/{films,tv} -maxdepth 1)"
+candidates="$(find /media/videos/{films,tv} -maxdepth 1)"
 
-local shortnames="$(printf "%s" "$candidates" |
+shortnames="$(printf "%s" "$candidates" |
   sed -r "s#/media/videos/(tv|films)/?##;s#\..{3,4}\$##")"
 
-local choice="$(printf "%s" "$shortnames" |
+choice="$(printf "%s" "$shortnames" |
   grep -v "^[ \t]*$" |
   uniq |
   shuf |
   dmenu -z -p "watch")"
 
-local fullpath="$(printf "%s" "$candidates" |
+fullpath="$(printf "%s" "$candidates" |
   egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$" |
   head -n 1)" # just in case two share a name, pick the first
 

@@ -66,7 +66,7 @@ noremap <silent> <leader>ep :edit $DOTFILES/vim/vimrc.d/35-pluginconfig.vim<CR>
 noremap <silent> <leader>eu :edit $DOTFILES/vim/vimrc.d/10-bundle.vim<CR>
 
 " grepping
-nnoremap \\ :FuckinGrep<space>
+nnoremap \\ :Ggrep ""<left>
 nnoremap \w :GrepFromWord<CR>
 nnoremap \s :GrepFromSearch<CR>
 
@@ -77,6 +77,12 @@ nnoremap <silent> <Tab> :CtrlP<CR>
 " make shift tab work
 map <Esc>[Z <S-Tab>
 ounmap <ESC>[Z
+
+" indent text object
+onoremap <silent>ai :<C-U>cal IndentTextObj(0)<CR>
+onoremap <silent>ii :<C-U>cal IndentTextObj(1)<CR>
+vnoremap <silent>ai :<C-U>cal IndentTextObj(0)<CR><Esc>gv
+vnoremap <silent>ii :<C-U>cal IndentTextObj(1)<CR><Esc>gv
 
 " fugitive
 nnoremap <silent> <leader>ga :Git add .<CR>

@@ -7,17 +7,12 @@ function! ConfigureAirline()
   let g:airline_section_z = airline#section#create(['%lL%cC'])
 endfunction
 
-" wraps it in quotes and assumes case insensitivity
-function! FuckinGrep(args)
-  execute "Ggrep --ignore-case '" . a:args . "'"
-endfunction
-
 function! GrepFromWord()
-  call FuckinGrep(expand("<cword>"))
+  execute "Ggrep '" . expand("<cword>") . "'"
 endfunction
 
 function! GrepFromSearch()
-  call FuckinGrep(substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g'))
+  execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"
 endfunction
 
 function! DeleteAllOtherBuffers()
@@ -44,5 +39,31 @@ function! RunLastSpec()
     execute "Dispatch rspec " . s:last_spec
   else
     echo "No last spec"
+  endif
+endfunction
+
+function! IndentTextObj(inner)
+  let curline = line(".")
+  let lastline = line("$")
+  let i = indent(line(".")) - &shiftwidth * (v:count1 - 1)
+  let i = i < 0 ? 0 : i
+  if getline(".") !~ "^\\s*$"
+    let p = line(".") - 1
+    let nextblank = getline(p) =~ "^\\s*$"
+    while p > 0 && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
+      -
+      let p = line(".") - 1
+      let nextblank = getline(p) =~ "^\\s*$"
+    endwhile
+    normal! 0V
+    call cursor(curline, 0)
+    let p = line(".") + 1
+    let nextblank = getline(p) =~ "^\\s*$"
+    while p <= lastline && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
+      +
+      let p = line(".") + 1
+      let nextblank = getline(p) =~ "^\\s*$"
+    endwhile
+    normal! $
   endif
 endfunction

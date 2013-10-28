@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set album (mpc listall | cut -d/ -f1-2 | uniq | egrep -v "\..{3,4}$" \
+set album (mpc listall | cut -d/ -f1-2 | uniq | egrep -v "\..{3,4}\$" \
   | shuf | dmenu -z -p 'play' | chomp)
 
 if set -q album

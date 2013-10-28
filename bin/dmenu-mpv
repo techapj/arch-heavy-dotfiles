@@ -2,18 +2,25 @@
 
 set candidates (find /media/videos/{films,tv} -maxdepth 1)
 
-set shortnames (printf "%s" "$candidates" |
-  sed -r "s#/media/videos/(tv|films)/?##;s#\..{3,4}\$##")
+set shortnames (echo $candidates \
+  | tr " " "\n" \
+  | sed -r "s#/media/videos/(tv|films)/?##g;s#\..{3,4}\$##g")
 
-set choice (printf "%s" "$shortnames" |
-  grep -v "^[ \t]*$" |
-  uniq |
-  shuf |
-  dmenu -z -p "watch")
+set choice (echo $shortnames \
+  | tr " " "\n" \
+  | grep -v '^[ \t]*\$' \
+  | uniq \
+  | shuf \
+  | dmenu -z -p "watch")
 
-set fullpath (printf "%s" "$candidates" |
-  egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$" |
-  head -n 1) # just in case two share a name, pick the first
+if test -z $choice
+  exit 1
+end
+
+set fullpath (echo $candidates \
+  | tr " " "\n" \
+  | egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$" \
+  | head -n 1) # just in case two share a name, pick the first
 
 if test -d $fullpath
   exec mpv-random $fullpath

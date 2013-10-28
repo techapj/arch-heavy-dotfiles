@@ -5,6 +5,6 @@ set album (mpc listall | cut -d/ -f1-2 | uniq | egrep -v "\..{3,4}\$" \
 
 if set -q album
   mpc clear
-  mpc add "$album"
+  mpc add $album
   mpc play
 end

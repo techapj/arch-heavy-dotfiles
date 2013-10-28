@@ -29,7 +29,7 @@ When you're done, `git grep` for `devlin` and change it as necessary.  If you
 installed to a different directory, look for `.dotfiles`, too.
 
 The script is idempotent and you can run it again to update symbolic links, git
-submdules and vim plugins.
+submodules and vim plugins.
 
 compiling vim
 -------------

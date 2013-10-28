@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-pre-rebase" &> /dev/null; then
-  git-pre-rebase $*
-fi
+if which "git-pre-rebase" > /dev/null
+  exec git-pre-rebase $argv
+end
+
+exit 0

@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-commit-msg" &> /dev/null; then
-  git-commit-msg $*
-fi
+if which "git-commit-msg" > /dev/null
+  exec git-commit-msg $argv
+end
+
+exit 0

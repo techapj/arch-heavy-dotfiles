@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-post-update" &> /dev/null; then
-  git-post-update 
-fi
+if which "git-post-update" > /dev/null
+  exec git-post-update $argv
+end
+
+exit 0

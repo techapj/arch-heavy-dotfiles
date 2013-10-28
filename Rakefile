@@ -1,5 +1,5 @@
 namespace :install do
-  desc 'Pull git submodules like zsh and vim plugins.'
+  desc 'Pull git submodules.'
   task :submodules do
     system 'bin/git-pull-all'
   end

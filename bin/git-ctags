@@ -1,9 +1,8 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-dir="$(git root)/.git"
+set dir (git root)/.git
+set random (random)
 
-trap 'rm -f "$dir/tags.$$"' EXIT INT TERM
-git ls-files | ctags --tag-relative -L - -f "$dir/tags.$$" --languages=-javascript,sql
+git ls-files | ctags --tag-relative -L - -f $dir/tags.$random --languages=-javascript,sql
 
-mv "$dir/tags.$$" "$dir/tags"
+mv $dir/tags.$random $dir/tags

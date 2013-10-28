@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-"$(which -a mbsync | tail -n 1)" $* && notmuch new 2>&1 | grep -v "^Note:"
+exec (which -a mbsync | tail -n 1) $argv && notmuch new ^&1 | grep -v "^Note:"

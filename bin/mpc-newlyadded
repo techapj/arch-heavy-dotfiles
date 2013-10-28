@@ -1,5 +1,4 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
 mpc clear
 grep "added" "$HOME/.mpd/mpd.log" | tail -n 50 | cut -d\  -f6- | mpc add

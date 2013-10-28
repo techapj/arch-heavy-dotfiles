@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-applypatch-msg" &> /dev/null; then
-  git-applypatch-msg $*
-fi
+if which "git-applypatch-msg" > /dev/null
+  exec git-applypatch-msg $argv
+end
+
+exit 0

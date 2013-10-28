@@ -51,7 +51,7 @@ beautiful.init( awful.util.getdir('config') .. "/theme.lua" )
 
 browser = "luakit"
 system_monitor = "urxvt -e htop"
-terminal = 'urxvt'
+terminal = 'urxvt -e fish'
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

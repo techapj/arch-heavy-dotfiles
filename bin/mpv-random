@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-find "${1-"$PWD"}" -type f -print0 | sample --print0 | xargs -i% mpv "%" $@
+find "${1-"$PWD"}" -type f -print0 | sample --print0 | xargs -i% mpv "%" $argv

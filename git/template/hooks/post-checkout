@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-post-checkout" &> /dev/null; then
-  git-post-checkout $*
-fi
+if which "git-post-checkout" > /dev/null
+  exec git-post-checkout $argv
+end
+
+exit 0

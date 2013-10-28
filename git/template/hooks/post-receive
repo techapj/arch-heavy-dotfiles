@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-post-receive" &> /dev/null; then
-  git-post-receive 
-fi
+if which "git-post-receive" > /dev/null
+  exec git-post-receive $argv
+end
+
+exit 0

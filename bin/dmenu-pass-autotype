@@ -1,25 +1,24 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-password_store="$HOME/.password-store"
+set password_store $HOME/.password-store
 
 # make sure the password store exists
-if [[ ! -d "$password_store" ]]; then
-  printf "Configure \$password_store within $(command -v dmenu-pass-autotype).\n" 1>&2
-  printf "Its default location, $password_store, does not exist.\n" 1>&2
+if not test -d $password_store
+  printf "Configure \$password_store within "(which dmenu-pass-autotype)".\n" > /dev/stderr
+  printf "Its default location, $password_store, does not exist.\n" > /dev/stderr
   exit 1
-fi
+end
 
 # discern a list of possibilities
-candidates="$(find "$password_store" -name '*gpg' -print0 |
+set candidates (find "$password_store" -name '*gpg' -print0 |
   tr "\0" "\n" | 
-  sed "s#$password_store/##;s#\.gpg\$##")"
+  sed "s#$password_store/##;s#\.gpg\$##")
 
 # ask which
-choice="$(printf "$candidates" | sort | dmenu -p 'autotype' | chomp)"
+set choice (printf "$candidates" | sort | dmenu -p 'autotype' | chomp)
 
 # notify which we found, using stderr so it isn't piped to anything else
-printf "Using $choice.\n" 1>&2
+printf "Using $choice.\n" > /dev/stderr
 
 # delegate to pass 
-exec pass-autotype "$choice" $*
+exec pass-autotype "$choice" $argv

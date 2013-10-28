@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-git ctags &> /dev/null &
+git ctags > /dev/null ^&1 &

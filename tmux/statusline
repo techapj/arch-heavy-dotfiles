@@ -1,53 +1,55 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#D")" | cut -d= -f2-)"
+function change_to_tmux_pwd
+  set -l var_name (tmux display -p "TMUX_PWD_#D")
+  set -l tmux_pwd (tmux showenv $var_name | cut -d = -f 2-)
+  cd $tmux_pwd
+end
 
-short_pwd() {
+function short_pwd
   pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g"
-}
+end
 
-git_status() {
-  local unstaged="$(git diff-files | wc -l)"
-  local staged="$(git diff-index --cached HEAD | wc -l)"
-  if [[ "$unstaged" -gt 0 ]]; then
+function git_status
+  set -l unstaged (git diff-files | wc -l)
+  set -l staged (git diff-index --cached HEAD | wc -l)
+  if test $unstaged -gt 0
     printf " #[fg=colour3]%d waiting " "$unstaged"
-  fi
-  if [[ "$staged" -gt 0 ]]; then
+  end
+  if test $staged -gt 0
     printf " #[fg=colour1]%d staged " "$staged"
-  fi
-}
+  end
+end
 
-git_since() {
-  local seconds="$(git since)"
-  if [[ "$seconds" -gt 3600 ]]; then
-    printf " #[fg=colour9]$((seconds / 3600))h$((seconds % 3600 / 60))m "
-  elif [[ "$seconds" -gt 60 ]]; then
-    printf " #[fg=colour2]$((seconds / 60))m "
+function git_since
+  set -l seconds (git since)
+  if test $seconds -gt 3600
+    printf " #[fg=colour9]%dh%dm " (math "$seconds / 3600") (math "$seconds % 3600 / 60")
+  end
+end
+
+function git_branch
+  printf " #[fg=colour7]%s " (git rev-parse --abbrev-ref HEAD)
+end
+
+function git_pwd
+  if git trusted
+    printf " #[fg=colour9]%s" (short_pwd)
   else
-    printf " #[fg=colour2]<1m "
-  fi
-}
+    printf " #[fg=colour4]%s" (short_pwd)
+  end
+end
 
-git_branch() {
-  printf " #[fg=colour7]$(git rev-parse --abbrev-ref HEAD) "
-}
-
-git_pwd() {
-  local color
-  if git trusted; then
-    color="colour9"
+function statusline
+  if git root > /dev/null
+    git_status
+    git_since
+    git_branch
+    git_pwd
   else
-    color="colour4"
-  fi
-  printf " #[fg=$color]%s" "$(short_pwd)"
-}
+    printf " #[fg=color4]%s " (short_pwd)
+  end
+end
 
-if git root &> /dev/null; then
-  git_status
-  git_since
-  git_branch
-  git_pwd
-else
-  printf " #[fg=colour4]%s" "$(short_pwd)"
-fi
+change_to_tmux_pwd
+statusline

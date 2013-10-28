@@ -1,23 +1,22 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-candidates="$(find /media/videos/{films,tv} -maxdepth 1)"
+set candidates (find /media/videos/{films,tv} -maxdepth 1)
 
-shortnames="$(printf "%s" "$candidates" |
-  sed -r "s#/media/videos/(tv|films)/?##;s#\..{3,4}\$##")"
+set shortnames (printf "%s" "$candidates" |
+  sed -r "s#/media/videos/(tv|films)/?##;s#\..{3,4}\$##")
 
-choice="$(printf "%s" "$shortnames" |
+set choice (printf "%s" "$shortnames" |
   grep -v "^[ \t]*$" |
   uniq |
   shuf |
-  dmenu -z -p "watch")"
+  dmenu -z -p "watch")
 
-fullpath="$(printf "%s" "$candidates" |
+set fullpath (printf "%s" "$candidates" |
   egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$" |
-  head -n 1)" # just in case two share a name, pick the first
+  head -n 1) # just in case two share a name, pick the first
 
-if [[ -d "$fullpath" ]]; then
-  exec mpv-random "$fullpath"
-elif [[ -f "$fullpath" ]]; then
-  exec mpv "$fullpath"
-fi
+if test -d $fullpath
+  exec mpv-random $fullpath
+else
+  exec mpv $fullpath
+end

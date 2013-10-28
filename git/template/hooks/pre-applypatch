@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-pre-applypatch" &> /dev/null; then
-  git-pre-applypatch $*
-fi
+if which "git-pre-applypatch" > /dev/null
+  exec git-pre-applypatch $argv
+end
+
+exit 0

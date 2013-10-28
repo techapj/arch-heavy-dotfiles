@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-pre-commit" &> /dev/null; then
-  git-pre-commit $*
-fi
+if which "git-pre-commit" > /dev/null
+  exec git-pre-commit $argv
+end
+
+exit 0

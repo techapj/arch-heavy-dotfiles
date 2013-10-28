@@ -1,8 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-cd "$(git root)"
+cd (git root)
 
-if [[ ! -d ".git/trusted" ]]; then
+if not test -d ".git/trusted"
   mkdir ".git/trusted"
-fi
+end

@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-exec less ~/.ssh/id_${1:-ecdsa}.pub
+exec less ~/.ssh/id_$1.pub

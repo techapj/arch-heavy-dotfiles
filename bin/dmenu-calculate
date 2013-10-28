@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
 dmenu -p "calculate" | bc 2>&1 | chomp | xsel -ib

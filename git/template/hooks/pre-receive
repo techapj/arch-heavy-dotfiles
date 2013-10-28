@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-set -ue
+#!/usr/bin/env fish
 
-if command -v "git-pre-receive" &> /dev/null; then
-  git-pre-receive 
-fi
+if which "git-pre-receive" > /dev/null
+  exec git-pre-receive $argv
+end
+
+exit 0

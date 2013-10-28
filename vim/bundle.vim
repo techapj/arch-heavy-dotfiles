@@ -1,8 +1,6 @@
 set runtimepath+=~/.dotfiles/vim/plugins/neobundle.vim
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-
 NeoBundle 'PeterRincker/vim-argumentative'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/neocomplete.vim'
@@ -10,6 +8,7 @@ NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'dag/vim-fish'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'moll/vim-bbye'

@@ -5,6 +5,23 @@ set -gx EDITOR vim
 
 set -gx fish_greeting
 
+set fish_color_autosuggestion 235
+set fish_color_command green
+set fish_color_comment green
+set fish_color_error red
+set fish_color_escape cyan
+set fish_color_history_current cyan
+set fish_color_host cyan
+set fish_color_match cyan
+set fish_color_normal normal
+set fish_color_operator cyan
+set fish_color_param cyan
+set fish_color_quote brown
+set fish_color_redirection normal
+set fish_color_search_match normal
+set fish_color_status red
+set fish_color_user green
+
 function update_tmux --description "Send the current directory to tmux." --on-event fish_prompt
   if set -q TMUX
     set -l var_name (tmux display -p "TMUX_PWD_#D")

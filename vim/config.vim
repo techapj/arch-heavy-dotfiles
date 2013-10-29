@@ -41,7 +41,7 @@ set pumheight=10
 set relativenumber
 set report=0
 set ruler
-set shell=bash
+set shell=sh
 set shiftround
 set shiftwidth=2
 set shortmess=filtIoOA

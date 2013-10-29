@@ -1,10 +1,4 @@
-set -gx DOTFILES $HOME/.dotfiles
-set -gx PATH .git/trusted/../../bin $DOTFILES/bin $HOME/.local/bin /usr/local/bin /usr/bin
-
-set -gx EDITOR vim
-
 set -gx fish_greeting
-
 set fish_color_autosuggestion 235
 set fish_color_command green
 set fish_color_comment 235

@@ -13,7 +13,7 @@ if test -f $HOME/.Xmodmap; and which xmodmap > /dev/null
 end
 
 if test -f $HOME/.Xresources
-  xrdb -merge $HOME/.xresources
+  xrdb -merge $HOME/.Xresources
 end
 
 if test -d $HOME/.fonts

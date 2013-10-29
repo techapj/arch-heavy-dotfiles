@@ -1,0 +1,15 @@
+#
+# ~/.bash_profile
+#
+
+if [[ -f "~/.bashrc" ]]; then
+  source ~/.bashrc
+fi
+
+export DOTFILES="$HOME/.dotfiles"
+export PATH=".git/trusted/../../bin:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
+export EDITOR="vim"
+
+if [[ -z "$DISPLAY" ]] && [[ "$XDG_VTNR" -gt 0 ]]; then
+  exec startx
+fi

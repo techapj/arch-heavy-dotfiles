@@ -63,7 +63,7 @@ noremap <silent> <leader>ec :edit $DOTFILES/vim/config.vim<CR>
 noremap <silent> <leader>ef :edit $DOTFILES/vim/functions.vim<CR>
 noremap <silent> <leader>em :edit $DOTFILES/vim/commands.vim<CR>
 noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
-noremap <silent> <leader>eu :edit $DOTFILES/vim/bundle.vim<CR>
+noremap <silent> <leader>eu :edit $DOTFILES/vim/neobundle.vim<CR>
 
 " grepping
 nnoremap \\ :Ggrep ""<left>

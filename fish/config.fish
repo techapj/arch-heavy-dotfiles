@@ -7,7 +7,7 @@ set -gx fish_greeting
 
 set fish_color_autosuggestion 235
 set fish_color_command green
-set fish_color_comment green
+set fish_color_comment 235
 set fish_color_error red
 set fish_color_escape cyan
 set fish_color_history_current cyan
@@ -15,8 +15,8 @@ set fish_color_host cyan
 set fish_color_match cyan
 set fish_color_normal normal
 set fish_color_operator cyan
-set fish_color_param cyan
-set fish_color_quote brown
+set fish_color_param normal
+set fish_color_quote yellow
 set fish_color_redirection normal
 set fish_color_search_match normal
 set fish_color_status red

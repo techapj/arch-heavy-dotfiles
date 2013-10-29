@@ -6,7 +6,7 @@ else
   set commit HEAD
 end
 
-set then (git log --pretty=format:%at --max-count=1 "$commit")
+set then (git log --pretty=format:%at --max-count=1 $commit)
 set now (date +%s)
 
-printf "%d\n" (math "$now - $then")
+printf "%d\n" (math $now - $then)

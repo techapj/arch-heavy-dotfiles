@@ -1,9 +1,12 @@
+" load before everything else
 source $DOTFILES/vim/config.vim
 source $DOTFILES/vim/neobundle.vim
-source $DOTFILES/vim/bundle.vim
-source $DOTFILES/vim/matchit.vim
-source $DOTFILES/vim/functions.vim
-source $DOTFILES/vim/plugin_config.vim
+
+" order doesn't matter
 source $DOTFILES/vim/autocmd.vim
 source $DOTFILES/vim/bindings.vim
+source $DOTFILES/vim/colorscheme.vim
 source $DOTFILES/vim/commands.vim
+source $DOTFILES/vim/functions.vim
+source $DOTFILES/vim/matchit.vim
+source $DOTFILES/vim/plugin_config.vim

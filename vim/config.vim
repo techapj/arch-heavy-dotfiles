@@ -67,8 +67,6 @@ set wildmode=list:longest,full
 set wrap
 set wrapmargin=4
 
-colorscheme base16-default
-
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")
 endif

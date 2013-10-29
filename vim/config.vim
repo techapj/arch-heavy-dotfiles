@@ -52,13 +52,13 @@ set softtabstop=2
 set splitbelow
 set splitright
 set suffixesadd=.rb
-set tabstop=4
+set tabstop=2
 set tags=./.git/tags,/
 set textwidth=79
 set timeoutlen=210
 set undodir=~/.vim/tmp/undo//
 set undofile
-set undolevels=128
+set undolevels=256
 set undoreload=1024
 set visualbell
 set whichwrap+=<,>,h,l,[,]

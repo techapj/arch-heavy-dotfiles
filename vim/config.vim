@@ -1,9 +1,3 @@
-set nocompatible
-
-filetype plugin indent on
-
-syntax on
-
 set autoindent
 set autoread
 set autowrite

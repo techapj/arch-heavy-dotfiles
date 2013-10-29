@@ -10,12 +10,12 @@ if not test -d $password_store
 end
 
 # discern a list of possibilities
-set candidates (find "$password_store" -name '*gpg' -print0 |
-  tr "\0" "\n" | 
-  sed "s#$password_store/##;s#\.gpg\$##")
+set candidates (find "$password_store" -name '*gpg' -print0 \
+  | tr "\0" "\n" \
+  | sed "s#$password_store/##;s#\.gpg\$##")
 
 # ask which
-set choice (printf "$candidates" | sort | dmenu -p 'autotype' | chomp)
+set choice (printf "$candidates" | tr " " "\n" | sort | dmenu -p 'autotype' | chomp)
 
 # notify which we found, using stderr so it isn't piped to anything else
 printf "Using $choice.\n" > /dev/stderr

@@ -24,9 +24,9 @@ end
 function git_since
   set -l seconds (git since)
   if test $seconds -gt 3600
-    printf " #[fg=colour9]%dh%dm " (math $seconds / 3600) (math $seconds % 3600 / 60)
+    printf " #[fg=colour9]%dh%dm " (math $seconds/3600) (math $seconds%3600/60)
   else if test $seconds -gt 60
-    printf " #[fg=colour2]%dm " (math $seconds / 60)
+    printf " #[fg=colour2]%dm " (math $seconds/60)
   else
     printf " #[fg=colour2]<1m "
   end

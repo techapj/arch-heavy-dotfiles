@@ -28,8 +28,7 @@ Afterward, check out the repository and run the installation script:
 When you're done, `git grep` for `devlin` and change it as necessary.  If you
 installed to a different directory, look for `.dotfiles`, too.
 
-The script is idempotent and you can run it again to update symbolic links, git
-submodules and vim plugins.
+The script is idempotent and you can run it again to update stuff.
 
 compiling vim
 -------------

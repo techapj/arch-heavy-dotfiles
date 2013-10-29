@@ -1,9 +1,4 @@
 namespace :install do
-  desc 'Pull git submodules.'
-  task :submodules do
-    system 'bin/git-pull-all'
-  end
-
   desc 'Set up symlinks to the rest of the system.'
   task :symlinks do
     require 'fileutils'
@@ -35,8 +30,6 @@ end
 
 desc 'Run every install command in order.'
 task :install do
-  Rake::Task['install:submodules'].invoke # put this 1st
-
   Rake::Task['install:symlinks'].invoke
   Rake::Task['install:vim_plugins'].invoke
 end

@@ -8,7 +8,12 @@ fi
 
 export DOTFILES="$HOME/.dotfiles"
 export PATH=".git/trusted/../../bin:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
+
+export BROWSER="luakit"
 export EDITOR="vim"
+
+export LESSHISTFILE="/dev/null"
+unset HISTFILE # disable bash_history
 
 if [[ -z "$DISPLAY" ]] && [[ "$XDG_VTNR" -gt 0 ]]; then
   exec startx

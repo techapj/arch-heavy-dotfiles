@@ -1,4 +1,5 @@
 set -gx fish_greeting
+
 set fish_color_autosuggestion 235
 set fish_color_command green
 set fish_color_comment 235

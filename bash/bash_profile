@@ -15,6 +15,8 @@ export EDITOR="vim"
 export LESSHISTFILE="/dev/null"
 unset HISTFILE # disable bash_history
 
+eval "$(keychain --eval --clear)"
+
 if [[ -z "$DISPLAY" ]] && [[ "$XDG_VTNR" -gt 0 ]]; then
   exec startx
 fi

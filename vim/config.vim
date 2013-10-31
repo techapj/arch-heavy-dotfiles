@@ -8,6 +8,7 @@ set concealcursor=i
 set conceallevel=2
 set copyindent
 set cpoptions+=J
+set directory=~/.vim/tmp/swap//
 set expandtab
 set foldlevelstart=99
 set foldmethod=indent
@@ -27,7 +28,6 @@ set nolazyredraw
 set nolist
 set noshowmode
 set nostartofline
-set noswapfile
 set nowritebackup
 set number
 set omnifunc=neocomplete#complete#auto_complete
@@ -46,6 +46,7 @@ set softtabstop=2
 set splitbelow
 set splitright
 set suffixesadd=.rb
+set swapfile
 set tabstop=2
 set tags=./.git/tags,/
 set textwidth=79

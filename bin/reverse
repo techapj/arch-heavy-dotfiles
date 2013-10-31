@@ -1,3 +1,7 @@
 #!/usr/bin/env ruby
 
-puts STDIN.readlines.reverse
+if ARGV.delete("-0") || ARGV.delete("--print0")
+  puts STDIN.read.split("\0").reverse
+else
+  puts STDIN.readlines.reverse
+end

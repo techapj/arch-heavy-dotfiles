@@ -1,8 +1,8 @@
 #!/usr/bin/env fish
 
 set dir (git root)/.git
-set random (random)
+set pid %self
 
-git ls-files | ctags --tag-relative -L - -f $dir/tags.$random --languages=-javascript,sql
+git ls-files | ctags --tag-relative -L - -f $dir/tags.$pid --languages=-javascript,sql
 
-mv $dir/tags.$random $dir/tags
+mv $dir/tags.$pid $dir/tags

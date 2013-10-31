@@ -11,3 +11,8 @@ source $DOTFILES/vim/commands.vim
 source $DOTFILES/vim/functions.vim
 source $DOTFILES/vim/matchit.vim
 source $DOTFILES/vim/plugin_config.vim
+
+if !isdirectory(expand(&undodir))
+  call mkdir(expand(&undodir), "p")
+endif
+

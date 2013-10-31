@@ -60,7 +60,3 @@ set wildmenu
 set wildmode=list:longest,full
 set wrap
 set wrapmargin=4
-
-if !isdirectory(expand(&undodir))
-  call mkdir(expand(&undodir), "p")
-endif

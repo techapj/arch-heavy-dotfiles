@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if test -n $argv[1]
+if test (count argv) -gt 0
   set commit $argv[1]
 else
   set commit HEAD
@@ -9,4 +9,4 @@ end
 set then (git log --pretty=format:%at --max-count=1 $commit)
 set now (date +%s)
 
-printf "%d\n" (math $now - $then)
+printf "%d\n" (math $now-$then)

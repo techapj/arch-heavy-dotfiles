@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
 
-if test $argv[1] = 'rebase'
+if test (count $argv) -gt 0; and test $argv[1] = 'rebase'
   exec git post-merge
 end

@@ -4,7 +4,7 @@ function! ConfigureAirline()
   let g:airline_section_c = ''
   let g:airline_section_x = ''
   let g:airline_section_y = airline#section#create(['filetype'])
-  let g:airline_section_z = airline#section#create(['%lL%cC'])
+  let g:airline_section_z = airline#section#create(['L%lC%c'])
 endfunction
 
 function! GrepFromWord()

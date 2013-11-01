@@ -7,7 +7,7 @@ if [[ -f "~/.bashrc" ]]; then
 fi
 
 export DOTFILES="$HOME/.dotfiles"
-export PATH=".git/trusted/../../bin:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
+export PATH=".git/trusted/../../bin:.git/trusted/../../.bundle/binstubs:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
 
 export BROWSER="luakit"
 export EDITOR="vim"

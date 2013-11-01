@@ -17,7 +17,7 @@ Before installing, you should install the relevant packages with `pacman` and
               mutt msmtp newsbeuter notmuch packer pass ruby rxvt-unicode\
               slock sxiv tmux xautolock
     packer -S dmenu-xft-fuzzy isync-git
-    gem install gem-ctags bundler mail redcarpet
+    gem install gem-ctags bundler
 
 Afterward, check out the repository and run the installation script:
 

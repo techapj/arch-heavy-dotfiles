@@ -13,9 +13,9 @@ install
 Before installing, you should install the relevant packages with `pacman` and
 `gem`.  A list of packages and their purpose is below.
 
-    pacman -S awesome ctags fish git keychain lua luajit luakit mpc mpd mpv\
-              mutt msmtp newsbeuter notmuch packer pass ruby rxvt-unicode\
-              slock sxiv tmux xautolock
+    pacman -S awesome ctags fish git keychain lua luajit luakit irssi mpc mpd\
+              mpv mutt msmtp notmuch packer pass ruby rxvt-unicode slock sxiv\
+              tmux xautolock
     packer -S dmenu-xft-fuzzy isync-git
     gem install gem-ctags bundler
 
@@ -45,8 +45,8 @@ what i use
 The focal bits are the following.  This repository mainly consists of
 configuration and scripts for these programs.
 
+* **chat**: [irssi](http://irssi.org) with [bitlbee](http://bitlbee.org)
 * **email**: [mutt](http://mutt.org/)
-* **feed reader**: [newsbeuter](http://www.newsbeuter.org/)
 * **image viewer**: [sxiv](https://bbs.archlinux.org/viewtopic.php?id=112643)
 * **music player**: [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki) and [mpc](http://mpd.wikia.com/wiki/Client:Mpc)
 * **shell**: [fish](http://fishshell.com/)

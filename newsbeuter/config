@@ -1,9 +1,0 @@
-always-display-description yes
-auto-reload yes
-browser luakit
-download-path /media/downloads
-download-retries 5
-download-timeout 20
-max-downloads 2
-refresh-on-startup yes
-reload-time 15

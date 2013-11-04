@@ -27,8 +27,6 @@ luakit/theme.lua: .config/luakit/theme.lua
 luakit/webview.lua: .config/luakit/webview.lua
 luakit/window.lua: .config/luakit/window.lua
 mpv/config: .mpv/config
-newsbeuter/config: .config/newsbeuter/config
-newsbeuter/urls: .config/newsbeuter/urls
 ruby/bundle: .bundle
 ruby/gemrc: .gemrc
 ruby/irbrc: .irbrc

@@ -1,6 +1,6 @@
 -- Global variables for luakit
 globals = {
-    homepage            = "http://duckduckgo.com",
+    homepage            = "http://3g2upl4pq6kufc4m.onion/lite",
     scroll_step         = 100,
     zoom_step           = 0.1,
     max_cmd_history     = 8192,
@@ -51,7 +51,8 @@ soup.accept_policy = cookie_policy.no_third_party
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 search_engines = {
-    duckduckgo  = "https://duckduckgo.com/?q=%s",
+    -- duckduckgo  = "https://duckduckgo.com/?q=%s",
+    duckduckgo = "http://3g2upl4pq6kufc4m.onion/lite?q=%s",
 }
 
 -- Set google as fallback search engine

@@ -49,7 +49,7 @@ end
 -- Themes define colours, icons, and wallpapers
 beautiful.init( awful.util.getdir('config') .. "/theme.lua" )
 
-browser = "luakit"
+browser = "torify luakit"
 system_monitor = "urxvt -e htop"
 terminal = 'urxvt -e fish'
 

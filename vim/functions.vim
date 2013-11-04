@@ -26,6 +26,7 @@ function! DeleteAllOtherBuffers()
 endfunction
 
 function! RunAllSpecs()
+  let s:last_spec = "<all>"
   execute "Dispatch rspec"
 endfunction
 
@@ -36,7 +37,11 @@ endfunction
 
 function! RunLastSpec()
   if exists('s:last_spec')
-    execute "Dispatch rspec " . s:last_spec
+    if s:last_spec == "all"
+      execute "Dispatch rspec"
+    else
+      execute "Dispatch rspec " . s:last_spec
+    endif
   else
     echo "No last spec"
   endif

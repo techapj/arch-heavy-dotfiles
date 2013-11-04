@@ -13,12 +13,14 @@ augroup dfknz
   au FileType python setlocal shiftwidth=4 softtabstop=4
   au FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake<space>
   au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
+  au FileType ruby,haml,eruby nmap <buffer> <leader>rgm :Rgenerate migration<space>
+  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rad :Rake db:migrate<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rs :call RunLastSpec()<CR>
   au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsa :call RunAllSpecs()<CR>
   au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsc :call RunCurrentSpecFile()<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsp :call RunLastSpec()<CR>
   au InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0
   au InsertEnter * set number
   au InsertLeave * let &timeoutlen = old_timeoutlen | unlet old_timeoutlen

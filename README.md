@@ -13,10 +13,10 @@ install
 Before installing, you should install the relevant packages with `pacman` and
 `gem`.  A list of packages and their purpose is below.
 
-    pacman -S awesome ctags fish git keychain lua luajit luakit irssi mpc mpd\
-              mpv mutt msmtp notmuch packer pass ruby rxvt-unicode slock sxiv\
-              tmux xautolock
-    packer -S dmenu-xft-fuzzy isync-git
+    pacman -S awesome bitlbee ctags fish git keychain lua luajit luakit irssi \
+              mpc mpd mpv mutt msmtp notmuch packer pass ruby rxvt-unicode    \
+              slock sxiv tmux xautolock
+    packer -S dmenu-xft-fuzzy isync-git irssi-libnotify-git
     gem install gem-ctags bundler
 
 Afterward, check out the repository and run the installation script:

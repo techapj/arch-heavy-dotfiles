@@ -22,6 +22,7 @@ if test -d $HOME/.fonts
   fc-cache
 end
 
+pgrep -f notify-listener.py; or notify-listener.py &
 pgrep mpd -u $USER; or mpd
 pgrep xautolock -u $USER; or xautolock -time 15 -locker slock -secure &
 

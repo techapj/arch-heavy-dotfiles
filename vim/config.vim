@@ -22,7 +22,7 @@ set laststatus=2
 set linebreak
 set magic
 set mat=1
-set modelines=0
+set modelines=1
 set nobackup
 set nolazyredraw
 set nolist

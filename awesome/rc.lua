@@ -13,13 +13,6 @@ local menubar = require("menubar")
 
 _G.CONFIG = awful.util.getdir("config")
 
-function pretty(text, foreground, background)
-  foreground = foreground or beautiful.fg_normal
-  background = background or beautiful.bg_normal
-
-  return "<span color='" .. foreground .. "' background='" .. background .. "'> " .. text .. " </span>"
-end
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -144,7 +137,7 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 -- time widget
-mytextclock = awful.widget.textclock(pretty("%Y %m %d", "#8bb4c6", "#223a44") .. pretty("%I %M %S", "#8bb4c6", "#192b33"), 1)
+-- mytextclock = awful.widget.textclock(pretty("%Y %m %d", "#8bb4c6", "#223a44") .. pretty("%I %M %S", "#8bb4c6", "#192b33"), 1)
 
 for s = 1, screen.count() do
     -- Create a taglist widget
@@ -162,7 +155,7 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local top_right_layout = wibox.layout.fixed.horizontal()
-    top_right_layout:add(mytextclock)
+    -- top_right_layout:add(mytextclock)
     top_right_layout:add(mytasklist[s])
 
     -- Create the bottom wibox

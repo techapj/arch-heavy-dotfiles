@@ -25,7 +25,7 @@ function update_tmux --description "Send the current directory to tmux." --on-ev
 end
 
 function line_divider --description "Create a line as wide as the terminal." --on-event fish_prompt
-  set_color 235
+  set_color 222
   for i in (seq 1 $COLUMNS)
     printf "—"
   end

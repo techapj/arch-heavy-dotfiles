@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
 
-find $argv[1] -type f -print0 | sample --print0 | xargs -i% mpv "%"
+find $argv -type f -print0 | sample --print0 | xargs -i \% mpv "%"

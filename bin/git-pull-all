@@ -1,4 +1,4 @@
 #!/usr/bin/env fish
 
 git submodule foreach --quiet pwd\
-  | xargs -P 4 -n 1 -i % sh -c "cd % && (git checkout master; git pull origin)"
+  | xargs -P 4 -n 1 -i \% sh -c "cd % && (git checkout master; git pull origin)"

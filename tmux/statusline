@@ -11,26 +11,24 @@ function short_pwd
 end
 
 function git_status
-  set -l unstaged (git diff-files | wc -l)
   set -l staged (git diff-index --cached HEAD | wc -l)
-  if test $unstaged -gt 0
-    printf " #[fg=colour3]%d waiting " "$unstaged"
-  end
+  set -l unstaged (git diff-files | wc -l)
   if test $staged -gt 0
-    printf " #[fg=colour1]%d staged " "$staged"
+    printf " #[fg=colour2]%dstgd " "$staged"
+  end
+  if test $unstaged -gt 0
+    printf " #[fg=colour3]%dwait " "$unstaged"
   end
 end
 
 function git_since
   set -l seconds (git since)
   if test $seconds -gt 1800 # >= 30 mins is too long
-    printf " #[fg=colour1]too long "
-  else if test $seconds -gt 900 # >= 15 mins is getting there
-    printf " #[fg=colour9]%dm " (math $seconds/60)
+    printf " #[fg=colour1]>30mins "
   else if test $seconds -gt 60 # >= 1 minute is ok
-    printf " #[fg=colour3]%dm " (math $seconds/60)
+    printf " #[fg=colour9]%dmins " (math $seconds/60)
   else # < 1 minute is super nice
-    printf " #[fg=colour2]<1m "
+    printf " #[fg=colour2]<1min "
   end
 end
 

@@ -1,27 +1,36 @@
 " lead with spacebar
 let mapleader = " "
 
-" does this work
+" use escape to enter insert mode, allowing us to use it to toggle insert mode
 nnoremap <ESC> i
 
-" fast save and exit
+" fast save with return
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
+
+" close a window with C-w
 nnoremap <silent> <C-w> :q<CR>
-nnoremap <silent> <leader><C-x> :q!<CR>
+
+" force quit with leader
+nnoremap <silent> <leader><C-w> :q!<CR> 
+
+" close every inactive buffer
 nnoremap <silent> <leader>k :DeleteAllOtherBuffers<CR>
+
+" close the active buffer
 nnoremap <silent> K :Bdelete<CR>
 
-" fast redo
+" fast redo - since we use escape to enter insert mode, the key
+" next to undo is free
 nnoremap i <C-r>
 
-" navigate through paragraphs intelligently
+" navigate through paragraphs by visual line instead of literal line
 nnoremap j gj
 nnoremap k gk
 
 " vis the previously entered text
 nnoremap gV `[v`]
 
-" splits
+" open splits with C-t and C-g
 nnoremap <silent> <C-t> :vsplit<CR>
 nnoremap <silent> <C-g> :split<CR>
 

@@ -45,13 +45,13 @@ function git_pwd
 end
 
 function statusline
-  if git root > /dev/null
+  if git root > /dev/null ^&1
     git_status
     git_since
     git_branch
     git_pwd
   else
-    printf " #[fg=color4]%s " (short_pwd)
+    printf " #[fg=colour4]%s " (short_pwd)
   end
 end
 

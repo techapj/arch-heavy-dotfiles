@@ -122,10 +122,10 @@ function! s:my_cr_function()
 endfunction
 
 " neosnippet
-inoremap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)" :
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
-snoremap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)" :
       \ "\<TAB>"

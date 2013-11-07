@@ -17,8 +17,6 @@ add_album() {
   fi
 }
 
-local type
-
 if [[ "$#" < "1" ]] || [[ -z "$1" ]]; then
   type="album"
 else

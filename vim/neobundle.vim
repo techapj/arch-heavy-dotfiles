@@ -11,12 +11,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'moll/vim-bbye'
-NeoBundle 'svermeulen/vim-extended-ft'
+NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-dispatch'
@@ -30,8 +29,14 @@ NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'ujihisa/neco-look'
 NeoBundle 'vim-ruby/vim-ruby'
+
+NeoBundle 'Valloric/YouCompleteMe', {
+      \ 'build' : {
+      \   'mac' : './install.sh --clang-completer --system-libclang',
+      \   'unix' : './install.sh --clang-completer --system-libclang',
+      \   },
+      \ }
 
 NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
       \ 'autoload': {
@@ -48,13 +53,6 @@ NeoBundleLazy 'devlinzed/toggle_quickfix', {
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],
-      \   },
-      \ }
-
-NeoBundle 'Valloric/YouCompleteMe', {
-      \ 'build' : {
-      \   'mac' : './install.sh --clang-completer --system-libclang',
-      \   'unix' : './install.sh --clang-completer --system-libclang',
       \   },
       \ }
 

@@ -45,3 +45,7 @@ let g:splitjoin_join_mapping = ''
 
 " surround
 let g:surround_35  = "#{\r}"   " wrap in #{} with ysiw#
+
+" ycm
+let g:ycm_complete_in_comments = 1
+let g:ycm_min_number_of_chars_for_completion = 1

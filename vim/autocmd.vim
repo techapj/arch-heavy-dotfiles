@@ -23,8 +23,7 @@ augroup dfknz " guess what this means
   " vim-rails binds
   au FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake<space>
   au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
-  au FileType ruby,haml,eruby nmap <buffer> <leader>rgm :Rgenerate migration<space>
-  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rad :Rake db:migrate<CR>
+  au FileType ruby,haml,eruby nmap <buffer> <leader>ro :Rails<space> " console
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>

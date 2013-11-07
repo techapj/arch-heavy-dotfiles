@@ -7,32 +7,26 @@ nnoremap <ESC> i
 " fast save with return
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 
-" close a window with C-w
-nnoremap <silent> <C-w> :q<CR>
-
-" force quit with leader
-nnoremap <silent> <leader><C-w> :q!<CR> 
-
 " close every inactive buffer
-nnoremap <silent> <leader>k :DeleteAllOtherBuffers<CR>
+nnoremap <silent> <C-k> :DeleteAllOtherBuffers<CR>
 
 " close the active buffer
 nnoremap <silent> K :Bdelete<CR>
 
 " fast redo - since we use escape to enter insert mode, the key
 " next to undo is free
-nnoremap i <C-r>
+nnoremap <silent> i :<C-U>call repeat#wrap("\<Lt>C-R>",v:count)<CR>
 
 " navigate through paragraphs by visual line instead of literal line
 nnoremap j gj
 nnoremap k gk
 
+" buffer nav
+nnoremap <silent> , :<C-U>execute v:count . "bprevious"<CR>
+nnoremap <silent> . :<C-U>execute v:count . "bnext"<CR>
+
 " vis the previously entered text
 nnoremap gV `[v`]
-
-" open splits with C-t and C-g
-nnoremap <silent> <C-t> :vsplit<CR>
-nnoremap <silent> <C-g> :split<CR>
 
 " toggle quickfix with support for dispatch
 nnoremap <silent> Q :ToggleQuickfix<CR>
@@ -41,10 +35,9 @@ nnoremap <silent> Q :ToggleQuickfix<CR>
 map <C-a> <nop>
 
 " replace overwritten binds
-nnoremap + <C-a>
-nnoremap - <C-x>
-nnoremap <leader>w <C-w>
-nnoremap <leader>l <C-l>
+nnoremap <silent> ; :<C-U>call repeat#run(v:count)<CR>
+nnoremap <leader>- <C-x>
+nnoremap <leader>= <C-a>
 
 " quickly open tags
 nnoremap tt <C-]>
@@ -88,10 +81,10 @@ map <Esc>[Z <S-Tab>
 ounmap <ESC>[Z
 
 " indent text object
-onoremap <silent>ai :<C-U>cal IndentTextObj(0)<CR>
-onoremap <silent>ii :<C-U>cal IndentTextObj(1)<CR>
-vnoremap <silent>ai :<C-U>cal IndentTextObj(0)<CR><Esc>gv
-vnoremap <silent>ii :<C-U>cal IndentTextObj(1)<CR><Esc>gv
+onoremap <silent>ai :<C-U>call IndentTextObj(0)<CR>
+onoremap <silent>ii :<C-U>call IndentTextObj(1)<CR>
+vnoremap <silent>ai :<C-U>call IndentTextObj(0)<CR><Esc>gv
+vnoremap <silent>ii :<C-U>call IndentTextObj(1)<CR><Esc>gv
 
 " fugitive
 nnoremap <silent> <leader>ga :Git add .<CR>

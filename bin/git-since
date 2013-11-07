@@ -1,12 +1,15 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-if test (count argv) -gt 0
-  set commit $argv[1]
+local commit
+
+if [[ "$#" > 0 ]]; then
+  commit="$1"
 else
-  set commit HEAD
-end
+  commit="HEAD"
+fi
 
-set then (git log --pretty=format:%at --max-count=1 $commit)
-set now (date +%s)
+local then_="$(git log --pretty=format:%at --max-count=1 "$commit")"
+local now=$(date +%s)
 
-printf "%d\n" (math $now-$then)
+printf "%d\n" "$(($now - $then_))"

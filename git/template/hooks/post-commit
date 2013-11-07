@@ -1,7 +1,6 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-if which git-post-commit > /dev/null
-  exec git-post-commit $argv
-end
-
-exit 0
+if command -v "git-post-commit" &> /dev/null; then
+  git-post-commit $*
+fi

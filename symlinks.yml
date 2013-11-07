@@ -6,8 +6,6 @@ email/mbsyncrc: .mbsyncrc
 email/msmtprc: .msmtprc
 email/muttrc: .muttrc
 email/notmuch-config: .notmuch-config
-fish/config.fish: .config/fish/config.fish
-fish/functions: .config/fish/functions
 fonts/lemon.pcf: .fonts/lemon.pcf
 git/gitconfig: .gitconfig
 git/gitignore: .gitignore
@@ -35,3 +33,4 @@ tmux/tmux.conf: .tmux.conf
 vim/vimrc: .vimrc
 x/Xresources: .Xresources
 x/xinitrc: .xinitrc
+zsh/zshrc: .zshrc

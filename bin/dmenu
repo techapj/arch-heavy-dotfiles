@@ -1,4 +1,11 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-exec /usr/bin/dmenu -i -fn lemon-7 -nb "#151515" -nf "#e0e0e0" -sb "#75b5aa"\
-  -sf "#505050" $argv
+exec "$(which -a dmenu | tail -n 1)" \
+  -i\
+  -fn lemon-7\
+  -nb "#151515"\
+  -nf "#e0e0e0"\
+  -sb "#75b5aa"\
+  -sf "#505050"\
+  $*

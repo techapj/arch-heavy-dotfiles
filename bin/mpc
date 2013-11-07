@@ -1,3 +1,4 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-exec env MPD_HOST=$HOME/.mpd/socket /usr/bin/mpc $argv
+MPD_HOST=$HOME/.mpd/socket exec "$(which -a mpc | tail -n 1)" $*

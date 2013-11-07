@@ -1,7 +1,6 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-if which git-prepare-commit-msg > /dev/null
-  exec git-prepare-commit-msg $argv
-end
-
-exit 0
+if command -v "git-prepare-commit-msg" &> /dev/null; then
+  git-prepare-commit-msg $*
+fi

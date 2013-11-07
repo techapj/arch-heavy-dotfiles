@@ -1,5 +1,6 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-if test (count $argv) -gt 0; and test $argv[1] = 'rebase'
+if [[ "$#" > 0 ]] && [[ "$1" == "rebase" ]]; then
   exec git post-merge
-end
+fi

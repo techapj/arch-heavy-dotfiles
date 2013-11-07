@@ -1,6 +1,7 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-for dir in /usr/lib/ruby/[0-9]*
+for dir in /usr/lib/ruby/[0-9]*; do
   cd "$dir"
   find . -name '*rb' | ctags -L - --languages=ruby
-end
+done

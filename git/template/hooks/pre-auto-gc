@@ -1,7 +1,6 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-if which git-pre-auto-gc > /dev/null
-  exec git-pre-auto-gc $argv
-end
-
-exit 0
+if command -v "git-pre-auto-gc" &> /dev/null; then
+  git-pre-auto-gc 
+fi

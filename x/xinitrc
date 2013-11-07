@@ -1,33 +1,38 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
 
-if test -d /etc/X11/xinit/xinitrc.d
-  for node in /etc/X11/xinit/xinitrc.d/*
-    if test -f $node
-      . $node
-    end
-  end
-end
+if [[ -d "/etc/X11/xinit/xinitrc.d" ]]; then
+  for node in /etc/X11/xinit/xinitrc.d/*; do
+    if [[ -x "$node" ]]; then
+      source "$node"
+    fi
+  done
 
-if test -f $HOME/.Xmodmap; and which xmodmap > /dev/null
-  xmodmap $HOME/.Xmodmap
-end
+  unset node
+fi
 
-if test -f $HOME/.Xresources
-  xrdb -merge $HOME/.Xresources
-end
+if [[ -f "$HOME/.Xmodmap" ]] && command -v xmodmap &> /dev/null; then
+  xmodmap "$HOME/.Xmodmap"
+fi
 
-if test -d $HOME/.fonts
-  xset +fp $HOME/.fonts
+if [[ -f "$HOME/.Xresources" ]]; then
+  xrdb -merge "$HOME/.Xresources"
+fi
+
+if [[ -d "$HOME/.fonts" ]]; then
+  xset +fp "$HOME/.fonts"
   xset fp rehash
   fc-cache
-end
+fi
 
-pgrep -f notify-listener.py; or notify-listener.py &
-pgrep mpd -u $USER; or mpd
-pgrep xautolock -u $USER; or xautolock -time 15 -locker slock -secure &
+pgrep mpd -u $USER || mpd
+pgrep xautolock -u $USER || xautolock -time 15 -locker "slock" -secure &
 
 setxkbmap -option 'caps:escape'
 
-eval (keychain --eval --clear)
+eval `keychain --eval --clear`
+
+# temporary infinality shit
+export INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=0
+export INFINALITY_FT_STEM_FITTING_STRENGTH=0
 
 exec dbus-launch --exit-with-session awesome

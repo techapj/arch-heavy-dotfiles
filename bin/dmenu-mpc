@@ -1,10 +1,32 @@
-#!/usr/bin/env fish
+#window!/usr/bin/env zsh
+set -ue
 
-set album (mpc listall | cut -d/ -f1-2 | uniq | egrep -v "\..{3,4}\$" \
-  | shuf | dmenu -z -p 'play' | chomp)
+add_album() {
+  local album="$(mpc listall |
+    cut -d/ -f1-2 |
+    uniq |
+    egrep -v "\..{3,4}$" |
+    shuf |
+    dmenu -z -p 'play' |
+    chomp)"
 
-if set -q album
-  mpc clear
-  mpc add $album
-  mpc play
-end
+  if [[ -n "$album" ]]; then
+    mpc clear
+    mpc add "$album"
+    mpc play
+  fi
+}
+
+local type
+
+if [[ "$#" < "1" ]] || [[ -z "$1" ]]; then
+  type="album"
+else
+  type="$1"
+fi
+
+case "$type" in
+  # artist) add_artist ;;
+  # track) add_track ;;
+  *) add_album ;;
+esac

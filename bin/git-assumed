@@ -1,3 +1,4 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
 git ls-files -v | grep "^h" | cut -d\  -f 2

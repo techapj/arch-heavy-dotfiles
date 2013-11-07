@@ -1,3 +1,4 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-test -d (git root)/.git/trusted
+[[ -d "$(git root)/.git/trusted" ]]

@@ -1,7 +1,6 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-if which git-post-rewrite > /dev/null
-  exec git-post-rewrite $argv
-end
-
-exit 0
+if command -v "git-post-rewrite" &> /dev/null; then
+  git-post-rewrite 
+fi

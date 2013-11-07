@@ -1,59 +1,60 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-function change_to_tmux_pwd
-  set -l var_name (tmux display -p "TMUX_PWD_#D")
-  set -l tmux_pwd (tmux showenv $var_name | cut -d = -f 2-)
+change_to_tmux_pwd() {
+  local var_name="$(tmux display -p 'TMUX_PWD_#D')"
+  local tmux_pwd="$(tmux showenv $var_name | cut -d = -f 2-)"
   cd $tmux_pwd
-end
+}
 
-function short_pwd
-  pwd | sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g"
-end
+short_pwd() {
+  sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g" <<< "$PWD"
+}
 
-function git_status
-  set -l staged (git diff-index --cached HEAD | wc -l)
-  set -l unstaged (git diff-files | wc -l)
-  if test $staged -gt 0
+git_status() {
+  local staged="$(git diff-index --cached HEAD | wc -l)"
+  local unstaged="$(git diff-files | wc -l)"
+  if [[ $staged -gt 0 ]]; then
     printf " #[fg=colour2]%dstgd " "$staged"
-  end
-  if test $unstaged -gt 0
+  fi
+  if [[ $unstaged -gt 0 ]]; then
     printf " #[fg=colour3]%dwait " "$unstaged"
-  end
-end
+  fi
+}
 
-function git_since
-  set -l seconds (git since)
-  if test $seconds -gt 1800 # >= 30 mins is too long
+git_since() {
+  local seconds="$(git since)"
+  if [[ $seconds -gt 1800 ]]; then # >= 30 mins is too long
     printf " #[fg=colour1]>30mins "
-  else if test $seconds -gt 60 # >= 1 minute is ok
-    printf " #[fg=colour9]%dmins " (math $seconds/60)
+  elif [[ $seconds -gt 60 ]]; then # >= 1 minute is ok
+    printf " #[fg=colour9]%dmins " $(( $seconds / 60 ))
   else # < 1 minute is super nice
     printf " #[fg=colour2]<1min "
-  end
-end
+  fi
+}
 
-function git_branch
-  printf " #[fg=colour7]%s " (git rev-parse --abbrev-ref HEAD)
-end
+git_branch() {
+  printf " #[fg=colour7]%s " "$(git rev-parse --abbrev-ref HEAD)"
+}
 
-function git_pwd
-  if git trusted
-    printf " #[fg=colour9]%s" (short_pwd)
+git_pwd() {
+  if git trusted; then
+    printf " #[fg=colour9]%s" "$(short_pwd)"
   else
-    printf " #[fg=colour4]%s" (short_pwd)
-  end
-end
+    printf " #[fg=colour4]%s" "$(short_pwd)"
+  fi
+}
 
-function statusline
-  if git root > /dev/null ^&1
+statusline() {
+  if git root &> /dev/null; then
     git_status
     git_since
     git_branch
     git_pwd
   else
-    printf " #[fg=colour4]%s " (short_pwd)
-  end
-end
+    printf " #[fg=colour4]%s " "$(short_pwd)"
+  fi
+}
 
 change_to_tmux_pwd
 statusline

@@ -1,7 +1,6 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-if which git-post-applypatch > /dev/null
-  exec git-post-applypatch $argv
-end
-
-exit 0
+if command -v "git-post-applypatch" &> /dev/null; then
+  git-post-applypatch $*
+fi

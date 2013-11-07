@@ -42,9 +42,9 @@ end
 -- Themes define colours, icons, and wallpapers
 beautiful.init( awful.util.getdir('config') .. "/theme.lua" )
 
-browser = "torify luakit"
-system_monitor = "urxvt -e htop"
-terminal = 'urxvt -e fish'
+browser = 'torify luakit'
+system_monitor = 'urxvt -e htop'
+terminal = 'urxvt'
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

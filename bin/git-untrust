@@ -1,7 +1,8 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
+set -ue
 
-cd (git root)
+cd "$(git root)"
 
-if test -d .git/trusted
+if [[ -d ".git/trusted" ]]; then
   rmdir ".git/trusted"
-end
+fi

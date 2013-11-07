@@ -9,8 +9,6 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
@@ -47,9 +45,25 @@ NeoBundleLazy 'devlinzed/toggle_quickfix', {
       \   },
       \ }
 
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \     'windows' : 'make -f make_mingw32.mak',
+      \    },
+      \ }
+
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],
+      \   },
+      \ }
+
+NeoBundle 'Valloric/YouCompleteMe', {
+      \ 'build' : {
+      \   'mac' : './install.sh --clang-completer --system-libclang',
+      \   'unix' : './install.sh --clang-completer --system-libclang',
       \   },
       \ }
 

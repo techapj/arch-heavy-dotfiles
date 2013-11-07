@@ -15,7 +15,7 @@ Before installing, you should install the relevant packages with `pacman` and
 
     pacman -S awesome bitlbee ctags fish git keychain lua luajit luakit irssi \
               mpc mpd mpv mutt msmtp notmuch packer pass ruby rxvt-unicode    \
-              slock sxiv tmux xautolock
+              slock sxiv tmux vim xautolock
     packer -S dmenu-xft-fuzzy isync-git irssi-libnotify-git
     gem install gem-ctags bundler
 
@@ -29,15 +29,6 @@ When you're done, `git grep` for `devlin` and change it as necessary.  If you
 installed to a different directory, look for `.dotfiles`, too.
 
 The script is idempotent and you can run it again to update stuff.
-
-compiling vim
--------------
-
-vim should be compiled with:
-
-    ./configure --enable-gui=no --enable-luainterp --enable-pythoninterp\
-                --enable-rubyinterp --prefix=/usr/local --with-features=huge\
-                --with-luajit --with-x
 
 what i use
 ==========

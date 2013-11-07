@@ -39,17 +39,6 @@ let g:ctrlp_user_command = {
       \ 'fallback': 'find %s -type f'
       \ }
 
-" neocomplete
-let g:neocomplete#enable_at_startup = 1 " why is this necessary?
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#force_omni_input_patterns = {}
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplete#sources#omni#input_patterns = {}
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::' 
-let g:neocomplete#syntax#min_keyword_length = 1
-
 " splitjoin
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''

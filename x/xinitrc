@@ -6,12 +6,7 @@ if [[ -d "/etc/X11/xinit/xinitrc.d" ]]; then
       source "$node"
     fi
   done
-
   unset node
-fi
-
-if [[ -f "$HOME/.Xmodmap" ]] && command -v xmodmap &> /dev/null; then
-  xmodmap "$HOME/.Xmodmap"
 fi
 
 if [[ -f "$HOME/.Xresources" ]]; then
@@ -27,12 +22,8 @@ fi
 pgrep mpd -u $USER || mpd
 pgrep xautolock -u $USER || xautolock -time 15 -locker "slock" -secure &
 
-setxkbmap -option 'caps:escape'
+setxkbmap -option "caps:escape"
 
-eval `keychain --eval --clear`
-
-# temporary infinality shit
-export INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=0
-export INFINALITY_FT_STEM_FITTING_STRENGTH=0
+eval "$(keychain --eval --clear)"
 
 exec dbus-launch --exit-with-session awesome

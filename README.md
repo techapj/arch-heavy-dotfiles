@@ -13,7 +13,7 @@ install
 Before installing, you should install the relevant packages with `pacman` and
 `gem`.  A list of packages and their purpose is below.
 
-    pacman -S awesome bitlbee ctags git keychain lua luajit luakit irssi \
+    pacman -S awesome bitlbee ctags git keychain lua luajit luakit irssi      \
               mpc mpd mpv mutt msmtp notmuch packer pass ruby rxvt-unicode    \
               slock sxiv tmux vim xautolock zsh
     packer -S dmenu-xft-fuzzy isync-git irssi-libnotify-git

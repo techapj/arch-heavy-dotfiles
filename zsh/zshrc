@@ -6,3 +6,8 @@ export PATH=".git/trusted/../../bin:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bi
 find $DOTFILES/zsh/zshrc.d -name '*\.zsh' | sort | while read thing; do
   source $thing
 done
+
+# run chpwd hook on startup
+if command -v chpwd &> /dev/null; then
+  chpwd
+fi

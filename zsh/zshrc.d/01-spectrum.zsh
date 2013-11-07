@@ -35,3 +35,4 @@ for color in {000..$SUPPORT}; do
     FG[$color]="[38;5;${color}m"
     BG[$color]="[48;5;${color}m"
 done
+unset color

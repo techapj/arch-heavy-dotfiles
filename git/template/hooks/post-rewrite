@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if which "git-post-rewrite" > /dev/null
+if which git-post-rewrite > /dev/null
   exec git-post-rewrite $argv
 end
 

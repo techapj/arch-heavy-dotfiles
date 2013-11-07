@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if which "git-post-applypatch" > /dev/null
+if which git-post-applypatch > /dev/null
   exec git-post-applypatch $argv
 end
 

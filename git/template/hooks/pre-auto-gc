@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if which "git-pre-auto-gc" > /dev/null
+if which git-pre-auto-gc > /dev/null
   exec git-pre-auto-gc $argv
 end
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if which "git-pre-commit" > /dev/null
+if which git-pre-commit > /dev/null
   exec git-pre-commit $argv
 end
 

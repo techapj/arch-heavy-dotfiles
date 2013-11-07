@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if which "git-commit-msg" > /dev/null
+if which git-commit-msg > /dev/null
   exec git-commit-msg $argv
 end
 

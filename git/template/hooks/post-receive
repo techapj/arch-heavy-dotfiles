@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if which "git-post-receive" > /dev/null
+if which git-post-receive > /dev/null
   exec git-post-receive $argv
 end
 

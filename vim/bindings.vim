@@ -112,20 +112,3 @@ nnoremap <silent> gk :SplitjoinSplit<CR>
 " dispatch
 nnoremap <leader>d :Dispatch<space>
 nnoremap <leader>D :Dispatch!<space>
-
-" neocomplete
-inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-snoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
-function! s:my_cr_function()
-  return neocomplete#smart_close_popup() . "\<CR>"
-endfunction
-
-" neosnippet
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" :
-      \ pumvisible() ? "\<C-n>" : "\<TAB>"
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" :
-      \ "\<TAB>"

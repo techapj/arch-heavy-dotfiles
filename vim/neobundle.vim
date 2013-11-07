@@ -45,15 +45,6 @@ NeoBundleLazy 'devlinzed/toggle_quickfix', {
       \   },
       \ }
 
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \     'windows' : 'make -f make_mingw32.mak',
-      \    },
-      \ }
-
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],

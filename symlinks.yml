@@ -1,5 +1,4 @@
 awesome: .config/awesome
-bash/bash_profile: .bash_profile
 ctags/ctags: .ctags
 email/mailcap: .mailcap
 email/mbsyncrc: .mbsyncrc

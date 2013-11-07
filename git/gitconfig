@@ -20,9 +20,13 @@
   default = current
 [rebase]
   autosquash = true
+[url "git@bitbucket.org:"]
+  insteadOf = "bb:"
+  pushInsteadOf = "git://bitbucket.org/"
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "git://bitbucket.org/"
 [user]
   email = me@devlinzed.com
   name = devlin zed
   signingkey = CF7781EF
-[web]
-  browser = open

@@ -9,9 +9,6 @@ augroup dfknz " guess what this means
   " css { } as folds
   au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 
-  " automatically source vim configuration files as i live edit them
-  au BufWritePost $MYVIMRC,$DOTFILES/vim/*.vim source %
-
   " spelling correction & 72-column git commits
   au FileType gitcommit setlocal spell textwidth=72
 
@@ -23,7 +20,7 @@ augroup dfknz " guess what this means
   " vim-rails binds
   au FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake<space>
   au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
-  au FileType ruby,haml,eruby nmap <buffer> <leader>ro :Rails<space> " console
+  au FileType ruby,haml,eruby nmap <buffer> <leader>ro :Rails console<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>

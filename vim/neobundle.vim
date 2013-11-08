@@ -9,6 +9,8 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -29,13 +31,6 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-ruby/vim-ruby'
-
-NeoBundle 'Valloric/YouCompleteMe', {
-      \ 'build' : {
-      \   'mac' : './install.sh --clang-completer --system-libclang',
-      \   'unix' : './install.sh --clang-completer --system-libclang',
-      \   },
-      \ }
 
 NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
       \ 'autoload': {

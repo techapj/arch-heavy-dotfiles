@@ -1,6 +1,6 @@
 # set required environment variables
 export DOTFILES="$HOME/.dotfiles"
-export PATH=".git/trusted/../../bin:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
+export PATH=".git/trusted/../../bin:.git/trusted/../../.bundle/binstubs:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
 
 # source autoloaded zsh files
 find $DOTFILES/zsh/zshrc.d -name '*\.zsh' | sort | while read thing; do

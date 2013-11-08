@@ -1,4 +1,4 @@
 if [[ -n "$TMUX" ]]; then
   tmux setenv "$(tmux display -p "TMUX_PWD_#D")" "$PWD"
-  sh -c "tmux set status-right '$($DOTFILES/tmux/statusline)' &" &> /dev/null
+  sh -c "$DOTFILES/tmux/update_statusline &"
 fi

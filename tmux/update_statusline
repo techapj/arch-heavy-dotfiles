@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-set -ue
-
-tmux set status-right "$($DOTFILES/tmux/statusline)" &> /dev/null
-tmux set status-right "#($DOTFILES/tmux/statusline)" &> /dev/null

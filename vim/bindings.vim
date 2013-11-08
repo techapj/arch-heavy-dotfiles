@@ -15,15 +15,14 @@ nnoremap <silent> K :Bdelete<CR>
 
 " fast redo - since we use escape to enter insert mode, the key
 " next to undo is free
-nnoremap <silent> i :<C-U>call repeat#wrap("\<Lt>C-R>",v:count)<CR>
 
 " navigate through paragraphs by visual line instead of literal line
 nnoremap j gj
 nnoremap k gk
 
-" buffer nav (after repeat steals them)
-au VimEnter * nnoremap <silent> , :<C-U>execute v:count . "bprevious"<CR>
-au VimEnter * nnoremap <silent> . :<C-U>execute v:count . "bnext"<CR>
+" buffer nav
+nnoremap <silent> , :<C-U>execute v:count . "bprevious"<CR>
+nnoremap <silent> . :<C-U>execute v:count . "bnext"<CR>
 
 " vis the previously entered text
 nnoremap gV `[v`]
@@ -35,7 +34,6 @@ nnoremap <silent> Q :ToggleQuickfix<CR>
 map <C-a> <nop>
 
 " replace overwritten binds
-nnoremap <silent> ; :<C-U>call repeat#run(v:count)<CR>
 nnoremap <leader>- <C-x>
 nnoremap <leader>= <C-a>
 

@@ -20,9 +20,10 @@ augroup dfknz " guess what this means
   " vim-rails binds
   au FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake<space>
   au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
-  au FileType ruby,haml,eruby nmap <buffer> <leader>ro :Rails console<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
+  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>re :Rails server<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
+  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>ro :Rails console<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>
 
   " run specs with vim-dispatch
@@ -35,5 +36,5 @@ augroup dfknz " guess what this means
   au InsertLeave * let &timeoutlen = old_timeoutlen | unlet old_timeoutlen
 
   " configure airline after vimrc is loaded
-  au VimEnter * call ConfigureAirline()
+  au VimEnter * call ConfigureAirline() | delfunction ConfigureAirline
 augroup END

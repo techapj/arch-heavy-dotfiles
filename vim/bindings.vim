@@ -21,9 +21,9 @@ nnoremap <silent> i :<C-U>call repeat#wrap("\<Lt>C-R>",v:count)<CR>
 nnoremap j gj
 nnoremap k gk
 
-" buffer nav
-nnoremap <silent> , :<C-U>execute v:count . "bprevious"<CR>
-nnoremap <silent> . :<C-U>execute v:count . "bnext"<CR>
+" buffer nav (after repeat steals them)
+au VimEnter * nnoremap <silent> , :<C-U>execute v:count . "bprevious"<CR>
+au VimEnter * nnoremap <silent> . :<C-U>execute v:count . "bnext"<CR>
 
 " vis the previously entered text
 nnoremap gV `[v`]

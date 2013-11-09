@@ -13,6 +13,10 @@ if [[ -f "$HOME/.Xresources" ]]; then
   xrdb -merge "$HOME/.Xresources"
 fi
 
+if [[ -f "$HOME/.Xmodmap "]]; then
+  xmodmap "$HOME/.Xmodmap"
+fi
+
 if [[ -d "$HOME/.fonts" ]]; then
   xset +fp "$HOME/.fonts"
   xset fp rehash
@@ -20,9 +24,7 @@ if [[ -d "$HOME/.fonts" ]]; then
 fi
 
 pgrep mpd -u $USER || mpd
-pgrep xautolock -u $USER || xautolock -time 15 -locker "slock" -secure &
-
-setxkbmap -option "caps:escape"
+pgrep xautolock -u $USER || xautolock -time 30 -locker "slock" -secure &
 
 eval "$(keychain --eval --clear)"
 

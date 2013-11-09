@@ -30,6 +30,7 @@ ruby/irbrc: .irbrc
 ssh/config: .ssh/config
 tmux/tmux.conf: .tmux.conf
 vim/vimrc: .vimrc
+x/Xmodmap: .Xmodmap
 x/Xresources: .Xresources
 x/xinitrc: .xinitrc
 zsh/zshrc: .zshrc

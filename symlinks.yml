@@ -16,6 +16,7 @@ gtk/gtkrc: .gtkrc
 gtk/naos: .themes/naos
 irssi/scripts: .irssi/scripts
 luakit/binds.lua: .config/luakit/binds.lua
+luakit/cookies.lua: .config/luakit/cookies.lua
 luakit/globals.lua: .config/luakit/globals.lua
 luakit/modes.lua: .config/luakit/modes.lua
 luakit/rc.lua: .config/luakit/rc.lua

@@ -19,6 +19,7 @@ luakit/binds.lua: .config/luakit/binds.lua
 luakit/cookies.lua: .config/luakit/cookies.lua
 luakit/globals.lua: .config/luakit/globals.lua
 luakit/modes.lua: .config/luakit/modes.lua
+luakit/noscript.lua: .config/luakit/noscript.lua
 luakit/rc.lua: .config/luakit/rc.lua
 luakit/scripts: .local/share/luakit/scripts
 luakit/theme.lua: .config/luakit/theme.lua

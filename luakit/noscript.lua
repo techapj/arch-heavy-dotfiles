@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS by_domain (
     enable_plugins INTEGER
 );]]
 
-db = capi.sqlite3{ filename = capi.luakit.data_dir .. "/noscript.db" }
+db = capi.sqlite3{ filename = ":memory:" }
 db:exec("PRAGMA synchronous = OFF; PRAGMA secure_delete = 1;")
 db:exec(create_table)
 

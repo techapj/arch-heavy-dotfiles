@@ -39,7 +39,7 @@ for _, ca_file in ipairs(ca_files) do
 end
 
 -- Change to stop navigation sites with invalid or expired ssl certificates
-soup.ssl_strict = true
+soup.ssl_strict = false
 
 -- Set cookie acceptance policy
 cookie_policy = { always = 0, never = 1, no_third_party = 2 }

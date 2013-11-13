@@ -22,6 +22,7 @@ augroup dfknz " guess what this means
   au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>re :Rails server<CR>
+  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rh :Ehelper<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>ro :Rails console<CR>
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>

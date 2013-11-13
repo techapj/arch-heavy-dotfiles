@@ -12,7 +12,7 @@ namespace :install do
         if File.readlink(dst) == src
           next
         else
-          FileUtils.mv(dst, "#{dst.bak}", verbose: true)
+          FileUtils.mv(dst, "#{dst}.bak", verbose: true)
         end
       elsif !File.directory?(File.dirname(dst))
         FileUtils.mkdir_p(File.dirname(dst), verbose: true)

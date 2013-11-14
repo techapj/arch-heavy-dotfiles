@@ -1,2 +1,8 @@
+# ignore files that end in .gitignore, but not '.gitignore'
+# order matters
+*.gitignore
+!.gitignore
+
+# rails shit
 .bundle
 .rake_tasks

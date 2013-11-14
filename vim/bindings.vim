@@ -67,8 +67,8 @@ noremap <silent> <leader>eu :edit $DOTFILES/vim/neobundle.vim<CR>
 
 " grepping
 nnoremap \\ :Ggrep ""<left>
-nnoremap \w :GrepFromWord<CR>
-nnoremap \s :GrepFromSearch<CR>
+nnoremap \w :execute "Ggrep '" . expand("<cword>") . "'"<CR>
+nnoremap \s :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
 
 " ctrlp
 nnoremap <silent> <S-Tab> :CtrlPTag<CR>
@@ -77,12 +77,6 @@ nnoremap <silent> <Tab> :CtrlP<CR>
 " make shift tab work
 map <Esc>[Z <S-Tab>
 ounmap <ESC>[Z
-
-" indent text object
-onoremap <silent>ai :<C-U>call IndentTextObj(0)<CR>
-onoremap <silent>ii :<C-U>call IndentTextObj(1)<CR>
-vnoremap <silent>ai :<C-U>call IndentTextObj(0)<CR><Esc>gv
-vnoremap <silent>ii :<C-U>call IndentTextObj(1)<CR><Esc>gv
 
 " fugitive
 nnoremap <silent> <leader>ga :Git add .<CR>

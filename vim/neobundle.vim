@@ -44,6 +44,17 @@ NeoBundleLazy 'devlinzed/toggle_quickfix', {
       \   },
       \ }
 
+NeoBundleLazy 'devlinzed/vim-dispatch-rspec', {
+      \ 'autoload': {
+      \   'commands': [
+      \     'RunAllSpecs',
+      \     'RunCurrentSpec',
+      \     'RunFocusedSpec',
+      \     'RunPreviousSpec',
+      \     ],
+      \   },
+      \ }
+
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],

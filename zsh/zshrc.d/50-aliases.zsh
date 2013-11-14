@@ -8,5 +8,3 @@ done
 unset i
 
 alias "rspec"="nocorrect rspec"
-
-alias "ls"="ls --color=auto"

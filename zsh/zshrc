@@ -3,11 +3,9 @@ export DOTFILES="$HOME/.dotfiles"
 export PATH=".git/trusted/../../bin:.git/trusted/../../.bundle/binstubs:$DOTFILES/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin"
 
 # source autoloaded zsh files
-find $DOTFILES/zsh/zshrc.d -name '*\.zsh' | sort | while read thing; do
+for thing in $DOTFILES/zsh/zshrc.d/*.zsh; do
   source $thing
 done
 
 # run chpwd hook on startup
-if command -v chpwd &> /dev/null; then
-  chpwd
-fi
+chpwd

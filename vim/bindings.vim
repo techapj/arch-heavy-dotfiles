@@ -100,11 +100,8 @@ nnoremap <leader>D :Dispatch!<space>
 
 " neocomplete
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+inoremap <silent> <CR> <C-r>=NeoCompleteIt()<CR>
 snoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
-function! s:my_cr_function()
-  return neocomplete#smart_close_popup() . "\<CR>"
-endfunction
 
 " neosnippet
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?

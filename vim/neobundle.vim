@@ -21,7 +21,6 @@ NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'kana/vim-textobj-syntax'
 NeoBundle 'kana/vim-textobj-underscore'
 NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'moll/vim-bbye'
 NeoBundle 'tpope/vim-abolish'
@@ -53,12 +52,7 @@ NeoBundleLazy 'devlinzed/toggle_quickfix', {
 
 NeoBundleLazy 'devlinzed/vim-dispatch-rspec', {
       \ 'autoload': {
-      \   'commands': [
-      \     'RunAllSpecs',
-      \     'RunCurrentSpec',
-      \     'RunFocusedSpec',
-      \     'RunPreviousSpec',
-      \     ],
+      \   'commands': ['RunAllSpecs', 'RunCurrentSpec', 'RunFocusedSpec', 'RunPreviousSpec'],
       \   },
       \ }
 

@@ -12,6 +12,10 @@ source $DOTFILES/vim/functions.vim
 source $DOTFILES/vim/matchit.vim
 source $DOTFILES/vim/plugin_config.vim
 
+if filereadable($HOME . '/.vimrc.local')
+  source $HOME/.vimrc.local
+endif
+
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")
 endif

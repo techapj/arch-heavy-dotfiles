@@ -7,3 +7,8 @@ function! ConfigureAirline()
   let g:airline_section_y = airline#section#create(['filetype'])
   let g:airline_section_z = airline#section#create(['L%lC%c'])
 endfunction
+
+" used with map <expr>
+function! NeoCompleteIt()
+  return neocomplete#smart_close_popup() . "\<CR>"
+endfunction

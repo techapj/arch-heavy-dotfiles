@@ -62,6 +62,12 @@ NeoBundleLazy 'devlinzed/vim-dispatch-rspec', {
       \   },
       \ }
 
+NeoBundleLazy 'devlinzed/vim-focus', {
+      \ 'autoload': {
+      \   'commands': ['Bfocus', 'Bf']
+      \   },
+      \ }
+
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],

@@ -16,7 +16,7 @@ Before installing, you should install the relevant packages with `pacman` and
     pacman -S awesome bitlbee ctags git keychain lua luajit luakit irssi      \
               mpc mpd mpv mutt msmtp notmuch packer pass ruby rxvt-unicode    \
               slock sxiv tmux vim xautolock zsh
-    packer -S dmenu-xft-fuzzy isync-git irssi-libnotify-git
+    packer -S dmenu-xft-fuzzy isync-git
     gem install gem-ctags bundler
 
 Afterward, check out the repository and run the installation script:

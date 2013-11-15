@@ -1,6 +1,5 @@
 " airline
 " also configured in functions.vim by an autocmd
-let g:airline#extensions#branch#empty_message = "✗"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ":t"
 let g:airline_detect_modified = 0
@@ -10,19 +9,26 @@ let g:airline_left_alt_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_right_sep = ''
-let g:airline_symbols = { 'branch': '', 'linenr': '', 'readonly': '' }
+
+let g:airline_symbols = {
+      \ 'branch': '',
+      \ 'linenr': '',
+      \ 'readonly': '',
+      \ 'space': '',
+      \ }
+
 let g:airline_mode_map = {
-    \ 'n'  : 'normal',
-    \ 'i'  : 'insert',
-    \ 'R'  : 'replace',
-    \ 'c'  : 'command',
-    \ 'v'  : 'visual',
-    \ 'V'  : 'v-line',
-    \ '' : 'v-block',
-    \ 's'  : 'select',
-    \ 'S'  : 's-line',
-    \ '' : 's-block',
-    \ }
+      \ 'n'  : 'normal',
+      \ 'i'  : 'insert',
+      \ 'R'  : 'replace',
+      \ 'c'  : 'command',
+      \ 'v'  : 'visual',
+      \ 'V'  : 'v-line',
+      \ '' : 'v-block',
+      \ 's'  : 'select',
+      \ 'S'  : 's-line',
+      \ '' : 's-block',
+      \ }
 
 " ruby
 let g:ruby_complete_classes_in_global = 1

@@ -14,7 +14,7 @@ let g:airline_symbols = {
       \ 'branch': '',
       \ 'linenr': '',
       \ 'readonly': '',
-      \ 'space': '',
+      \ 'space': ' ',
       \ }
 
 let g:airline_mode_map = {

@@ -7,13 +7,13 @@ theme = {}
 theme.font          = "lemon 7"
 
 theme.bg_normal     = "#151515"
-theme.bg_focus      = "#505050"
+theme.bg_focus      = "#192b33"
 theme.bg_urgent     = "#D28445"
 theme.bg_minimize   = "#6a9fb5"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#e0e0e0"
-theme.fg_focus      = "#e0e0e0"
+theme.fg_focus      = "#f5f5f5"
 theme.fg_urgent     = "#f5f5f5"
 theme.fg_minimize   = "#303030"
 

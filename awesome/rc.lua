@@ -46,6 +46,13 @@ browser = 'torify luakit'
 system_monitor = 'urxvt -e htop'
 terminal = 'urxvt'
 
+function pretty(text, foreground, background)
+  foreground = foreground or beautiful.fg_normal
+  background = background or beautiful.bg_normal
+
+  return "<span color='" .. foreground .. "' background='" .. background .. "'> " .. text .. " </span>"
+end
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -137,11 +144,11 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 -- time widget
--- mytextclock = awful.widget.textclock(pretty("%Y %m %d", "#8bb4c6", "#223a44") .. pretty("%I %M %S", "#8bb4c6", "#192b33"), 1)
+mytextclock = awful.widget.textclock(pretty("%Y %m %d", "#8bb4c6", "#192b33") .. pretty("%I %M %S", "#8bb4c6", "#223a44"), 1)
 
 for s = 1, screen.count() do
     -- Create a taglist widget
-    -- mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
@@ -151,20 +158,19 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the left
     local top_left_layout = wibox.layout.fixed.horizontal()
-    -- top_left_layout:add(mytextclock)
+    top_left_layout:add(mytaglist[s])
 
     -- Widgets that are aligned to the right
     local top_right_layout = wibox.layout.fixed.horizontal()
-    -- top_right_layout:add(mytextclock)
-    top_right_layout:add(mytasklist[s])
+    top_right_layout:add(mytextclock)
 
     -- Create the bottom wibox
-    -- mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s, height = 12 })
+    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s, height = 12 })
 
-    -- local bottom_left_layout = wibox.layout.fixed.horizontal()
-    -- bottom_left_layout:add(mytasklist[s])
+    local bottom_left_layout = wibox.layout.fixed.horizontal()
+    bottom_left_layout:add(mytasklist[s])
 
-    -- local bottom_right_layout = wibox.layout.fixed.horizontal()
+    local bottom_right_layout = wibox.layout.fixed.horizontal()
 
     -- Now bring it all together
     local top_layout = wibox.layout.align.horizontal()
@@ -173,11 +179,11 @@ for s = 1, screen.count() do
 
     mytopwibox[s]:set_widget(top_layout)
 
-    -- local bottom_layout = wibox.layout.align.horizontal()
-    -- bottom_layout:set_left(bottom_left_layout)
-    -- bottom_layout:set_right(bottom_right_layout)
+    local bottom_layout = wibox.layout.align.horizontal()
+    bottom_layout:set_left(bottom_left_layout)
+    bottom_layout:set_right(bottom_right_layout)
 
-    -- mybottomwibox[s]:set_widget(bottom_layout)
+    mybottomwibox[s]:set_widget(bottom_layout)
 end
 -- }}}
 

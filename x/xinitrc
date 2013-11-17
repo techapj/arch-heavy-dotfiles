@@ -28,4 +28,8 @@ pgrep xautolock -u $USER || xautolock -time 30 -locker "slock" -secure &
 
 eval "$(keychain --eval --clear)"
 
+if [[ -e "$HOME/.xinitrc.local" ]]; then
+  $HOME/.xinitrc.local
+fi
+
 exec dbus-launch --exit-with-session awesome

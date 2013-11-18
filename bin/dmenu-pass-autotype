@@ -18,6 +18,11 @@ local candidates="$(find "$password_store" -name '*gpg' -print0 |
 # ask which
 local choice="$(printf "$candidates" | sort | dmenu -p 'autotype' | chomp)"
 
+# fail if they didn't supply anything
+if [[ -z "$choice" ]]; then
+  exit 2
+fi
+
 # notify which we found, using stderr so it isn't piped to anything else
 printf "Using $choice.\n" 1>&2
 

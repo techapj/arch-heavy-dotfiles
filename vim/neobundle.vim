@@ -13,6 +13,7 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'devlinzed/vim-dispatch-rspec'
 NeoBundle 'devlinzed/vim-repeat'
 NeoBundle 'kana/vim-textobj-entire'
 NeoBundle 'kana/vim-textobj-fold'
@@ -47,12 +48,6 @@ NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
 NeoBundleLazy 'devlinzed/toggle_quickfix', {
       \ 'autoload': {
       \   'commands': ['ToggleQuickfix'],
-      \   },
-      \ }
-
-NeoBundleLazy 'devlinzed/vim-dispatch-rspec', {
-      \ 'autoload': {
-      \   'commands': ['RunAllSpecs', 'RunCurrentSpec', 'RunFocusedSpec', 'RunPreviousSpec'],
       \   },
       \ }
 

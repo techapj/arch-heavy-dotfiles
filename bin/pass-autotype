@@ -3,8 +3,13 @@ set -ue
 
 # make sure the dependencies are installed
 if ! command -v xdotool &> /dev/null; then
-  printf "You need to install xdotool.\n" 1>&2
+  printf "You need to install xdotool.\n" >&2
   exit 1
+fi
+
+if [[ "$#" -lt 1 ]]; then
+  printf "Usage: pass-autotype password" >&2
+  exit 2
 fi
 
 # get the deets

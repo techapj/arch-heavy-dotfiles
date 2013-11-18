@@ -11,6 +11,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+-- bashets widgets
+local bashets = require('bashets')
+
 _G.CONFIG = awful.util.getdir("config")
 
 -- {{{ Error handling
@@ -146,6 +149,15 @@ mytasklist.buttons = awful.util.table.join(
 -- time widget
 mytextclock = awful.widget.textclock(pretty("%I %M %S", "#8bb4c6", "#192b33") .. pretty("%Y %m %d", "#8bb4c6", "#223a44"), 1)
 
+-- mpd bashet
+mympdwidget = wibox.widget.textbox()
+bashets.register(os.getenv('DOTFILES') .. "/awesome/bashets/mpc.zsh", {
+  format = pretty('$1', '#8bb4c6'),
+  separator = "\n",
+  update_time = 1,
+  widget = mympdwidget,
+})
+
 for s = 1, screen.count() do
     -- Create a taglist widget
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
@@ -162,6 +174,7 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local top_right_layout = wibox.layout.fixed.horizontal()
+    top_right_layout:add(mympdwidget)
     top_right_layout:add(mytextclock)
 
     -- Create the bottom wibox
@@ -432,3 +445,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+bashets.start()

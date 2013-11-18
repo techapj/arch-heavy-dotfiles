@@ -144,7 +144,7 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 -- time widget
-mytextclock = awful.widget.textclock(pretty("%Y %m %d", "#8bb4c6", "#192b33") .. pretty("%I %M %S", "#8bb4c6", "#223a44"), 1)
+mytextclock = awful.widget.textclock(pretty("%I %M %S", "#8bb4c6", "#192b33") .. pretty("%Y %m %d", "#8bb4c6", "#223a44"), 1)
 
 for s = 1, screen.count() do
     -- Create a taglist widget

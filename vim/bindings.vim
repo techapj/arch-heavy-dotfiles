@@ -71,8 +71,8 @@ nnoremap \w :execute "Ggrep '" . expand("<cword>") . "'"<CR>
 nnoremap \s :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
 
 " ctrlp
-nnoremap <silent> <S-Tab> :CtrlPTag<CR>
-nnoremap <silent> <Tab> :CtrlP<CR>
+nnoremap <silent> S :CtrlPTag<CR>
+nnoremap <silent> s :CtrlP<CR>
 
 " make shift tab work
 map <Esc>[Z <S-Tab>

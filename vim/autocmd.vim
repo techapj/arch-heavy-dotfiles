@@ -28,10 +28,10 @@ augroup dfknz " guess what this means
   au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>
 
   " run specs with vim-dispatch-rspec
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rs :RunPreviousSpec<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsa :RunAllSpecs<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsc :RunCurrentSpec<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <leader>rsf :RunFocusedSpec<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab><Tab> :RunPreviousSpec<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>a :RunAllSpecs<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>c :RunCurrentSpec<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>f :RunFocusedSpec<CR>
 
   " fixes a bug with airline
   au InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0

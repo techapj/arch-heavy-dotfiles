@@ -5,7 +5,7 @@ exec "$(which -a dmenu | tail -n 1)" \
   -i\
   -fn lemon-7\
   -nb "#151515"\
-  -nf "#e0e0e0"\
-  -sb "#75b5aa"\
-  -sf "#505050"\
+  -nf "#9ecce0"\
+  -sb "#394952"\
+  -sf "#8bb4c6"\
   $*

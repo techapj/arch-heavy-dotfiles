@@ -24,3 +24,6 @@
   email = me@devlinzed.com
   name = devlin zed
   signingkey = CF7781EF
+
+[include]
+  path = .gitconfig.local

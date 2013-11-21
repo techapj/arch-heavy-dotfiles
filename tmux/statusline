@@ -4,34 +4,34 @@ set -ue
 change_to_tmux_pwd() {
   local var_name="$(tmux display -p 'TMUX_PWD_#D')"
   local tmux_pwd="$(tmux showenv $var_name | cut -d = -f 2-)"
-  cd $tmux_pwd
+  cd "$tmux_pwd"
 }
 
 short_pwd() {
   sed "s#^$HOME#~#; s#\([a-zA-Z]\)[a-zA-Z]*[^/]*/#\1/#g" <<< "$PWD"
 }
 
-git_status() {
-  local staged="$(git diff-index --cached HEAD | wc -l)"
-  local unstaged="$(git diff-files | wc -l)"
-  if [[ $staged -gt 0 ]]; then
-    printf " #[fg=colour2]%dstgd " "$staged"
-  fi
-  if [[ $unstaged -gt 0 ]]; then
-    printf " #[fg=colour3]%dwait " "$unstaged"
-  fi
-}
+# git_status() {
+#   local staged="$(git diff-index --cached HEAD | wc -l)"
+#   local unstaged="$(git diff-files | wc -l)"
+#   if [[ $staged -gt 0 ]]; then
+#     printf " #[fg=colour2]%d " "$staged"
+#   fi
+#   if [[ $unstaged -gt 0 ]]; then
+#     printf " #[fg=colour3]%d " "$unstaged"
+#   fi
+# }
 
-git_since() {
-  local seconds="$(git since)"
-  if [[ $seconds -gt 1800 ]]; then # >= 30 mins is too long
-    printf " #[fg=colour1]>30mins "
-  elif [[ $seconds -gt 60 ]]; then # >= 1 minute is ok
-    printf " #[fg=colour9]%dmins " $(( $seconds / 60 ))
-  else # < 1 minute is super nice
-    printf " #[fg=colour2]<1min "
-  fi
-}
+# git_since() {
+#   local seconds="$(git since)"
+#   if [[ $seconds -gt 1800 ]]; then # >= 30 mins is too long
+#     printf " #[fg=colour1]>30m "
+#   elif [[ $seconds -gt 60 ]]; then # >= 1 minute is ok
+#     printf " #[fg=colour9]%dm " $(( $seconds / 60 ))
+#   else # < 1 minute is super nice
+#     printf " #[fg=colour2]<1m "
+#   fi
+# }
 
 git_branch() {
   printf " #[fg=colour7]%s " "$(git rev-parse --abbrev-ref HEAD)"
@@ -47,8 +47,8 @@ git_pwd() {
 
 statusline() {
   if git root &> /dev/null; then
-    git_status
-    git_since
+    # git_status
+    # git_since
     git_branch
     git_pwd
   else

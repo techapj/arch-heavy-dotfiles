@@ -46,8 +46,8 @@ end
 beautiful.init( awful.util.getdir('config') .. "/theme.lua" )
 
 browser = 'torify luakit'
-system_monitor = 'urxvtc -e htop'
-terminal = 'urxvtc'
+system_monitor = 'urxvt -e htop'
+terminal = 'urxvt'
 
 function pretty(text, foreground, background)
   foreground = foreground or beautiful.fg_normal

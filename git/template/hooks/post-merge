@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-post-merge" &> /dev/null; then
-  git-post-merge 
+  exec "git-post-merge" $*
 fi

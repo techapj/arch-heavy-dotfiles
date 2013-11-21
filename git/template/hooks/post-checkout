@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-post-checkout" &> /dev/null; then
-  git-post-checkout $*
+  exec "git-post-checkout" $*
 fi

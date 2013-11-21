@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-pre-auto-gc" &> /dev/null; then
-  git-pre-auto-gc 
+  exec "git-pre-auto-gc" $*
 fi

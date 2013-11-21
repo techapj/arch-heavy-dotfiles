@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-pre-rebase" &> /dev/null; then
-  git-pre-rebase $*
+  exec "git-pre-rebase" $*
 fi

@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-post-rewrite" &> /dev/null; then
-  git-post-rewrite 
+  exec "git-post-rewrite" $*
 fi

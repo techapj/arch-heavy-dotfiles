@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-commit-msg" &> /dev/null; then
-  git-commit-msg $*
+  exec "git-commit-msg" $*
 fi

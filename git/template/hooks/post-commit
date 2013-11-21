@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-post-commit" &> /dev/null; then
-  git-post-commit $*
+  exec "git-post-commit" $*
 fi

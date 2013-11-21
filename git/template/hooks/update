@@ -2,5 +2,5 @@
 set -ue
 
 if command -v "git-update" &> /dev/null; then
-  git-update 
+  exec "git-update" $*
 fi

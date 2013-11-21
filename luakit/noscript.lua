@@ -103,10 +103,15 @@ webview.init_funcs.noscript_load = function (view)
         if status ~= "committed" or v.uri == "about:blank" then return end
         local enable_scripts, enable_plugins = _M.enable_scripts, _M.enable_plugins
         local domain = get_domain(v.uri)
-        local row = match_domain(domain)
-        if row then
+        if domain_props[domain] then
+          enable_scripts = domain_props[domain].enable_scripts
+          enable_plugins = domain_props[domain].enable_plugins
+        else
+          local row = match_domain(domain)
+          if row then
             enable_scripts = itob(row.enable_scripts)
             enable_plugins = itob(row.enable_plugins)
+          end
         end
         view.enable_scripts = enable_scripts
         view.enable_plugins = enable_plugins

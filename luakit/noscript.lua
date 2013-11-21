@@ -104,14 +104,17 @@ webview.init_funcs.noscript_load = function (view)
         local enable_scripts, enable_plugins = _M.enable_scripts, _M.enable_plugins
         local domain = get_domain(v.uri)
         if domain_props[domain] then
-          enable_scripts = domain_props[domain].enable_scripts
-          enable_plugins = domain_props[domain].enable_plugins
-        else
-          local row = match_domain(domain)
-          if row then
-            enable_scripts = itob(row.enable_scripts)
-            enable_plugins = itob(row.enable_plugins)
+          if domain_props[domain].enable_scripts ~= nil then
+            enable_scripts = domain_props[domain].enable_scripts
           end
+          if domain_props[domain].enable_plugins ~= nil then
+            enable_plugins = domain_props[domain].enable_plugins
+          end
+        end
+        local row = match_domain(domain)
+        if row then
+          enable_scripts = itob(row.enable_scripts)
+          enable_plugins = itob(row.enable_plugins)
         end
         view.enable_scripts = enable_scripts
         view.enable_plugins = enable_plugins

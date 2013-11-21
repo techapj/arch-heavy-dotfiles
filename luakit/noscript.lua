@@ -16,6 +16,7 @@ local add_binds = add_binds
 local lousy = require "lousy"
 local sql_escape = lousy.util.sql_escape
 local capi = { luakit = luakit, sqlite3 = sqlite3 }
+local domain_props = domain_props
 
 module "noscript"
 
@@ -98,19 +99,26 @@ function webview.methods.toggle_remove(view, w)
     w:notify("Removed rules for domain: " .. domain)
 end
 
+function defaults_for(domain)
+  local scripts, plugins = _M.enable_scripts, _M.enable_plugins
+
+  if domain_props[domain] then
+    if domain_props[domain].enable_scripts ~= nil then
+      scripts = domain_props[domain].enable_scripts
+    end
+    if domain_props[domain].enable_plugins ~= nil then
+      plugins = domain_props[domain].enable_plugins
+    end
+  end
+
+  return scripts, plugins
+end
+
 webview.init_funcs.noscript_load = function (view)
     view:add_signal("load-status", function (v, status)
         if status ~= "committed" or v.uri == "about:blank" then return end
-        local enable_scripts, enable_plugins = _M.enable_scripts, _M.enable_plugins
         local domain = get_domain(v.uri)
-        if domain_props[domain] then
-          if domain_props[domain].enable_scripts ~= nil then
-            enable_scripts = domain_props[domain].enable_scripts
-          end
-          if domain_props[domain].enable_plugins ~= nil then
-            enable_plugins = domain_props[domain].enable_plugins
-          end
-        end
+        local enable_scripts, enable_plugins = defaults_for(domain)
         local row = match_domain(domain)
         if row then
           enable_scripts = itob(row.enable_scripts)

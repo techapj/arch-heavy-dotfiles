@@ -71,7 +71,7 @@ domain_props = {
     },
     ["facebook.com"] = {
         enable_scripts = true,
-    }
+    },
     ["github.com"] = {
         enable_scripts = true,
     },

@@ -5,7 +5,6 @@ email/mbsyncrc: .mbsyncrc
 email/msmtprc: .msmtprc
 email/muttrc: .muttrc
 email/notmuch-config: .notmuch-config
-fonts/lemon.pcf: .fonts/lemon.pcf
 git/gitconfig: .gitconfig
 git/gitignore: .gitignore
 gnupg/gpg.conf: .gnupg/gpg.conf

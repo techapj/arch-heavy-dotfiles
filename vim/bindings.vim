@@ -66,12 +66,10 @@ noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
 noremap <silent> <leader>eu :edit $DOTFILES/vim/neobundle.vim<CR>
 
 " grepping
-nnoremap \\ :Ggrep ""<left>
-nnoremap \w :execute "Ggrep '" . expand("<cword>") . "'"<CR>
-nnoremap \s :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
+nnoremap SS :Ggrep ""<left>
+nnoremap S/ :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
 
 " ctrlp
-nnoremap <silent> S :CtrlPTag<CR>
 nnoremap <silent> s :CtrlP<CR>
 
 " make shift tab work

@@ -64,4 +64,8 @@ NeoBundleLazy 'sjl/gundo.vim', {
       \   },
       \ }
 
+if filereadable($HOME . '/.vimrc.local')
+  source $HOME/.vimrc.local
+endif
+
 NeoBundleCheck

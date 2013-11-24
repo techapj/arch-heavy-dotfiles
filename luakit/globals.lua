@@ -69,7 +69,7 @@ domain_props = {
     ["reddit.com"] = {
         enable_scripts = true,
     },
-    ["facebook.com"] = {
+    ["www.facebook.com"] = {
         enable_scripts = true,
     },
     ["github.com"] = {

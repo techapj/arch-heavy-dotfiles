@@ -66,7 +66,7 @@ domain_props = {
     ["news.ycombinator.com"] = {
         enable_scripts = true,
     },
-    ["reddit.com"] = {
+    ["www.reddit.com"] = {
         enable_scripts = true,
     },
     ["www.facebook.com"] = {

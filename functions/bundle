@@ -1,0 +1,2 @@
+# lazy way to override local binstubs
+command /usr/bin/bundle $*

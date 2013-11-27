@@ -34,4 +34,4 @@ task :install do
   Rake::Task['install:vim_plugins'].invoke
 end
 
-task default: [:install]
+task default: :install

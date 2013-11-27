@@ -1,4 +1,3 @@
-application/pdf; /usr/bin/epdfview '%s'; test=test -n "$DISPLAY"
 audio/*; /usr/bin/mpv '%s'; test=test -n "$DISPLAY" 
 image/*; /usr/bin/sxiv '%s'; test=test -n "$DISPLAY"
 text/html; /usr/bin/lynx -dump '%s' -display_charset "`locale charmap`" -assume_charset %{charset}; nametemplate=%s.html; copiousoutput;

@@ -1,6 +1,6 @@
 if !isdirectory($HOME . '/.vim/bundle/neobundle.vim')
   silent! !mkdir -p $HOME/.vim/bundle/neobundle.vim
-  silent! !git clone git@github.com:Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundle.vim
+  silent! !git clone https://github.com/Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundle.vim
 endif
 
 set runtimepath+=~/.vim/bundle/neobundle.vim

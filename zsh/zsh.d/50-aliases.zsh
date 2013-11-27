@@ -1,3 +1,5 @@
+alias "sudo"="sudo " # allow sudo with aliases
+
 alias "1st"="awk '{ print \$1 }'"
 alias "2nd"="awk '{ print \$2 }'"
 alias "3rd"="awk '{ print \$3 }'"
@@ -8,3 +10,7 @@ done
 unset i
 
 alias "rspec"="nocorrect rspec"
+
+if command -v powerpill &> /dev/null; then
+  alias "pacman"="powerpill"
+fi

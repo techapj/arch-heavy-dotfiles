@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -ue
 
-local commit
+commit
 
 if [[ "$#" > 0 ]]; then
   commit="$1"
@@ -9,7 +9,7 @@ else
   commit="HEAD"
 fi
 
-local then_="$(git log --pretty=format:%at --max-count=1 "$commit")"
-local now=$(date +%s)
+then_="$(git log --pretty=format:%at --max-count=1 "$commit")"
+now=$(date +%s)
 
 printf "%d\n" "$(($now - $then_))"

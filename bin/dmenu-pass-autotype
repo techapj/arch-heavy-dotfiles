@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -ue
 
-local password_store="$HOME/.password-store"
+password_store="$HOME/.password-store"
 
 # make sure the password store exists
 if [[ ! -d "$password_store" ]]; then
@@ -11,12 +11,12 @@ if [[ ! -d "$password_store" ]]; then
 fi
 
 # discern a list of possibilities
-local candidates="$(find "$password_store" -name '*gpg' -print0 |
+candidates="$(find "$password_store" -name '*gpg' -print0 |
   tr "\0" "\n" | 
   sed "s#$password_store/##;s#\.gpg\$##")"
 
 # ask which
-local choice="$(printf "$candidates" | sort | dmenu -p 'autotype' | chomp)"
+choice="$(printf "$candidates" | sort | dmenu -p 'autotype' | chomp)"
 
 # fail if they didn't supply anything
 if [[ -z "$choice" ]]; then

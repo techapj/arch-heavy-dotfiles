@@ -63,6 +63,9 @@ search_engines.default = search_engines.duckduckgo
 -- Per-domain webview properties
 -- See http://webkitgtk.org/reference/webkitgtk/stable/WebKitWebSettings.html
 domain_props = { 
+    ["localhost"] = {
+        enable_scripts = true,
+    },
     ["news.ycombinator.com"] = {
         enable_scripts = true,
     },

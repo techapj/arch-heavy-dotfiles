@@ -62,6 +62,13 @@ end
 
 function webview.methods.toggle_scripts(view, w)
     local domain = get_domain(view.uri)
+
+    if domain_props[domain] and domain_props[domain].enable_scripts ~= nil then
+        w:notify(string.format("Scripts on %s are %sabled in globals.lua.",
+            domain, domain_props[domain].enable_scripts and "en" or "dis"))
+        return
+    end
+
     local enable_scripts = _M.enable_scripts
     local row = match_domain(domain)
 
@@ -80,6 +87,12 @@ function webview.methods.toggle_plugins(view, w)
     local domain = get_domain(view.uri)
     local enable_plugins = _M.enable_plugins
     local row = match_domain(domain)
+
+    if domain_props[domain] and domain_props[domain].enable_plugins ~= nil then
+        w:notify(string.format("Plugins on %s are %sabled in globals.lua.",
+            domain, domain_props[domain].enable_plugins and "en" or "dis"))
+        return
+    end
 
     if row then
         enable_plugins = itob(row.enable_plugins)

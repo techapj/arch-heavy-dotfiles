@@ -17,7 +17,7 @@ Before installing, you should install the relevant packages with `pacman` and
               luajit luakit mpc mpd mpv mutt msmtp notmuch packer pass ruby   \
               rxvt-unicode slock sxiv tmux xautolock xorg-server xorg-xmodmap \
               xsel zsh
-    packer -S dmenu-xft-fuzzy isync-git
+    packer -S dmenu-xft-fuzzy isync-git xcape-git
     gem install gem-ctags bundler
 
 Afterward, check out the repository and run the installation script:

@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 set -ue
 
-"$(which -a mbsync | tail -n 1)" $* && notmuch new 2>&1 | grep -v "^Note:"
+/usr/bin/mbsync $* && notmuch new 2>&1 | grep -v "^Note:"

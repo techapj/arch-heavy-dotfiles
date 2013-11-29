@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -ue
 
-exec "$(which -a dmenu | tail -n 1)" \
+exec /usr/bin/dmenu \
   -i\
   -fn lime-7\
   -nb "#151515"\

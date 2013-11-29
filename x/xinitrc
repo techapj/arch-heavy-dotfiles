@@ -23,11 +23,8 @@ if [[ -d "$HOME/.fonts" ]]; then
   fc-cache
 fi
 
-pgrep mpd -u $USER || mpd
 pgrep xautolock -u $USER || xautolock -time 30 -locker "slock" -secure &
 pgrep xcape || xcape -e "Shift_L=parenleft;Shift_R=parenright;"
-
-eval "$(keychain --eval --clear)"
 
 if [[ -e "$HOME/.xinitrc.local" ]]; then
   $HOME/.xinitrc.local

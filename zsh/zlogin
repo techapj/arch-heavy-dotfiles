@@ -1,0 +1,3 @@
+eval "$(keychain --eval --clear)"
+
+pgrep mpd -u $USER || mpd

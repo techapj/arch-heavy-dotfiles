@@ -33,4 +33,5 @@ vim/vimrc: .vimrc
 x/Xmodmap: .Xmodmap
 x/Xresources: .Xresources
 x/xinitrc: .xinitrc
+zsh/zlogin: .zlogin
 zsh/zshrc: .zshrc

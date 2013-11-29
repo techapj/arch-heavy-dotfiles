@@ -98,14 +98,6 @@ nnoremap <leader>D :Dispatch!<space>
 
 " neocomplete
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent> <CR> <C-r>=NeoCompleteIt()<CR>
 snoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" neosnippet
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" :
-      \ pumvisible() ? "\<C-n>" : "\<TAB>"
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" :
-      \ "\<TAB>"

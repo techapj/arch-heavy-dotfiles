@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-set -ue
-
-MPD_HOST=$HOME/.mpd/socket exec /usr/bin/mpc $*

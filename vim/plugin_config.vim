@@ -63,7 +63,6 @@ let g:ycm_min_number_of_chars_for_completion = 1
 
 " repeat
 let g:repeat_map = {
-      \ '.': ';',
       \ '<C-r>': 'i',
       \ 'U': 0,
       \ 'u': 'u',

@@ -21,8 +21,8 @@ nnoremap j gj
 nnoremap k gk
 
 " buffer nav
-nnoremap <silent> , :<C-U>execute v:count . "bprevious"<CR>
-nnoremap <silent> . :<C-U>execute v:count . "bnext"<CR>
+nnoremap <silent> ( :<C-U>execute v:count . "bprevious"<CR>
+nnoremap <silent> ) :<C-U>execute v:count . "bnext"<CR>
 
 " vis the previously entered text
 nnoremap gV `[v`]
@@ -38,7 +38,7 @@ nnoremap <leader>- <C-x>
 nnoremap <leader>= <C-a>
 
 " quickly open tags
-nnoremap tt <C-]>
+nnoremap <C-t> <C-]>
 
 " switch between alternate files and recent buffers
 nnoremap zz <C-^>
@@ -51,7 +51,7 @@ noremap Y y$
 noremap gs :sort<CR>
 
 " open and close folds
-nnoremap ff za
+nnoremap <leader><leader> za
 
 " focus a fold
 nnoremap FF mzzMzvzz`z

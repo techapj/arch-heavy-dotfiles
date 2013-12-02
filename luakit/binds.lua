@@ -360,10 +360,10 @@ add_binds("normal", {
     key({"Shift","Control"}, "Tab", "Go to previous tab.",
         function (w) w:prev_tab() end),
 
-    key({}, ".", "Go to next tab.",
+    key({}, ")", "Go to next tab.",
         function (w) w:next_tab() end),
 
-    key({}, ",", "Go to previous tab.",
+    key({}, "(", "Go to previous tab.",
         function (w) w:prev_tab() end),
 
     buf("^gT$", "Go to previous tab.",

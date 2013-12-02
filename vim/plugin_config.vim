@@ -70,3 +70,6 @@ let g:repeat_map = {
 
 " grep_operator
 let g:grep_operator_map = "S"
+
+" autobundle
+let g:autobundle_on = "VimEnter"

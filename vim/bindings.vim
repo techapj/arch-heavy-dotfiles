@@ -13,9 +13,6 @@ nnoremap <silent> <C-k> :Bfocus<CR>
 " close the active buffer
 nnoremap <silent> K :Bdelete<CR>
 
-" fast redo - since we use escape to enter insert mode, the key
-" next to undo is free
-
 " navigate through paragraphs by visual line instead of literal line
 nnoremap j gj
 nnoremap k gk

@@ -36,7 +36,7 @@ augroup dfknz " guess what this means
   " more abolish-like coercions: string to symbol/vice versa
   " use nmap so surround can be used
   au FileType ruby,haml,eruby nmap <buffer> <silent> css Bxysiw'
-  au FileType ruby,haml,eruby nmap <buffer> <silent> csy ds'<ESC>:<ESC>``
+  au FileType ruby,haml,eruby nmap <buffer> <silent> csy ds'ds"<ESC>:<ESC>``
 
   " fixes a bug with airline
   au InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0

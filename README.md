@@ -14,7 +14,7 @@ Before installing, you should install the relevant packages with `pacman` and
 `gem`.  A list of packages and their purpose is below.
 
     pacman -S artwiz-fonts awesome ctags git gtk-engine-murrine keychain lua  \
-              luajit luakit mpc mpd mpv mutt msmtp notmuch packer pass ruby   \
+              luajit luakit mpc mpd mpv mutt msmtp notmuch pass ruby          \
               rxvt-unicode slock sxiv tmux xautolock xorg-server xorg-xmodmap \
               xsel zsh
     packer -S dmenu-xft-fuzzy isync-git xcape-git
@@ -24,7 +24,7 @@ Afterward, check out the repository and run the installation script:
 
     git clone https://github.com/devlinzed/dotfiles ~/.dotfiles
     cd ~/.dotfiles
-    rake install
+    rake
 
 When you're done, `git grep` for `devlin` and change it as necessary.  If you
 installed to a different directory, look for `.dotfiles`, too.

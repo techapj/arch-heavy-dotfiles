@@ -33,6 +33,11 @@ augroup dfknz " guess what this means
   au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>c :RunCurrentSpec<CR>
   au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>f :RunFocusedSpec<CR>
 
+  " more abolish-like coercions: string to symbol/vice versa
+  " use nmap so surround can be used
+  au FileType ruby,haml,eruby nmap <buffer> <silent> css Bxysiw'
+  au FileType ruby,haml,eruby nmap <buffer> <silent> csy ds'<ESC>:<ESC>``
+
   " fixes a bug with airline
   au InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0
   au InsertLeave * let &timeoutlen = old_timeoutlen | unlet old_timeoutlen

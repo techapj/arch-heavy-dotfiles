@@ -1,5 +1,4 @@
 --tag-relative
---verbose
 --fields=+l
 
 --langdef=coffee

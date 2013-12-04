@@ -24,7 +24,7 @@ if [[ -d "$HOME/.fonts" ]]; then
 fi
 
 pgrep xautolock -u $USER || xautolock -time 30 -locker "slock" -secure &
-pgrep xcape || xcape -e "Shift_L=parenleft;Shift_R=parenright;Control_L=Escape"
+pgrep xcape || xcape -e "Shift_L=parenleft;Shift_R=parenright"
 
 if [[ -e "$HOME/.xinitrc.local" ]]; then
   $HOME/.xinitrc.local

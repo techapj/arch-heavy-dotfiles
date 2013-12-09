@@ -11,6 +11,7 @@ unset i
 
 alias "rspec"="nocorrect rspec"
 
-if command -v powerpill &> /dev/null; then
-  alias "pacman"="powerpill"
-fi
+alias "pacman"="powerpill"
+
+alias "git"="hub"
+compdef hub=git

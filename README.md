@@ -13,11 +13,11 @@ install
 Before installing, you should install the relevant packages with `pacman` and
 `gem`.  A list of packages and their purpose is below.
 
-    pacman -S artwiz-fonts awesome ctags git gtk-engine-murrine keychain lua  \
-              luajit luakit mpc mpd mpv mutt msmtp notmuch pass ruby          \
+    pacman -S artwiz-fonts awesome ctags git gtk-engine-murrine hub keychain  \
+              lua luajit luakit mpc mpd mpv mutt msmtp notmuch pass ruby      \
               rxvt-unicode slock sxiv tmux xautolock xorg-server xorg-xmodmap \
               xsel zsh
-    packer -S dmenu-xft-fuzzy isync-git xcape-git
+    packer -S dmenu-xft-fuzzy isync-git powerpill xcape-git
     gem install gem-ctags bundler
 
 Afterward, check out the repository and run the installation script:

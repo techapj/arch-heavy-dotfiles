@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 set -ue
 
+git() {
+  command git $*
+}
+
 change_to_tmux_pwd() {
   local var_name="$(tmux display -p 'TMUX_PWD_#D')"
   local tmux_pwd="$(tmux showenv $var_name | cut -d = -f 2-)"

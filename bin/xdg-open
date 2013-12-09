@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+set -ue
+
+if ! luakit "$1"; then
+  /usr/bin/xdg-open $*
+fi

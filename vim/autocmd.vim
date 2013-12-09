@@ -29,9 +29,9 @@ augroup dfknz " guess what this means
 
   " run specs with vim-dispatch-rspec
   au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab><Tab> :RunPreviousSpec<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>a :RunAllSpecs<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>c :RunCurrentSpec<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> <Tab>f :RunFocusedSpec<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> a<Tab> :RunAllSpecs<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> c<Tab> :RunCurrentSpec<CR>
+  au FileType ruby,haml,eruby nnoremap <buffer> <silent> f<Tab> :RunFocusedSpec<CR>
 
   " more abolish-like coercions: string to symbol/vice versa
   " use nmap so surround can be used

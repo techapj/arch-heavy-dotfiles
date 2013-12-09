@@ -6,6 +6,8 @@
   run = "!exec "
   unassume = update-index --no-assume-unchanged
   undo = reset --hard
+[browser "luakit"]
+  cmd = /usr/bin/luakit
 [color]
   ui = auto
 [core]
@@ -24,6 +26,8 @@
   email = me@devlinzed.com
   name = devlin zed
   signingkey = CF7781EF
+[web]
+  browser = luakit
 
 [include]
   path = .gitconfig.local

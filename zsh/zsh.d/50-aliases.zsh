@@ -14,4 +14,3 @@ alias "rspec"="nocorrect rspec"
 alias "pacman"="powerpill"
 
 alias "git"="hub"
-compdef hub=git

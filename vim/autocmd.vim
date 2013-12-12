@@ -13,25 +13,25 @@ augroup dfknz " guess what this means
   au FileType gitcommit setlocal spell textwidth=72
 
   " quick markdown headers & spell check
-  au FileType markdown nmap <buffer> <leader>1 yypVr=
-  au FileType markdown nmap <buffer> <leader>2 yypVr-
+  au FileType markdown nnoremap <buffer> <leader>1 yypVr=
+  au FileType markdown nnoremap <buffer> <leader>2 yypVr-
   au FileType markdown setlocal spell
 
   " vim-rails binds
-  au FileType ruby,haml,eruby nmap <buffer> <leader>ra :Rake<space>
-  au FileType ruby,haml,eruby nmap <buffer> <leader>rg :Rgenerate<space>
-  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rc :Rcontroller<CR>
-  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>re :Rails server<CR>
-  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rh :Ehelper<CR>
-  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rm :Rmodel<CR>
-  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>ro :Rails console<CR>
-  au FileType ruby,haml,eruby nmap <buffer> <silent> <leader>rv :Rview<CR>
+  au FileType ruby nnoremap <buffer> <leader>ra :Rake<space>
+  au FileType ruby nnoremap <buffer> <leader>rg :Rgenerate<space>
+  au FileType ruby nnoremap <buffer> <silent> <leader>rc :Rcontroller<CR>
+  au FileType ruby nnoremap <buffer> <silent> <leader>re :Rails server<CR>
+  au FileType ruby nnoremap <buffer> <silent> <leader>rh :Ehelper<CR>
+  au FileType ruby nnoremap <buffer> <silent> <leader>rm :Rmodel<CR>
+  au FileType ruby nnoremap <buffer> <silent> <leader>ro :Rails console<CR>
+  au FileType ruby nnoremap <buffer> <silent> <leader>rv :Rview<CR>
 
   " run specs with vim-dispatch-rspec
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> \\ :RunPreviousSpec<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> \a :RunAllSpecs<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> \c :RunCurrentSpec<CR>
-  au FileType ruby,haml,eruby nnoremap <buffer> <silent> \f :RunFocusedSpec<CR>
+  au FileType ruby nnoremap <buffer> <silent> \\ :RunPreviousSpec<CR>
+  au FileType ruby nnoremap <buffer> <silent> \a :RunAllSpecs<CR>
+  au FileType ruby nnoremap <buffer> <silent> \c :RunCurrentSpec<CR>
+  au FileType ruby nnoremap <buffer> <silent> \f :RunFocusedSpec<CR>
 
   " more abolish-like coercions: string to symbol/vice versa
   " use nmap so surround can be used

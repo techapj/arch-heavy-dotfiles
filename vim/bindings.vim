@@ -48,8 +48,7 @@ noremap Y y$
 noremap gs :sort<CR>
 
 " open and close folds
-" cc is a synonym for S
-nnoremap cc za
+nnoremap <leader><leader> za
 
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
@@ -61,12 +60,11 @@ noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
 noremap <silent> <leader>eu :edit $DOTFILES/vim/neobundle.vim<CR>
 
 " grepping
-nnoremap <leader><leader> :Ggrep ""<left>
-nnoremap <leader>/ :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
+nnoremap <Tab><Tab> :Ggrep ""<left>
+nnoremap <Tab>/ :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
 
 " ctrlp
-nnoremap <silent> <Tab> :CtrlP<CR>
-nnoremap <silent> <S-Tab> :CtrlPTag<CR>
+nnoremap <silent> S :CtrlP<CR>
 
 " make shift tab work
 map <Esc>[Z <S-Tab>

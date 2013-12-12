@@ -65,4 +65,4 @@ let g:repeat_map = {
       \ }
 
 " grep_operator
-let g:grep_operator_map = "<leader>"
+let g:grep_operator_map = "<Tab>"

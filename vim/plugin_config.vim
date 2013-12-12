@@ -57,10 +57,6 @@ let g:neocomplete#enable_at_startup = 1 " why is this necessary?
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#syntax#min_keyword_length = 1
 
-" ycm
-let g:ycm_complete_in_comments = 1
-let g:ycm_min_number_of_chars_for_completion = 1
-
 " repeat
 let g:repeat_map = {
       \ '<C-r>': 'i',
@@ -70,6 +66,3 @@ let g:repeat_map = {
 
 " grep_operator
 let g:grep_operator_map = "<leader>"
-
-" autobundle
-let g:autobundle_on = "VimEnter"

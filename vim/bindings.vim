@@ -11,7 +11,7 @@ nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 nnoremap <silent> <C-k> :Bfocus<CR>
 
 " close the active buffer
-nnoremap <silent> K :Bdelete<CR>
+nnoremap <silent> K :bdelete<CR>
 
 " navigate through paragraphs by visual line instead of literal line
 nnoremap j gj

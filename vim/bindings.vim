@@ -55,9 +55,10 @@ noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
 noremap <silent> <leader>eb :edit $DOTFILES/vim/bindings.vim<CR>
 noremap <silent> <leader>ec :edit $DOTFILES/vim/config.vim<CR>
 noremap <silent> <leader>ef :edit $DOTFILES/vim/functions.vim<CR>
-noremap <silent> <leader>em :edit $DOTFILES/vim/commands.vim<CR>
+noremap <silent> <leader>en :edit $DOTFILES/vim/neobundle.vim<CR>
+noremap <silent> <leader>eo :edit $DOTFILES/vim/colours.vim<CR>
 noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
-noremap <silent> <leader>eu :edit $DOTFILES/vim/neobundle.vim<CR>
+noremap <silent> <leader>es :edit $DOTFILES/vim/statusline.vim<CR>
 
 " grepping
 nnoremap <Tab><Tab> :Ggrep ""<left>

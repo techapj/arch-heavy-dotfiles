@@ -1,3 +1,4 @@
+let &statusline = ' '
 set autoindent
 set autoread
 set autowrite
@@ -18,7 +19,7 @@ set hidden
 set history=1024
 set ignorecase
 set incsearch
-set laststatus=2
+set laststatus=0
 set linebreak
 set magic
 set mat=1
@@ -26,7 +27,6 @@ set modelines=1
 set nobackup
 set nolazyredraw
 set nolist
-set noshowmode
 set nostartofline
 set nowritebackup
 set number
@@ -37,8 +37,9 @@ set report=0
 set ruler
 set shiftround
 set shiftwidth=2
-set shortmess=filtIoOA
+set shortmess=atI
 set showmatch
+set showmode
 set smartindent
 set smarttab
 set softtabstop=2

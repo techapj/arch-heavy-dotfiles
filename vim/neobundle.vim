@@ -9,7 +9,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'bling/vim-bufferline'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'devlinzed/automkdir'
 NeoBundle 'devlinzed/grep_operator'
@@ -24,16 +24,13 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-ruby/vim-ruby'
 
 NeoBundleLazy 'AndrewRadev/splitjoin.vim', {
@@ -50,13 +47,25 @@ NeoBundleLazy 'devlinzed/toggle_quickfix', {
 
 NeoBundleLazy 'devlinzed/vim-focus', {
       \ 'autoload': {
-      \   'commands': ['Bfocus', 'Bf']
+      \   'commands': ['Bfocus', 'Bf'],
       \   },
       \ }
 
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],
+      \   },
+      \ }
+
+NeoBundleLazy 'tpope/vim-dispatch', {
+      \ 'autoload': {
+      \   'commads': ['Dispatch'],
+      \   },
+      \ }
+
+NeoBundleLazy 'tpope/vim-eunuch', {
+      \ 'autoload': {
+      \   'commands': ['Unlink', 'Move', 'Chmod', 'SudoWrite', 'SudoW'],
       \   },
       \ }
 

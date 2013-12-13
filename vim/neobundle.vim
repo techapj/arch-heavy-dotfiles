@@ -20,7 +20,6 @@ NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-commentary'
@@ -48,6 +47,12 @@ NeoBundleLazy 'devlinzed/toggle_quickfix', {
 NeoBundleLazy 'devlinzed/vim-focus', {
       \ 'autoload': {
       \   'commands': ['Bfocus', 'Bf'],
+      \   },
+      \ }
+
+NeoBundleLazy 'kien/ctrlp.vim', {
+      \ 'autoload': {
+      \   'commands': ['CtrlP', 'CtrlPTag'],
       \   },
       \ }
 

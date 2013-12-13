@@ -8,10 +8,11 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" NeoBundle 'bling/vim-bufferline'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'bling/vim-bufferline'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'devlinzed/automkdir'
+NeoBundle 'devlinzed/bfln'
 NeoBundle 'devlinzed/grep_operator'
 NeoBundle 'devlinzed/vim-dispatch-rspec'
 NeoBundle 'devlinzed/vim-dmenu'

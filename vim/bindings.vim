@@ -8,7 +8,7 @@ nnoremap <ESC> i
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 
 " close every inactive buffer
-nnoremap <silent> <C-k> :Bfocus<CR>
+nnoremap <silent> <C-k> :Bfocus<CR>:call bfln#sync()<CR>
 
 " close the active buffer
 nnoremap <silent> K :bdelete<CR>

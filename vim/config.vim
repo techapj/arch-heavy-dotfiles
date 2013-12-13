@@ -1,4 +1,3 @@
-let &statusline = ' '
 set autoindent
 set autoread
 set autowrite
@@ -19,7 +18,7 @@ set hidden
 set history=1024
 set ignorecase
 set incsearch
-set laststatus=0
+set laststatus=2
 set linebreak
 set magic
 set mat=1

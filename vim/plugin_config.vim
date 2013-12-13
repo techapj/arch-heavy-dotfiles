@@ -68,9 +68,10 @@ let g:repeat_map = {
 let g:grep_operator_map = "<Tab>"
 
 " bufferline
-let g:bufferline_active_buffer_left = "[ "
-let g:bufferline_active_buffer_right = "]"
-let g:bufferline_echo = 1
+let g:bufferline_active_buffer_left = ""
+let g:bufferline_active_buffer_right = ""
+let g:bufferline_echo = 0
 let g:bufferline_rotate = 1
+let g:bufferline_separator = ""
 let g:bufferline_show_bufnr = 0
 let g:bufferline_solo_highlight = 1

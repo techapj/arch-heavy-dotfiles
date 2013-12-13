@@ -37,4 +37,9 @@ augroup dfknz " guess what this means
   " use nmap so surround can be used
   au FileType ruby,haml,eruby nmap <buffer> <silent> css EBxysiw'
   au FileType ruby,haml,eruby nmap <buffer> <silent> csy ds'ds"<ESC>:<ESC>``
+
+  " bufferline meet statusline
+  autocmd VimEnter *
+        \ let &statusline='%{bufferline#refresh_status()}'
+        \ .bufferline#get_status_string()
 augroup END

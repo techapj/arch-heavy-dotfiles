@@ -63,8 +63,8 @@ noremap <silent> <leader>eu :edit $DOTFILES/vim/neobundle.vim<CR>
 nnoremap <Tab><Tab> :Ggrep ""<left>
 nnoremap <Tab>/ :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
 
-" ctrlp
-nnoremap <silent> S :CtrlP<CR>
+" dmenu
+nnoremap <silent> S :Dmenu<CR>
 
 " make shift tab work
 map <Esc>[Z <S-Tab>

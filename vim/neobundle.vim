@@ -14,6 +14,7 @@ NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'devlinzed/automkdir'
 NeoBundle 'devlinzed/grep_operator'
 NeoBundle 'devlinzed/vim-dispatch-rspec'
+NeoBundle 'devlinzed/vim-dmenu'
 NeoBundle 'devlinzed/vim-repeat'
 NeoBundle 'kana/vim-textobj-entire'
 NeoBundle 'kana/vim-textobj-indent'
@@ -24,6 +25,7 @@ NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
@@ -50,12 +52,6 @@ NeoBundleLazy 'devlinzed/vim-focus', {
       \   },
       \ }
 
-NeoBundleLazy 'kien/ctrlp.vim', {
-      \ 'autoload': {
-      \   'commands': ['CtrlP', 'CtrlPTag'],
-      \   },
-      \ }
-
 NeoBundleLazy 'sjl/gundo.vim', {
       \ 'autoload': {
       \   'commands': ['GundoToggle'],
@@ -65,12 +61,6 @@ NeoBundleLazy 'sjl/gundo.vim', {
 NeoBundleLazy 'tpope/vim-dispatch', {
       \ 'autoload': {
       \   'commads': ['Dispatch'],
-      \   },
-      \ }
-
-NeoBundleLazy 'tpope/vim-eunuch', {
-      \ 'autoload': {
-      \   'commands': ['Unlink', 'Move', 'Chmod', 'SudoWrite', 'SudoW'],
       \   },
       \ }
 

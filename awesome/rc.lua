@@ -147,12 +147,12 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 -- time widget
-mytextclock = awful.widget.textclock(pretty("%I %M %S", "#8bb4c6", "#394952") .. pretty("%Y %m %d", "#8bb4c6", "#42616e"), 1)
+mytextclock = awful.widget.textclock(pretty("%I %M %S", "#b0b0b0", "#202020") .. pretty("%Y %m %d", "#b0b0b0", "#303030"), 1)
 
 -- mpd bashet
 mympdwidget = wibox.widget.textbox()
 bashets.register(os.getenv('DOTFILES') .. "/awesome/bashets/mpc.zsh", {
-  format = pretty('$1', '#9ecce0'),
+  format = pretty('$1', '#b0b0b0'),
   separator = "\n",
   update_time = 1,
   widget = mympdwidget,

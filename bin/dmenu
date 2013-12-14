@@ -5,7 +5,7 @@ exec /usr/bin/dmenu \
   -i\
   -fn lime-7\
   -nb "#151515"\
-  -nf "#9ecce0"\
-  -sb "#394952"\
-  -sf "#8bb4c6"\
+  -nf "#b0b0b0"\
+  -sb "#505050"\
+  -sf "#b0b0b0"\
   $*

@@ -27,6 +27,9 @@ augroup dfknz " guess what this means
   au FileType ruby nnoremap <buffer> <silent> <leader>ro :Rails console<CR>
   au FileType ruby nnoremap <buffer> <silent> <leader>rv :Rview<CR>
 
+  " neocomplete
+	au FileType ruby setlocal omnifunc=rubycomplete#Complete
+
   " run specs with vim-dispatch-rspec
   au FileType ruby nnoremap <buffer> <silent> \\ :RunPreviousSpec<CR>
   au FileType ruby nnoremap <buffer> <silent> \a :RunAllSpecs<CR>

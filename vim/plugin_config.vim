@@ -11,8 +11,12 @@ let g:splitjoin_join_mapping = ''
 let g:surround_35  = "#{\r}"   " wrap in #{} with ysiw#
 
 " neocomplete
+if !exists('g:neocomplete#force_omni_input_patterns')
+	let g:neocomplete#force_omni_input_patterns = {}
+endif
 let g:neocomplete#enable_at_startup = 1 " why is this necessary?
 let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#syntax#min_keyword_length = 1
 
 " repeat

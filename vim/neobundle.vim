@@ -32,6 +32,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'ujihisa/neco-look'
 NeoBundle 'vim-ruby/vim-ruby'
 
 NeoBundleLazy 'AndrewRadev/splitjoin.vim', {

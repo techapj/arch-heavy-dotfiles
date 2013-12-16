@@ -50,6 +50,12 @@ noremap gs :sort<CR>
 " open and close folds
 nnoremap <leader><leader> za
 
+" bracket binds inspired by unimpaired
+nnoremap <silent> [<space> O<ESC>
+nnoremap <silent> [q :cprev<CR>
+nnoremap <silent> ]<space> o<ESC>
+nnoremap <silent> ]q :cnext<CR>
+
 " quickly open vim config
 noremap <silent> <leader>ea :edit $DOTFILES/vim/autocmd.vim<CR>
 noremap <silent> <leader>eb :edit $DOTFILES/vim/bindings.vim<CR>

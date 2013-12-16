@@ -70,7 +70,7 @@ NeoBundleLazy 'sjl/gundo.vim', {
 
 NeoBundleLazy 'tpope/vim-dispatch', {
       \ 'autoload': {
-      \   'commads': ['Dispatch'],
+      \   'commands': ['Dispatch'],
       \   },
       \ }
 

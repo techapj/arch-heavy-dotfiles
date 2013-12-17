@@ -15,16 +15,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 	let g:neocomplete#force_omni_input_patterns = {}
 endif
 
-if !exists('g:neocomplete#sources')
-  let g:neocomplete#sources = {}
-endif
-
-let g:neocomplete#sources#dictionary#dictionaries = {
-      \ 'default': '/usr/share/dict/cracklib-small',
-      \ }
-
 let g:neocomplete#enable_at_startup = 1 " why is this necessary?
-let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#syntax#min_keyword_length = 1

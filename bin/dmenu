@@ -6,6 +6,6 @@ exec /usr/bin/dmenu \
   -fn lime-7\
   -nb "#151515"\
   -nf "#b0b0b0"\
-  -sb "#505050"\
+  -sb "#303030"\
   -sf "#b0b0b0"\
   $*

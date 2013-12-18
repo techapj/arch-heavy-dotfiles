@@ -1,23 +1,16 @@
 #!/usr/bin/env zsh
 set -ue
 
-candidates="$(find /media/videos/{films,tv} -maxdepth 1)"
+for candidate in $1/*; do
+  basename "$candidate" | sed -r "s#\..{3,4}\$##g"
+done | uniq | dmenu -p "watch" | read choice
 
-shortnames="$(printf "%s" "$candidates" |
-  sed -r "s#/media/videos/(tv|films)/?##;s#\..{3,4}\$##")"
+find "$1" -name "$choice*" | head -1 | read fullpath
 
-choice="$(printf "%s" "$shortnames" |
-  grep -v "^[ \t]*$" |
-  uniq |
-  shuf |
-  dmenu -p "watch")"
-
-fullpath="$(printf "%s" "$candidates" |
-  egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$" |
-  head -n 1)" # just in case two share a name, pick the first
+printf "%s\n" "$fullpath"
 
 if [[ -d "$fullpath" ]]; then
-  exec mpv-random "$fullpath"
+  exec dmenu-mpv "$fullpath"
 elif [[ -f "$fullpath" ]]; then
   exec mpv "$fullpath"
 fi

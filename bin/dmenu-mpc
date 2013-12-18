@@ -1,30 +1,17 @@
 #window!/usr/bin/env zsh
 set -ue
 
-add_album() {
-  album="$(mpc listall |
-    cut -d/ -f1-2 |
-    uniq |
-    egrep -v "\..{3,4}$" |
-    shuf |
-    dmenu -p 'play' |
-    chomp)"
+mpc listall |
+  cut -d/ -f1-2 |
+  uniq |
+  egrep -v "\..{3,4}$" |
+  shuf |
+  dmenu -p 'play' |
+  chomp |
+  read album
 
-  if [[ -n "$album" ]]; then
-    mpc clear
-    mpc add "$album"
-    mpc play
-  fi
-}
-
-if [[ "$#" < "1" ]] || [[ -z "$1" ]]; then
-  type="album"
-else
-  type="$1"
+if [[ -n "$album" ]]; then
+  mpc clear
+  mpc add "$album"
+  mpc play
 fi
-
-case "$type" in
-  # artist) add_artist ;;
-  # track) add_track ;;
-  *) add_album ;;
-esac

@@ -245,7 +245,7 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ modkey,           }, "w", function () awful.util.spawn(browser) end),
     awful.key({ modkey,           }, "p", function () awful.util.spawn("dmenu-mpc") end),
-    awful.key({ modkey,           }, "v", function () awful.util.spawn("dmenu-mpv") end),
+    awful.key({ modkey,           }, "v", function () awful.util.spawn("dmenu-mpv /media/videos/{tv,films}") end),
     awful.key({ modkey,           }, "a", function () awful.util.spawn("dmenu-pass-autotype") end),
     awful.key({ modkey,           }, "c", function () awful.util.spawn("dmenu-calculate") end),
 

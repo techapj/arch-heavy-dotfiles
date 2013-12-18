@@ -67,7 +67,7 @@ noremap <silent> <leader>ep :edit $DOTFILES/vim/plugin_config.vim<CR>
 noremap <silent> <leader>es :edit $DOTFILES/vim/statusline.vim<CR>
 
 " grepping
-nnoremap <Tab><Tab> :Ggrep ""<left>
+nnoremap <Tab><Tab> :Ggrep -- ""<left>
 nnoremap <Tab>/ :execute "Ggrep '" . substitute(getreg('/'), '\(\\<\|\\>\)','\\b','g') . "'"<CR>
 
 " dmenu

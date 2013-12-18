@@ -58,6 +58,3 @@ let g:repeat_map = {
       \ 'U': 0,
       \ 'u': 'u',
       \ }
-
-" grep_operator
-let g:grep_operator_map = "<Tab>"

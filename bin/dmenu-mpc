@@ -1,14 +1,12 @@
 #window!/usr/bin/env zsh
 set -ue
 
-mpc listall |
+album="$(mpc listall |
   cut -d/ -f1-2 |
   uniq |
   egrep -v "\..{3,4}$" |
   shuf |
-  dmenu -p 'play' |
-  chomp |
-  read album
+  dmenu -p 'play')"
 
 if [[ -n "$album" ]]; then
   mpc clear

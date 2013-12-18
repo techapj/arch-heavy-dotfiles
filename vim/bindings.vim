@@ -8,10 +8,10 @@ nnoremap <ESC> i
 nnoremap <expr><silent> <CR> empty(expand("%")) ? "<CR>" : ":write<CR>"
 
 " close every inactive buffer
-nnoremap <silent> <C-k> :Bfocus<CR>:call bfln#sync()<CR>
+nnoremap <silent> <C-k> :Bfocus<CR>
 
 " close the active buffer
-nnoremap <silent> K :bdelete<CR>:call bfln#sync()<CR>
+nnoremap <silent> K :bdelete<CR>
 
 " navigate through paragraphs by visual line instead of literal line
 nnoremap j gj

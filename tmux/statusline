@@ -2,6 +2,7 @@
 set -ue
 
 git() {
+  # use git instead of hub, which git is normally aliased to
   command git $*
 }
 
@@ -18,20 +19,20 @@ short_pwd() {
 git_status() {
   local staged="$(git diff-index --cached HEAD | wc -l)"
   local unstaged="$(git diff-files | wc -l)"
-  if [[ $staged -gt 0 ]]; then
+  if [[ "$staged" -gt 0 ]]; then
     printf " #[fg=colour2]%d! " "$staged"
   fi
-  if [[ $unstaged -gt 0 ]]; then
+  if [[ "$unstaged" -gt 0 ]]; then
     printf " #[fg=colour1]%d? " "$unstaged"
   fi
 }
 
 git_since() {
   local seconds="$(git since)"
-  if [[ $seconds -gt 1800 ]]; then # >= 30 mins is too long
+  if [[ "$seconds" -gt 1800 ]]; then # >= 30 mins is too long
     printf " #[fg=colour9]>30m "
-  elif [[ $seconds -gt 60 ]]; then # >= 1 minute is ok
-    printf " #[fg=colour3]%dm " $(( $seconds / 60 ))
+  elif [[ "$seconds" -gt 60 ]]; then # >= 1 minute is ok
+    printf " #[fg=colour3]%dm " $(( "$seconds" / 60 ))
   else # < 1 minute is super nice
     printf " #[fg=colour2]<1m "
   fi

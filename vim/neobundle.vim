@@ -9,9 +9,9 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'devlinzed/automkdir'
-NeoBundle 'devlinzed/bfln'
 NeoBundle 'devlinzed/grep_operator'
 NeoBundle 'devlinzed/vim-dispatch-rspec'
 NeoBundle 'devlinzed/vim-dmenu'

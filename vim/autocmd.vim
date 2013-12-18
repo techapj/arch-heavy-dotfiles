@@ -40,4 +40,18 @@ augroup dfknz " guess what this means
   " use nmap so surround can be used
   au FileType ruby,haml,eruby nmap <buffer> <silent> css EBxysiw'
   au FileType ruby,haml,eruby nmap <buffer> <silent> csy ds'ds"<ESC>:<ESC>``
+
+  " fixes a bug with airline
+  au InsertEnter * let old_timeoutlen = &timeoutlen | set timeoutlen=0
+  au InsertLeave * let &timeoutlen = old_timeoutlen | unlet old_timeoutlen
+
+  " configure airline after vimrc is loaded
+  " this is heaps ugly
+  au VimEnter *
+        \   let g:airline_section_a = airline#section#create(['mode'])
+        \ | let g:airline_section_b = ''
+        \ | let g:airline_section_c = ''
+        \ | let g:airline_section_x = ''
+        \ | let g:airline_section_y = airline#section#create(['filetype'])
+        \ | let g:airline_section_z = airline#section#create(['L%lC%c'])
 augroup END

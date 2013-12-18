@@ -7,8 +7,6 @@ done | uniq | dmenu -p "watch" | read choice
 
 find "$1" -name "$choice*" | head -1 | read fullpath
 
-printf "%s\n" "$fullpath"
-
 if [[ -d "$fullpath" ]]; then
   exec dmenu-mpv "$fullpath"
 elif [[ -f "$fullpath" ]]; then

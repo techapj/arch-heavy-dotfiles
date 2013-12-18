@@ -7,7 +7,7 @@ add_album() {
     uniq |
     egrep -v "\..{3,4}$" |
     shuf |
-    dmenu -z -p 'play' |
+    dmenu -p 'play' |
     chomp)"
 
   if [[ -n "$album" ]]; then

@@ -10,7 +10,7 @@ choice="$(printf "%s" "$shortnames" |
   grep -v "^[ \t]*$" |
   uniq |
   shuf |
-  dmenu -z -p "watch")"
+  dmenu -p "watch")"
 
 fullpath="$(printf "%s" "$candidates" |
   egrep "^/media/videos/(films|tv)/$choice(\..{3,4})?\$" |
